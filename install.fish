@@ -29,6 +29,31 @@ end
 
 ## Define an install process for every application
 
+# Add `PasswordAuthentication no` to `/etc/ssh/sshd_config`
+function ssh_hardening
+  if grep -q '^#*PasswordAuthentication.*$' /etc/ssh/sshd_config
+    sed 's/^#*PasswordAuthentication.*$/PasswordAuthentication no/' /etc/ssh/sshd_config | sudo tee /etc/ssh/sshd_config >/dev/null
+  else
+    echo 'PasswordAuthentication no' | sudo tee -a /etc/ssh/sshd_config
+  end
+end
+
+function users
+  # add gep user
+  if ! awk -F: '{ print $1 }' /etc/passwd | grep -q gep
+    if sudo adduser gep
+      sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi gep
+    end
+  end
+
+  # add shared user
+  if ! awk -F: '{ print $1 }' /etc/passwd | grep -q shared
+    if sudo adduser shared
+      sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi shared
+    end
+  end
+end
+
 function dotnet
 #  if ! apt list --installed | grep -q packages-microsoft-prod
 #    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
@@ -71,14 +96,14 @@ end
 
 ## Call the install functions
 
-sudo apt full-upgrade -y
-
 if ! test -n "$argv"
 ################################################################
 ################################################################
 ################## CHOOSE YOUR TOOLS BELOW #####################
 ################################################################
 ################################################################
+  ssh_hardening
+  users
   dotnet
   vim
   fish
@@ -96,6 +121,7 @@ end
 
 ## Actually install
 if test -n "$packages"
+  sudo apt full-upgrade -y
   sudo apt install -y $packages
 end
 
