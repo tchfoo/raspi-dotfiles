@@ -28,10 +28,13 @@ end
 ## Define an install process for every application
 
 function dotnet
-  if ! apt list --installed | grep -q packages-microsoft-prod
-    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
-  end
+#  if ! apt list --installed | grep -q packages-microsoft-prod
+#    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
+#    sudo dpkg -i packages-microsoft-prod.deb
+#  end
+  wget https://dot.net/v1/dotnet-install.sh
+  chmod +x dotnet-install.sh
+  ./dotnet-install.sh -c Current
 end
 
 function vim
