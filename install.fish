@@ -6,6 +6,9 @@ if test $USER = "root"
   exit
 end
 
+
+set INSTALL_DIR (cd (dirname (status --current-filename)); and pwd)
+
 ## Refresh the temporary directory
 rm -vrf temp
 mkdir -v temp
@@ -16,8 +19,7 @@ function link
 end
 
 function link_here
-  set SCRIPT_DIR (cd (dirname (status --current-filename)); and pwd)
-  ../link.fish "$SCRIPT_DIR/$argv[1]" $argv[2] $argv[3]
+  ../link.fish "$INSTALL_DIR/$argv[1]" $argv[2] $argv[3]
 end
 
 set packages

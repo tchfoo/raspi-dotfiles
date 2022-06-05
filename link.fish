@@ -28,7 +28,11 @@ end
 
 if test -e $target # exists
   if read_confirm "Do you want to delete $target?"
-    sudo rm -rf $target
+    if test -n "$argv[3]"
+      sudo rm -rf $target
+    else
+      rm -rf $target
+    end
   else
     exit 1
   end
