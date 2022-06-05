@@ -12,12 +12,18 @@ function read_confirm
   end
 end
 
-set SCRIPT_DIR (cd (dirname (status --current-filename)); and pwd)
-set source "$SCRIPT_DIR/$argv[1]"
+set source $argv[1]
 set target $argv[2]
 
-if test -L $target
-  exit 0
+# check if target is symlink
+if test -n "$argv[3]"
+  if sudo test -L $target
+    exit 0
+  end
+else
+  if test -L $target
+    exit 0
+  end
 end
 
 if test -e $target # exists
