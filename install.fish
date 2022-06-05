@@ -54,6 +54,37 @@ function users
   end
 end
 
+function ufw
+  sudo apt install ufw
+  sudo ufw enable
+  sudo ufw allow ssh
+  sudo ufw allow 80
+  sudo ufw allow 443
+  sudo ufw allow Transmission
+  sudo ufw allow VNC
+end
+
+function fail2ban
+  queue fail2ban
+end
+
+function rsync
+  queue rsync
+end
+
+function docker
+  # docker
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  sudo usermod -aG docker ymstnt
+  sudo usermod -aG docker gep
+  sudo usermod -aG docker shared
+
+  # docker-compose
+  set docker_compose_version '2.6.0'
+  sudo curl -L "https://github.com/docker/compose/releases/download/v$docker_compose_version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+end
+
 function dotnet
 #  if ! apt list --installed | grep -q packages-microsoft-prod
 #    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
@@ -104,6 +135,10 @@ if ! test -n "$argv"
 ################################################################
   ssh_hardening
   users
+  ufw
+  fail2ban
+  rsync
+  docker
   dotnet
   vim
   fish
