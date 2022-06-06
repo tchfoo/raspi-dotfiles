@@ -1,18 +1,24 @@
 #!/bin/fish
 
 ## Since there are user specific settings, force the user to run without sudo
+
 if test $USER = "root"
   echo "Run this script without sudo!"
   exit
 end
 
 
-set INSTALL_DIR (cd (dirname (status --current-filename)); and pwd)
-
 ## Refresh the temporary directory
+
 rm -vrf temp
 mkdir -v temp
 cd temp
+
+
+## Helper functions and variables
+
+set INSTALL_DIR (cd (dirname (status --current-filename)); and pwd)
+set update 0
 
 function link
  ../link.fish $argv[1] $argv[2] $argv[3]
@@ -26,6 +32,7 @@ set packages
 function queue
   set packages $packages $argv
 end
+
 
 ## Define an install process for every application
 
@@ -78,6 +85,7 @@ function log2ram
   if ! apt list --installed | grep -q log2ram
     echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
     sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg https://azlux.fr/repo.gpg
+    set update 1
     queue log2ram
   end
 end
@@ -104,15 +112,20 @@ end
 
 function docker
   # docker
-  curl -fsSL https://get.docker.com -o get-docker.sh
-  sudo sh get-docker.sh
-  sudo usermod -aG docker ymstnt
-  sudo usermod -aG docker gep
-  sudo usermod -aG docker shared
+  if ! which docker
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
+    sudo usermod -aG docker ymstnt
+    sudo usermod -aG docker gep
+    sudo usermod -aG docker shared
+  end
 
   # docker-compose
-  set docker_compose_version '2.6.0'
-  sudo curl -L "https://github.com/docker/compose/releases/download/v$docker_compose_version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  if ! which docker-compose
+    set docker_compose_version '2.6.0'
+    sudo curl -L https://github.com/docker/compose/releases/download/v$docker_compose_version/docker-compose-(uname -s)-(uname -m) -o /usr/local/bin/docker-compose
+    sudo chmod a+x /usr/local/bin/docker-compose
+  end
 end
 
 function chromium_browser
@@ -130,8 +143,8 @@ function rplace_tk_bot
   if ! test -d /opt/rplace-tk-bot
     git clone git@github.com:gutyina70/rplace-tk-bot
     sudo mv rplace-tk-bot /opt
-    sudo chown shared /opt/rplace-tk-bot
-    sudo chgrp shared /opt/rplace-tk-bot
+    sudo chown -R shared /opt/rplace-tk-bot
+    sudo chgrp -R shared /opt/rplace-tk-bot
     echo '---------------rplace.tk bot setup----------------'
     echo 'Connect to this machine on port 9002 via vncviewer'
     echo 'Start chromium-browser'
@@ -148,8 +161,8 @@ function moe
   if ! test -d /opt/TNTBot
     git clone git@github.com:YMSTNT/TNTBot
     sudo mv TNTBot /opt
-    sudo chown shared /opt/TNTBot
-    sudo chgrp shared /opt/TNTBot
+    sudo chown -R shared /opt/TNTBot
+    sudo chgrp -R shared /opt/TNTBot
     link_here fsroot/etc/systemd/system/moe-barbot.service /etc/systemd/system/moe-barbot.service 1
     sudo systemctl daemon-reload
     sudo systemctl enable moe-barbot
@@ -162,14 +175,15 @@ function moe
 end
 
 function dotnet
-#  if ! apt list --installed | grep -q packages-microsoft-prod
-#    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
-#    sudo dpkg -i packages-microsoft-prod.deb
-#  end
   if ! which dotnet
     wget https://dot.net/v1/dotnet-install.sh
     chmod +x dotnet-install.sh
     ./dotnet-install.sh -c Current
+    sudo mv ~/.dotnet /opt
+    sudo chown -R shared /opt/.dotnet 
+    sudo chgrp -R shared /opt/.dotnet 
+    sudo chmod a+x -R /opt/.dotnet
+    link /opt/.dotnet/dotnet /bin/dotnet 1
   end
 end
 
@@ -218,9 +232,9 @@ if ! test -n "$argv"
   opt_ymstnt
   log2ram
   rsync
-  # raspi-config
-  # tailscale
-  # docker
+  raspi-config
+  tailscale
+  docker
   chromium_browser
   realvnc
   rplace_tk_bot
@@ -241,11 +255,16 @@ else
 end
 
 ## Actually install
+
+if test "$update" -eq 1
+  sudo apt update
+end
 if test -n "$packages"
-  sudo apt full-upgrade -y
   sudo apt install -y $packages
 end
 
+
 ## Clean up
+
 cd ..
 sudo rm -vrf temp
