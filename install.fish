@@ -38,8 +38,8 @@ end
 
 # Add `PasswordAuthentication no` to `/etc/ssh/sshd_config`
 function ssh_hardening
-  if grep -q '^#*PasswordAuthentication.*$' /etc/ssh/sshd_config
-    sed 's/^#*PasswordAuthentication.*$/PasswordAuthentication no/' /etc/ssh/sshd_config | sudo tee /etc/ssh/sshd_config >/dev/null
+  if grep -q '^\s*#*PasswordAuthentication' /etc/ssh/sshd_config
+    sed 's/^\s*#*PasswordAuthentication.*$/PasswordAuthentication no/' /etc/ssh/sshd_config | sudo tee /etc/ssh/sshd_config >/dev/null
   else
     echo 'PasswordAuthentication no' | sudo tee -a /etc/ssh/sshd_config
   end
@@ -79,6 +79,34 @@ function opt_ymstnt
   sudo mkdir /opt/ymstnt
   sudo chown ymstnt /opt/ymstnt
   sudo chgrp ymstnt /opt/ymstnt
+end
+
+function minidlna
+  sudo apt install -y minidlna
+
+  # Add or replace `media_dir=V,/home/ymstnt/media-server`
+  # Add or replace `media_dir=V,/opt/ymstnt/torrents`
+  if grep -q '^\s*#*media_dir=' /etc/minidlna.conf
+    set media_dir_line (grep -n '^\s*#*media_dir=' /etc/minidlna.conf |
+        awk -F: '{ print $1 }' | head -n1)
+    sed '/^\s*#*media_dir=.*$/d' /etc/minidlna.conf |
+      sed "$media_dir_line i media_dir=V,/opt/ymstnt/torrents" |
+      sed "$media_dir_line i media_dir=V,/home/ymstnt/media-server" |
+      sudo tee /etc/minidlna.conf >/dev/null
+  else
+    echo 'media_dir=V,/home/ymstnt/media-server' | sudo tee -a /etc/minidlna.conf
+    echo 'media_dir=V,/opt/ymstnt/torrents' | sudo tee -a /etc/minidlna.conf
+  end
+
+  # Add or replace `friendly_name=ymstnt-media`
+  if grep -q '^\s*#*friendly_name=' /etc/minidlna.conf
+    sed 's/^\s*#*friendly_name=.*$/friendly_name=ymstnt-media/' /etc/minidlna.conf |
+    sudo tee /etc/minidlna.conf >/dev/null
+  else
+    echo 'friendly_name=ymstnt-media' | sudo tee -a /etc/minidlna.conf
+  end
+
+  sudo systemctl restart minidlna
 end
 
 function log2ram
@@ -230,6 +258,7 @@ if ! test -n "$argv"
   ufw
   fail2ban
   opt_ymstnt
+  minidlna
   log2ram
   rsync
   raspi-config
