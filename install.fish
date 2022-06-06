@@ -69,7 +69,7 @@ function ufw
   sudo ufw allow 80
   sudo ufw allow 443
   sudo ufw allow Transmission
-  sudo ufw allow 5902 # vnc
+  sudo ufw allow 5901 # vnc
 end
 
 function fail2ban
@@ -83,23 +83,25 @@ function opt_ymstnt
 end
 
 function transmission
-  sudo apt install -y transmission-daemon
-  sudo systemctl stop transmission-daemon
+  if ! apt list --installed | grep -q transmission-daemon
+    sudo apt install -y transmission-daemon
+    sudo systemctl stop transmission-daemon
 
-  link_here fsroot/etc/init.d/transmission-daemon /etc/init.d/transmission-daemon 1
-  link_here fsroot/etc/systemd/system/multi-user.target.wants/transmission-daemon.service /etc/systemd/system/multi-user.target.wants/transmission-daemon.service 1
-  sudo systemctl daemon-reload
+    link_here fsroot/etc/init.d/transmission-daemon /etc/init.d/transmission-daemon 1
+    link_here fsroot/etc/systemd/system/multi-user.target.wants/transmission-daemon.service /etc/systemd/system/multi-user.target.wants/transmission-daemon.service 1
+    sudo systemctl daemon-reload
 
-  sudo chown -R ymstnt:ymstnt /etc/transmission-daemon
+    sudo chown -R ymstnt:ymstnt /etc/transmission-daemon
 
-  sudo mkdir -p /home/ymstnt/.config/transmission-daemon
-  link /etc/transmission-daemon/settings.json /home/ymstnt/.config/transmission-daemon 1
-  sudo chown -R ymstnt:ymstnt /home/ymstnt/.config/transmission-daemon
+    sudo mkdir -p /home/ymstnt/.config/transmission-daemon
+    link /etc/transmission-daemon/settings.json /home/ymstnt/.config/transmission-daemon 1
+    sudo chown -R ymstnt:ymstnt /home/ymstnt/.config/transmission-daemon
 
-  sudo mkdir -p /opt/ymstnt/torrents
-  sudo chown -R ymstnt:ymstnt /opt/ymstnt/torrents
+    sudo mkdir -p /opt/ymstnt/torrents
+    sudo chown -R ymstnt:ymstnt /opt/ymstnt/torrents
 
-  link_here fsroot/etc/transmission-daemon/settings.json /etc/transmission-daemon/settings.json 1
+    link_here fsroot/etc/transmission-daemon/settings.json /etc/transmission-daemon/settings.json 1
+  end
 
   # check if password is empty by measuring the number of characters
   if test (sudo grep 'rpc-password' /etc/transmission-daemon/settings.json | wc -c) -lt 25
@@ -111,9 +113,11 @@ function transmission
 end
 
 function minidlna
-  sudo apt install -y minidlna
-  link_here fsroot/etc/minidlna.conf /etc/minidlna.conf 1
-  sudo systemctl restart minidlna
+  if ! apt list --installed | grep -q minidlna
+    sudo apt install -y minidlna
+    link_here fsroot/etc/minidlna.conf /etc/minidlna.conf 1
+    sudo systemctl restart minidlna
+  end
 end
 
 function log2ram
@@ -141,8 +145,10 @@ function raspi_config
 end
 
 function tailscale
-  curl -fsSL https://tailscale.com/install.sh | sh
-  sudo tailscale up
+  if ! which tailscale
+    curl -fsSL https://tailscale.com/install.sh | sh
+    sudo tailscale up
+  end
 end
 
 function docker
@@ -168,10 +174,12 @@ function chromium_browser
 end
 
 function realvnc
-  sudo apt install -y realvnc-vnc-server
-  link_here fsroot/etc/systemd/system/vncserver.service /etc/systemd/system/vncserver.service 1
-  sudo systemctl daemon-reload
-  sudo systemctl enable --now vncserver
+  if ! apt list --installed | grep -q realvnc-vnc-server
+    sudo apt install -y realvnc-vnc-server xorg x11-xserver-utils
+    link_here fsroot/etc/systemd/system/vncserver.service /etc/systemd/system/vncserver.service 1
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now vncserver
+  end
 end
 
 function rplace_tk_bot
