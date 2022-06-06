@@ -55,17 +55,25 @@ function users
 end
 
 function ufw
-  sudo apt install ufw
+  sudo apt install -y ufw
   sudo ufw enable
   sudo ufw allow ssh
   sudo ufw allow 80
   sudo ufw allow 443
   sudo ufw allow Transmission
-  sudo ufw allow VNC
+  sudo ufw allow 5902 # vnc
 end
 
 function fail2ban
   queue fail2ban
+end
+
+function log2ram
+  if ! apt list --installed | grep -q log2ram
+    echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
+    sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg https://azlux.fr/repo.gpg
+    queue log2ram
+  end
 end
 
 function rsync
@@ -85,14 +93,62 @@ function docker
   sudo curl -L "https://github.com/docker/compose/releases/download/v$docker_compose_version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 end
 
+function chromium_browser
+  queue chromium-browser
+end
+
+function realvnc
+  sudo apt install -y realvnc-vnc-server
+  link_here fsroot/etc/systemd/system/vncserver.service /etc/systemd/system/vncserver.service 1
+  sudo systemctl daemon-reload
+  sudo systemctl enable --now vncserver
+end
+
+function rplace_tk_bot
+  if ! test -d /opt/rplace-tk-bot
+    git clone git@github.com:gutyina70/rplace-tk-bot
+    sudo mv rplace-tk-bot /opt
+    sudo chown shared /opt/rplace-tk-bot
+    sudo chgrp shared /opt/rplace-tk-bot
+    echo '---------------rplace.tk bot setup----------------'
+    echo 'Connect to this machine on port 9002 via vncviewer'
+    echo 'Start chromium-browser'
+    echo 'Go to chrome://extensions'
+    echo 'Enable developer mode'
+    echo 'Load unpacked /opt/rplace-tk-bot'
+    echo 'Go to https://rplace.tk'
+    echo '--------------------------------------------------'
+    read -P 'Press enter to continue '
+  end
+end
+
+function moe
+  if ! test -d /opt/TNTBot
+    git clone git@github.com:YMSTNT/TNTBot
+    sudo mv TNTBot /opt
+    sudo chown shared /opt/TNTBot
+    sudo chgrp shared /opt/TNTBot
+    link_here fsroot/etc/systemd/system/moe-barbot.service /etc/systemd/system/moe-barbot.service 1
+    sudo systemctl daemon-reload
+    sudo systemctl enable moe-barbot
+    echo '-----------------Moe Barbot setup-----------------'
+    echo 'Put storage.db and prod.env files in /opt/TNTBot'
+    echo 'then start it with systemctl start moe-barbot'
+    echo '--------------------------------------------------'
+    read -P 'Press enter to continue '
+  end
+end
+
 function dotnet
 #  if ! apt list --installed | grep -q packages-microsoft-prod
 #    wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
 #    sudo dpkg -i packages-microsoft-prod.deb
 #  end
-  wget https://dot.net/v1/dotnet-install.sh
-  chmod +x dotnet-install.sh
-  ./dotnet-install.sh -c Current
+  if ! which dotnet
+    wget https://dot.net/v1/dotnet-install.sh
+    chmod +x dotnet-install.sh
+    ./dotnet-install.sh -c Current
+  end
 end
 
 function vim
@@ -137,8 +193,13 @@ if ! test -n "$argv"
   users
   ufw
   fail2ban
+  log2ram
   rsync
-  docker
+  # docker
+  chromium_browser
+  realvnc
+  rplace_tk_bot
+  moe
   dotnet
   vim
   fish

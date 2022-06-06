@@ -1,0 +1,16 @@
+[Unit]
+Description=A virtual desktop server, primarily for running rplace.tk bot
+After=local-fs.target network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=forking
+User=shared
+ExecStart=vncserver
+
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+

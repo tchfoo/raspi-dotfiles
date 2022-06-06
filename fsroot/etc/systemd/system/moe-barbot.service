@@ -1,0 +1,17 @@
+[Unit]
+Description=Moe Barbot aka TNTBot
+After=local-fs.target network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=shared
+WorkingDirectory=/opt/TNTBot
+ExecStart=dotnet run -c Release
+
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
