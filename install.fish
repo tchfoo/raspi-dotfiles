@@ -68,6 +68,12 @@ function fail2ban
   queue fail2ban
 end
 
+function opt_ymstnt
+  sudo mkdir /opt/ymstnt
+  sudo chown ymstnt /opt/ymstnt
+  sudo chgrp ymstnt /opt/ymstnt
+end
+
 function log2ram
   if ! apt list --installed | grep -q log2ram
     echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
@@ -78,6 +84,22 @@ end
 
 function rsync
   queue rsync
+end
+
+function raspi_config
+  echo '------------------raspi-config--------------------'
+  echo ' - Performance options'
+  echo '   - GPU Memory: Set to 16 (lowest)'
+  echo ' - Advanced options'
+  echo '   - Expand filesystem'
+  echo '--------------------------------------------------'
+  read -P 'Press enter to continue '
+  sudo raspi-config
+end
+
+function tailscale
+  curl -fsSL https://tailscale.com/install.sh | sh
+  sudo tailscale up
 end
 
 function docker
@@ -193,8 +215,11 @@ if ! test -n "$argv"
   users
   ufw
   fail2ban
+  opt_ymstnt
   log2ram
   rsync
+  # raspi-config
+  # tailscale
   # docker
   chromium_browser
   realvnc
