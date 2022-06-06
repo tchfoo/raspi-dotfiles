@@ -15,33 +15,24 @@ end
 set source $argv[1]
 set target $argv[2]
 
-# check if target is symlink
-if test -n "$argv[3]"
-  if sudo test -L $target
-    exit 0
-  end
-else
-  if test -L $target
-    exit 0
-  end
-end
-
-if test -e $target # exists
-  if read_confirm "Do you want to delete $target?"
-    if test -n "$argv[3]"
+if test -n "$argv[3]" # if super user
+  if test -e $target && ! sudo test -L $target # if exists and not symlink
+    if read_confirm "Do you want to delete $target?"
       sudo rm -rf $target
     else
-      rm -rf $target
+      exit 0
     end
-  else
-    exit 1
   end
-end
-
-if test -n "$argv[3]" # super user
   sudo mkdir -vp (dirname $target)
   sudo ln -vsf $source $target
-else 
+else
+  if test -e $target && ! test -L $target # if exists and not symlink
+    if read_confirm "Do you want to delete $target?"
+      rm -rf $target
+    else
+      exit 0
+    end
+  end
   mkdir -vp (dirname $target)
   ln -vsf $source $target
 end

@@ -82,6 +82,34 @@ function opt_ymstnt
   sudo chgrp ymstnt /opt/ymstnt
 end
 
+function transmission
+  sudo apt install -y transmission-daemon
+  sudo systemctl stop transmission-daemon
+
+  link_here fsroot/etc/init.d/transmission-daemon /etc/init.d/transmission-daemon 1
+  link_here fsroot/etc/systemd/system/multi-user.target.wants/transmission-daemon.service /etc/systemd/system/multi-user.target.wants/transmission-daemon.service 1
+  sudo systemctl daemon-reload
+
+  sudo chown -R ymstnt:ymstnt /etc/transmission-daemon
+
+  sudo mkdir -p /home/ymstnt/.config/transmission-daemon
+  link /etc/transmission-daemon/settings.json /home/ymstnt/.config/transmission-daemon 1
+  sudo chown -R ymstnt:ymstnt /home/ymstnt/.config/transmission-daemon
+
+  sudo mkdir -p /opt/ymstnt/torrents
+  sudo chown -R ymstnt:ymstnt /opt/ymstnt/torrents
+
+  link_here fsroot/etc/transmission-daemon/settings.json /etc/transmission-daemon/settings.json 1
+
+  # check if password is empty by measuring the number of characters
+  if test (sudo grep 'rpc-password' /etc/transmission-daemon/settings.json | wc -c) -lt 25
+    echo '----------------transmission config---------------'
+    echo 'Set rpc-password in /etc/transmission-daemon/settings.json'
+    echo '--------------------------------------------------'
+    read -P 'Press enter to continue '
+  end
+end
+
 function minidlna
   sudo apt install -y minidlna
   link_here fsroot/etc/minidlna.conf /etc/minidlna.conf 1
@@ -237,6 +265,7 @@ if ! test -n "$argv"
   ufw
   fail2ban
   opt_ymstnt
+  transmission
   minidlna
   log2ram
   rsync
