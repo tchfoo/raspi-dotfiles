@@ -87,26 +87,21 @@ function transmission
     sudo apt install -y transmission-daemon
     sudo systemctl stop transmission-daemon
 
-    link_here fsroot/etc/init.d/transmission-daemon /etc/init.d/transmission-daemon 1
-    link_here fsroot/etc/systemd/system/multi-user.target.wants/transmission-daemon.service /etc/systemd/system/multi-user.target.wants/transmission-daemon.service 1
     sudo systemctl daemon-reload
 
     sudo chown -R ymstnt:ymstnt /etc/transmission-daemon
 
     sudo mkdir -p /home/ymstnt/.config/transmission-daemon
-    link /etc/transmission-daemon/settings.json /home/ymstnt/.config/transmission-daemon 1
     sudo chown -R ymstnt:ymstnt /home/ymstnt/.config/transmission-daemon
 
     sudo mkdir -p /opt/ymstnt/torrents
     sudo chown -R ymstnt:ymstnt /opt/ymstnt/torrents
-
-    link_here fsroot/etc/transmission-daemon/settings.json /etc/transmission-daemon/settings.json 1
   end
 
   # check if password is empty by measuring the number of characters
   if test (sudo grep 'rpc-password' /etc/transmission-daemon/settings.json | wc -c) -lt 25
     echo '----------------transmission config---------------'
-    echo 'Set rpc-password in /etc/transmission-daemon/settings.json'
+    echo 'https://pimylifeup.com/raspberry-pi-transmission'
     echo '--------------------------------------------------'
     read -P 'Press enter to continue '
   end
@@ -186,8 +181,7 @@ function rplace_tk_bot
   if ! test -d /opt/rplace-tk-bot
     git clone git@github.com:gutyina70/rplace-tk-bot
     sudo mv rplace-tk-bot /opt
-    sudo chown -R shared /opt/rplace-tk-bot
-    sudo chgrp -R shared /opt/rplace-tk-bot
+    sudo chown -R shared:sharedg /opt/rplace-tk-bot
     echo '---------------rplace.tk bot setup----------------'
     echo 'Connect to this machine on port 9002 via vncviewer'
     echo 'Start chromium-browser'
@@ -204,8 +198,7 @@ function moe
   if ! test -d /opt/TNTBot
     git clone git@github.com:YMSTNT/TNTBot
     sudo mv TNTBot /opt
-    sudo chown -R shared /opt/TNTBot
-    sudo chgrp -R shared /opt/TNTBot
+    sudo chown -R shared:sharedg /opt/TNTBot
     link_here fsroot/etc/systemd/system/moe-barbot.service /etc/systemd/system/moe-barbot.service 1
     sudo systemctl daemon-reload
     sudo systemctl enable moe-barbot
@@ -223,8 +216,7 @@ function dotnet
     chmod +x dotnet-install.sh
     ./dotnet-install.sh -c Current
     sudo mv ~/.dotnet /opt
-    sudo chown -R shared /opt/.dotnet 
-    sudo chgrp -R shared /opt/.dotnet 
+    sudo chown -R shared:sharedg /opt/.dotnet
     sudo chmod a+x -R /opt/.dotnet
     link /opt/.dotnet/dotnet /bin/dotnet 1
   end
