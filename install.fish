@@ -232,7 +232,6 @@ end
 
 function vim
   queue vim
-  queue vim-gtk
   queue neovim
   if ! test -e ~/.SpaceVim
     curl -Lv https://spacevim.org/install.sh | bash
