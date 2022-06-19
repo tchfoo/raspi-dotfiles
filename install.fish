@@ -70,6 +70,7 @@ function ufw
   sudo ufw allow 443
   sudo ufw allow Transmission
   sudo ufw allow 5901 # vnc
+  sudo ufw allow 8200 # minidlna
 end
 
 function fail2ban
