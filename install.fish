@@ -196,16 +196,16 @@ function rplace_tk_bot
 end
 
 function moe
-  if ! test -d /opt/TNTBot
-    git clone git@github.com:YMSTNT/TNTBot
-    sudo mv TNTBot /opt
-    sudo chown -R shared:sharedg /opt/TNTBot
-    link_here fsroot/etc/systemd/system/moe-barbot.service /etc/systemd/system/moe-barbot.service 1
+  if ! test -d /opt/Moe-Bot
+    git clone git@github.com:YMSTNT/Moe-Bot
+    sudo mv Moe-Bot /opt
+    sudo chown -R shared:sharedg /opt/Moe-Bot
+    link_here fsroot/etc/systemd/system/moebot.service /etc/systemd/system/moebot.service 1
     sudo systemctl daemon-reload
-    sudo systemctl enable moe-barbot
-    echo '-----------------Moe Barbot setup-----------------'
-    echo 'Put storage.db and prod.env files in /opt/TNTBot'
-    echo 'then start it with systemctl start moe-barbot'
+    sudo systemctl enable moebot
+    echo '------------------Moe-Bot setup-------------------'
+    echo 'Put storage.db and prod.env files in /opt/Moe-Bot'
+    echo 'then start it with systemctl start moebot'
     echo '--------------------------------------------------'
     read -P 'Press enter to continue '
   end

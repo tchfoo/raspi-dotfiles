@@ -1,5 +1,5 @@
 [Unit]
-Description=Moe Barbot aka TNTBot
+Description=moebot
 After=local-fs.target network.target
 StartLimitIntervalSec=0
 
