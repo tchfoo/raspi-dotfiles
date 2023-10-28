@@ -8,6 +8,16 @@
 
   time.timeZone = "Europe/Budapest";
 
+  services.nginx = {
+    enable = true;
+    virtualHosts = {
+      "ymstnt.com" = {
+        root = "/var/www/ymstnt.com";
+      };
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   services.openssh = {
     enable = true;
     ports = [ 42727 ];
