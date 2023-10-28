@@ -18,6 +18,11 @@
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
   services.openssh = {
     enable = true;
     ports = [ 42727 ];
