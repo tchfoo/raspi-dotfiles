@@ -28,11 +28,13 @@
     };
   };
 
+  environment.shellInit = "umask 002";
   users.users = {
     gep = {
       isNormalUser = true;
       extraGroups = [
         "wheel"
+        "shared"
       ];
       openssh.authorizedKeys.keys = [
         # geptop
@@ -47,6 +49,7 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
+        "shared"
       ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLWg7uXAd3GfBmXV5b9iLp+EZ9rfu+gRWWCb8YXML4o u0_a557@localhost"
@@ -54,6 +57,7 @@
       ];
     };
   };
+  users.groups.shared = { };
 
   system.stateVersion = "23.05";
 }
