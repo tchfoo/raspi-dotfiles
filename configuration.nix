@@ -64,5 +64,9 @@
   };
   users.groups.shared = { };
 
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
   system.stateVersion = "23.05";
 }
