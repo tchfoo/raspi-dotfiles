@@ -1,6 +1,11 @@
 { lib, config, pkgs, ... }:
 
 {
+  imports = [
+    (import ./moe-bot)
+    ./secret.nix
+  ];
+
   networking = {
     hostName = "raspi-doboz";
     networkmanager.enable = true;
@@ -96,6 +101,13 @@
   };
 
   users.groups.shared = { };
+
+  services.moe-bot = {
+    enable = true;
+    group = "shared";
+    backups-interval-minutes = 240;
+    backups-to-keep = 100;
+  };
 
   environment.systemPackages = with pkgs; [
     git
