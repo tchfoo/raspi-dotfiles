@@ -30,6 +30,7 @@ in
       "php_admin_value[error_log]" = "stderr";
       "php_admin_flag[log_errors]" = true;
       "catch_workers_output" = true;
+      "security.limit_extensions" = ".php .html";
     };
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
   };
@@ -45,7 +46,7 @@ in
           "/" = {
             index = "index.html index.php";
           };
-          "~ \\.php$".extraConfig = ''
+          "~ \\.(php|html)$".extraConfig = ''
             fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
             fastcgi_index index.php;
           '';
