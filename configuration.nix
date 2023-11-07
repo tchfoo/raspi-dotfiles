@@ -1,9 +1,11 @@
 { lib, config, pkgs, ... }:
 
+let
+  secrets = import ./secret.nix;
+in
 {
   imports = [
     (import ./moe-bot)
-    ./secret.nix
   ];
 
   networking = {
@@ -109,6 +111,8 @@
     group = "shared";
     backups-interval-minutes = 240;
     backups-to-keep = 100;
+    token = secrets.moe-bot.token;
+    owners = secrets.moe-bot.owners;
   };
 
   environment.systemPackages = with pkgs; [
