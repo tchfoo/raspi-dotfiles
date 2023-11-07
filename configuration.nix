@@ -37,6 +37,7 @@ in
 
   services.nginx = {
     enable = true;
+    group = "shared";
     virtualHosts = {
       "ymstnt.com" = {
         root = "/var/www/ymstnt.com";
