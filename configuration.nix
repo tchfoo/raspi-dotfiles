@@ -41,10 +41,15 @@ in
     virtualHosts = {
       "ymstnt.com" = {
         root = "/var/www/ymstnt.com";
-        locations."~ \\.php$".extraConfig = ''
-          fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
-          fastcgi_index index.php;
-        '';
+        locations = {
+          "/" = {
+            index = "index.html index.php";
+          };
+          "~ \\.php$".extraConfig = ''
+            fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
+            fastcgi_index index.php;
+          '';
+        };
       };
     };
   };
