@@ -3,6 +3,7 @@
 - for first install, copy secrets.nix.example to secret.nix and fill it out
 - rebuild with `./rebuild.sh .#raspi` or with `./rebuild.sh .#vm`
 - when making a commit make sure that secret.nix is NOT added, rebuild.sh needs to add it to git
+- run `mysql_secure_installation`: set root password, remove anonymous users
 
 # Installation
 
