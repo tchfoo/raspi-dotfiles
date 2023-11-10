@@ -17,6 +17,44 @@ in
 
   time.timeZone = "Europe/Budapest";
 
+  systemd.tmpfiles.rules = [
+    "d /var/media 0755 ymstnt shared"
+    "d /var/media/torrents 0755 ymstnt shared"
+    "d /var/media/media-server 0755 ymstnt shared"
+  ];
+
+  services.minidlna = {
+    enable = true;
+    settings = {
+      friendly_name = "ymstnt-media";
+      media_dir = [
+        "V,/var/media/media-server"
+        "V,/var/media/torrents"
+      ];
+    };
+  };
+
+  services.transmission = {
+    user = "ymstnt";
+    group = "shared";
+    enable = true;
+    openRPCPort = true;
+    settings = {
+      download-dir = "/var/media/torrents";
+      incomplete-dir-enabled = false;
+      rpc-password = secrets.transmission.password;
+      rpc-enabled = true;
+      rpc-whitelist-enabled = true;
+      rpc-authentication-required = true;
+      rpc-username = "ymstnt";
+      rpc-whitelist = "127.0.0.1,192.168.*.*,100.*.*.*";
+      rpc-bind-address = "0.0.0.0";
+      umask = 18;
+      ratio-limit = 1;
+      ratio-limit-enabled = true;
+    };
+  };
+
   services.phpfpm.pools.shared = {
     user = "shared";
     settings = {
