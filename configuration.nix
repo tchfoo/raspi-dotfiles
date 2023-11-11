@@ -17,6 +17,10 @@ in
 
   time.timeZone = "Europe/Budapest";
 
+  services.tailscale = {
+    enable = true;
+  };
+
   systemd.tmpfiles.rules = [
     "d /var/media 0755 ymstnt shared"
     "d /var/media/torrents 0755 ymstnt shared"
