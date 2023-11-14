@@ -3,11 +3,11 @@
 with lib;
 with types;
 let
-  cfg = config.services.moe-bot;
+  cfg = config.services.moe;
 in
 {
-  options.services.moe-bot = {
-    enable = mkEnableOption "Enable the Moe-Bot service";
+  options.services.moe = {
+    enable = mkEnableOption "Enable the moe service";
     package = mkOption {
       type = package;
       default = (pkgs.callPackage ./package.nix { });
@@ -15,7 +15,7 @@ in
     group = mkOption {
       type = str;
       description = ''
-        The group for moe-bot user that the systemd service will run under.
+        The group for moe user that the systemd service will run under.
       '';
     };
     token = mkOption {
@@ -48,21 +48,21 @@ in
   };
 
   config = mkIf cfg.enable {
-    users.users.moe-bot = {
+    users.users.moe = {
       isSystemUser = true;
-      home = "/var/moe-bot";
+      home = "/var/moe";
       createHome = true;
       group = cfg.group;
     };
 
-    systemd.services.moe-bot = {
-      description = "Moe-Bot";
+    systemd.services.moe = {
+      description = "Moe, a multi-purpose Discord bot made using Discord.Net.";
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${cfg.package}/bin/MoeBot";
-        WorkingDirectory = "/var/moe-bot";
-        User = "moe-bot";
+        ExecStart = "${cfg.package}/bin/moe";
+        WorkingDirectory = "/var/moe";
+        User = "moe";
         Environment =
           let
             token = "TOKEN=${cfg.token}";

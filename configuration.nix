@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    (import ./moe-bot)
+    (import ./moe)
   ];
 
   networking = {
@@ -152,13 +152,13 @@ in
 
   users.groups.shared = { };
 
-  services.moe-bot = {
+  services.moe = {
     enable = true;
     group = "shared";
     backups-interval-minutes = 240;
     backups-to-keep = 100;
-    token = secrets.moe-bot.token;
-    owners = secrets.moe-bot.owners;
+    token = secrets.moe.token;
+    owners = secrets.moe.owners;
   };
 
   environment.systemPackages = with pkgs; [
