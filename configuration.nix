@@ -71,6 +71,10 @@ in
       "pm.max_spare_servers" = 5;
       "security.limit_extensions" = ".php .html";
     };
+    phpOptions = ''
+      upload_max_filesize = 50G
+      post_max_size = 50G
+    '';
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
   };
 
@@ -81,6 +85,9 @@ in
     virtualHosts = {
       "ymstnt.com" = {
         root = "/var/www/ymstnt.com";
+        extraConfig = ''
+          client_max_body_size 50G;
+        '';
         locations = {
           "/" = {
             index = "index.html index.php";
