@@ -87,6 +87,7 @@ in
         root = "/var/www/ymstnt.com";
         extraConfig = ''
           client_max_body_size 50G;
+          fastcgi_read_timeout 24h;
         '';
         locations = {
           "/" = {
