@@ -30,6 +30,8 @@ in
     "d /var/media 0755 ymstnt shared"
     "d /var/media/torrents 0755 ymstnt shared"
     "d /var/media/media-server 0755 ymstnt shared"
+    "d /var/moe 0750 moe shared"
+    "d /var/www/ymstnt.com 2770 nginx shared"
   ];
 
   services.minidlna = {
