@@ -128,6 +128,7 @@ in
   environment.shellInit = "umask 002";
   users.users = {
     gep = {
+      initialPassword = "gep";
       isNormalUser = true;
       extraGroups = [
         "wheel"
@@ -145,6 +146,7 @@ in
       ];
     };
     ymstnt = {
+      initialPassword = "ymstnt";
       isNormalUser = true;
       extraGroups = [
         "wheel"
