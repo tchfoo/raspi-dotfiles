@@ -6,6 +6,10 @@
   # Enables the generation of /boot/extlinux/extlinux.conf
   boot.loader.generic-extlinux-compatible.enable = true;
 
+  networking.hostName = "raspi-doboz";
+
+  console.keyMap = "hu";
+
   imports = [
     ./configuration.nix
     ./hardware-configuration-raspi.nix
