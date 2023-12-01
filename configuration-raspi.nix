@@ -1,10 +1,22 @@
 { config, pkgs, lib, ... }:
 
 {
-  # NixOS wants to enable GRUB by default
-  boot.loader.grub.enable = false;
-  # Enables the generation of /boot/extlinux/extlinux.conf
-  boot.loader.generic-extlinux-compatible.enable = true;
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
+  };
+
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/NIXOS_SD";
+      fsType = "ext4";
+      options = [ "noatime" ];
+    };
+  };
 
   networking.hostName = "raspi-doboz";
 
@@ -14,4 +26,6 @@
     ./configuration.nix
     ./hardware-configuration-raspi.nix
   ];
+
+  hardware.enableRedistributableFirmware = true;
 }
