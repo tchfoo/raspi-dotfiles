@@ -1,4 +1,4 @@
-{ config, pkgs, lib ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # NixOS wants to enable GRUB by default
