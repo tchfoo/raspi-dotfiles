@@ -36,14 +36,19 @@ in
     "d /var/www/ymstnt.com 2770 nginx shared"
   ];
 
+  services.avahi.enable = true;
+
   services.minidlna = {
     enable = true;
+    openFirewall = true;
     settings = {
       friendly_name = "ymstnt-media";
       media_dir = [
         "V,/var/media/media-server"
         "V,/var/media/torrents"
       ];
+      log_level = "error";
+      inotify = "yes";
     };
   };
 
@@ -120,7 +125,10 @@ in
   	};
   };
   
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall = {
+  	allowedTCPPorts = [ 80 443 8200 ];
+  	allowedUDPPorts = [ 8200 ];
+  }; 
 
   services.mysql = {
     enable = true;
@@ -179,6 +187,9 @@ in
       isSystemUser = true;
       group = "shared";
     };
+    minidlna = {
+      extraGroups = [ "users" "shared" ];
+    };
   };
 
   users.groups.shared = { };
@@ -194,6 +205,7 @@ in
 
   environment.systemPackages = with pkgs; [
     git
+    inotify-tools
   ];
 
   nixpkgs.config.allowUnfree = true;
