@@ -94,6 +94,8 @@ in
     virtualHosts = {
       "ymstnt.com" = {
         root = "/var/www/ymstnt.com";
+        enableACME = true;
+        forceSSL = true;
         extraConfig = ''
           client_max_body_size 50G;
           fastcgi_read_timeout 24h;
@@ -110,6 +112,14 @@ in
       };
     };
   };
+
+  security.acme = {
+    acceptTerms = true;
+  	certs = {
+  	  "ymstnt.com".email = secrets.acme.email;
+  	};
+  };
+  
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.mysql = {
