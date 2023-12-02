@@ -13,6 +13,8 @@ in
     size = 2 * 1024;
   }];
 
+  console.keyMap = "hu";
+
   networking = {
     hostName = "raspi-doboz";
     networkmanager.enable = true;
