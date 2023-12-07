@@ -35,6 +35,8 @@ in
     " d    /var/media/media-server 0755 ymstnt shared"
     " d    /var/moe                0750 moe    shared"
     " d    /var/www/ymstnt.com     2770 nginx  shared"
+    " d    /var/runners            0755 shared shared"
+    " d    /var/runners/website    0755 shared shared"
     # required by gepDrive due to sending requests to localhost
     " L    /var/www/localhost      -    -      -      -    /var/www/ymstnt.com"
   ];
@@ -73,6 +75,22 @@ in
       umask = 18;
       ratio-limit = 1;
       ratio-limit-enabled = true;
+    };
+  };
+
+  services.github-runners = {
+    website = {
+      enable = true;
+      replace = true;
+      user = "shared";
+      url = "https://github.com/ymstnt/ymstnt.com";
+      tokenFile = builtins.toFile "token" secrets.runners.runner1;
+      extraPackages = with pkgs; [ 
+        bun
+        nodejs_20  
+      ];
+      nodeRuntimes = [ "node20" ];
+      workDir = "/var/runners/website";
     };
   };
 
