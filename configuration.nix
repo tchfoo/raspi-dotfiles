@@ -115,6 +115,22 @@ in
           '';
         };
       };
+      "localhost" = {
+      	root = "/var/www/ymstnt.com";
+      	extraConfig = ''
+ 	      client_max_body_size 50G;
+      	  fastcgi_read_timeout 24h;
+      	'';
+      	locations = {
+      	 "/" = {
+      	    index = "index.html index.php";
+      	 };
+      	 "~ \\.(php|html)$".extraConfig = ''
+      	   fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
+      	   fastcgi_index index.php;
+      	 '';
+        };
+      };
       "mnflx.ymstnt.com" = {
         enableACME = true;
         forceSSL = true;
@@ -135,16 +151,13 @@ in
       ADMIN_PASSWORD=${secrets.miniflux.password}
     '';
     config = {
-      LISTEN_ADDR = "localhost:3327";
+      PORT = "3327";
     };
   };
 
   security.acme = {
     acceptTerms = true;
-  	certs = {
-  	  "ymstnt.com".email = secrets.acme.email;
-      "mnflx.ymstnt.com".email = secrets.acme.email;
-  	};
+	defaults.email = secrets.acme.email;
   };
   
   networking.firewall = {
