@@ -10,13 +10,15 @@
       nixosConfigurations.raspi = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          ./configuration-raspi.nix
+          ./configuration.nix
+          ./hosts/raspi/configuration.nix
         ];
       };
       nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration-vm.nix
+          ./configuration.nix
+          ./hosts/vm/configuration.nix
         ];
       };
     };

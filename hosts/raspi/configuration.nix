@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./configuration.nix
-    ./hardware-configuration-raspi.nix
+    ./hardware-configuration.nix
   ];
 
   boot = {
