@@ -113,6 +113,10 @@ in
             fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
             fastcgi_index index.php;
           '';
+          "/miniflux/" = {
+         	proxyPass = "http://localhost:3327/miniflux/";
+         	recommendedProxySettings = true;
+          };
         };
       };
       "localhost" = {
@@ -131,16 +135,6 @@ in
       	 '';
         };
       };
-      "mnflx.ymstnt.com" = {
-        enableACME = true;
-        forceSSL = true;
-        locations = {
-          "/" = {
-            proxyPass = "http://localhost:3327";
-            recommendedProxySettings = true;
-          };
-        };
-      };
     };
   };
 
@@ -152,6 +146,7 @@ in
     '';
     config = {
       PORT = "3327";
+      BASE_URL = "http://localhost/miniflux/";
     };
   };
 
