@@ -96,46 +96,37 @@ in
   services.nginx = {
     enable = true;
     group = "shared";
-    virtualHosts = {
-      "ymstnt.com" = {
-        root = "/var/www/ymstnt.com";
-        enableACME = true;
-        forceSSL = true;
-        extraConfig = ''
-          client_max_body_size 50G;
-          fastcgi_read_timeout 24h;
-        '';
-        locations = {
-          "/" = {
-            index = "index.html index.php";
-          };
-          "~ \\.(php|html)$".extraConfig = ''
-            fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
-            fastcgi_index index.php;
+    virtualHosts =
+      let
+        ymstnt-com = {
+          root = "/var/www/ymstnt.com";
+          extraConfig = ''
+            client_max_body_size 50G;
+            fastcgi_read_timeout 24h;
           '';
-          "/miniflux/" = {
-         	proxyPass = "http://localhost:3327/miniflux/";
-         	recommendedProxySettings = true;
+          locations = {
+            "/" = {
+              index = "index.html index.php";
+            };
+            "~ \\.(php|html)$".extraConfig = ''
+              fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
+              fastcgi_index index.php;
+            '';
+            "/miniflux/" = {
+              proxyPass = "http://localhost:3327/miniflux/";
+              recommendedProxySettings = true;
+            };
           };
         };
-      };
-      "localhost" = {
-      	root = "/var/www/ymstnt.com";
-      	extraConfig = ''
- 	      client_max_body_size 50G;
-      	  fastcgi_read_timeout 24h;
-      	'';
-      	locations = {
-      	 "/" = {
-      	    index = "index.html index.php";
-      	 };
-      	 "~ \\.(php|html)$".extraConfig = ''
-      	   fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
-      	   fastcgi_index index.php;
-      	 '';
+      in
+      {
+        "ymstnt.com" = ymstnt-com // {
+          enableACME = true;
+          forceSSL = true;
         };
+        # gepDrive needs to send requests to current host, and can't send it to ymstnt.com due to hairpinning
+        "localhost" = ymstnt-com;
       };
-    };
   };
 
   services.miniflux = {
@@ -152,13 +143,13 @@ in
 
   security.acme = {
     acceptTerms = true;
-	defaults.email = secrets.acme.email;
+    defaults.email = secrets.acme.email;
   };
-  
+
   networking.firewall = {
-  	allowedTCPPorts = [ 80 443 8200 ];
-  	allowedUDPPorts = [ 8200 ];
-  }; 
+    allowedTCPPorts = [ 80 443 8200 ];
+    allowedUDPPorts = [ 8200 ];
+  };
 
   services.mysql = {
     enable = true;
