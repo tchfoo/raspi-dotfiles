@@ -230,6 +230,8 @@ in
     inotify-tools
   ];
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
     "nix-command"
