@@ -29,11 +29,14 @@ in
   };
 
   systemd.tmpfiles.rules = [
-    "d /var/media 0755 ymstnt shared"
-    "d /var/media/torrents 0755 ymstnt shared"
-    "d /var/media/media-server 0755 ymstnt shared"
-    "d /var/moe 0750 moe shared"
-    "d /var/www/ymstnt.com 2770 nginx shared"
+    # Type Path                    Mode User   Group   Age Argument
+    " d    /var/media              0755 ymstnt shared"
+    " d    /var/media/torrents     0755 ymstnt shared"
+    " d    /var/media/media-server 0755 ymstnt shared"
+    " d    /var/moe                0750 moe    shared"
+    " d    /var/www/ymstnt.com     2770 nginx  shared"
+    # required by gepDrive due to sending requests to localhost
+    " L    /var/www/localhost      -    -      -      -    /var/www/ymstnt.com"
   ];
 
   services.avahi.enable = true;
@@ -102,20 +105,46 @@ in
     virtualHosts =
       let
         ymstnt-com = {
-          root = "/var/www/ymstnt.com";
+          root = "/var/www";
           extraConfig = ''
             client_max_body_size 50G;
             fastcgi_read_timeout 24h;
           '';
           locations = {
-            "/" = {
-              index = "index.html index.php";
-            };
-            "~ \\.(php|html)$".extraConfig = ''
-              fastcgi_pass  unix:${config.services.phpfpm.pools.shared.socket};
-              fastcgi_index index.php;
+            "~ ^([^.\?]*[^/])$".extraConfig = ''
+              if (-d $document_root/ymstnt.com-generated$uri) {
+                rewrite ^([^.]*[^/])$ $1/ permanent;
+              }
+              if (-d $document_root/ymstnt.com$uri) {
+                rewrite ^([^.]*[^/])$ $1/ permanent;
+              }
+              try_files _ @entry;
             '';
-            "/miniflux/" = {
+            "/".extraConfig = ''
+              try_files _ @entry;
+            '';
+            "@entry".extraConfig = ''
+              try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/index.html @ymstnt.com-rewrite;
+            '';
+            "@ymstnt.com-rewrite".extraConfig = ''
+              if (-f $document_root/ymstnt.com$uri) {
+                rewrite ^(.*)$ /ymstnt.com$1 last;
+              }
+              if (-f $document_root/ymstnt.com$uri/index.html) {
+                rewrite ^(.*)$ /ymstnt.com$1/index.html last;
+              }
+              if (-f $document_root/ymstnt.com$uri/index.php) {
+                rewrite ^(.*)$ /ymstnt.com$1/index.php last;
+              }
+            '';
+            "/ymstnt.com/".extraConfig = ''
+              alias /var/www/ymstnt.com/;
+              location ~ \.(php|html)$ {
+                alias /var/www;
+                fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
+              }
+            '';
+            "^~ /miniflux/" = {
               proxyPass = "http://localhost:3327/miniflux/";
               recommendedProxySettings = true;
             };
