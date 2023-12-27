@@ -96,6 +96,9 @@ in
   services.nginx = {
     enable = true;
     group = "shared";
+    appendConfig = ''
+      error_log /var/log/nginx/error.log debug;
+    '';
     virtualHosts =
       let
         ymstnt-com = {
