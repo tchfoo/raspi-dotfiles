@@ -35,10 +35,7 @@ in
     " d    /var/media/media-server       0755 ymstnt shared"
     " d    /var/moe                      0750 moe    shared"
     " d    /var/www/ymstnt.com           2770 nginx  shared"
-    " d    /var/runners                  0755 shared shared"
-    " d    /var/runners/website          0755 shared shared"
-    # TODO: figure out a better deyployment strategy, the dist folder gets deleted when the runner restarts
-    " L    /var/www/ymstnt.com-generated -    -      -      -    /var/runners/website/ymstnt.com/ymstnt.com/dist"
+    " d    /var/www/ymstnt.com-generated 0775 shared shared"
     # required by gepDrive due to sending requests to localhost
     " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
@@ -92,7 +89,9 @@ in
         nodejs_20  
       ];
       nodeRuntimes = [ "node20" ];
-      workDir = "/var/runners/website";
+      serviceOverrides = {
+      	ReadWritePaths = [ "/var/www/ymstnt.com-generated" ];
+      };
     };
   };
 
