@@ -29,16 +29,18 @@ in
   };
 
   systemd.tmpfiles.rules = [
-    # Type Path                    Mode User   Group   Age Argument
-    " d    /var/media              0755 ymstnt shared"
-    " d    /var/media/torrents     0755 ymstnt shared"
-    " d    /var/media/media-server 0755 ymstnt shared"
-    " d    /var/moe                0750 moe    shared"
-    " d    /var/www/ymstnt.com     2770 nginx  shared"
-    " d    /var/runners            0755 shared shared"
-    " d    /var/runners/website    0755 shared shared"
+    # Type Path                          Mode User   Group   Age Argument
+    " d    /var/media                    0755 ymstnt shared"
+    " d    /var/media/torrents           0755 ymstnt shared"
+    " d    /var/media/media-server       0755 ymstnt shared"
+    " d    /var/moe                      0750 moe    shared"
+    " d    /var/www/ymstnt.com           2770 nginx  shared"
+    " d    /var/runners                  0755 shared shared"
+    " d    /var/runners/website          0755 shared shared"
+    # TODO: figure out a better deyployment strategy, the dist folder gets deleted when the runner restarts
+    " L    /var/www/ymstnt.com-generated -    -      -      -    /var/runners/website/ymstnt.com/ymstnt.com/dist"
     # required by gepDrive due to sending requests to localhost
-    " L    /var/www/localhost      -    -      -      -    /var/www/ymstnt.com"
+    " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
 
   services.avahi.enable = true;
