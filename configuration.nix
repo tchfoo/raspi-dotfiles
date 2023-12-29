@@ -84,13 +84,13 @@ in
       user = "shared";
       url = "https://github.com/ymstnt/ymstnt.com";
       tokenFile = builtins.toFile "token" secrets.runners.runner1;
-      extraPackages = with pkgs; [ 
+      extraPackages = with pkgs; [
         bun
-        nodejs_20  
+        nodejs_20
       ];
       nodeRuntimes = [ "node20" ];
       serviceOverrides = {
-      	ReadWritePaths = [ "/var/www/ymstnt.com-generated" ];
+        ReadWritePaths = [ "/var/www/ymstnt.com-generated" ];
       };
     };
   };
