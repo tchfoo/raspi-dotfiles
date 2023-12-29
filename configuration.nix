@@ -126,6 +126,7 @@ in
         ymstnt-com = {
           root = "/var/www";
           extraConfig = ''
+            error_page 404 /ymstnt.com-generated/404.html;
             client_max_body_size 50G;
             fastcgi_read_timeout 24h;
           '';
