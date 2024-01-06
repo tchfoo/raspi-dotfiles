@@ -32,7 +32,13 @@ in
     # Type Path                          Mode User   Group   Age Argument
     " d    /var/media                    0755 ymstnt shared"
     " d    /var/media/torrents           0755 ymstnt shared"
+    " d    /var/media/torrents/Movies    0755 ymstnt shared"
+    " d    /var/media/torrents/Shows     0755 ymstnt shared"
+    " d    /var/media/torrents/Anime     0755 ymstnt shared"
     " d    /var/media/media-server       0755 ymstnt shared"
+    " d    /var/media/media-server/Movies 0755 ymstnt shared"
+    " d    /var/media/media-server/Shows 0755 ymstnt shared"
+    " d    /var/media/media-server/Anime 0755 ymstnt shared"
     " d    /var/moe                      0750 moe    shared"
     " d    /var/www/ymstnt.com           2770 nginx  shared"
     " d    /var/www/ymstnt.com-generated 0775 shared shared"
