@@ -133,18 +133,42 @@ in
           root = "/var/www";
           extraConfig = ''
             error_page 404 /ymstnt.com-generated/404.html;
-            index index.php index.html;
             client_max_body_size 50G;
             fastcgi_read_timeout 24h;
           '';
           locations = {
-            "/".extraConfig = '' 
-              rewrite ^([^.]*[^/])$ $1/ permanent;
-              try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/ /ymstnt.com$uri /ymstnt.com$uri/ =404;
+            "~ ^([^.\?]*[^/])$".extraConfig = ''
+              if (-d $document_root/ymstnt.com-generated$uri) {
+                rewrite ^([^.]*[^/])$ $1/ permanent;
+              }
+              if (-d $document_root/ymstnt.com$uri) {
+                rewrite ^([^.]*[^/])$ $1/ permanent;
+              }
+              try_files _ @entry;
             '';
-            "~ \.(php|html)$".extraConfig = ''
-              try_files $uri /ymstnt.com-generated$uri /ymstnt.com$uri =404;
-              fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
+            "/".extraConfig = ''
+              try_files _ @entry;
+            '';
+            "@entry".extraConfig = ''
+              try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/index.html @ymstnt.com-rewrite;
+            '';
+            "@ymstnt.com-rewrite".extraConfig = ''
+              if (-f $document_root/ymstnt.com$uri) {
+                rewrite ^(.*)$ /ymstnt.com$1 last;
+              }
+              if (-f $document_root/ymstnt.com$uri/index.html) {
+                rewrite ^(.*)$ /ymstnt.com$1/index.html last;
+              }
+              if (-f $document_root/ymstnt.com$uri/index.php) {
+                rewrite ^(.*)$ /ymstnt.com$1/index.php last;
+              }
+            '';
+            "/ymstnt.com/".extraConfig = ''
+              alias /var/www/ymstnt.com/;
+              location ~ \.(php|html)$ {
+                alias /var/www;
+                fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
+              }
             '';
             "^~ /miniflux/" = {
               proxyPass = "http://localhost:3327/miniflux/";
