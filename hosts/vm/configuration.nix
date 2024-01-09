@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -9,4 +9,6 @@
     enable = true;
     device = "/dev/vda";
   };
+
+  networking.hostName = lib.mkForce "raspi-doboz-vm";
 }
