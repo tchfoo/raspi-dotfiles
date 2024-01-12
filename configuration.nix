@@ -29,19 +29,19 @@ in
   };
 
   systemd.tmpfiles.rules = [
-    # Type Path                          Mode User   Group   Age Argument
-    " d    /var/media                    0755 ymstnt shared"
-    " d    /var/media/torrents           0755 ymstnt shared"
-    " d    /var/media/torrents/Movies    0755 ymstnt shared"
-    " d    /var/media/torrents/Shows     0755 ymstnt shared"
-    " d    /var/media/torrents/Anime     0755 ymstnt shared"
-    " d    /var/media/media-server       0755 ymstnt shared"
+    # Type Path                           Mode User   Group   Age Argument
+    " d    /var/media                     0755 ymstnt shared"
+    " d    /var/media/torrents            0755 ymstnt shared"
+    " d    /var/media/torrents/Movies     0755 ymstnt shared"
+    " d    /var/media/torrents/Shows      0755 ymstnt shared"
+    " d    /var/media/torrents/Anime      0755 ymstnt shared"
+    " d    /var/media/media-server        0755 ymstnt shared"
     " d    /var/media/media-server/Movies 0755 ymstnt shared"
-    " d    /var/media/media-server/Shows 0755 ymstnt shared"
-    " d    /var/media/media-server/Anime 0755 ymstnt shared"
-    " d    /var/moe                      0750 moe    shared"
-    " d    /var/www/ymstnt.com           2770 nginx  shared"
-    " d    /var/www/ymstnt.com-generated 0775 shared shared"
+    " d    /var/media/media-server/Shows  0755 ymstnt shared"
+    " d    /var/media/media-server/Anime  0755 ymstnt shared"
+    " d    /var/moe                       0750 moe    shared"
+    " d    /var/www/ymstnt.com            2770 nginx  shared"
+    " d    /var/www/ymstnt.com-generated  0775 shared shared"
     # required by gepDrive due to sending requests to localhost
     " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
@@ -174,6 +174,10 @@ in
               proxyPass = "http://localhost:3327/miniflux/";
               recommendedProxySettings = true;
             };
+            "^~ /stingle/" = {
+              proxyPass = "http://localhost:3328/";
+              recommendedProxySettings = true;
+            };
           };
         };
       in
@@ -196,6 +200,17 @@ in
     config = {
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
+    };
+  };
+
+  services.c2fmzq-server = {
+    enable = true;
+    port = 3328;
+    passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
+    settings = {
+      allow-new-accounts = false;
+      auto-approve-new-accounts = false;
+      enable-webapp = false;
     };
   };
 
