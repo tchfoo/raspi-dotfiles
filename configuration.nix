@@ -220,7 +220,7 @@ in
   };
 
   networking.firewall = {
-    allowedTCPPorts = [ 80 443 8200 ];
+    allowedTCPPorts = [ 80 443 8000 8200 ];
     allowedUDPPorts = [ 8200 ];
   };
 
@@ -294,6 +294,7 @@ in
     group = "shared";
     backups-interval-minutes = 240;
     backups-to-keep = 100;
+    status-port = 8000;
     token = secrets.moe.token;
     owners = secrets.moe.owners;
   };

@@ -45,6 +45,13 @@ in
         Delete old backups after the number of backups exceeds this.
       '';
     };
+    status-port = mkOption {
+      type = port;
+      default = 8000;
+      description = ''
+        Start a web server on this port to appear online for status services.
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -69,8 +76,9 @@ in
             owners = "OWNERS=${cfg.owners}";
             backups-interval-minutes = "BACKUP_INTERVAL_MINUTES=${toString cfg.backups-interval-minutes}";
             backups-to-keep = "BACKUPS_TO_KEEP=${toString cfg.backups-to-keep}";
+            status-port = "STATUS_PORT=${toString cfg.status-port}";
           in
-          "${token} ${owners} ${backups-interval-minutes} ${backups-to-keep}";
+          "${token} ${owners} ${backups-interval-minutes} ${backups-to-keep} ${status-port}";
       };
     };
   };

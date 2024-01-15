@@ -1,26 +1,36 @@
 { buildDotnetModule
 , fetchFromGitHub
+, lib
 }:
 
+# to update deps.nix:
+# checkout out github:gepbird/nixpkgs/moebot-fetch-deps
+# update version number, rev and hash
+# $ pkgs/tools/moebot/update.sh
+# copy pkgs/tools/moebot/deps.nix to this directory
 buildDotnetModule rec {
   pname = "moe";
-  version = "2023-11-14";
+  version = "2024-01-15";
 
   src = fetchFromGitHub {
     owner = "ymstnt";
     repo = pname;
-    rev = "5c01058b5ea3bcac5ce38d3374eae54734199c35";
-    hash = "sha256-EOxX98fOaHVvsgtVCVBIUl0kg9mHMIsG0d/RwmcAiA8=";
+    rev = "dcb687b7058626ddbc17f13eff7c95f7fe4b1404";
+    hash = "sha256-Zja4V2SOnuYa3g1xGjj63P5EsHvs61rZ5UvOouRgAZg=";
   };
 
-  # to update deps.nix:
-  # $ git clone git@github.com:gepbird/nixpkgs -b moebot-fetch-deps --depth 1
-  # update the revision an the hash in nixpkgs/pkgs/tools/moebot/default.nix
-  # $ nixpkgs/pkgs/tools/moebot/update.sh
-  # copy nixpkgs/pkgs/tools/moebot/deps.nix to this directory
   nugetDeps = ./deps.nix;
 
   projectFile = [ "moe.csproj" ];
 
   executables = [ "moe" ];
+
+  meta = with lib; {
+    description = "A multi-purpose Discord bot made using Discord.Net";
+    homepage = "https://github.com/ymstnt/moe/";
+    license = licenses.gpl3;
+    maintainers = with maintainers; [ gepbird ];
+    platforms = platforms.all;
+    mainProgram = "moe";
+  };
 }
