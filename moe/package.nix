@@ -10,13 +10,13 @@
 # copy pkgs/tools/moebot/deps.nix to this directory
 buildDotnetModule rec {
   pname = "moe";
-  version = "2024-01-15";
+  version = "2024-01-15.1";
 
   src = fetchFromGitHub {
     owner = "ymstnt";
     repo = pname;
-    rev = "dcb687b7058626ddbc17f13eff7c95f7fe4b1404";
-    hash = "sha256-Zja4V2SOnuYa3g1xGjj63P5EsHvs61rZ5UvOouRgAZg=";
+    rev = "0368a158f95dbc33d91ce8a001cd645672e99679";
+    hash = "sha256-0f0n4Wdp9Shddzc6oAq35me/rJ5qTbIAbg6mCGpYzts=";
   };
 
   nugetDeps = ./deps.nix;
