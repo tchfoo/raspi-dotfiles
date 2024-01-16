@@ -2,8 +2,7 @@
   description = "System configuration for raspi-doboz server";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # uncomment when https://github.com/NixOS/nixpkgs/pull/279479 and https://github.com/NixOS/nixpkgs/pull/277783 is merged
-    nixpkgs.url = "github:gepbird/nixpkgs/c2fmzq-server-all-fixes";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = { self, nixpkgs }:
