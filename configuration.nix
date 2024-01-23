@@ -219,10 +219,7 @@ in
     defaults.email = secrets.acme.email;
   };
 
-  networking.firewall = {
-    allowedTCPPorts = [ 80 443 8200 25571 ];
-    allowedUDPPorts = [ 8200 ];
-  };
+  networking.firewall.allowedTCPPorts = [ 80 443 25571 ];
 
   services.mysql = {
     enable = true;
