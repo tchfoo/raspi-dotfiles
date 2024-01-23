@@ -289,11 +289,13 @@ in
   services.moe = {
     enable = true;
     group = "shared";
-    backups-interval-minutes = 240;
-    backups-to-keep = 100;
-    status-port = 25571;
-    token = secrets.moe.token;
-    owners = secrets.moe.owners;
+    settings = {
+      backups-interval-minutes = 240;
+      backups-to-keep = 100;
+      status-port = 25571;
+      token = secrets.moe.token;
+      owners = secrets.moe.owners;
+    };
   };
 
   environment.systemPackages = with pkgs; [
