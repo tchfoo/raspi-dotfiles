@@ -219,7 +219,7 @@ in
     defaults.email = secrets.acme.email;
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 25571 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.mysql = {
     enable = true;
@@ -289,6 +289,7 @@ in
   services.moe = {
     enable = true;
     group = "shared";
+    openFirewall = true;
     settings = {
       backups-interval-minutes = 240;
       backups-to-keep = 100;

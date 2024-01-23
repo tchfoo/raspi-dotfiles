@@ -18,6 +18,13 @@ in
         The group for moe user that the systemd service will run under.
       '';
     };
+    openFirewall = mkOption {
+      type = bool;
+      default = false;
+      description = ''
+        Whether to open the TCP port for status in the firewall.
+      '';
+    };
     settings = {
       token = mkOption {
         type = str;
@@ -63,6 +70,8 @@ in
       createHome = true;
       group = cfg.group;
     };
+
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ cfg.settings.status-port ];
 
     systemd.services.moe = {
       description = "Moe, a multi-purpose Discord bot made using Discord.Net.";
