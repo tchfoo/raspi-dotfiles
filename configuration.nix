@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, home-manager, ... }:
 
 let
   secrets = import ./secrets.nix;
@@ -284,6 +284,73 @@ in
     };
   };
 
+  home-manager.users.ymstnt = {
+    programs.micro = {
+      enable = true;
+      settings = {
+        statusformatl = "$(filename) $(modified)($(line)/$(lines),$(col)) $(status.paste)| ft:$(opt:filetype) | $(opt:fileformat) | $(opt:encoding)";
+        tabstospaces = true;
+        tabsize = 2;
+      };
+    };
+    programs.bash = {
+      enable = true;
+      shellAliases = {
+        rebuild = "(cd $HOME/raspi-dotfiles && bash ./rebuild.sh .#raspi)";
+        update = "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
+        dotcd = "cd $HOME/raspi-dotfiles";
+        bashreload = "source $HOME/.bashrc";
+      };
+    };
+    programs.starship = {
+      enable = true;
+      settings = {
+        format = "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[ ](fg:\#F41C5D)";
+
+        username = {
+          show_always = true;
+          style_user = "bg:\#AF083A";
+          style_root = "bg:\#AF083A";
+          format = "[$user ]($style)";
+          disabled = false;
+        };
+
+        os = {
+          format = "[ ]($style)";
+          style = "bg:\#AF083A";
+          disabled = false;
+        };
+
+        directory = {
+          style = "bg:\#D50A47";
+          format = "[ $path ]($style)";
+          truncation_length = 3;
+          truncation_symbol = "…/";
+        };
+
+        directory.substitutions = {
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = " ";
+          "Pictures" = " ";
+        };
+
+        git_branch = {
+          symbol = "";
+          style = "bg:\#F41C5D";
+          format = "[ $symbol $branch ]($style)";
+        };
+
+        git_status = {
+          style = "bg:\#F41C5D";
+          format = "[$all_status$ahead_behind ]($style)";
+        };
+      };
+    };
+
+    home.stateVersion = config.system.stateVersion;
+  };
+
   users.groups.shared = { };
 
   services.moe = {
@@ -311,6 +378,8 @@ in
     "nix-command"
     "flakes"
   ];
+
+  home-manager.useGlobalPkgs = true;
 
   system.stateVersion = "23.05";
 }
