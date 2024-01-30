@@ -1,7 +1,7 @@
-{ lib, config, pkgs, home-manager, ... }:
+{ lib, config, pkgs, inputs, home-manager, ... }:
 
 let
-  secrets = import ./secrets.nix;
+  secrets = import ./secretsa.nix;
 in
 {
   imports = [
@@ -46,6 +46,17 @@ in
     " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
 
+  age.secrets = {
+    moe-token.file = ./secrets/moe-token.age;
+    moe-owners.file = ./secrets/moe-owners.age;
+    mysql.file = ./secrets/mysql.age;
+    transmission.file = ./secrets/transmission.json.age;
+    acme-email.file = ./secrets/acme-email.age;
+    runner1.file = ./secrets/runner1.age;
+    miniflux.file = ./secrets/miniflux.age;
+    c2fmzq.file = ./secrets/c2fmzq.age;
+  };
+
   services.avahi.enable = true;
 
   services.minidlna = {
@@ -71,6 +82,7 @@ in
       download-dir = "/var/media/torrents";
       incomplete-dir-enabled = false;
       rpc-password = secrets.transmission.password;
+      # rpc-password = builtins.readFile config.age.secrets.transmission.path;
       rpc-enabled = true;
       rpc-whitelist-enabled = true;
       rpc-authentication-required = true;
@@ -81,6 +93,7 @@ in
       ratio-limit = 1;
       ratio-limit-enabled = true;
     };
+    # credentialsFile = config.age.secrets.transmission.path;
   };
 
   services.github-runners = {
@@ -89,7 +102,8 @@ in
       replace = true;
       user = "shared";
       url = "https://github.com/ymstnt/ymstnt.com";
-      tokenFile = builtins.toFile "token" secrets.runners.runner1;
+      # tokenFile = builtins.toFile "token" secrets.runners.runner1;
+      tokenFile = config.age.secrets.runner1.path;
       extraPackages = with pkgs; [
         bun
         nodejs_20
@@ -193,10 +207,11 @@ in
 
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = builtins.toFile "env" ''
-      ADMIN_USERNAME=${secrets.miniflux.username}
-      ADMIN_PASSWORD=${secrets.miniflux.password}
-    '';
+    # adminCredentialsFile = builtins.toFile "env" ''
+    #   ADMIN_USERNAME=${secrets.miniflux.username}
+    #   ADMIN_PASSWORD=${secrets.miniflux.password}
+    # '';
+    adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
@@ -206,7 +221,8 @@ in
   services.c2fmzq-server = {
     enable = true;
     port = 3328;
-    passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
+    # passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
+    passphraseFile = config.age.secrets.c2fmzq.path;
     settings = {
       allow-new-accounts = false;
       auto-approve-new-accounts = false;
@@ -217,6 +233,7 @@ in
   security.acme = {
     acceptTerms = true;
     defaults.email = secrets.acme.email;
+    # defaults.email = config.age.secrets.acme-email.path;
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
@@ -361,6 +378,8 @@ in
       backups-interval-minutes = 240;
       backups-to-keep = 100;
       status-port = 25571;
+      # token = builtins.readFile config.age.secrets.moe-token.path;
+      # owners = builtins.readFile config.age.secrets.moe-owners.path;
       token = secrets.moe.token;
       owners = secrets.moe.owners;
     };

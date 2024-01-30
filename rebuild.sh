@@ -5,7 +5,7 @@
 # As a workaround: stage this file, rebuild the system then unstage the file
 # Warning: custom local git exclude file will be overwritten
 echo "" > .git/info/exclude
-git add secrets.nix >/dev/null
+git add secretsa.nix >/dev/null
 sudo nixos-rebuild switch --flake $1
-git reset HEAD secrets.nix >/dev/null
-echo "secrets.nix" > .git/info/exclude
+git reset HEAD secretsa.nix >/dev/null
+echo "secretsa.nix" > .git/info/exclude
