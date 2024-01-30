@@ -188,6 +188,13 @@ in
         };
         # gepDrive needs to send requests to current host, and can't send it to ymstnt.com due to hairpinning
         "localhost" = ymstnt-com;
+        "gep.bio" = {
+          locations."/".extraConfig = ''
+            rewrite ^.*$ https://anydesk.com/en/downloads/thank-you?dv=win_exe permanent;
+          '';
+          enableACME = true;
+          forceSSL = true;
+        };
       };
   };
 
