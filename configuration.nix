@@ -54,7 +54,8 @@ in
     acme-email.file = ./secrets/acme-email.age;
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
-    c2fmzq.file = ./secrets/c2fmzq.age;
+    # disabled due to decryption failure
+    #c2fmzq.file = ./secrets/c2fmzq.age;
   };
 
   services.avahi.enable = true;
@@ -218,17 +219,17 @@ in
     };
   };
 
-  services.c2fmzq-server = {
-    enable = true;
-    port = 3328;
-    # passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
-    passphraseFile = config.age.secrets.c2fmzq.path;
-    settings = {
-      allow-new-accounts = false;
-      auto-approve-new-accounts = false;
-      enable-webapp = false;
-    };
-  };
+  #services.c2fmzq-server = {
+  #  enable = true;
+  #  port = 3328;
+  #  # passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
+  #  passphraseFile = config.age.secrets.c2fmzq.path;
+  #  settings = {
+  #    allow-new-accounts = false;
+  #    auto-approve-new-accounts = false;
+  #    enable-webapp = false;
+  #  };
+  #};
 
   security.acme = {
     acceptTerms = true;
