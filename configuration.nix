@@ -224,6 +224,7 @@ in
   security.acme = {
     acceptTerms = true;
     defaults.email = secrets.acme.email;
+    certs."gep.bio".email = "gutyina.gergo.2@gmail.com";
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
