@@ -26,17 +26,17 @@ in
       '';
     };
     settings = {
-      token = mkOption {
+      tokenFile = mkOption {
         type = str;
         description = ''
-          Your Discord bot's access token.
+          Path to file containing your Discord bot's access token.
           Anyone with possession of this token can act on your bot's behalf.
         '';
       };
-      owners = mkOption {
+      ownersFile = mkOption {
         type = str;
         description = ''
-          Comma separated list of User IDs who have full access to the bot. Overrides modranks.
+          Path to file of a comma separated list of User IDs who have full access to the bot. Overrides modranks.
         '';
       };
       backups-interval-minutes = mkOption {
@@ -83,8 +83,9 @@ in
         User = "moe";
         Environment =
           let
-            token = "TOKEN=${cfg.settings.token}";
-            owners = "OWNERS=${cfg.settings.owners}";
+            fromFile = file: builtins.replaceStrings ["\n"] [""] (builtins.readFile file);
+            token = "TOKEN=${fromFile cfg.settings.tokenFile}";
+            owners = "OWNERS=${fromFile cfg.settings.ownersFile}";
             backups-interval-minutes = "BACKUP_INTERVAL_MINUTES=${toString cfg.settings.backups-interval-minutes}";
             backups-to-keep = "BACKUPS_TO_KEEP=${toString cfg.settings.backups-to-keep}";
             status-port = "STATUS_PORT=${toString cfg.settings.status-port}";

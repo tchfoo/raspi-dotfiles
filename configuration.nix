@@ -379,10 +379,8 @@ in
       backups-interval-minutes = 240;
       backups-to-keep = 100;
       status-port = 25571;
-      # token = builtins.readFile config.age.secrets.moe-token.path;
-      # owners = builtins.readFile config.age.secrets.moe-owners.path;
-      token = secrets.moe.token;
-      owners = secrets.moe.owners;
+      tokenFile = config.age.secrets.moe-token.path;
+      ownersFile = config.age.secrets.moe-owners.path;
     };
   };
 
