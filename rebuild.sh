@@ -6,6 +6,6 @@
 # Warning: custom local git exclude file will be overwritten
 echo "" > .git/info/exclude
 git add secretsa.nix >/dev/null
-sudo nixos-rebuild switch --flake $1
+sudo nixos-rebuild switch --flake $1 --impure
 git reset HEAD secretsa.nix >/dev/null
 echo "secretsa.nix" > .git/info/exclude
