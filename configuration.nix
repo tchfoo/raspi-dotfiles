@@ -54,8 +54,7 @@ in
     acme-email.file = ./secrets/acme-email.age;
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
-    # disabled due to decryption failure
-    #c2fmzq.file = ./secrets/c2fmzq.age;
+    c2fmzq.file = ./secrets/c2fmzq.age;
   };
 
   services.avahi.enable = true;
@@ -82,9 +81,9 @@ in
     settings = {
       download-dir = "/var/media/torrents";
       incomplete-dir-enabled = false;
-      rpc-password = secrets.transmission.password;
-      # rpc-password = builtins.readFile config.age.secrets.transmission.path;
+      rpc-password = lib.strings.removeSuffix "\n" (builtins.readFile config.age.secrets.transmission.path);
       rpc-enabled = true;
+      rpc-host-whitelist-enabled = false;
       rpc-whitelist-enabled = true;
       rpc-authentication-required = true;
       rpc-username = "ymstnt";
@@ -94,7 +93,7 @@ in
       ratio-limit = 1;
       ratio-limit-enabled = true;
     };
-    # credentialsFile = config.age.secrets.transmission.path;
+    #credentialsFile = config.age.secrets.transmission.path;
   };
 
   services.github-runners = {
@@ -103,7 +102,6 @@ in
       replace = true;
       user = "shared";
       url = "https://github.com/ymstnt/ymstnt.com";
-      # tokenFile = builtins.toFile "token" secrets.runners.runner1;
       tokenFile = config.age.secrets.runner1.path;
       extraPackages = with pkgs; [
         bun
@@ -208,10 +206,6 @@ in
 
   services.miniflux = {
     enable = true;
-    # adminCredentialsFile = builtins.toFile "env" ''
-    #   ADMIN_USERNAME=${secrets.miniflux.username}
-    #   ADMIN_PASSWORD=${secrets.miniflux.password}
-    # '';
     adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
@@ -219,22 +213,20 @@ in
     };
   };
 
-  #services.c2fmzq-server = {
-  #  enable = true;
-  #  port = 3328;
-  #  # passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
-  #  passphraseFile = config.age.secrets.c2fmzq.path;
-  #  settings = {
-  #    allow-new-accounts = false;
-  #    auto-approve-new-accounts = false;
-  #    enable-webapp = false;
-  #  };
-  #};
+  services.c2fmzq-server = {
+    enable = true;
+    port = 3328;
+    passphraseFile = config.age.secrets.c2fmzq.path;
+    settings = {
+      allow-new-accounts = false;
+      auto-approve-new-accounts = false;
+      enable-webapp = false;
+    };
+  };
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = secrets.acme.email;
-    # defaults.email = config.age.secrets.acme-email.path;
+    defaults.email = lib.strings.removeSuffix "\n" (builtins.readFile config.age.secrets.acme-email.path);
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
