@@ -81,7 +81,6 @@ in
     settings = {
       download-dir = "/var/media/torrents";
       incomplete-dir-enabled = false;
-      rpc-password = lib.strings.removeSuffix "\n" (builtins.readFile config.age.secrets.transmission.path);
       rpc-enabled = true;
       rpc-host-whitelist-enabled = false;
       rpc-whitelist-enabled = true;
@@ -93,7 +92,7 @@ in
       ratio-limit = 1;
       ratio-limit-enabled = true;
     };
-    #credentialsFile = config.age.secrets.transmission.path;
+    credentialsFile = config.age.secrets.transmission.path;
   };
 
   services.github-runners = {
