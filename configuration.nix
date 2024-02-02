@@ -1,7 +1,7 @@
-{ lib, config, pkgs, home-manager, ... }:
+{ lib, config, pkgs, inputs, home-manager, ... }:
 
 let
-  secrets = import ./secrets.nix;
+  secrets = import ./secretsa.nix;
 in
 {
   imports = [
@@ -46,6 +46,17 @@ in
     " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
 
+  age.secrets = {
+    moe-token.file = ./secrets/moe-token.age;
+    moe-owners.file = ./secrets/moe-owners.age;
+    mysql.file = ./secrets/mysql.age;
+    transmission.file = ./secrets/transmission.json.age;
+    acme-email.file = ./secrets/acme-email.age;
+    runner1.file = ./secrets/runner1.age;
+    miniflux.file = ./secrets/miniflux.age;
+    c2fmzq.file = ./secrets/c2fmzq.age;
+  };
+
   services.avahi.enable = true;
 
   services.minidlna = {
@@ -70,8 +81,8 @@ in
     settings = {
       download-dir = "/var/media/torrents";
       incomplete-dir-enabled = false;
-      rpc-password = secrets.transmission.password;
       rpc-enabled = true;
+      rpc-host-whitelist-enabled = false;
       rpc-whitelist-enabled = true;
       rpc-authentication-required = true;
       rpc-username = "ymstnt";
@@ -81,6 +92,7 @@ in
       ratio-limit = 1;
       ratio-limit-enabled = true;
     };
+    credentialsFile = config.age.secrets.transmission.path;
   };
 
   services.github-runners = {
@@ -89,7 +101,7 @@ in
       replace = true;
       user = "shared";
       url = "https://github.com/ymstnt/ymstnt.com";
-      tokenFile = builtins.toFile "token" secrets.runners.runner1;
+      tokenFile = config.age.secrets.runner1.path;
       extraPackages = with pkgs; [
         bun
         nodejs_20
@@ -200,10 +212,7 @@ in
 
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = builtins.toFile "env" ''
-      ADMIN_USERNAME=${secrets.miniflux.username}
-      ADMIN_PASSWORD=${secrets.miniflux.password}
-    '';
+    adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
@@ -213,7 +222,7 @@ in
   services.c2fmzq-server = {
     enable = true;
     port = 3328;
-    passphraseFile = builtins.toFile "c2fmzq" secrets.c2fmzq.passphrase;
+    passphraseFile = config.age.secrets.c2fmzq.path;
     settings = {
       allow-new-accounts = false;
       auto-approve-new-accounts = false;
@@ -223,7 +232,7 @@ in
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = secrets.acme.email;
+    defaults.email = lib.strings.removeSuffix "\n" (builtins.readFile config.age.secrets.acme-email.path);
     certs."gep.bio".email = "gutyina.gergo.2@gmail.com";
   };
 
@@ -304,7 +313,7 @@ in
     programs.bash = {
       enable = true;
       shellAliases = {
-        rebuild = "(cd $HOME/raspi-dotfiles && bash ./rebuild.sh .#raspi)";
+        rebuild = "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake .#raspi --impure)";
         update = "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
         dotcd = "cd $HOME/raspi-dotfiles";
         bashreload = "source $HOME/.bashrc";
@@ -369,8 +378,8 @@ in
       backups-interval-minutes = 240;
       backups-to-keep = 100;
       status-port = 25571;
-      token = secrets.moe.token;
-      owners = secrets.moe.owners;
+      tokenFile = config.age.secrets.moe-token.path;
+      ownersFile = config.age.secrets.moe-owners.path;
     };
   };
 
