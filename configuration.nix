@@ -1,8 +1,5 @@
 { lib, config, pkgs, inputs, home-manager, ... }:
 
-let
-  secrets = import ./secretsa.nix;
-in
 {
   imports = [
     (import ./moe)
