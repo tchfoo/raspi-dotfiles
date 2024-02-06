@@ -75,6 +75,7 @@
     group = "shared";
     enable = true;
     openRPCPort = true;
+    openPeerPorts = true;
     settings = {
       download-dir = "/var/media/torrents";
       incomplete-dir-enabled = false;
