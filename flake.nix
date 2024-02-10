@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    moe = {
+      url = "github:YMSTNT/moe";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, home-manager }:
+  outputs = { self, nixpkgs, agenix, home-manager, moe }:
     {
       nixosConfigurations.raspi =
         let
@@ -22,6 +26,7 @@
             agenix.nixosModules.default
             { environment.systemPackages = [ agenix.packages.${system}.default ]; }
             home-manager.nixosModule
+            moe.nixosModule
             ./configuration.nix
             ./hosts/raspi/configuration.nix
           ];
@@ -36,6 +41,7 @@
             agenix.nixosModules.default
             { environment.systemPackages = [ agenix.packages.${system}.default ]; }
             home-manager.nixosModule
+            moe.nixosModule
             ./configuration.nix
             ./hosts/vm/configuration.nix
           ];

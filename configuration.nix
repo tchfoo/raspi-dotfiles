@@ -1,10 +1,6 @@
 { lib, config, pkgs, inputs, home-manager, ... }:
 
 {
-  imports = [
-    (import ./moe)
-  ];
-
   swapDevices = [{
     device = "/var/lib/swapfile";
     size = 2 * 1024;
@@ -368,7 +364,7 @@
 
   users.groups.shared = { };
 
-  services.moe = {
+  moe = {
     enable = true;
     group = "shared";
     openFirewall = true;
