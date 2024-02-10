@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, home-manager, ... }:
+{ lib, config, pkgs, agenix, ... }:
 
 {
   swapDevices = [{
@@ -380,6 +380,7 @@
   environment.systemPackages = with pkgs; [
     git
     inotify-tools
+    agenix.packages.${pkgs.system}.default
   ];
 
   systemd.services.NetworkManager-wait-online.enable = false;

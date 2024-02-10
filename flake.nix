@@ -14,22 +14,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, agenix, home-manager, moe }:
-    {
-      nixosConfigurations.raspi =
-        let
-          system = "aarch64-linux";
-        in
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            agenix.nixosModules.default
-            { environment.systemPackages = [ agenix.packages.${system}.default ]; }
-            home-manager.nixosModule
-            moe.nixosModule
-            ./configuration.nix
-            ./hosts/raspi/configuration.nix
-          ];
-        };
+  outputs = { self, nixpkgs, agenix, home-manager, moe } @ inputs: {
+    nixosConfigurations.raspi = nixpkgs.lib.nixosSystem {
+      modules = [
+        agenix.nixosModules.default
+        home-manager.nixosModule
+        moe.nixosModule
+        ./configuration.nix
+        ./hosts/raspi/configuration.nix
+      ];
+      specialArgs = inputs;
     };
+  };
 }
