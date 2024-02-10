@@ -31,20 +31,5 @@
             ./hosts/raspi/configuration.nix
           ];
         };
-      nixosConfigurations.vm =
-        let
-          system = "x86_64-linux";
-        in
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            agenix.nixosModules.default
-            { environment.systemPackages = [ agenix.packages.${system}.default ]; }
-            home-manager.nixosModule
-            moe.nixosModule
-            ./configuration.nix
-            ./hosts/vm/configuration.nix
-          ];
-        };
     };
 }
