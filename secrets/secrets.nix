@@ -7,8 +7,7 @@ let
   keys = [ ymstnt gep raspi ];
 in
 {
-  "moe-token.age".publicKeys = keys;
-  "moe-owners.age".publicKeys = keys;
+  "moe.age".publicKeys = keys;
   "mysql.age".publicKeys = keys;
   "transmission.json.age".publicKeys = keys;
   "acme-email.age".publicKeys = keys;

@@ -40,8 +40,7 @@
   ];
 
   age.secrets = {
-    moe-token.file = ./secrets/moe-token.age;
-    moe-owners.file = ./secrets/moe-owners.age;
+    moe.file = ./secrets/moe.age;
     mysql.file = ./secrets/mysql.age;
     transmission.file = ./secrets/transmission.json.age;
     acme-email.file = ./secrets/acme-email.age;
@@ -372,9 +371,8 @@
       backups-interval-minutes = 240;
       backups-to-keep = 100;
       status-port = 25571;
-      tokenFile = config.age.secrets.moe-token.path;
-      ownersFile = config.age.secrets.moe-owners.path;
     };
+    credentialsFile = config.age.secrets.moe.path;
   };
 
   environment.systemPackages = with pkgs; [
