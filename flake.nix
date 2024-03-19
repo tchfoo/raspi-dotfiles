@@ -12,9 +12,15 @@
       url = "github:YMSTNT/moe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gep-dotfiles = {
+      url = "github:gepbird/dotfiles/nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.agenix.follows = "agenix";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, home-manager, moe } @ inputs: {
+  outputs = { self, nixpkgs, agenix, home-manager, moe, gep-dotfiles } @ inputs: {
     nixosConfigurations.raspi = nixpkgs.lib.nixosSystem {
       modules = [
         agenix.nixosModules.default

@@ -43,6 +43,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -58,6 +74,34 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "gep-dotfiles": {
+      "inputs": {
+        "agenix": [
+          "agenix"
+        ],
+        "home-manager": [
+          "home-manager"
+        ],
+        "nix-matlab": "nix-matlab",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1710844428,
+        "narHash": "sha256-n/+i5YtKCQxkDsV/D/2CakyfL3nH6nvGnutshYO0UFY=",
+        "owner": "gepbird",
+        "repo": "dotfiles",
+        "rev": "b71a2e65c2dba024b56568a4bf2d1793f33cf6fe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "ref": "nixos",
+        "repo": "dotfiles",
         "type": "github"
       }
     },
@@ -123,6 +167,28 @@
         "type": "github"
       }
     },
+    "nix-matlab": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "gep-dotfiles",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1710774114,
+        "narHash": "sha256-bljS2velgh95iKYUdcgRytDo+tdqlrJdWY+mFUNAZNc=",
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "rev": "fda842214aaeb923d53df6352318552144a5f59e",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1703013332,
@@ -158,6 +224,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "gep-dotfiles": "gep-dotfiles",
         "home-manager": "home-manager_2",
         "moe": "moe",
         "nixpkgs": "nixpkgs_2"

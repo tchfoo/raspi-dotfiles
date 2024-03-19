@@ -1,6 +1,16 @@
-{ ... }:
+{ gep-dotfiles, ... }:
 
 {
+  imports = with gep-dotfiles.nixosModules; [
+    cli
+    hm
+    lsp
+    nvim
+    sdk
+    starship
+    zsh
+  ];
+
   users.users.gep = {
     initialPassword = "gep";
     isNormalUser = true;
