@@ -9,7 +9,12 @@
     sdk
     starship
     zsh
+    chatgpt
   ];
+
+  age.secrets = {
+    openai-token.file = ../secrets/openai-token-gep.age;
+  };
 
   users.users.gep = {
     initialPassword = "gep";
