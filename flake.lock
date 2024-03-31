@@ -88,14 +88,15 @@
         "nix-matlab": "nix-matlab",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "nixpkgs-stylelint-lsp": "nixpkgs-stylelint-lsp"
       },
       "locked": {
-        "lastModified": 1710844428,
-        "narHash": "sha256-n/+i5YtKCQxkDsV/D/2CakyfL3nH6nvGnutshYO0UFY=",
+        "lastModified": 1711814304,
+        "narHash": "sha256-TuuWkGHFgFlGJszJkt9yMuwezddM0qw9J0AhanpM0nE=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "b71a2e65c2dba024b56568a4bf2d1793f33cf6fe",
+        "rev": "6436fe86a0b7aae1c4a2fdb40db7ded92a3755d5",
         "type": "github"
       },
       "original": {
@@ -133,11 +134,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710714957,
-        "narHash": "sha256-eZCxuF58YWgaJMMRrn8oRkwRhxooe5kBS/s2wRVr9PA=",
+        "lastModified": 1711868868,
+        "narHash": "sha256-QpZanlbVu6Gb2K96u3vgu0F2BvZD74+fOsIFWcYEXoY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7b3fca5adcf6c709874a8f2e0c364fe9c58db989",
+        "rev": "30f2ec39519f4f5a8a96af808c439e730c15aeab",
         "type": "github"
       },
       "original": {
@@ -154,11 +155,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710796301,
-        "narHash": "sha256-ZVNH2UeeC7XM3XtkshE+B2fJoYq+xfN3XPw8iOhlr8w=",
+        "lastModified": 1710878994,
+        "narHash": "sha256-DyjgfTvO3AaqQxw0SJXXaqXEY8CzKYDN5A4tWn719gU=",
         "owner": "YMSTNT",
         "repo": "moe",
-        "rev": "b1857aec6a6b1c125dcb833b871a3487b6f314c7",
+        "rev": "3afbe574969abfbb178015424043ae6e4d1e1adb",
         "type": "github"
       },
       "original": {
@@ -176,11 +177,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710774114,
-        "narHash": "sha256-bljS2velgh95iKYUdcgRytDo+tdqlrJdWY+mFUNAZNc=",
+        "lastModified": 1711810902,
+        "narHash": "sha256-NMKpFzJYrY0V5TVS7W2wLybwa2msudA5C502bENDsDU=",
         "owner": "doronbehar",
         "repo": "nix-matlab",
-        "rev": "fda842214aaeb923d53df6352318552144a5f59e",
+        "rev": "a4084cd30461afa6ea7e47dfcbd1432748124e1a",
         "type": "gitlab"
       },
       "original": {
@@ -205,13 +206,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-stylelint-lsp": {
+      "locked": {
+        "lastModified": 1711214309,
+        "narHash": "sha256-QEMivPQDvTVivn8iT3vefAeVDMjdGfGx9Y6NT/f1wY4=",
+        "owner": "gepbird",
+        "repo": "nixpkgs",
+        "rev": "672b6b386f12163a40faf5ba4a749282793dc66c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "ref": "stylelint-lsp-init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1710631334,
-        "narHash": "sha256-rL5LSYd85kplL5othxK5lmAtjyMOBg390sGBTb3LRMM=",
+        "lastModified": 1711703276,
+        "narHash": "sha256-iMUFArF0WCatKK6RzfUJknjem0H9m4KgorO/p3Dopkk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c75037bbf9093a2acb617804ee46320d6d1fea5a",
+        "rev": "d8fe5e6c92d0d190646fb9f1056741a229980089",
         "type": "github"
       },
       "original": {
