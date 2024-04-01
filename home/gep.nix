@@ -2,14 +2,20 @@
 
 {
   imports = with gep-dotfiles.nixosModules; [
+    atuin
+    bottom
+    chatgpt
+    clac
     cli
+    git
     hm
+    lf
     lsp
     nvim
     sdk
     starship
+    zoxide
     zsh
-    chatgpt
   ];
 
   age.secrets = {
