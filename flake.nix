@@ -18,9 +18,15 @@
       inputs.agenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
     };
+    ymstnt-dotfiles = {
+      url = "github:ymstnt/dotfiles/flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.agenix.follows = "agenix";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, home-manager, moe, gep-dotfiles } @ inputs: {
+  outputs = { self, nixpkgs, agenix, home-manager, moe, gep-dotfiles, ymstnt-dotfiles } @ inputs: {
     nixosConfigurations.raspi = nixpkgs.lib.nixosSystem {
       modules = [
         agenix.nixosModules.default
