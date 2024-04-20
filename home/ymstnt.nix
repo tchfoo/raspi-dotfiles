@@ -50,7 +50,7 @@
     };
     programs.starship = {
       settings = {
-        format = lib.mkForce "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[ ](fg:\#F41C5D)";
+        format = lib.mkForce "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[](bg:\#F75787 fg:\#F41C5D)\$cmd_duration[ ](fg:\#F75787)";
 
         username = {
           style_user = lib.mkForce "bg:\#AF083A";
@@ -72,6 +72,10 @@
 
         git_status = {
           style = lib.mkForce "bg:\#F41C5D";
+        };
+
+        cmd_duration = {
+          style = lib.mkForce "bg:\#F75787";
         };
       };
     };

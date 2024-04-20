@@ -19,7 +19,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     ymstnt-dotfiles = {
-      url = "github:ymstnt/dotfiles/flakes";
+      url = "github:ymstnt/dotfiles/main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.agenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
