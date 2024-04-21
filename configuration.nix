@@ -29,6 +29,7 @@
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
     " d    /var/media                     0755 ymstnt shared"
+    " d    /var/media/music               0755 ymstnt shared"
     " d    /var/media/torrents            0755 ymstnt shared"
     " d    /var/media/torrents/Movies     0755 ymstnt shared"
     " d    /var/media/torrents/Shows      0755 ymstnt shared"
@@ -188,6 +189,10 @@
               proxyPass = "http://localhost:3328/";
               recommendedProxySettings = true;
             };
+            "^~ /navidrome/" = {
+              proxyPass = "http://127.0.0.1:4533";
+              recommendedProxySettings = true;
+            };
           };
         };
       in
@@ -225,6 +230,16 @@
       allow-new-accounts = false;
       auto-approve-new-accounts = false;
       enable-webapp = false;
+    };
+  };
+
+  services.navidrome = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      Address = "127.0.0.1";
+      BaseUrl = "/navidrome";
+      MusicFolder = "/var/media/music";
     };
   };
 
