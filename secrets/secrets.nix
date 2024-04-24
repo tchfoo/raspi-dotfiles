@@ -10,7 +10,6 @@ in
   "moe.age".publicKeys = keys;
   "mysql.age".publicKeys = keys;
   "transmission.json.age".publicKeys = keys;
-  "acme-email.age".publicKeys = keys;
   "runner1.age".publicKeys = keys;
   "miniflux.age".publicKeys = keys;
   "c2fmzq.age".publicKeys = keys;

@@ -49,7 +49,6 @@
     moe.file = ./secrets/moe.age;
     mysql.file = ./secrets/mysql.age;
     transmission.file = ./secrets/transmission.json.age;
-    acme-email.file = ./secrets/acme-email.age;
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
     c2fmzq.file = ./secrets/c2fmzq.age;
@@ -245,7 +244,7 @@
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = lib.strings.removeSuffix "\n" (builtins.readFile config.age.secrets.acme-email.path);
+    defaults.email = "ymstnt@mailbox.org";
     certs."gep.bio".email = "gutyina.gergo.2@gmail.com";
   };
 
