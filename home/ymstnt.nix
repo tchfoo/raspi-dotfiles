@@ -32,7 +32,7 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        rebuild = "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake .#raspi --impure)";
+        rebuild = "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake . --impure)";
         update = "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
         dotcd = "cd $HOME/raspi-dotfiles";
         bashreload = "source $HOME/.bashrc";
@@ -41,7 +41,7 @@
     programs.zsh = {
       shellAliases = {
         update = lib.mkForce "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
-        rebuild = lib.mkForce "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake .#raspi --impure)";
+        rebuild = lib.mkForce "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake . --impure)";
         dotcd = lib.mkForce "cd $HOME/raspi-dotfiles";
       };
       sessionVariables = {

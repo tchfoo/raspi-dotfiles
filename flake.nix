@@ -27,13 +27,13 @@
   };
 
   outputs = { self, nixpkgs, agenix, home-manager, moe, gep-dotfiles, ymstnt-dotfiles } @ inputs: {
-    nixosConfigurations.raspi = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
       modules = [
         agenix.nixosModules.default
         home-manager.nixosModule
         moe.nixosModule
         ./configuration.nix
-        ./hosts/raspi/configuration.nix
+        ./hosts/raspi-doboz/configuration.nix
       ];
       specialArgs = inputs;
     };
