@@ -286,6 +286,10 @@
   environment.systemPackages = with pkgs; [
     git
     inotify-tools
+    nh
+    nix-inspect
+    nvd
+    nix-output-monitor
     agenix.packages.${pkgs.system}.default
   ];
 
