@@ -232,6 +232,8 @@
       Address = "127.0.0.1";
       BaseUrl = "/navidrome";
       MusicFolder = "/var/media/music";
+      # TODO: remove when fixed: https://github.com/NixOS/nixpkgs/issues/312749
+      Port = 4533;
     };
   };
 
