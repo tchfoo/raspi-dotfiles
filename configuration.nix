@@ -301,6 +301,8 @@
     "nix-command"
   ];
 
+  nix.settings.trusted-users = [ "gep" "ymstnt" ];
+
   home-manager.useGlobalPkgs = true;
 
   system.stateVersion = "23.05";
