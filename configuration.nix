@@ -93,6 +93,12 @@
     credentialsFile = config.age.secrets.transmission.path;
   };
 
+  services.n8n = {
+    enable = true;
+    openFirewall = true;
+    #webhookUrl = "https://ymstnt.com/n8n/";
+  };
+
   services.github-runners = {
     website = {
       enable = true;
@@ -190,6 +196,10 @@
             };
             "^~ /navidrome/" = {
               proxyPass = "http://127.0.0.1:4533";
+              recommendedProxySettings = true;
+            };
+            "^~ /n8n/" = {
+              proxyPass = "http://127.0.0.1:5678";
               recommendedProxySettings = true;
             };
           };
