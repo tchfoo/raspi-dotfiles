@@ -28,7 +28,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, agenix, home-manager, moe, gep-dotfiles, ymstnt-dotfiles, nixpkgs-n8n } @ inputs: {
+  outputs = inputs: with inputs; {
     nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
       modules = [
         agenix.nixosModules.default
