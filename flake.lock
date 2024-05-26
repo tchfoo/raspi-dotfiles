@@ -314,22 +314,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-n8n": {
-      "locked": {
-        "lastModified": 1716328033,
-        "narHash": "sha256-jVWc2dMSY7dwdahA3yBvc4Gm6GDTLKCnd9xs4ZJ1y9g=",
-        "owner": "gepbird",
-        "repo": "nixpkgs",
-        "rev": "abbb4a7e2795852dca65da51734d142c2d0d98f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gepbird",
-        "ref": "n8n-fix-aarch64",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stylelint-lsp": {
       "locked": {
         "lastModified": 1711214309,
@@ -369,7 +353,6 @@
         "home-manager": "home-manager_2",
         "moe": "moe",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-n8n": "nixpkgs-n8n",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
     },
