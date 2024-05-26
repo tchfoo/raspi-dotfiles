@@ -192,15 +192,15 @@
               }
             '';
             "^~ /miniflux/" = {
-              proxyPass = "http://localhost:3327/miniflux/";
+              proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
               recommendedProxySettings = true;
             };
             "^~ /stingle/" = {
-              proxyPass = "http://localhost:3328/";
+              proxyPass = "http://localhost:${toString config.services.c2fmzq-server.port}/";
               recommendedProxySettings = true;
             };
             "^~ /navidrome/" = {
-              proxyPass = "http://127.0.0.1:4533";
+              proxyPass = "http://127.0.0.1:${toString config.services.navidrome.settings.Port}";
               recommendedProxySettings = true;
             };
           };
