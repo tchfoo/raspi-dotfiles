@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix.url = "github:ryantm/agenix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,6 +30,7 @@
   outputs = inputs: with inputs; {
     nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
       modules = [
+        nixos-hardware.nixosModules.raspberry-pi-4
         agenix.nixosModules.default
         home-manager.nixosModule
         moe.nixosModule
