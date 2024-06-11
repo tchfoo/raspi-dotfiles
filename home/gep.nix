@@ -1,4 +1,4 @@
-{ config, gep-dotfiles, lib, ... }:
+{ config, gep-dotfiles, pkgs, ... }:
 
 {
   imports = with gep-dotfiles.nixosModules; [
@@ -11,7 +11,6 @@
     hm
     lf
     lsp
-    nh
     nix
     nvim
     sdk
@@ -25,7 +24,14 @@
     openai-token.file = ../secrets/openai-token-gep.age;
   };
 
-  programs.nh.flake = lib.mkForce "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
+  hm-gep.home = {
+    sessionVariables = {
+      FLAKE = "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
+    };
+    packages = with pkgs; [
+      nh
+    ];
+  };
 
   users.users.gep = {
     initialPassword = "gep";
