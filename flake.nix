@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # TODO: remove when merged: https://github.com/NixOS/nixpkgs/pull/319310
+    nixpkgs-n8n.url = "github:gepbird/nixpkgs/n8n-pnpm.fetchDeps";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix.url = "github:ryantm/agenix";
     home-manager = {
@@ -36,6 +38,7 @@
         moe.nixosModule
         ./configuration.nix
         ./hosts/raspi-doboz/configuration.nix
+        ./n8n-pnpm.nix
       ];
       specialArgs = inputs;
     };
