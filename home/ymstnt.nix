@@ -32,17 +32,19 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        rebuild = "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake .)";
+        rebuild = "nh os switch ~/raspi-dotfiles -- --impure";
         update = "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
         dotcd = "cd $HOME/raspi-dotfiles";
         bashreload = "source $HOME/.bashrc";
+        nrebuild = "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake . --impure)";
       };
     };
     programs.zsh = {
       shellAliases = {
         update = lib.mkForce "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
-        rebuild = lib.mkForce "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake .)";
+        rebuild = lib.mkForce "nh os switch $HOME/raspi-dotfiles -- --impure";
         dotcd = lib.mkForce "cd $HOME/raspi-dotfiles";
+        nrebuild = lib.mkForce "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake . --impure)";
       };
       sessionVariables = {
         COLORTERM = "truecolor"; # needed for helix themes
