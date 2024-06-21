@@ -51,7 +51,6 @@
     transmission.file = ./secrets/transmission.json.age;
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
-    c2fmzq.file = ./secrets/c2fmzq.age;
   };
 
   services.avahi.enable = true;
@@ -195,10 +194,6 @@
               proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
               recommendedProxySettings = true;
             };
-            "^~ /stingle/" = {
-              proxyPass = "http://localhost:${toString config.services.c2fmzq-server.port}/";
-              recommendedProxySettings = true;
-            };
             "^~ /navidrome/" = {
               proxyPass = "http://127.0.0.1:${toString config.services.navidrome.settings.Port}";
               recommendedProxySettings = true;
@@ -257,17 +252,6 @@
     config = {
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
-    };
-  };
-
-  services.c2fmzq-server = {
-    enable = true;
-    port = 3328;
-    passphraseFile = config.age.secrets.c2fmzq.path;
-    settings = {
-      allow-new-accounts = false;
-      auto-approve-new-accounts = false;
-      enable-webapp = false;
     };
   };
 
