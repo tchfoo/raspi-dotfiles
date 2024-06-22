@@ -33,6 +33,10 @@
     ];
   };
 
+  hm-gep.services.ssh-agent = {
+    enable = true;
+  };
+
   users.users.gep = {
     initialPassword = "gep";
     isNormalUser = true;
