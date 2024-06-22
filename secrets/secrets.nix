@@ -12,6 +12,5 @@ in
   "transmission.json.age".publicKeys = keys;
   "runner1.age".publicKeys = keys;
   "miniflux.age".publicKeys = keys;
-  "c2fmzq.age".publicKeys = keys;
   "openai-token-gep.age".publicKeys = keys;
 }
