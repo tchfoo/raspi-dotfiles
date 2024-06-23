@@ -51,6 +51,7 @@
     transmission.file = ./secrets/transmission.json.age;
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
+    gotosocial.file = ./secrets/gotosocial.age;
   };
 
   services.avahi.enable = true;
@@ -190,6 +191,15 @@
                 fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
               }
             '';
+            "/.well-known/webfinger".extraConfig = ''
+              rewrite ^.*$ https://social.ymstnt.com/.well-known/webfinger permanent;
+            '';
+            "/.well-known/host-meta".extraConfig = ''
+              rewrite ^.*$ https://social.ymstnt.com/.well-known/host-meta permanent;
+            '';
+            "/.well-known/nodeinfo".extraConfig = ''
+              rewrite ^.*$ https://social.ymstnt.com/.well-known/nodeinfo permanent;
+            '';
             "^~ /miniflux/" = {
               proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
               recommendedProxySettings = true;
@@ -243,6 +253,24 @@
             };
           };
         };
+        "social.ymstnt.com" = {
+          enableACME = true;
+          forceSSL = true;
+          locations = {
+            "/" = {
+              proxyPass = "http://127.0.0.1:${toString config.services.gotosocial.settings.port}";
+
+              extraConfig = ''
+                proxy_set_header Host $host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                client_max_body_size 40M;
+              '';
+            };
+          };
+        };
       };
   };
 
@@ -262,6 +290,21 @@
       BaseUrl = "/navidrome";
       MusicFolder = "/var/media/music";
     };
+  };
+
+  services.gotosocial = {
+    enable = true;
+    settings = {
+      bind-address = "127.0.0.1";
+      port = 3333;
+      host = "social.ymstnt.com";
+      account-domain = "ymstnt.com";
+      db-type = "sqlite";
+      db-address = "/var/lib/gotosocial/database.sqlite";
+      protocol = "https";
+      storage-local-base-path = "/var/lib/gotosocial/storage";
+    };
+    environmentFile = config.age.secrets.gotosocial.path;
   };
 
   security.acme = {
@@ -319,6 +362,7 @@
     nix-inspect
     nvd
     nix-output-monitor
+    gotosocial
     agenix.packages.${pkgs.system}.default
   ];
 
