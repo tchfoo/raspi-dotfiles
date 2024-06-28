@@ -14,4 +14,5 @@ in
   "miniflux.age".publicKeys = keys;
   "openai-token-gep.age".publicKeys = keys;
   "gotosocial.age".publicKeys = keys;
+  "ddclient.age".publicKeys = keys;
 }

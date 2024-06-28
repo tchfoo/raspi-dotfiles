@@ -52,6 +52,7 @@
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
     gotosocial.file = ./secrets/gotosocial.age;
+    ddclient.file = ./secrets/ddclient.age;
   };
 
   services.avahi.enable = true;
@@ -328,6 +329,11 @@
       PermitRootLogin = "no";
       X11Forwarding = true;
     };
+  };
+
+  services.ddclient = {
+    enable = true;
+    configFile = config.age.secrets.ddclient.path;
   };
 
   environment.shellInit = "umask 002";
