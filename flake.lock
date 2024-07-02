@@ -565,22 +565,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-n8n": {
-      "locked": {
-        "lastModified": 1719424146,
-        "narHash": "sha256-yYH5536UlG2Mgbq7CZBF1LL+xXSng78e7moXl6HIh68=",
-        "owner": "gepbird",
-        "repo": "nixpkgs",
-        "rev": "a0b3e63b7d8ca7b19c16e07ed61abe07c6f78491",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gepbird",
-        "ref": "n8n-pnpm.fetchDeps",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1719253556,
@@ -621,7 +605,6 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-n8n": "nixpkgs-n8n",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
     },
