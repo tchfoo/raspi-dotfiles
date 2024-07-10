@@ -354,8 +354,6 @@
     group = "shared";
     openFirewall = true;
     settings = {
-      backups-interval-minutes = 240;
-      backups-to-keep = 100;
       status-port = 25571;
     };
     credentialsFile = config.age.secrets.moe.path;
