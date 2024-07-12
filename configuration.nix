@@ -113,7 +113,6 @@
       url = "https://github.com/ymstnt/ymstnt.com";
       tokenFile = config.age.secrets.runner1.path;
       extraPackages = with pkgs; [
-        bun
         nodejs_20
       ];
       nodeRuntimes = [ "node20" ];
