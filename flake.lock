@@ -379,15 +379,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1720609338,
-        "narHash": "sha256-gX+PBl7sS3ou62q5HeuR5nYYsaeN2QOCjA2F3ZKteDw=",
+        "lastModified": 1720786609,
+        "narHash": "sha256-eRCO7gS5bvbyBRVq/qnTX1mZYy4YHuoZLkpiHxUT9TM=",
         "owner": "YMSTNT",
         "repo": "moe",
-        "rev": "43fff11764f920760ce43143f346468aeefe7d0b",
+        "rev": "328fb9f455a1871e2bef129f6c6a0452526c4866",
         "type": "github"
       },
       "original": {
         "owner": "YMSTNT",
+        "ref": "defer-everywhere",
         "repo": "moe",
         "type": "github"
       }
