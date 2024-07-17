@@ -16,6 +16,9 @@
   networking = {
     hostName = "raspi-doboz";
     networkmanager.enable = true;
+    extraHosts = ''
+      127.0.0.1 ymstnt.com
+    '';
   };
 
   services.fail2ban.enable = true;
