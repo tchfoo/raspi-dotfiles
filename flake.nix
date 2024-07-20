@@ -10,8 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     moe = {
-      # https://github.com/YMSTNT/moe/pull/40
-      url = "github:YMSTNT/moe/defer-everywhere";
+      url = "github:YMSTNT/moe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     gep-dotfiles = {
