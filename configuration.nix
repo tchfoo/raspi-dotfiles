@@ -36,6 +36,7 @@
     " d    /var/media                     0755 ymstnt shared"
     " d    /var/media/music               0755 ymstnt shared"
     " d    /var/media/torrents            0755 ymstnt shared"
+    " d    /var/media/incomplete-torrents 0755 ymstnt shared"
     " d    /var/media/torrents/Movies     0755 ymstnt shared"
     " d    /var/media/torrents/Shows      0755 ymstnt shared"
     " d    /var/media/torrents/Anime      0755 ymstnt shared"
@@ -62,18 +63,11 @@
 
   services.avahi.enable = true;
 
-  services.minidlna = {
+  services.plex = {
     enable = true;
     openFirewall = true;
-    settings = {
-      friendly_name = "ymstnt-media";
-      media_dir = [
-        "V,/var/media/media-server"
-        "V,/var/media/torrents"
-      ];
-      log_level = "error";
-      inotify = "yes";
-    };
+    user = "ymstnt";
+    group = "shared";
   };
 
   services.transmission = {
@@ -84,7 +78,7 @@
     openPeerPorts = true;
     settings = {
       download-dir = "/var/media/torrents";
-      incomplete-dir-enabled = false;
+      incomplete-dir = "/var/media/incomplete-torrents";
       rpc-enabled = true;
       rpc-host-whitelist-enabled = false;
       rpc-whitelist-enabled = true;
@@ -345,9 +339,6 @@
     shared = {
       isSystemUser = true;
       group = "shared";
-    };
-    minidlna = {
-      extraGroups = [ "users" "shared" ];
     };
   };
 
