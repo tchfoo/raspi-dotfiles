@@ -356,12 +356,13 @@
 
   environment.systemPackages = with pkgs; [
     git
+    gotosocial
     inotify-tools
+    ncdu
     nh
     nix-inspect
-    nvd
     nix-output-monitor
-    gotosocial
+    nvd
     agenix.packages.${pkgs.system}.default
   ];
 
