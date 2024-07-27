@@ -203,10 +203,6 @@
               proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
               recommendedProxySettings = true;
             };
-            "^~ /navidrome/" = {
-              proxyPass = "http://127.0.0.1:${toString config.services.navidrome.settings.Port}";
-              recommendedProxySettings = true;
-            };
           };
         };
       in
@@ -279,15 +275,6 @@
     config = {
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
-    };
-  };
-
-  services.navidrome = {
-    enable = true;
-    openFirewall = true;
-    settings = {
-      BaseUrl = "/navidrome";
-      MusicFolder = "/var/media/music";
     };
   };
 
