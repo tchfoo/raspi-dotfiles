@@ -21,8 +21,6 @@
     '';
   };
 
-  services.resolved.enable = true;
-
   services.fail2ban.enable = true;
 
   time.timeZone = "Europe/Budapest";
