@@ -25,6 +25,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEVxinYyV/gDhWNeSa0LD6kRKwTWhFxXVS23axGO/2sa ymstnt@andromeda"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKV37wsI1w67r267Tq1J4qGlym2eTdcOBs6jtlUpu3UJ ymstnt@andromeda-win"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKLQKmZDSyZvpXqaqLigdrQEJzrcu4ry0zGydZipliPZ u0_a293@localhost"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICRh9g9ZttYswCxdIE7KYL3xs4JZqhDCUc5BYjDMxFph u0_a355@localhost"
     ];
   };
 
