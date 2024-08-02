@@ -91,17 +91,6 @@
     credentialsFile = config.age.secrets.transmission.path;
   };
 
-  services.n8n = {
-    enable = true;
-    openFirewall = true;
-    webhookUrl = "https://n8n.ymstnt.com/";
-    settings = {
-      generic = {
-        timezone = config.time.timeZone;
-      };
-    };
-  };
-  
   services.github-runners = {
     website = {
       enable = true;
@@ -211,41 +200,6 @@
         };
         # gepDrive needs to send requests to current host, and can't send it to ymstnt.com due to hairpinning
         "localhost" = ymstnt-com;
-        "n8n.ymstnt.com" = {
-          enableACME = true;
-          forceSSL = true;
-          locations = {
-            "/" = {
-              proxyPass = "http://127.0.0.1:${toString config.services.n8n.settings.port}";
-              proxyWebsockets = true;
-              recommendedProxySettings = true;
-
-              extraConfig = ''
-                chunked_transfer_encoding off;
-                proxy_buffering off;
-                proxy_cache off;
-              '';
-            };
-            "~ ^/(webhook|webhook-test)" = {
-              proxyPass = "http://127.0.0.1:${toString config.services.n8n.settings.port}";
-
-              extraConfig = ''
-                chunked_transfer_encoding off;
-                proxy_buffering off;
-                proxy_cache off;
-              '';
-            };
-            "~ ^/rest/oauth2-credential/callback" = {
-              proxyPass = "http://127.0.0.1:${toString config.services.n8n.settings.port}";
-
-              extraConfig = ''
-                chunked_transfer_encoding off;
-                proxy_buffering off;
-                proxy_cache off;
-              '';
-            };
-          };
-        };
         "social.ymstnt.com" = {
           enableACME = true;
           forceSSL = true;
