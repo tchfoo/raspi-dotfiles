@@ -8,7 +8,7 @@
 
   swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 2 * 1024;
+    size = 6 * 1024;
   }];
 
   console.keyMap = "hu";
