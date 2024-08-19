@@ -108,6 +108,16 @@
     };
   };
 
+  services.ntfy-sh = {
+    enable = true;
+    group = "shared";
+    settings = {
+      base-url = "https://ntfy.ymstnt.com";
+      behind-proxy = true;
+      web-root = "disable";
+    };
+  };
+
   services.phpfpm.pools.shared = {
     user = "shared";
     settings = {
@@ -126,7 +136,6 @@
     '';
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
   };
-
 
   services.nginx = {
     enable = true;
@@ -215,6 +224,17 @@
                 proxy_set_header X-Forwarded-Proto $scheme;
                 client_max_body_size 40M;
               '';
+            };
+          };
+        };
+        "ntfy.ymstnt.com" = {
+          enableACME = true;
+          forceSSL = true;
+          locations = {
+            "/" = {
+              proxyPass = "http://${toString config.services.ntfy-sh.settings.listen-http}";
+              recommendedProxySettings = true;
+              proxyWebsockets = true;
             };
           };
         };
