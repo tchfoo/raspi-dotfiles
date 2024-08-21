@@ -138,100 +138,95 @@
     appendConfig = ''
       error_log /var/log/nginx/error.log debug;
     '';
-    virtualHosts =
-      let
-        ymstnt-com = {
-          root = "/var/www";
-          extraConfig = ''
-            error_page 404 /ymstnt.com-generated/404.html;
-            client_max_body_size 50G;
-            fastcgi_read_timeout 24h;
+    virtualHosts = {
+      "ymstnt.com" = {
+        enableACME = true;
+        forceSSL = true;
+        root = "/var/www";
+        extraConfig = ''
+          error_page 404 /ymstnt.com-generated/404.html;
+          client_max_body_size 50G;
+          fastcgi_read_timeout 24h;
+        '';
+        locations = {
+          "~ ^([^.\?]*[^/])$".extraConfig = ''
+            if (-d $document_root/ymstnt.com-generated$uri) {
+              rewrite ^([^.]*[^/])$ $1/ permanent;
+            }
+            if (-d $document_root/ymstnt.com$uri) {
+              rewrite ^([^.]*[^/])$ $1/ permanent;
+            }
+            try_files _ @entry;
           '';
-          locations = {
-            "~ ^([^.\?]*[^/])$".extraConfig = ''
-              if (-d $document_root/ymstnt.com-generated$uri) {
-                rewrite ^([^.]*[^/])$ $1/ permanent;
-              }
-              if (-d $document_root/ymstnt.com$uri) {
-                rewrite ^([^.]*[^/])$ $1/ permanent;
-              }
-              try_files _ @entry;
-            '';
-            "/".extraConfig = ''
-              try_files _ @entry;
-            '';
-            "@entry".extraConfig = ''
-              try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/index.html @ymstnt.com-rewrite;
-            '';
-            "@ymstnt.com-rewrite".extraConfig = ''
-              if (-f $document_root/ymstnt.com$uri) {
-                rewrite ^(.*)$ /ymstnt.com$1 last;
-              }
-              if (-f $document_root/ymstnt.com$uri/index.html) {
-                rewrite ^(.*)$ /ymstnt.com$1/index.html last;
-              }
-              if (-f $document_root/ymstnt.com$uri/index.php) {
-                rewrite ^(.*)$ /ymstnt.com$1/index.php last;
-              }
-            '';
-            "/ymstnt.com/".extraConfig = ''
-              alias /var/www/ymstnt.com/;
-              location ~ \.(php|html)$ {
-                alias /var/www;
-                fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
-              }
-            '';
-            "/.well-known/webfinger".extraConfig = ''
-              rewrite ^.*$ https://social.ymstnt.com/.well-known/webfinger permanent;
-            '';
-            "/.well-known/host-meta".extraConfig = ''
-              rewrite ^.*$ https://social.ymstnt.com/.well-known/host-meta permanent;
-            '';
-            "/.well-known/nodeinfo".extraConfig = ''
-              rewrite ^.*$ https://social.ymstnt.com/.well-known/nodeinfo permanent;
-            '';
-            "^~ /miniflux/" = {
-              proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
-              recommendedProxySettings = true;
-            };
-          };
-        };
-      in
-      {
-        "ymstnt.com" = ymstnt-com // {
-          enableACME = true;
-          forceSSL = true;
-        };
-        "social.ymstnt.com" = {
-          enableACME = true;
-          forceSSL = true;
-          locations = {
-            "/" = {
-              proxyPass = "http://127.0.0.1:${toString config.services.gotosocial.settings.port}";
-
-              extraConfig = ''
-                proxy_set_header Host $host;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection "upgrade";
-                proxy_set_header X-Forwarded-For $remote_addr;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                client_max_body_size 40M;
-              '';
-            };
-          };
-        };
-        "ntfy.ymstnt.com" = {
-          enableACME = true;
-          forceSSL = true;
-          locations = {
-            "/" = {
-              proxyPass = "http://${toString config.services.ntfy-sh.settings.listen-http}";
-              recommendedProxySettings = true;
-              proxyWebsockets = true;
-            };
+          "/".extraConfig = ''
+            try_files _ @entry;
+          '';
+          "@entry".extraConfig = ''
+            try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/index.html @ymstnt.com-rewrite;
+          '';
+          "@ymstnt.com-rewrite".extraConfig = ''
+            if (-f $document_root/ymstnt.com$uri) {
+              rewrite ^(.*)$ /ymstnt.com$1 last;
+            }
+            if (-f $document_root/ymstnt.com$uri/index.html) {
+              rewrite ^(.*)$ /ymstnt.com$1/index.html last;
+            }
+            if (-f $document_root/ymstnt.com$uri/index.php) {
+              rewrite ^(.*)$ /ymstnt.com$1/index.php last;
+            }
+          '';
+          "/ymstnt.com/".extraConfig = ''
+            alias /var/www/ymstnt.com/;
+            location ~ \.(php|html)$ {
+              alias /var/www;
+              fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
+            }
+          '';
+          "/.well-known/webfinger".extraConfig = ''
+            rewrite ^.*$ https://social.ymstnt.com/.well-known/webfinger permanent;
+          '';
+          "/.well-known/host-meta".extraConfig = ''
+            rewrite ^.*$ https://social.ymstnt.com/.well-known/host-meta permanent;
+          '';
+          "/.well-known/nodeinfo".extraConfig = ''
+            rewrite ^.*$ https://social.ymstnt.com/.well-known/nodeinfo permanent;
+          '';
+          "^~ /miniflux/" = {
+            proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
+            recommendedProxySettings = true;
           };
         };
       };
+      "social.ymstnt.com" = {
+        enableACME = true;
+        forceSSL = true;
+        locations = {
+          "/" = {
+            proxyPass = "http://127.0.0.1:${toString config.services.gotosocial.settings.port}";
+
+            extraConfig = ''
+              proxy_set_header Host $host;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              proxy_set_header X-Forwarded-For $remote_addr;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              client_max_body_size 40M;
+            '';
+          };
+        };
+      };
+      "ntfy.ymstnt.com" = {
+        enableACME = true;
+        forceSSL = true;
+        locations = {
+          "/" = {
+            proxyPass = "http://${toString config.services.ntfy-sh.settings.listen-http}";
+            recommendedProxySettings = true;
+            proxyWebsockets = true;
+          };
+        };
+      };
+    };
   };
 
   services.miniflux = {
