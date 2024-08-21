@@ -42,8 +42,6 @@
     " d    /var/moe                       0750 moe    shared"
     " d    /var/www/ymstnt.com            2770 nginx  shared"
     " d    /var/www/ymstnt.com-generated  0775 shared shared"
-    # required by gepDrive due to sending requests to localhost
-    " L    /var/www/localhost            -    -      -      -    /var/www/ymstnt.com"
   ];
 
   age.secrets = {
@@ -204,8 +202,6 @@
           enableACME = true;
           forceSSL = true;
         };
-        # gepDrive needs to send requests to current host, and can't send it to ymstnt.com due to hairpinning
-        "localhost" = ymstnt-com;
         "social.ymstnt.com" = {
           enableACME = true;
           forceSSL = true;
