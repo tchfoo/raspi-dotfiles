@@ -194,11 +194,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1723671695,
-        "narHash": "sha256-0aTZ/GeJLpzAVgXGijAtdZVp6GC/hcVadzEagwJUMuA=",
+        "lastModified": 1724256938,
+        "narHash": "sha256-eX4OZecstRRhuBw/acmyZiPPuLiugDRk2L5ElqjEelI=",
         "owner": "YMSTNT",
         "repo": "moe",
-        "rev": "ef37d3ec9c2e4acc93aa584f911d4d0e3267a30e",
+        "rev": "8c4de6118699e22e0bb09a6b9ab6482ca4c3a668",
         "type": "github"
       },
       "original": {
