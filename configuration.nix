@@ -51,6 +51,7 @@
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
     gotosocial.file = ./secrets/gotosocial.age;
+    borgmatic-raspi.file = ./secrets/borgmatic-raspi.age;
   };
 
   services.avahi.enable = true;
@@ -264,6 +265,73 @@
     package = pkgs.mariadb;
   };
 
+  services.borgmatic = {
+    enable = true;
+    configurations = {
+      "raspi" = {
+        repositories = [
+          {
+            label = "borgmatic";
+            path = "ssh://khrfjql1@khrfjql1.repo.borgbase.com/./repo";
+          }
+        ];
+        postgresql_databases = [
+          {
+            name = "miniflux";
+            username = "postgres";
+            password = "";
+          }
+        ];
+        sqlite_databases = [
+          {
+            name = "moe";
+            path = "/var/moe/storage.db";
+          }
+          {
+            name = "gotosocial";
+            path = "/var/lib/gotosocial/database.sqlite";
+          }
+        ];
+        exclude_patterns = [
+          "*cache*"
+          "*Cache*"
+          "*.tmp"
+          "*.log"
+        ];
+        exclude_if_present = [
+          ".nobackup"
+        ];
+        encryption_passcommand = "${pkgs.coreutils}/bin/cat ${config.age.secrets.borgmatic-raspi.path}";
+        ssh_command = "${pkgs.openssh}/bin/ssh -i /etc/ssh/borg";
+        relocated_repo_access_is_ok = true;
+        compression = "auto,zstd";
+        archive_name_format = "{hostname}-{now:%Y-%m-%d-%H%M%S}";
+        retries = 5;
+        retry_wait = 30;
+        keep_hourly = 1;
+        keep_daily = 7;
+        keep_weekly = 4;
+        keep_monthly = 6;
+        checks = [
+          {
+            name = "repository";
+            frequency = "weekly";
+            only_run_on = [
+              "Sunday"
+            ];
+          }
+          {
+            name = "archives";
+            frequency = "weekly";
+            only_run_on = [
+              "Sunday"
+            ];
+          }
+        ];
+      };
+    };
+  };
+
   services.openssh = {
     enable = true;
     ports = [ 42727 ];
@@ -278,6 +346,10 @@
   environment.shellInit = "umask 002";
   users.users = {
     shared = {
+      isSystemUser = true;
+      group = "shared";
+    };
+    borgmatic = {
       isSystemUser = true;
       group = "shared";
     };
