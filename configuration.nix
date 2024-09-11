@@ -265,6 +265,14 @@
     package = pkgs.mariadb;
   };
 
+  services.postgresql = {
+    enable = true;
+    authentication = ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+  };
+
   services.borgmatic = {
     enable = true;
     configurations = {
