@@ -273,6 +273,12 @@
     '';
   };
 
+  systemd.services.borgmatic = {
+    path = with pkgs; [
+      postgresql
+      sqlite
+    ];
+  };
   services.borgmatic = {
     enable = true;
     configurations = {
