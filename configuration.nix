@@ -182,6 +182,9 @@
               fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
             }
           '';
+          "/\.git".extraConfig = ''
+            deny all;
+          '';
           "/.well-known/webfinger".extraConfig = ''
             rewrite ^.*$ https://social.ymstnt.com/.well-known/webfinger permanent;
           '';
