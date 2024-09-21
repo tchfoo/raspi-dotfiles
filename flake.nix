@@ -29,7 +29,6 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
-      inputs.nixpkgs-nvidia.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
