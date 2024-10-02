@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +62,7 @@
         agenix.nixosModules.default
         home-manager.nixosModule
         moe.nixosModule
+        lix-module.nixosModules.lixFromNixpkgs
         ./configuration.nix
         ./hosts/raspi-doboz/configuration.nix
       ];
