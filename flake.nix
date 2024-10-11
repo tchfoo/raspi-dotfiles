@@ -17,7 +17,8 @@
     };
     moe = {
       url = "github:YMSTNT/moe";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # TODO: uncomment when fixed: https://github.com/NixOS/nixpkgs/issues/347310
+      #inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
     lix-module = {
@@ -34,6 +35,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
+      inputs.lix-module.follows = "lix-module";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
