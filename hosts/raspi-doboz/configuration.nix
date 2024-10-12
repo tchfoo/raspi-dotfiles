@@ -14,8 +14,5 @@
     };
   };
 
-  # TODO: remove after fixed: https://github.com/NixOS/nixpkgs/issues/344963
-  boot.initrd.systemd.tpm2.enable = false;
-
   hardware.enableRedistributableFirmware = true;
 }
