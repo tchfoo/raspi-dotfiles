@@ -396,6 +396,9 @@
     agenix.packages.${pkgs.system}.default
   ];
 
+  # TODO: remove after issue is fixed https://github.com/NixOS/nixpkgs/issues/180175
+  systemd.services.tailscaled.after = ["NetworkManager-wait-online.service"];
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
     "nix-command"
