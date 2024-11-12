@@ -49,7 +49,7 @@
       inputs.nixpkgs-develop.follows = "";
       inputs.nixos-cosmic.follows = "";
       inputs.lix-module.follows = "";
-      inputs.nixpkgs-nvidia.follows = "";
+      inputs.winapps.follows = "";
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
