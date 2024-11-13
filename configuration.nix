@@ -51,6 +51,7 @@
     runner1.file = ./secrets/runner1.age;
     miniflux.file = ./secrets/miniflux.age;
     gotosocial.file = ./secrets/gotosocial.age;
+    vikunja.file = ./secrets/vikunja.age;
     borgmatic-raspi.file = ./secrets/borgmatic-raspi.age;
   };
 
@@ -218,6 +219,19 @@
           };
         };
       };
+      "tasks.ymstnt.com" = {
+        enableACME = true;
+        forceSSL = true;
+        locations = {
+          "/" = {
+            proxyPass = "${config.services.vikunja.frontendScheme}://${config.services.vikunja.frontendHostname}:${toString config.services.vikunja.port}";
+            recommendedProxySettings = true;
+            extraConfig = ''
+              client_max_body_size 20M; # Change accordingly to Vikunja's upload size
+            '';
+          };
+        };
+      };
       "ntfy.ymstnt.com" = {
         enableACME = true;
         forceSSL = true;
@@ -239,6 +253,33 @@
       PORT = "3327";
       BASE_URL = "http://localhost/miniflux/";
     };
+  };
+
+  services.vikunja = {
+    enable = true;
+    frontendScheme = "http";
+    frontendHostname = "127.0.0.1";
+    settings = {
+      service = {
+        timezone = "Europe/Budapest";
+        publicurl = "https://tasks.ymstnt.com";
+      };
+      migration = {
+        trello = {
+          enable = true;
+        };
+      };
+      mailer = {
+        enabled = true;
+        host = "smtp.eu.mailgun.org";
+        port = 465;
+        authtype = "login";
+        forcessl = true;
+      };
+    };
+    environmentFiles = [
+      config.age.secrets.vikunja.path
+    ]; 
   };
 
   services.gotosocial = {
@@ -308,6 +349,13 @@
             name = "gotosocial";
             path = "/var/lib/gotosocial/database.sqlite";
           }
+          {
+            name = "vikunja";
+            path = "/var/lib/vikunja/vikunja.db";
+          }
+        ];
+        source_directories = [
+          "/var/lib/vikunja/files"
         ];
         exclude_patterns = [
           "*cache*"
