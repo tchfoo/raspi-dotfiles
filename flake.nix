@@ -49,6 +49,7 @@
       inputs.nix-matlab.follows = "";
       inputs.nixpkgs-master.follows = "";
       inputs.nixpkgs-develop.follows = "";
+      inputs.nixpkgs-stable.follows = "";
       inputs.nixos-cosmic.follows = "";
       inputs.lix-module.follows = "";
       inputs.winapps.follows = "";
