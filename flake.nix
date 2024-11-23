@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # TODO: remove when fixed: https://github.com/NixOS/nixpkgs/issues/353401
-    nixpkgs-termscp.url = "github:gepbird/nixpkgs/termscp-fix-build";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";
@@ -65,7 +63,6 @@
   outputs = inputs: with inputs; {
     nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
       modules = [
-        ./termscp-patch.nix
         nixos-hardware.nixosModules.raspberry-pi-4
         agenix.nixosModules.default
         home-manager.nixosModule
