@@ -250,13 +250,13 @@
       "locked": {
         "lastModified": 1731525898,
         "narHash": "sha256-YDVriWKrxtWu9D/jkKIjKxe5eiRdPyFKk7oOOHEFW0c=",
-        "owner": "YMSTNT",
+        "owner": "ymstnt-com",
         "repo": "moe",
         "rev": "5bd49bf9a8f7febde89277c1f72d4b66c16c5c3a",
         "type": "github"
       },
       "original": {
-        "owner": "YMSTNT",
+        "owner": "ymstnt-com",
         "repo": "moe",
         "type": "github"
       }

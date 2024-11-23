@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     moe = {
-      url = "github:YMSTNT/moe";
+      url = "github:ymstnt-com/moe";
       # TODO: uncomment when fixed: https://github.com/NixOS/nixpkgs/issues/347310
       #inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
