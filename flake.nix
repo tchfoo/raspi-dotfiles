@@ -31,6 +31,7 @@
     gep-dotfiles = {
       url = "github:gepbird/dotfiles/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-nvidia.follows = "";
       inputs.agenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
