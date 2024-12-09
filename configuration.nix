@@ -380,14 +380,14 @@
         checks = [
           {
             name = "repository";
-            frequency = "weekly";
+            frequency = "1 week";
             only_run_on = [
               "Sunday"
             ];
           }
           {
             name = "archives";
-            frequency = "weekly";
+            frequency = "1 week";
             only_run_on = [
               "Sunday"
             ];
