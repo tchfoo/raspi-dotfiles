@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # TODO: remove after merged: https://github.com/NixOS/nixpkgs/pull/362757
-    nixpkgs-lurk.url = "github:gepbird/nixpkgs/lurk-aarch64";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";
@@ -71,7 +69,6 @@
         lix-module.nixosModules.lixFromNixpkgs
         ./configuration.nix
         ./hosts/raspi-doboz/configuration.nix
-        ./lurk-patch.nix
       ];
       specialArgs = inputs;
     };
