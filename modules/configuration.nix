@@ -52,13 +52,6 @@
 
   services.avahi.enable = true;
 
-  services.plex = {
-    enable = true;
-    openFirewall = true;
-    user = "ymstnt";
-    group = "shared";
-  };
-
   services.transmission = {
     user = "ymstnt";
     group = "shared";
