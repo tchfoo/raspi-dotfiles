@@ -23,13 +23,11 @@
 
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
-    " d    /var/moe                       0750 moe    shared"
     " d    /var/www/ymstnt.com            2770 nginx  shared"
     " d    /var/www/ymstnt.com-generated  0775 shared shared"
   ];
 
   age.secrets = {
-    moe.file = ../secrets/moe.age;
     mysql.file = ../secrets/mysql.age;
     runner1.file = ../secrets/runner1.age;
     gotosocial.file = ../secrets/gotosocial.age;
@@ -274,10 +272,6 @@
         ];
         sqlite_databases = [
           {
-            name = "moe";
-            path = "/var/moe/storage.db";
-          }
-          {
             name = "gotosocial";
             path = "/var/lib/gotosocial/database.sqlite";
           }
@@ -353,16 +347,6 @@
   };
 
   users.groups.shared = { };
-
-  moe = {
-    enable = true;
-    group = "shared";
-    openFirewall = true;
-    settings = {
-      status-port = 25571;
-    };
-    credentialsFile = config.age.secrets.moe.path;
-  };
 
   environment.systemPackages = with pkgs; [
     git
