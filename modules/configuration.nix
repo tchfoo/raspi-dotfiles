@@ -13,13 +13,7 @@
     networkmanager.enable = true;
   };
 
-  services.fail2ban.enable = true;
-
   time.timeZone = "Europe/Budapest";
-
-  services.tailscale = {
-    enable = true;
-  };
 
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
