@@ -30,7 +30,6 @@
   age.secrets = {
     mysql.file = ../secrets/mysql.age;
     runner1.file = ../secrets/runner1.age;
-    gotosocial.file = ../secrets/gotosocial.age;
     vikunja.file = ../secrets/vikunja.age;
     borgmatic-raspi.file = ../secrets/borgmatic-raspi.age;
   };
@@ -136,33 +135,6 @@
           "/\.git".extraConfig = ''
             deny all;
           '';
-          "/.well-known/webfinger".extraConfig = ''
-            rewrite ^.*$ https://social.ymstnt.com/.well-known/webfinger permanent;
-          '';
-          "/.well-known/host-meta".extraConfig = ''
-            rewrite ^.*$ https://social.ymstnt.com/.well-known/host-meta permanent;
-          '';
-          "/.well-known/nodeinfo".extraConfig = ''
-            rewrite ^.*$ https://social.ymstnt.com/.well-known/nodeinfo permanent;
-          '';
-        };
-      };
-      "social.ymstnt.com" = {
-        enableACME = true;
-        forceSSL = true;
-        locations = {
-          "/" = {
-            proxyPass = "http://127.0.0.1:${toString config.services.gotosocial.settings.port}";
-
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection "upgrade";
-              proxy_set_header X-Forwarded-For $remote_addr;
-              proxy_set_header X-Forwarded-Proto $scheme;
-              client_max_body_size 40M;
-            '';
-          };
         };
       };
       "tasks.ymstnt.com" = {
@@ -219,21 +191,6 @@
     ]; 
   };
 
-  services.gotosocial = {
-    enable = true;
-    settings = {
-      bind-address = "127.0.0.1";
-      port = 3333;
-      host = "social.ymstnt.com";
-      account-domain = "ymstnt.com";
-      db-type = "sqlite";
-      db-address = "/var/lib/gotosocial/database.sqlite";
-      protocol = "https";
-      storage-local-base-path = "/var/lib/gotosocial/storage";
-    };
-    environmentFile = config.age.secrets.gotosocial.path;
-  };
-
   security.acme = {
     acceptTerms = true;
     defaults.email = "ymstnt@mailbox.org";
@@ -271,10 +228,6 @@
           }
         ];
         sqlite_databases = [
-          {
-            name = "gotosocial";
-            path = "/var/lib/gotosocial/database.sqlite";
-          }
           {
             name = "vikunja";
             path = "/var/lib/vikunja/vikunja.db";
@@ -350,7 +303,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gotosocial
     inotify-tools
     ncdu
     nh
