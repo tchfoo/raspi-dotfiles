@@ -30,7 +30,6 @@
   age.secrets = {
     mysql.file = ../secrets/mysql.age;
     runner1.file = ../secrets/runner1.age;
-    vikunja.file = ../secrets/vikunja.age;
     borgmatic-raspi.file = ../secrets/borgmatic-raspi.age;
   };
 
@@ -137,19 +136,6 @@
           '';
         };
       };
-      "tasks.ymstnt.com" = {
-        enableACME = true;
-        forceSSL = true;
-        locations = {
-          "/" = {
-            proxyPass = "${config.services.vikunja.frontendScheme}://${config.services.vikunja.frontendHostname}:${toString config.services.vikunja.port}";
-            recommendedProxySettings = true;
-            extraConfig = ''
-              client_max_body_size 20M; # Change accordingly to Vikunja's upload size
-            '';
-          };
-        };
-      };
       "ntfy.ymstnt.com" = {
         enableACME = true;
         forceSSL = true;
@@ -162,33 +148,6 @@
         };
       };
     };
-  };
-
-  services.vikunja = {
-    enable = true;
-    frontendScheme = "http";
-    frontendHostname = "127.0.0.1";
-    settings = {
-      service = {
-        timezone = "Europe/Budapest";
-        publicurl = "https://tasks.ymstnt.com";
-      };
-      migration = {
-        trello = {
-          enable = true;
-        };
-      };
-      mailer = {
-        enabled = true;
-        host = "smtp.eu.mailgun.org";
-        port = 465;
-        authtype = "login";
-        forcessl = true;
-      };
-    };
-    environmentFiles = [
-      config.age.secrets.vikunja.path
-    ]; 
   };
 
   security.acme = {
@@ -226,15 +185,6 @@
             label = "borgmatic";
             path = "ssh://khrfjql1@khrfjql1.repo.borgbase.com/./repo";
           }
-        ];
-        sqlite_databases = [
-          {
-            name = "vikunja";
-            path = "/var/lib/vikunja/vikunja.db";
-          }
-        ];
-        source_directories = [
-          "/var/lib/vikunja/files"
         ];
         exclude_patterns = [
           "*cache*"
