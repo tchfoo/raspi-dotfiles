@@ -32,7 +32,6 @@
     moe.file = ../secrets/moe.age;
     mysql.file = ../secrets/mysql.age;
     runner1.file = ../secrets/runner1.age;
-    miniflux.file = ../secrets/miniflux.age;
     gotosocial.file = ../secrets/gotosocial.age;
     vikunja.file = ../secrets/vikunja.age;
     borgmatic-raspi.file = ../secrets/borgmatic-raspi.age;
@@ -148,10 +147,6 @@
           "/.well-known/nodeinfo".extraConfig = ''
             rewrite ^.*$ https://social.ymstnt.com/.well-known/nodeinfo permanent;
           '';
-          "^~ /miniflux/" = {
-            proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
-            recommendedProxySettings = true;
-          };
         };
       };
       "social.ymstnt.com" = {
@@ -196,15 +191,6 @@
           };
         };
       };
-    };
-  };
-
-  services.miniflux = {
-    enable = true;
-    adminCredentialsFile = config.age.secrets.miniflux.path;
-    config = {
-      PORT = "3327";
-      BASE_URL = "http://localhost/miniflux/";
     };
   };
 
@@ -284,13 +270,6 @@
           {
             label = "borgmatic";
             path = "ssh://khrfjql1@khrfjql1.repo.borgbase.com/./repo";
-          }
-        ];
-        postgresql_databases = [
-          {
-            name = "miniflux";
-            username = "postgres";
-            password = "";
           }
         ];
         sqlite_databases = [
