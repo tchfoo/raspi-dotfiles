@@ -28,7 +28,6 @@
   ];
 
   age.secrets = {
-    mysql.file = ../secrets/mysql.age;
     runner1.file = ../secrets/runner1.age;
   };
 
@@ -134,19 +133,6 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
-
-  services.postgresql = {
-    enable = true;
-    authentication = ''
-      #type database  DBuser  auth-method
-      local all       all     trust
-    '';
-  };
 
   services.openssh = {
     enable = true;
