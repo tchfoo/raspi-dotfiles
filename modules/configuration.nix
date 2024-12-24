@@ -1,11 +1,6 @@
 { lib, config, pkgs, agenix, ... }:
 
 {
-  imports = [
-    ./home/gep.nix
-    ./home/ymstnt.nix
-  ];
-
   swapDevices = [{
     device = "/var/lib/swapfile";
     size = 6 * 1024;
@@ -45,14 +40,14 @@
   ];
 
   age.secrets = {
-    moe.file = ./secrets/moe.age;
-    mysql.file = ./secrets/mysql.age;
-    transmission.file = ./secrets/transmission.json.age;
-    runner1.file = ./secrets/runner1.age;
-    miniflux.file = ./secrets/miniflux.age;
-    gotosocial.file = ./secrets/gotosocial.age;
-    vikunja.file = ./secrets/vikunja.age;
-    borgmatic-raspi.file = ./secrets/borgmatic-raspi.age;
+    moe.file = ../secrets/moe.age;
+    mysql.file = ../secrets/mysql.age;
+    transmission.file = ../secrets/transmission.json.age;
+    runner1.file = ../secrets/runner1.age;
+    miniflux.file = ../secrets/miniflux.age;
+    gotosocial.file = ../secrets/gotosocial.age;
+    vikunja.file = ../secrets/vikunja.age;
+    borgmatic-raspi.file = ../secrets/borgmatic-raspi.age;
   };
 
   services.avahi.enable = true;
