@@ -25,8 +25,6 @@
     runner1.file = ../secrets/runner1.age;
   };
 
-  services.avahi.enable = true;
-
   services.github-runners = {
     website = {
       enable = true;
