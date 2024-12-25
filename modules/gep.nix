@@ -1,4 +1,9 @@
-{ config, gep-dotfiles, pkgs, ... }:
+{
+  config,
+  gep-dotfiles,
+  pkgs,
+  ...
+}:
 
 {
   imports = with gep-dotfiles.nixosModules; [

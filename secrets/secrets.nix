@@ -4,7 +4,11 @@ let
 
   raspi-doboz = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3vrYOUtZIZhwoYihWYUzglxs7w8GGq647OX9vNcPRP";
 
-  keys = [ ymstnt gep raspi-doboz ];
+  keys = [
+    ymstnt
+    gep
+    raspi-doboz
+  ];
 in
 {
   "moe.age".publicKeys = keys;

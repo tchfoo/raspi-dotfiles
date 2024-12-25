@@ -1,4 +1,10 @@
-{ config, lib, ymstnt-dotfiles, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ymstnt-dotfiles,
+  ...
+}:
 
 {
   imports = with ymstnt-dotfiles.nixosModules; [
@@ -10,7 +16,7 @@
     zsh
     git
   ];
-  
+
   users.users.ymstnt = {
     initialPassword = "ymstnt";
     isNormalUser = true;
@@ -31,6 +37,15 @@
   };
 
   home-manager.users.ymstnt = {
+    home.packages = with pkgs; [
+      git
+      inotify-tools
+      ncdu
+      nh
+      nix-inspect
+      nix-output-monitor
+      nvd
+    ];
     programs.bash = {
       enable = true;
       shellAliases = {
@@ -83,7 +98,7 @@
         };
       };
     };
-    
+
     home.stateVersion = config.system.stateVersion;
   };
 }

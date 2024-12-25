@@ -1,9 +1,13 @@
 { lib, pkgs, ... }:
 
+let
+  modules = import ../../modules;
+in
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports =
+    [ ./hardware-configuration.nix ]
+    ++ modules.allModulesExcept [
+    ];
 
   boot = {
     # rpi kernel set from nixos-hardware fails with EFI stub error on boot
@@ -16,6 +20,13 @@
       generic-extlinux-compatible.enable = lib.mkForce false;
     };
   };
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 6 * 1024;
+    }
+  ];
 
   system.stateVersion = "24.05";
 }
