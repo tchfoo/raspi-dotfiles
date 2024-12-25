@@ -136,14 +136,7 @@
 
   users.groups.shared = { };
 
-  environment.systemPackages = with pkgs; [
-    git
-    inotify-tools
-    ncdu
-    nh
-    nix-inspect
-    nix-output-monitor
-    nvd
+  environment.systemPackages = [
     agenix.packages.${pkgs.system}.default
   ];
 

@@ -1,4 +1,4 @@
-{ config, lib, ymstnt-dotfiles, ... }:
+{ config, pkgs, lib, ymstnt-dotfiles, ... }:
 
 {
   imports = with ymstnt-dotfiles.nixosModules; [
@@ -31,6 +31,15 @@
   };
 
   home-manager.users.ymstnt = {
+    home.packages = with pkgs; [
+      git
+      inotify-tools
+      ncdu
+      nh
+      nix-inspect
+      nix-output-monitor
+      nvd
+    ];
     programs.bash = {
       enable = true;
       shellAliases = {
