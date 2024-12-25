@@ -124,7 +124,7 @@ sudo cp -p /mnt/etc/ssh/host_host* /etc/ssh/
 #### Rebuild and reboot
 
 > [!WARNING]
-> In order to not run out of memory, disable heavy builds first: commenting out imports to `./home/gep.nix` and `./home/ymstnt.nix` in `./configuration.nix` should be enough (or temporarily add some swap)
+> In order to not run out of memory, disable heavy builds first: ignoring the modules `gep` and `ymstnt` in `./hosts/raspi-doboz/configuration.nix` should be enough (or temporarily add more swap)
 
 > [!NOTE]
 > Use `boot` rather than `switch` for the first time to avoid issues like getting disconnected from ssh due to enabling `NetworkManager`.
