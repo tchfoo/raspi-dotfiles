@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ymstnt-dotfiles, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ymstnt-dotfiles,
+  ...
+}:
 
 {
   imports = with ymstnt-dotfiles.nixosModules; [
@@ -10,7 +16,7 @@
     zsh
     git
   ];
-  
+
   users.users.ymstnt = {
     initialPassword = "ymstnt";
     isNormalUser = true;
@@ -92,7 +98,7 @@
         };
       };
     };
-    
+
     home.stateVersion = config.system.stateVersion;
   };
 }

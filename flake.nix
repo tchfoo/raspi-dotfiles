@@ -60,17 +60,18 @@
     };
   };
 
-  outputs = inputs: with inputs; {
-    nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
-      modules = [
-        nixos-hardware.nixosModules.raspberry-pi-4
-        agenix.nixosModules.default
-        home-manager.nixosModule
-        moe.nixosModule
-        lix-module.nixosModules.lixFromNixpkgs
-        ./hosts/raspi-doboz/configuration.nix
-      ];
-      specialArgs = inputs;
+  outputs =
+    inputs: with inputs; {
+      nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
+        modules = [
+          nixos-hardware.nixosModules.raspberry-pi-4
+          agenix.nixosModules.default
+          home-manager.nixosModule
+          moe.nixosModule
+          lix-module.nixosModules.lixFromNixpkgs
+          ./hosts/raspi-doboz/configuration.nix
+        ];
+        specialArgs = inputs;
+      };
     };
-  };
 }
