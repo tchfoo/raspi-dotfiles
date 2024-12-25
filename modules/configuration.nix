@@ -28,13 +28,4 @@
   # TODO: remove after issue is fixed https://github.com/NixOS/nixpkgs/issues/180175
   #systemd.services.tailscaled.after = ["NetworkManager-wait-online.service"];
   systemd.services.NetworkManager-wait-online.enable = false;
-
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-  ];
-
-  nix.settings.trusted-users = [ "gep" "ymstnt" ];
-
-  home-manager.useGlobalPkgs = true;
 }
