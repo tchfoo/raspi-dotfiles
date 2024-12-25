@@ -250,11 +250,11 @@
         "nuget-packageslock2nix": "nuget-packageslock2nix"
       },
       "locked": {
-        "lastModified": 1734964894,
-        "narHash": "sha256-HVKyMbvCL70plcN5bnYE8/KcP2V8HKGtMIpe28mJzjo=",
+        "lastModified": 1735138570,
+        "narHash": "sha256-iMlnxTDmFolbeby+m4tgLxVmZpkYPnI9rqHQ+NfjDGk=",
         "owner": "ymstnt-com",
         "repo": "moe",
-        "rev": "6fb3bb026d373bad1bda79c688d283d37538ff52",
+        "rev": "d5009441ba0ae50b23c10437524255727f5b2ac4",
         "type": "github"
       },
       "original": {
