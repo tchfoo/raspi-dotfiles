@@ -1,11 +1,6 @@
 { ... }:
 
 {
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 6 * 1024;
-  }];
-
   console.keyMap = "hu";
 
   networking = {
