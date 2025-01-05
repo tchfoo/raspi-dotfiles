@@ -345,6 +345,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-rauthy": {
+      "locked": {
+        "lastModified": 1736071221,
+        "narHash": "sha256-iXXY7AFLno7KkLHutCyJjTnkAy9SXJ1qrSMXKZislJw=",
+        "owner": "gepbird",
+        "repo": "nixpkgs",
+        "rev": "d526fa7945cdc9f15160349cf0159a080ac16dad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "ref": "rauthy-init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1737062831,
@@ -410,6 +426,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-rauthy": "nixpkgs-rauthy",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
