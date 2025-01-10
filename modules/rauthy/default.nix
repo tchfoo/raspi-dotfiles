@@ -15,6 +15,14 @@
         rauthy
         ;
     })
+    (final: prev: {
+      rauthy = prev.rauthy.overrideAttrs (o: {
+        patches = (o.patches or []) ++ [
+          # optimizations for faster local build
+          ./rauthy-optimizations.diff
+        ];
+      });
+    })
   ];
 
   services.rauthy = {
