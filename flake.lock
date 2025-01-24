@@ -347,11 +347,11 @@
     },
     "nixpkgs-rauthy": {
       "locked": {
-        "lastModified": 1736071221,
-        "narHash": "sha256-iXXY7AFLno7KkLHutCyJjTnkAy9SXJ1qrSMXKZislJw=",
+        "lastModified": 1737563121,
+        "narHash": "sha256-pZgFY8fdDAZhELrX2J0myI1LkG2adHbXzAy2tKJIabk=",
         "owner": "gepbird",
         "repo": "nixpkgs",
-        "rev": "d526fa7945cdc9f15160349cf0159a080ac16dad",
+        "rev": "a6dbb34285c976fc185387bfde01c9c566ed830b",
         "type": "github"
       },
       "original": {
