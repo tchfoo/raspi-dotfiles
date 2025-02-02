@@ -26,7 +26,7 @@
   };
 
   services.github-runners = {
-    website = {
+    website = rec {
       enable = true;
       replace = true;
       user = "shared";
@@ -35,9 +35,12 @@
       extraPackages = with pkgs; [
         nodejs_20
       ];
+      extraEnvironment = {
+        OUT_DIR = "/var/www/ymstnt.com-generated";
+      };
       nodeRuntimes = [ "node20" ];
       serviceOverrides = {
-        ReadWritePaths = [ "/var/www/ymstnt.com-generated" ];
+        ReadWritePaths = [ extraEnvironment.OUT_DIR ];
       };
     };
   };
