@@ -25,4 +25,16 @@
       };
     };
   };
+
+  services.borgmatic.configurations.raspi = {
+    sqlite_databases = [
+      {
+        name = "pocketid";
+        path = "/var/lib/pocketid/data/pocket-id.db";
+      }
+    ];
+    source_directories = [
+      "/var/lib/pocketid"
+    ];
+  };
 }
