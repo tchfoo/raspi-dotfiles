@@ -12,6 +12,10 @@
       db-address = "/var/lib/gotosocial/database.sqlite";
       protocol = "https";
       storage-local-base-path = "/var/lib/gotosocial/storage";
+      oidc-enabled = true;
+      oidc-idp-name = "Pocket ID";
+      oidc-issuer = "https://auth.ymstnt.com";
+      oidc-link-existing = true;
     };
     environmentFile = config.age.secrets.gotosocial.path;
   };
