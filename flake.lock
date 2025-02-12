@@ -30,7 +30,6 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "gep-dotfiles",
           "nixpkgs"
         ]
       },
@@ -89,19 +88,27 @@
           "agenix"
         ],
         "dwm-gep": [],
-        "flake-parts": "flake-parts",
+        "flake-parts": [
+          "flake-parts"
+        ],
         "flake-utils": [
           "flake-utils"
         ],
-        "git-hooks": "git-hooks",
-        "hercules-ci-effects": "hercules-ci-effects",
+        "git-hooks": [
+          "git-hooks"
+        ],
+        "hercules-ci-effects": [
+          "hercules-ci-effects"
+        ],
         "home-manager": [
           "home-manager"
         ],
         "lix-module": [
           "lix-module"
         ],
-        "neovim-nightly": "neovim-nightly",
+        "neovim-nightly": [
+          "neovim-nightly"
+        ],
         "nix-matlab": [],
         "nixpkgs": [
           "nixpkgs"
@@ -128,14 +135,9 @@
     },
     "git-hooks": {
       "inputs": {
-        "flake-compat": [
-          "gep-dotfiles"
-        ],
-        "gitignore": [
-          "gep-dotfiles"
-        ],
+        "flake-compat": [],
+        "gitignore": [],
         "nixpkgs": [
-          "gep-dotfiles",
           "nixpkgs"
         ]
       },
@@ -156,11 +158,9 @@
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": [
-          "gep-dotfiles",
           "flake-parts"
         ],
         "nixpkgs": [
-          "gep-dotfiles",
           "nixpkgs"
         ]
       },
@@ -259,36 +259,28 @@
     },
     "neovim-nightly": {
       "inputs": {
-        "flake-compat": [
-          "gep-dotfiles"
-        ],
+        "flake-compat": [],
         "flake-parts": [
-          "gep-dotfiles",
           "flake-parts"
         ],
         "git-hooks": [
-          "gep-dotfiles",
           "git-hooks"
         ],
         "hercules-ci-effects": [
-          "gep-dotfiles",
           "hercules-ci-effects"
         ],
         "neovim-src": "neovim-src",
         "nixpkgs": [
-          "gep-dotfiles",
-          "nixpkgs"
+          "nixpkgs-2025-02-04"
         ],
-        "treefmt-nix": [
-          "gep-dotfiles"
-        ]
+        "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1738887043,
-        "narHash": "sha256-MasPSFyIqXt5ldu1Evn1m9HzJCuKUccDd8o8Fm9V6n0=",
+        "lastModified": 1739348326,
+        "narHash": "sha256-T+LpQgJA1mVRcCkMO2kiQwTV+MdM9Wh1XvFeYuvlxT0=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "3a08ffdd6e9e39177d8d1ef3182f89a27b03a5b5",
+        "rev": "db04408ca625de944a70ab0d69099e2f0af74f5e",
         "type": "github"
       },
       "original": {
@@ -300,11 +292,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1738883144,
-        "narHash": "sha256-QI4UWbHufbMjYdTP2rMbW/zNPthD2VCKGlPsLHdMlUo=",
+        "lastModified": 1739317748,
+        "narHash": "sha256-WP2zIGrexV6P2Q1qR9q04GvLOO7jSAk/A/2v9vDI0S0=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "5371659524089b425887af1ce14bf9a374f0f234",
+        "rev": "00d75a24cfb74e8f35d73ebb0e59a7b9248950c1",
         "type": "github"
       },
       "original": {
@@ -342,6 +334,22 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "7402aa90cff52a03f14e680346fa4038a1e17e93",
+        "type": "github"
+      }
+    },
+    "nixpkgs-2025-02-04": {
+      "locked": {
+        "lastModified": 1738680400,
+        "narHash": "sha256-ooLh+XW8jfa+91F1nhf9OF7qhuA/y1ChLx6lXDNeY5U=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "799ba5bffed04ced7067a91798353d360788b30d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "799ba5bffed04ced7067a91798353d360788b30d",
         "type": "github"
       }
     },
@@ -403,13 +411,18 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
         "gep-dotfiles": "gep-dotfiles",
+        "git-hooks": "git-hooks",
+        "hercules-ci-effects": "hercules-ci-effects",
         "home-manager": "home-manager",
         "lix-module": "lix-module",
         "moe": "moe",
+        "neovim-nightly": "neovim-nightly",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-2025-02-04": "nixpkgs-2025-02-04",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }

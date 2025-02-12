@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-2025-02-04.url = "github:NixOS/nixpkgs/799ba5bffed04ced7067a91798353d360788b30d";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";
@@ -36,6 +37,11 @@
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
+      # TODO: remove after propagated: https://github.com/nix-community/neovim-nightly-overlay/issues/788
+      inputs.neovim-nightly.follows = "neovim-nightly";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
+      inputs.git-hooks.follows = "git-hooks";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
@@ -56,6 +62,30 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
+    };
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-2025-02-04";
+      inputs.flake-compat.follows = "";
+      inputs.treefmt-nix.follows = "";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
+      inputs.git-hooks.follows = "git-hooks";
+    };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    hercules-ci-effects = {
+      url = "github:hercules-ci/hercules-ci-effects";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "";
+      inputs.gitignore.follows = "";
     };
   };
 
