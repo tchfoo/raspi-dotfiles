@@ -31,15 +31,6 @@ in
           };
         };
       };
-
-      # not yet reported
-      python311 = prev.python311.override {
-        packageOverrides = pyfinal: pyprev: {
-          python-lsp-server = pyprev.python-lsp-server.overrideAttrs {
-            doInstallCheck = false;
-          };
-        };
-      };
     })
   ];
 }

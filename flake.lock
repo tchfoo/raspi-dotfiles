@@ -463,11 +463,11 @@
         "nur": []
       },
       "locked": {
-        "lastModified": 1739280708,
-        "narHash": "sha256-e5s3vuI7XDLEDQuZ9M/w7MmigqGExrw7vYudPX0YXyk=",
+        "lastModified": 1739370430,
+        "narHash": "sha256-yuP1CYpzb3zPmn4NyeniezRZ4wxB4j3ek3C8ZI4e5tU=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "3dd7612ed2a245003c402ff12f22d0465a2ee108",
+        "rev": "db07f2a203d38ac94e071588a34001f71fbe2895",
         "type": "github"
       },
       "original": {
