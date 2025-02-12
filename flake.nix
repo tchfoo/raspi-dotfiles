@@ -48,7 +48,8 @@
       inputs.nixpkgs-stable.follows = "";
       inputs.nixos-cosmic.follows = "";
       inputs.lix-module.follows = "";
-      inputs.winapps.follows = "";
+      inputs.cosmic-manager.follows = "";
+      inputs.nur.follows = "";
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
