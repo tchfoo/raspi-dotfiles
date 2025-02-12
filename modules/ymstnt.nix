@@ -40,6 +40,7 @@
     home.packages = with pkgs; [
       git
       inotify-tools
+      lazydocker
       ncdu
       nh
       nix-inspect
