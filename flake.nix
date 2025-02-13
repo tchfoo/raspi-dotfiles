@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-2025-02-04.url = "github:NixOS/nixpkgs/799ba5bffed04ced7067a91798353d360788b30d";
+    nixpkgs-pocket-id.url = "github:gepbird/nixpkgs/pocket-id-init";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";

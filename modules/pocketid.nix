@@ -1,6 +1,24 @@
-{ ... }:
+{ nixpkgs-pocket-id, pkgs, ... }:
 
 {
+  imports = [
+    "${nixpkgs-pocket-id}/nixos/modules/services/security/pocket-id.nix"
+  ];
+  nixpkgs.overlays = [
+    (final: prev: {
+      inherit
+        (import nixpkgs-pocket-id {
+          inherit (pkgs) system;
+        })
+        pocket-id
+        ;
+    })
+  ];
+
+  services.pocket-id = {
+    enable = true;
+  };
+
   services.nginx.virtualHosts."auth.ymstnt.com" = {
     enableACME = true;
     forceSSL = true;
