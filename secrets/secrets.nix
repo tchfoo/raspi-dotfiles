@@ -20,4 +20,5 @@ in
   "gotosocial.age".publicKeys = keys;
   "vikunja.age".publicKeys = keys;
   "borgmatic-raspi.age".publicKeys = keys;
+  "pocket-id.age".publicKeys = keys;
 }

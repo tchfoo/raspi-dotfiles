@@ -1,4 +1,4 @@
-{ nixpkgs-pocket-id, pkgs, ... }:
+{ nixpkgs-pocket-id, config, pkgs, ... }:
 
 {
   imports = [
@@ -17,6 +17,22 @@
 
   services.pocket-id = {
     enable = true;
+    user = "shared";
+    group = "shared";
+    settings = {
+      PORT = 12673;
+      PUBLIC_APP_URL = "https://auth.ymstnt.com";
+      TRUST_PROXY = true;
+      INTERNAL_BACKEND_URL = "http://localhost:12674";
+      BACKEND_PORT = 12674;
+      PUBLIC_UI_CONFIG_DISABLED = true;
+      EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
+    };
+    environmentFile = config.age.secrets.pocket-id.path;
+  };
+
+  age.secrets = {
+    pocket-id.file = ../secrets/pocket-id.age;
   };
 
   services.nginx.virtualHosts."auth.ymstnt.com" = {
@@ -48,11 +64,11 @@
     sqlite_databases = [
       {
         name = "pocketid";
-        path = "/var/lib/pocketid/data/pocket-id.db";
+        path = "/var/lib/pocket-id/data/pocket-id.db";
       }
     ];
     source_directories = [
-      "/var/lib/pocketid"
+      "/var/lib/pocket-id"
     ];
   };
 }
