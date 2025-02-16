@@ -109,6 +109,7 @@
         "neovim-nightly": [
           "neovim-nightly"
         ],
+        "nix-index-database": "nix-index-database",
         "nix-matlab": [],
         "nixpkgs": [
           "nixpkgs"
@@ -119,11 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738936911,
-        "narHash": "sha256-sgpCtkzEOElZ5WTuLbTUYPo6ppNsllR89sWHVSpSV/0=",
+        "lastModified": 1739705770,
+        "narHash": "sha256-Y6WBT6pUTAuCzpRHqqsvYIS1iVJh3Db8KbmthcEnfLc=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "5b1f4513c8908c3161d07093bf97d9ddaa8bc0da",
+        "rev": "484ca8c0f5447fb3bf23740c6e60c6aa0348bc1a",
         "type": "github"
       },
       "original": {
@@ -302,6 +303,27 @@
       "original": {
         "owner": "neovim",
         "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "gep-dotfiles",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739071773,
+        "narHash": "sha256-/Ak+Quinhmdxa9m3shjm4lwwwqmzG8zzGhhhhgR1k9I=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "895d81b6228bbd50a6ef22f5a58a504ca99763ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
         "type": "github"
       }
     },

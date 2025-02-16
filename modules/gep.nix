@@ -12,15 +12,19 @@
     chatgpt
     clac
     cli
+    config-formats
+    dotnet
     git
     hm
     lf
-    lsp
     nix
     nvim
-    sdk
+    php
+    python
+    rust
     starship
     tmux
+    webdev
     zoxide
     zsh
   ];
