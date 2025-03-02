@@ -64,7 +64,7 @@
         modules = [
           nixos-hardware.nixosModules.raspberry-pi-4
           agenix.nixosModules.default
-          home-manager.nixosModule
+          home-manager.nixosModules.default
           moe.nixosModule
           lix-module.nixosModules.lixFromNixpkgs
           ./hosts/raspi-doboz/configuration.nix
