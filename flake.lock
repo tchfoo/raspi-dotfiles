@@ -369,11 +369,11 @@
     },
     "nixpkgs-pocket-id": {
       "locked": {
-        "lastModified": 1740866791,
-        "narHash": "sha256-BeGHDGOwdS8eNMjkL/V/F6FKFhilYTplHXHWreSoVNY=",
+        "lastModified": 1741026230,
+        "narHash": "sha256-peBR1yvVGe5nlg2E0DDzmMYjL2LzAPT8x4sfgwKGOSU=",
         "owner": "gepbird",
         "repo": "nixpkgs",
-        "rev": "0604e00b83552126c7b7799a4ef2f14a361b4ee3",
+        "rev": "239e0536d52bc671ae40f1ec59d9cbf1b14b21d3",
         "type": "github"
       },
       "original": {
