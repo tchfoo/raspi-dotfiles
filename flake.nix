@@ -37,6 +37,7 @@
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
+      inputs.nixpkgs-firefox.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
