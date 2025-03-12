@@ -1,10 +1,11 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   services.transmission = {
+    enable = true;
+    package = pkgs.transmission_4;
     user = "ymstnt";
     group = "shared";
-    enable = true;
     openRPCPort = true;
     openPeerPorts = true;
     settings = {
