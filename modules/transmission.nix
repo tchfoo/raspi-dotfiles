@@ -18,6 +18,7 @@
       rpc-username = "ymstnt";
       rpc-whitelist = "127.0.0.1,192.168.*.*,100.*.*.*";
       rpc-bind-address = "0.0.0.0";
+      peer-port = 49560;
       umask = 18;
       ratio-limit = 1;
       ratio-limit-enabled = true;
@@ -35,6 +36,7 @@
     " d    /var/media/music               0755 ymstnt shared"
     " d    /var/media/torrents            0755 ymstnt shared"
     " d    /var/media/incomplete-torrents 0755 ymstnt shared"
+    " d    /var/media/torrents/Music      0755 ymstnt shared"
     " d    /var/media/torrents/Movies     0755 ymstnt shared"
     " d    /var/media/torrents/Shows      0755 ymstnt shared"
     " d    /var/media/torrents/Anime      0755 ymstnt shared"
