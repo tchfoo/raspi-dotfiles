@@ -21,7 +21,7 @@
     group = "shared";
     settings = {
       PORT = 12673;
-      PUBLIC_APP_URL = "https://auth.ymstnt.com";
+      PUBLIC_APP_URL = "https://auth.tchfoo.com";
       TRUST_PROXY = true;
       INTERNAL_BACKEND_URL = "http://localhost:12674";
       BACKEND_PORT = 12674;
@@ -35,7 +35,7 @@
     pocket-id.file = ../secrets/pocket-id.age;
   };
 
-  services.nginx.virtualHosts."auth.ymstnt.com" = {
+  services.nginx.virtualHosts."auth.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
     extraConfig = ''
