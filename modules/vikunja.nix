@@ -8,7 +8,7 @@
     settings = {
       service = {
         timezone = "Europe/Budapest";
-        publicurl = "https://tasks.ymstnt.com";
+        publicurl = "https://tasks.tchfoo.com";
       };
       migration = {
         trello = {
@@ -32,7 +32,7 @@
     vikunja.file = ../secrets/vikunja.age;
   };
 
-  services.nginx.virtualHosts."tasks.ymstnt.com" = {
+  services.nginx.virtualHosts."tasks.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
     locations = {
