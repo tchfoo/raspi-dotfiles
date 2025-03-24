@@ -14,7 +14,7 @@
       storage-local-base-path = "/var/lib/gotosocial/storage";
       oidc-enabled = true;
       oidc-idp-name = "Pocket ID";
-      oidc-issuer = "https://auth.ymstnt.com";
+      oidc-issuer = "https://auth.tchfoo.com";
       oidc-link-existing = true;
     };
     environmentFile = config.age.secrets.gotosocial.path;
