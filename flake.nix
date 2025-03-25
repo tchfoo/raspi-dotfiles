@@ -50,6 +50,7 @@
       inputs.nixpkgs-stable.follows = "";
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
+      inputs.spicetify-nix.follows = "";
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
