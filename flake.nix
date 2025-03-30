@@ -38,6 +38,7 @@
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
       inputs.nixpkgs-rustdesk.follows = "";
+      inputs.nur.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
@@ -51,6 +52,7 @@
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
       inputs.spicetify-nix.follows = "";
+      inputs.hifile-fix.follows = "";
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
