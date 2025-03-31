@@ -17,7 +17,6 @@ in
   "runner1.age".publicKeys = keys;
   "miniflux.age".publicKeys = keys;
   "openai-token-gep.age".publicKeys = keys;
-  "gotosocial.age".publicKeys = keys;
   "vikunja.age".publicKeys = keys;
   "borgmatic-raspi.age".publicKeys = keys;
   "pocket-id.age".publicKeys = keys;
