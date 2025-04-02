@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-glance.url = "github:gepbird/nixpkgs/glance-secret-settings";
     nixpkgs-pocket-id.url = "github:gepbird/nixpkgs/pocket-id-init";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
