@@ -6,25 +6,6 @@
 }:
 
 {
-  services.phpfpm.pools.shared = {
-    user = "shared";
-    settings = {
-      pm = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 32;
-      "pm.max_requests" = 500;
-      "pm.start_servers" = 2;
-      "pm.min_spare_servers" = 2;
-      "pm.max_spare_servers" = 5;
-      "security.limit_extensions" = ".php .html";
-    };
-    phpOptions = ''
-      upload_max_filesize = 50G
-      post_max_size = 50G
-    '';
-    phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
-  };
-
   services.github-runners = {
     website = rec {
       enable = true;
@@ -100,7 +81,6 @@
 
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
-    " d    /var/www/ymstnt.com            2770 nginx  shared"
     " d    /var/www/ymstnt.com-generated  0775 shared shared"
   ];
 }
