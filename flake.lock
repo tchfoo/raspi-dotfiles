@@ -115,11 +115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743338018,
-        "narHash": "sha256-kGWAzJgERWhO8C2MZBd6g9gQnZiWWmy/Fb3HPIxykPc=",
+        "lastModified": 1743896569,
+        "narHash": "sha256-zIystBJsPk7a7RY8R0Hx/AnIPNntZjRM6UDYLqshYdc=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "9f42f08a0164f40db01bc9f36b61422a7aacbe75",
+        "rev": "3a013ca9157fe886dd7cbcbc04458bab0eda5803",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743295846,
-        "narHash": "sha256-hKKz07d4RV9gzxzE5Qu3RQWX8a7XpzRrP5timoxoGRQ=",
+        "lastModified": 1743948087,
+        "narHash": "sha256-B6cIi2ScgVSROPPlTti6len+TdR0K25B9R3oKvbw3M8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "717030011980e9eb31eb8ce011261dd532bce92c",
+        "rev": "ef3b2a6b602c3f1a80c6897d6de3ee62339a3eb7",
         "type": "github"
       },
       "original": {
@@ -339,11 +339,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1743167577,
-        "narHash": "sha256-I09SrXIO0UdyBFfh0fxDq5WnCDg8XKmZ1HQbaXzMA1k=",
+        "lastModified": 1743420942,
+        "narHash": "sha256-b/exDDQSLmENZZgbAEI3qi9yHkuXAXCPbormD8CSJXo=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "0ed819e708af17bfc4bbc63ee080ef308a24aa42",
+        "rev": "de6fc5551121c59c01e2a3d45b277a6d05077bc4",
         "type": "github"
       },
       "original": {
@@ -458,6 +458,7 @@
         "agenix": [
           "agenix"
         ],
+        "grayjay": [],
         "hifile-fix": [],
         "home-manager": [
           "home-manager"
@@ -470,15 +471,14 @@
         "nixpkgs-develop": [],
         "nixpkgs-master": [],
         "nixpkgs-stable": [],
-        "nur": [],
-        "spicetify-nix": []
+        "nur": []
       },
       "locked": {
-        "lastModified": 1743072766,
-        "narHash": "sha256-S007y8hLLZ95RMiF9gtwK+da1CsfUfQcm0IAirTTlX8=",
+        "lastModified": 1743940885,
+        "narHash": "sha256-N5pkNZ5PP+wtneUHfCr+qW2kErfell+txQMfkdwy9KI=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "309920fe2d329c5d5609f68e0d2805cb9a7d4a9f",
+        "rev": "ce92f2d19bbb8f317ae1f3c669836e93c5bd2022",
         "type": "github"
       },
       "original": {

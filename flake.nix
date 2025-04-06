@@ -50,7 +50,7 @@
       inputs.nixpkgs-stable.follows = "";
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
-      inputs.spicetify-nix.follows = "";
+      inputs.grayjay.follows = "";
       inputs.hifile-fix.follows = "";
     };
     # dependencies of the above modules
