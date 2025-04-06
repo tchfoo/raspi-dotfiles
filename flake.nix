@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-pocket-id.url = "github:gepbird/nixpkgs/pocket-id-init";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";

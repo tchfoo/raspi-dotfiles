@@ -369,29 +369,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-pocket-id": {
-      "locked": {
-        "lastModified": 1743292448,
-        "narHash": "sha256-Ivd6Zmii38OeqjYI4SJFEvomo2wGR+vjCjmNCUUpmxU=",
-        "owner": "gepbird",
-        "repo": "nixpkgs",
-        "rev": "2604cd6cd2fc06c5497ffa5e554d09f1f4b2a617",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gepbird",
-        "ref": "pocket-id-init",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1743095683,
-        "narHash": "sha256-gWd4urRoLRe8GLVC/3rYRae1h+xfQzt09xOfb0PaHSk=",
+        "lastModified": 1743827369,
+        "narHash": "sha256-rpqepOZ8Eo1zg+KJeWoq1HAOgoMCDloqv5r2EAa9TSA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
+        "rev": "42a1c966be226125b48c384171c44c651c236c22",
         "type": "github"
       },
       "original": {
@@ -450,7 +434,6 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-pocket-id": "nixpkgs-pocket-id",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }

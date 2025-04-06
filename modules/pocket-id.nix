@@ -1,20 +1,6 @@
-{ nixpkgs-pocket-id, config, pkgs, ... }:
+{ config, ... }:
 
 {
-  imports = [
-    "${nixpkgs-pocket-id}/nixos/modules/services/security/pocket-id.nix"
-  ];
-  nixpkgs.overlays = [
-    (final: prev: {
-      inherit
-        (import nixpkgs-pocket-id {
-          inherit (pkgs) system;
-        })
-        pocket-id
-        ;
-    })
-  ];
-
   services.pocket-id = {
     enable = true;
     user = "shared";
