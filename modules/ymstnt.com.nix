@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }:
 
@@ -33,48 +32,19 @@
   services.nginx.virtualHosts."ymstnt.com" = {
     enableACME = true;
     forceSSL = true;
-    root = "/var/www";
+    root = "/var/www/ymstnt.com-generated";
     extraConfig = ''
-      error_page 404 /ymstnt.com-generated/404.html;
-      client_max_body_size 50G;
-      fastcgi_read_timeout 24h;
+      error_page 404 /404.html;
     '';
     locations = {
-      "~ ^([^.\?]*[^/])$".extraConfig = ''
-        if (-d $document_root/ymstnt.com-generated$uri) {
-          rewrite ^([^.]*[^/])$ $1/ permanent;
-        }
-        if (-d $document_root/ymstnt.com$uri) {
-          rewrite ^([^.]*[^/])$ $1/ permanent;
-        }
-        try_files _ @entry;
+      "~ ^/(auth|explode|gepDrive|geputils|header|libs|global.css)".extraConfig = ''
+        return 301 https://gd.tchfoo.com$request_uri;
       '';
-      "/".extraConfig = ''
-        try_files _ @entry;
-      '';
-      "@entry".extraConfig = ''
-        try_files /ymstnt.com-generated$uri /ymstnt.com-generated$uri/index.html @ymstnt.com-rewrite;
-      '';
-      "@ymstnt.com-rewrite".extraConfig = ''
-        if (-f $document_root/ymstnt.com$uri) {
-          rewrite ^(.*)$ /ymstnt.com$1 last;
+      "~ ^/seboard(/.*)?$".extraConfig = ''
+        if ($1 = "") {
+          set $1 "/";
         }
-        if (-f $document_root/ymstnt.com$uri/index.html) {
-          rewrite ^(.*)$ /ymstnt.com$1/index.html last;
-        }
-        if (-f $document_root/ymstnt.com$uri/index.php) {
-          rewrite ^(.*)$ /ymstnt.com$1/index.php last;
-        }
-      '';
-      "/ymstnt.com/".extraConfig = ''
-        alias /var/www/ymstnt.com/;
-        location ~ \.(php|html)$ {
-          alias /var/www;
-          fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
-        }
-      '';
-      "/\.git".extraConfig = ''
-        deny all;
+        return 301 https://sb.tchfoo.com$1;
       '';
     };
   };
