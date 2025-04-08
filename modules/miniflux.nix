@@ -6,7 +6,7 @@
     adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
-      BASE_URL = "http://localhost/miniflux/";
+      BASE_URL = "http://localhost/";
     };
   };
 
@@ -14,10 +14,14 @@
     miniflux.file = ../secrets/miniflux.age;
   };
 
-  services.nginx.virtualHosts."ymstnt.com".locations = {
-    "^~ /miniflux/" = {
-      proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux/";
-      recommendedProxySettings = true;
+  services.nginx.virtualHosts."miniflux.ymstnt.com" = {
+    enableACME = true;
+    forceSSL = true;
+    locations = {
+      "/" = {
+        proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/";
+        recommendedProxySettings = true;
+      };
     };
   };
 
