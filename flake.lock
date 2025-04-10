@@ -368,6 +368,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-glance": {
+      "locked": {
+        "lastModified": 1743619762,
+        "narHash": "sha256-j/T7Z/adm8GIrkJVo0E5ZLU0/zeOHtWD2+J8cOf2yFQ=",
+        "owner": "gepbird",
+        "repo": "nixpkgs",
+        "rev": "d7706eb1d46b560a7a39edff536ceb14b0b53c47",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "ref": "glance-secret-settings",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1745391562,
@@ -433,6 +449,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-glance": "nixpkgs-glance",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
