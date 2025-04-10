@@ -5,6 +5,9 @@
   ...
 }:
 
+let
+  gdPort = "6025";
+in
 {
   services.phpfpm.pools.shared = {
     user = "shared";
@@ -21,6 +24,26 @@
     phpOptions = ''
       upload_max_filesize = 50G
       post_max_size = 50G
+    '';
+    phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
+  };
+
+  services.phpfpm.pools.caddy = {
+    user = "shared";
+    settings = {
+      pm = "dynamic";
+      "listen.owner" = config.services.caddy.user;
+      "pm.max_children" = 32;
+      "pm.max_requests" = 500;
+      "pm.start_servers" = 2;
+      "pm.min_spare_servers" = 2;
+      "pm.max_spare_servers" = 5;
+      "security.limit_extensions" = ".php .html";
+    };
+    phpOptions = ''
+      upload_max_filesize = 50G
+      post_max_size = 50G
+      doc_root = "/var/www"
     '';
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
   };
@@ -69,7 +92,33 @@
       '';
     };
   };
-  
+
+  services.caddy = {
+    enable = true;
+    group = "shared";
+    virtualHosts."http://localhost:${gdPort}" = {
+      extraConfig = ''
+        root "/var/www/test.gd.tchfoo.com"
+        file_server
+        request_header Host test.tchfoo.com
+        php_fastcgi unix/${config.services.phpfpm.pools.caddy.socket} {
+          split .php .html
+          header_up Host test.tchfoo.com/
+        }
+      '';
+    };
+  };
+
+  services.nginx.virtualHosts."test.tchfoo.com" = {
+    enableACME = true;
+    forceSSL = true;
+    locations = {
+      "/" = {
+        proxyPass = "http://localhost:${gdPort}/";
+      };
+    };
+  };
+
   services.nginx.virtualHosts."tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
