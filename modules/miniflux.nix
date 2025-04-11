@@ -10,10 +10,6 @@
     };
   };
 
-  age.secrets = {
-    miniflux.file = ../secrets/miniflux.age;
-  };
-
   services.nginx.virtualHosts."miniflux.ymstnt.com" = {
     enableACME = true;
     forceSSL = true;

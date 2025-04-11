@@ -11,10 +11,6 @@
     credentialsFile = config.age.secrets.moe.path;
   };
 
-  age.secrets = {
-    moe.file = ../secrets/moe.age;
-  };
-
   services.borgmatic.configurations.raspi = {
     sqlite_databases = [
       {

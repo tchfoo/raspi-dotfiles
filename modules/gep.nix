@@ -29,10 +29,6 @@
     zsh
   ];
 
-  age.secrets = {
-    openai-token.file = ../secrets/openai-token-gep.age;
-  };
-
   hm-gep.home = {
     sessionVariables = {
       FLAKE = "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";

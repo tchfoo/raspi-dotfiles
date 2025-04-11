@@ -25,10 +25,6 @@
     };
   };
 
-  age.secrets = {
-    runner1.file = ../secrets/runner1.age;
-  };
-
   services.nginx.virtualHosts."ymstnt.com" = {
     enableACME = true;
     forceSSL = true;

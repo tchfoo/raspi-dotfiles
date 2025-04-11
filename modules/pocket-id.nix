@@ -17,10 +17,6 @@
     environmentFile = config.age.secrets.pocket-id.path;
   };
 
-  age.secrets = {
-    pocket-id.file = ../secrets/pocket-id.age;
-  };
-
   services.nginx.virtualHosts."auth.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;

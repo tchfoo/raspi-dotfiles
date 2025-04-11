@@ -26,10 +26,6 @@
     credentialsFile = config.age.secrets."transmission.json".path;
   };
 
-  age.secrets = {
-    "transmission.json".file = ../secrets/transmission.json.age;
-  };
-
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
     " d    /var/media                     0755 ymstnt shared"

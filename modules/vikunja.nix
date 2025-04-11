@@ -28,10 +28,6 @@
     ];
   };
 
-  age.secrets = {
-    vikunja.file = ../secrets/vikunja.age;
-  };
-
   services.nginx.virtualHosts."tasks.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;

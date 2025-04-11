@@ -58,10 +58,6 @@
     ];
   };
 
-  age.secrets = {
-    borgmatic-raspi.file = ../secrets/borgmatic-raspi.age;
-  };
-
   users.users.borgmatic = {
     isSystemUser = true;
     group = "shared";
