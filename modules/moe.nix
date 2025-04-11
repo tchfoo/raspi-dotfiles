@@ -6,7 +6,7 @@
 
 {
   imports = [
-    moe.nixosModule
+    moe.nixosModules.default
   ];
 
   moe = {
