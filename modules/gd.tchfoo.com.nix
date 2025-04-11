@@ -69,7 +69,7 @@
       '';
     };
   };
-  
+
   services.nginx.virtualHosts."tchfoo.com" = {
     enableACME = true;
     forceSSL = true;

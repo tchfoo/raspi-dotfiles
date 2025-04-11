@@ -1,4 +1,7 @@
-{ config, ... }:
+{
+  config,
+  ...
+}:
 
 {
   services.pocket-id = {
@@ -25,7 +28,7 @@
       proxy_buffers   4 512k;
       proxy_buffer_size   256k;
     '';
-    
+
     locations = {
       "/" = {
         proxyPass = "http://127.0.0.1:12673";

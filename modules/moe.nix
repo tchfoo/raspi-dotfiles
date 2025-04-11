@@ -1,4 +1,8 @@
-{ config, moe, ... }:
+{
+  config,
+  moe,
+  ...
+}:
 
 {
   imports = [

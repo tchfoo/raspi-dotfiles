@@ -1,4 +1,6 @@
-{ ... }:
+{
+  ...
+}:
 
 {
   services.fail2ban = {

@@ -1,4 +1,8 @@
-{ pkgs, agenix, ... }:
+{
+  pkgs,
+  agenix,
+  ...
+}:
 
 let
   inherit (builtins)

@@ -1,4 +1,8 @@
-{ lix-module, home-manager, ... }:
+{
+  lix-module,
+  home-manager,
+  ...
+}:
 
 {
   imports = [
