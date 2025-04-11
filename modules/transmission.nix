@@ -23,11 +23,11 @@
       ratio-limit = 1;
       ratio-limit-enabled = true;
     };
-    credentialsFile = config.age.secrets.transmission.path;
+    credentialsFile = config.age.secrets."transmission.json".path;
   };
 
   age.secrets = {
-    transmission.file = ../secrets/transmission.json.age;
+    "transmission.json".file = ../secrets/transmission.json.age;
   };
 
   systemd.tmpfiles.rules = [
