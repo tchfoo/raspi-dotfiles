@@ -1,6 +1,11 @@
-{ ... }:
+{ lix-module, home-manager, ... }:
 
 {
+  imports = [
+    lix-module.nixosModules.lixFromNixpkgs
+    home-manager.nixosModules.default
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {

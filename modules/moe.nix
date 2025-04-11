@@ -1,6 +1,10 @@
-{ config, ... }:
+{ config, moe, ... }:
 
 {
+  imports = [
+    moe.nixosModule
+  ];
+
   moe = {
     enable = true;
     group = "shared";

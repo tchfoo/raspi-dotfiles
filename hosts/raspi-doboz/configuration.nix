@@ -1,11 +1,19 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  nixos-hardware,
+  ...
+}:
 
 let
   modules = import ../../modules;
 in
 {
   imports =
-    [ ./hardware-configuration.nix ]
+    [
+      ./hardware-configuration.nix
+      nixos-hardware.nixosModules.raspberry-pi-4
+    ]
     ++ modules.allModulesExcept [
     ];
 
