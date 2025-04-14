@@ -6,7 +6,7 @@
 }:
 
 {
-  services.phpfpm.pools.shared = {
+  services.phpfpm.pools."gd.tchfoo.com" = {
     user = "shared";
     settings = {
       pm = "dynamic";
@@ -61,7 +61,7 @@
         alias /var/www/gd.tchfoo.com/;
         location ~ \.(php|html)$ {
           alias /var/www;
-          fastcgi_pass unix:${config.services.phpfpm.pools.shared.socket};
+          fastcgi_pass unix:${config.services.phpfpm.pools."gd.tchfoo.com".socket};
         }
       '';
       "/\.git".extraConfig = ''
