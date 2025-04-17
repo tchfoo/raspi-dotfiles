@@ -52,7 +52,7 @@
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
       inputs.grayjay.follows = "";
-      inputs.hifile-fix.follows = "";
+      inputs.cosmic-manager.follows = "";
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
