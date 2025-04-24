@@ -37,7 +37,6 @@
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
-      inputs.nixpkgs-rustdesk.follows = "";
       inputs.nur.follows = "";
     };
     ymstnt-dotfiles = {
@@ -51,7 +50,6 @@
       inputs.nixpkgs-stable.follows = "";
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
-      inputs.grayjay.follows = "";
       inputs.cosmic-manager.follows = "";
     };
     # dependencies of the above modules
