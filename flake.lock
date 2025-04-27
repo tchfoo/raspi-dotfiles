@@ -370,11 +370,11 @@
     },
     "nixpkgs-glance": {
       "locked": {
-        "lastModified": 1743619762,
-        "narHash": "sha256-j/T7Z/adm8GIrkJVo0E5ZLU0/zeOHtWD2+J8cOf2yFQ=",
+        "lastModified": 1745667735,
+        "narHash": "sha256-bNBOisNCuzdRDHN5hN46kpEnDO+cyAKfg69ROHDq/Y0=",
         "owner": "gepbird",
         "repo": "nixpkgs",
-        "rev": "d7706eb1d46b560a7a39edff536ceb14b0b53c47",
+        "rev": "27d160b60bb2f46444f19f026d3f109b0571fd29",
         "type": "github"
       },
       "original": {
