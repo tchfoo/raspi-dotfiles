@@ -51,6 +51,7 @@
       enable = true;
       shellAliases = {
         rebuild = "nh os switch ~/raspi-dotfiles -- --impure";
+        srebuild = "sudo nh os switch ~/raspi-dotfiles -R -- --impure";
         update = "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
         dotcd = "cd $HOME/raspi-dotfiles";
         bashreload = "source $HOME/.bashrc";
@@ -61,6 +62,7 @@
       shellAliases = {
         update = lib.mkForce "(cd $HOME/raspi-dotfiles && nix flake update --commit-lock-file)";
         rebuild = lib.mkForce "nh os switch $HOME/raspi-dotfiles -- --impure";
+        srebuild = lib.mkForce "sudo nh os switch $HOME/raspi-dotfiles -R -- --impure";
         dotcd = lib.mkForce "cd $HOME/raspi-dotfiles";
         nrebuild = lib.mkForce "(cd $HOME/raspi-dotfiles && sudo nixos-rebuild switch --flake . --impure)";
       };
