@@ -15,6 +15,7 @@
       INTERNAL_BACKEND_URL = "http://localhost:12674";
       BACKEND_PORT = 12674;
       PUBLIC_UI_CONFIG_DISABLED = true;
+      DISABLE_ANIMATIONS = true;
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
     };
     environmentFile = config.age.secrets.pocket-id.path;
