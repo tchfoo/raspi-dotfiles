@@ -117,6 +117,62 @@
                     }
                   ];
                 }
+                {
+                  type = "bookmarks";
+                  groups = [
+                    {
+                      title = "Tchfoo & co.";
+                      links = [
+                        {
+                          title = "gepDrive";
+                          url = "https://gd.tchfoo.com";
+                        }
+                        {
+                          title = "ymstnt";
+                          url = "https://ymstnt.com";
+                        }
+                        {
+                          title = "Tchfoo Services Status";
+                          url = "https://status.tchfoo.com";
+                        }
+                      ];
+                    }
+                    {
+                      title = "University";
+                      color = "146 63 51";
+                      links = [
+                        {
+                          title = "Neptun";
+                          url = "https://neptun.uni-obuda.hu/ujhallgato";
+                        }
+                        {
+                          title = "Moodle";
+                          url = "https://main.elearning.uni-obuda.hu/";
+                        }
+                        {
+                          title = "K-MOOC";
+                          url = "https://www.kmooc.uni-obuda.hu/";
+                        }
+                        {
+                          title = "OPEN e-learning";
+                          url = "https://open.elearning.uni-obuda.hu/";
+                        }
+                        {
+                          title = "ÓE Website";
+                          url = "https://uni-obuda.hu/";
+                        }
+                        {
+                          title = "Tanév rendje";
+                          url = "https://uni-obuda.hu/tanev-rendje/";
+                        }
+                        {
+                          title = "NIKHÖK";
+                          url = "https://nikhok.hu";
+                        }
+                      ];
+                    }
+                  ];
+                }
               ];
             }
             {
