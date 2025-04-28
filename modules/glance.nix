@@ -13,7 +13,7 @@
       };
       document = {
         head = ''
-          <script src="https://cdn.jsdelivr.net/gh/ymstnt/uni-week-counter@latest/script.js"></script>
+          <script src="https://cdn.statically.io/gh/ymstnt/uni-week-counter/main/script.js"></script>
         '';
       };
       pages = [
@@ -35,7 +35,8 @@
                         <h2 class="uppercase">Current week</h2>
                       </div>
                       <div class="widget-content">
-                        <p id="week-number">N/A</p>
+                        <p id="week-number" class="color-highlight" onclick="checkDateBefore()" onload="checkDateBefore()">Click me!</p>
+                        <img src="" onerror="checkDateBefore()" />
                       </div>
                     </div>
                   '';
