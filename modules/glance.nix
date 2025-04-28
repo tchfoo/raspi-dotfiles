@@ -194,6 +194,7 @@
                 }
                 {
                   type = "releases";
+                  cache = "12h";
                   show-source-icon = true;
                   token = {
                     _secret = config.age.secrets.glance-gh-token.path;
