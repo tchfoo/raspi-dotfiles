@@ -213,11 +213,13 @@
                         {
                           title = "gepDrive";
                           url = "https://gd.tchfoo.com";
+                          error-url = "https://status.tchfoo.com";
                         }
                         {
                           title = "ymstnt.com";
                           url = "https://ymstnt.com";
                           icon = "https://raw.githubusercontent.com/ymstnt/website/refs/heads/main/static/android-chrome-512x512.png";
+                          error-url = "https://status.tchfoo.com";
                         }
                         {
                           title = "Miniflux";
@@ -225,6 +227,7 @@
                           same-tab = true;
                           check-url = "https://miniflux.ymstnt.com";
                           icon = "di:miniflux";
+                          error-url = "https://status.tchfoo.com";
                         }
                         {
                           title = "PocketID";
@@ -232,11 +235,13 @@
                           same-tab = true;
                           check-url = "https://auth.tchfoo.com";
                           icon = "di:pocket-id";
+                          error-url = "https://status.tchfoo.com";
                         }
                         {
                           title = "Vikunja";
                           url = "https://tasks.tchfoo.com";
                           icon = "di:vikunja";
+                          error-url = "https://status.tchfoo.com";
                         }
                       ];
                     }
