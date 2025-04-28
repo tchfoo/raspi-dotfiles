@@ -117,15 +117,6 @@
                     }
                   ];
                 }
-                {
-                  type = "videos";
-                  channels = [
-                    "UCXuqSBlHAE6Xw-yeJA0Tunw" # Linus Tech Tips
-                    "UCR-DXc1voovS8nhAvccRZhg" # Jeff Geerling
-                    "UCsBjURrPoezykLs9EqgamOA" # Fireship
-                    "UCBJycsmduvYEL83R_U4JriQ" # Marques Brownlee
-                  ];
-                }
               ];
             }
             {
