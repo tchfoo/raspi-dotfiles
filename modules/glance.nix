@@ -167,6 +167,7 @@
                   };
                   units = "metric";
                   hour-format = "24h";
+                  hide-location = true;
                 }
                 {
                   type = "releases";
