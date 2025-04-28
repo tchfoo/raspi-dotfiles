@@ -71,6 +71,11 @@
                       url = "https://search.nixos.org/options?query={QUERY}";
                     }
                     {
+                      title = "nixpkgs tracker";
+                      shortcut = "!nixpkgstr";
+                      url = "https://nixpkgs-tracker.ocfox.me/?pr={QUERY}";
+                    }
+                    {
                       title = "Google";
                       shortcut = "!g";
                       url = "https://google.com/q={QUERY}";
