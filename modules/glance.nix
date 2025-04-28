@@ -187,18 +187,17 @@
                 }
                 {
                   type = "markets";
-                  symbol-link-template = "https://www.tradingview.com/symbols/{SYMBOL}/news";
                   markets = [
                     {
-                      symbol = "EUR-HUF";
+                      symbol = "EURHUF=X";
                       name = "EUR";
                     }
                     {
-                      symbol = "USD-HUF";
+                      symbol = "HUF=X";
                       name = "USD";
                     }
                     {
-                      symbol = "GBP-HUF";
+                      symbol = "GBPHUF=X";
                       name = "GBP";
                     }
                   ];
