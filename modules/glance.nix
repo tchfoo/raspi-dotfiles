@@ -118,35 +118,6 @@
                   ];
                 }
                 {
-                  type = "custom-api";
-                  title = "Miniflux";
-                  url = "https://miniflux.ymstnt.com/v1/categories/1/entries?limit=10&order=published_at&direction=desc&status=unread";
-                  headers = {
-                    X-Auth-Token = {
-                      _secret = config.age.secrets.glance-miniflux-token.path;
-                    };
-                    Accept = "application/json";
-                  };
-                  template = ''
-                    <ul class="list list-gap-10 collapsible-container" data-collapse-after="5">
-                    {{ range .JSON.Array "entries" }}
-                      <li>
-                          <div class="flex gap-10 row-reverse-on-mobile thumbnail-parent">
-                              <div class="grow min-width-0">
-                                  <a href="https://miniflux.ymstnt.com/unread/category/1/entry/{{ .String "id" }}" class="size-title-dynamic color-primary-if-not-visited" target="_blank" rel="noreferrer">{{ .String "title" }}</a>
-                                  <ul class="list-horizontal-text flex-nowrap text-compact">
-                                      <li class="shrink-0">{{ .String "feed.title" }}</li>
-                                      <li class="shrink-0">{{ .String "published_at" }}</li>
-                                      <li class="min-width-0"><a class="visited-indicator text-truncate block" href="{{ .String "url" | safeURL }}" target="_blank" rel="noreferrer" title="Link">Link</a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </li>
-                    {{ end }}
-                    </ul>
-                  '';
-                }
-                {
                   type = "videos";
                   channels = [
                     "UCXuqSBlHAE6Xw-yeJA0Tunw" # Linus Tech Tips
