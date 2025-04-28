@@ -176,6 +176,24 @@
                         }
                       ];
                     }
+                    {
+                      type = "clock";
+                      hour-format = "24h";
+                      timezones = [
+                        {
+                          timezone = "Etc/UTC";
+                          label = "UTC/GMT";
+                        }
+                        {
+                          timezone = "EST5EDT";
+                          label = "EST/EDT";
+                        }
+                        {
+                          timezone = "GB";
+                          label = "GMT/BST";
+                        }
+                      ];
+                    }
                   ];
                 }
               ];
