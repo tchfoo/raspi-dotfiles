@@ -32,7 +32,7 @@
                   source = ''
                     <div class="widget">
                       <div class="widget-header">
-                        <h2 class="uppercase">Current week</h2>
+                        <h2 class="uppercase">Current week (uni)</h2>
                       </div>
                       <div class="widget-content">
                         <p id="week-number" class="color-highlight" onclick="checkDateBefore()" onload="checkDateBefore()">Click me!</p>
