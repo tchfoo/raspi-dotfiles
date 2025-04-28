@@ -9,12 +9,13 @@
 {
   imports = with ymstnt-dotfiles.nixosModules; [
     cli
-    hm
+    git
     helix
+    hm
     micro
+    ssh
     starship
     zsh
-    git
   ];
 
   users.users.ymstnt = {
