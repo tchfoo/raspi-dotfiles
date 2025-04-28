@@ -196,6 +196,42 @@
                     }
                   ];
                 }
+                {
+                  type = "split-column";
+                  widgets = [
+                    {
+                      type = "monitor";
+                      cache = "5m";
+                      title = "Services";
+                      sites = [
+                        {
+                          title = "gepDrive";
+                          url = "https://gd.tchfoo.com";
+                        }
+                        {
+                          title = "ymstnt.com";
+                          url = "https://ymstnt.com";
+                          icon = "https://raw.githubusercontent.com/ymstnt/website/refs/heads/main/static/android-chrome-512x512.png";
+                        }
+                        {
+                          title = "Miniflux";
+                          url = "https://miniflux.ymstnt.com";
+                          icon = "di:miniflux";
+                        }
+                        {
+                          title = "PocketID";
+                          url = "https://auth.tchfoo.com";
+                          icon = "di:pocket-id";
+                        }
+                        {
+                          title = "Vikunja";
+                          url = "https://tasks.tchfoo.com";
+                          icon = "di:vikunja";
+                        }
+                      ];
+                    }
+                  ];
+                }
               ];
             }
             {
