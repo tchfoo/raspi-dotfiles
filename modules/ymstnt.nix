@@ -8,6 +8,7 @@
 
 {
   imports = with ymstnt-dotfiles.nixosModules; [
+    atuin
     cli
     git
     helix
