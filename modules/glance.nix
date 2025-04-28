@@ -221,12 +221,16 @@
                         }
                         {
                           title = "Miniflux";
-                          url = "https://miniflux.ymstnt.com";
+                          url = "#";
+                          same-tab = true;
+                          check-url = "https://miniflux.ymstnt.com";
                           icon = "di:miniflux";
                         }
                         {
                           title = "PocketID";
-                          url = "https://auth.tchfoo.com";
+                          url = "#";
+                          same-tab = true;
+                          check-url = "https://auth.tchfoo.com";
                           icon = "di:pocket-id";
                         }
                         {
