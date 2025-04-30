@@ -15,7 +15,6 @@ in
       nixos-hardware.nixosModules.raspberry-pi-4
     ]
     ++ modules.allModulesExcept [
-      "pocket-id-dev"
     ];
 
   boot = {
