@@ -368,20 +368,16 @@
         "type": "github"
       }
     },
-    "nixpkgs-glance": {
+    "nixpkgs-patch-glance-secret": {
+      "flake": false,
       "locked": {
-        "lastModified": 1745667735,
-        "narHash": "sha256-bNBOisNCuzdRDHN5hN46kpEnDO+cyAKfg69ROHDq/Y0=",
-        "owner": "gepbird",
-        "repo": "nixpkgs",
-        "rev": "27d160b60bb2f46444f19f026d3f109b0571fd29",
-        "type": "github"
+        "narHash": "sha256-vqMW5oSrgaqmX9rxKo3geEgrxzis1sOU3sRHdrBBENA=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/395551.patch"
       },
       "original": {
-        "owner": "gepbird",
-        "ref": "glance-secret-settings",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/395551.patch"
       }
     },
     "nixpkgs_2": {
@@ -449,7 +445,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-glance": "nixpkgs-glance",
+        "nixpkgs-patch-glance-secret": "nixpkgs-patch-glance-secret",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }

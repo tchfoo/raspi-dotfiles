@@ -3,7 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-glance.url = "github:gepbird/nixpkgs/glance-secret-settings";
+    nixpkgs-patch-glance-secret = {
+      url = "https://github.com/NixOS/nixpkgs/pull/395551.patch";
+      flake = false;
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";
