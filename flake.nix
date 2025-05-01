@@ -61,8 +61,27 @@
   };
 
   outputs =
-    inputs: with inputs; {
-      nixosConfigurations.raspi-doboz = nixpkgs.lib.nixosSystem {
+    inputs:
+    with inputs;
+    let
+      system = "aarch64-linux";
+      pkgs = import nixpkgs { inherit system; };
+      # take "nixpkgs" input as a base and apply patches that start with "nixpkgs-patch"
+      patches = builtins.attrValues (
+        pkgs.lib.filterAttrs (n: v: builtins.match "^nixpkgs-patch.*" n != null) inputs
+      );
+      patchedNixpkgs = pkgs.applyPatches {
+        name = "nixpkgs-patched";
+        src = nixpkgs;
+        inherit patches;
+      };
+      # don't use the patchedNixpkgs without patches, it takes time to build it
+      finalNixpkgs = if patches == [ ] then nixpkgs else patchedNixpkgs;
+      nixosSystem = import "${finalNixpkgs}/nixos/lib/eval-config.nix";
+    in
+    {
+      nixosConfigurations.raspi-doboz = nixosSystem {
+        inherit system;
         modules = [
           ./hosts/raspi-doboz/configuration.nix
         ];
