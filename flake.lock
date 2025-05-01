@@ -368,6 +368,30 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-0-pocket-id-dev": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-cz+qw8C1v3gTKJT+ZTlOKANnytilM2Yty97FW+K6o4k=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/401614.patch"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/401614.patch"
+      }
+    },
+    "nixpkgs-patch-1-pocket-id-dev": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-tBnp6RRObrBRhjuMSjt+2eowOo87ixpy00S+Y0W7lx4=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/403109.patch"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/403109.patch"
+      }
+    },
     "nixpkgs-patch-glance-secret": {
       "flake": false,
       "locked": {
@@ -445,6 +469,8 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-patch-0-pocket-id-dev": "nixpkgs-patch-0-pocket-id-dev",
+        "nixpkgs-patch-1-pocket-id-dev": "nixpkgs-patch-1-pocket-id-dev",
         "nixpkgs-patch-glance-secret": "nixpkgs-patch-glance-secret",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"

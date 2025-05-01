@@ -7,6 +7,14 @@
       url = "https://github.com/NixOS/nixpkgs/compare/pull/395551/head~1...pull/395551/head.patch";
       flake = false;
     };
+    nixpkgs-patch-0-pocket-id-dev = {
+      url = "https://github.com/NixOS/nixpkgs/pull/401614.patch";
+      flake = false;
+    };
+    nixpkgs-patch-1-pocket-id-dev = {
+      url = "https://github.com/NixOS/nixpkgs/pull/403109.patch";
+      flake = false;
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
       url = "github:ryantm/agenix";
