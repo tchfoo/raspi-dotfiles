@@ -10,6 +10,12 @@
     home-manager.nixosModules.default
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      lix = prev.lixPackageSets.latest.lix;
+    })
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
