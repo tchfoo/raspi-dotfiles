@@ -72,13 +72,13 @@ When you want to include a nixpkgs PR that hasn't landed yet or want to include 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-patch-foo-module = {
-      # include a PR from nixpkgs that adds a foo module
-      url = "https://gh.tchfoo.com/NixOS/nixpkgs/pull/123456";
+      # include the last 2 commits from a nixpkgs PR that adds foo module
+      url = "https://github.com/NixOS/nixpkgs/compare/pull/123456/head~2...pull/123456/head.patch";
       flake = false;
     };
     nixpkgs-patch-0-bar-package = {
       # include a PR from nixpkgs that adds bar package
-      url = "https://gh.tchfoo.com/NixOS/nixpkgs/pull/234567";
+      url = "https://github.com/NixOS/nixpkgs/compare/pull/234567/head~1...pull/234567/head.patch";
       flake = false;
     };
     # this depends on nixpkgs-patch-0-bar-package, make the ordering clear by using a bigger number at the start
@@ -97,4 +97,4 @@ These inputs are not references to a revision of nixpkgs, they are only the diff
 The inputs' name **must** start with `nixpkgs-patch`, otherwise it will be ignored.
 Patches are applied in alphabetical order of the inputs' name.
 
-As GitHub puts an heavy rate limit on endpoints like https://github.com/NixOS/nixpkgs/pull/123456.patch, use a server that proxies requests to https://api.github.com/repos/NixOS/nixpkgs/pulls/395551 with `Accept: application/vnd.github.v3.patch` header to achive the same result with a better rate limit. One such endpoint is https://gh.tchfoo.com/NixOS/nixpkgs/pull/123456.
+As GitHub puts an heavy rate limit on endpoints like https://github.com/NixOS/nixpkgs/pull/123456.patch, use compare with the number of commits in the PR (indicated by `~2` here): https://github.com/NixOS/nixpkgs/compare/pull/123456/head~2...pull/123456/head.patch.

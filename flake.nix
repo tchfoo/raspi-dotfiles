@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-patch-glance-secret = {
-      url = "https://gh.tchfoo.com/NixOS/nixpkgs/pull/395551";
+      url = "https://github.com/NixOS/nixpkgs/compare/pull/395551/head~1...pull/395551/head.patch";
       flake = false;
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
