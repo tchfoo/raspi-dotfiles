@@ -1,7 +1,7 @@
 {
   config,
+  lib,
   gep-dotfiles,
-  pkgs,
   ...
 }:
 
@@ -17,6 +17,7 @@
     git
     hm
     lf
+    nh
     nix
     nvim
     php
@@ -29,14 +30,7 @@
     zsh
   ];
 
-  hm-gep.home = {
-    sessionVariables = {
-      FLAKE = "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
-    };
-    packages = with pkgs; [
-      nh
-    ];
-  };
+  hm-gep.programs.nh.flake = lib.mkForce "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
 
   hm-gep.services.ssh-agent = {
     enable = true;
