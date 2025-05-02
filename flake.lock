@@ -373,11 +373,11 @@
       "locked": {
         "narHash": "sha256-vqMW5oSrgaqmX9rxKo3geEgrxzis1sOU3sRHdrBBENA=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/395551.patch"
+        "url": "https://gh.tchfoo.com/NixOS/nixpkgs/pull/395551"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/395551.patch"
+        "url": "https://gh.tchfoo.com/NixOS/nixpkgs/pull/395551"
       }
     },
     "nixpkgs_2": {
