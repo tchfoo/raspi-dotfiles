@@ -8,11 +8,11 @@
       flake = false;
     };
     nixpkgs-patch-0-pocket-id-dev = {
-      url = "https://github.com/NixOS/nixpkgs/pull/401614.patch";
+      url = "https://github.com/NixOS/nixpkgs/compare/pull/401614/head~1...pull/401614/head.patch";
       flake = false;
     };
     nixpkgs-patch-1-pocket-id-dev = {
-      url = "https://github.com/NixOS/nixpkgs/pull/403109.patch";
+      url = "https://github.com/NixOS/nixpkgs/compare/pull/403109/head~1...pull/403109/head.patch";
       flake = false;
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";

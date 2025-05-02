@@ -373,11 +373,11 @@
       "locked": {
         "narHash": "sha256-cz+qw8C1v3gTKJT+ZTlOKANnytilM2Yty97FW+K6o4k=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/401614.patch"
+        "url": "https://github.com/NixOS/nixpkgs/compare/pull/401614/head~1...pull/401614/head.patch"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/401614.patch"
+        "url": "https://github.com/NixOS/nixpkgs/compare/pull/401614/head~1...pull/401614/head.patch"
       }
     },
     "nixpkgs-patch-1-pocket-id-dev": {
@@ -385,11 +385,11 @@
       "locked": {
         "narHash": "sha256-tBnp6RRObrBRhjuMSjt+2eowOo87ixpy00S+Y0W7lx4=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/403109.patch"
+        "url": "https://github.com/NixOS/nixpkgs/compare/pull/403109/head~1...pull/403109/head.patch"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/403109.patch"
+        "url": "https://github.com/NixOS/nixpkgs/compare/pull/403109/head~1...pull/403109/head.patch"
       }
     },
     "nixpkgs-patch-glance-secret": {
