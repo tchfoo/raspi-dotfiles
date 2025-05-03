@@ -485,11 +485,11 @@
         "nur": []
       },
       "locked": {
-        "lastModified": 1746128621,
-        "narHash": "sha256-yyhaHkIf5fYATfposFgKwy2R3JbjAkXZxmR2llPTrig=",
+        "lastModified": 1746280949,
+        "narHash": "sha256-4LJA++z08Dss5gAQz9ngj2cPBh7niHTY5WrPKU/24FU=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "32910fa4faf06ec1feee089f3c1d09afdd418192",
+        "rev": "dd4a2d6a607be002e061e6914e1a309542df21c1",
         "type": "github"
       },
       "original": {
