@@ -9,11 +9,8 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     agenix = {
-      url = "github:ryantm/agenix";
+      url = "github:yaxitech/ragenix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      inputs.systems.follows = "systems";
-      inputs.darwin.follows = "";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
