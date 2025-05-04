@@ -11,6 +11,8 @@
     ragenix = {
       url = "github:yaxitech/ragenix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.agenix.follows = "agenix";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -57,6 +59,13 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
+    };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      inputs.systems.follows = "systems";
+      inputs.darwin.follows = "";
     };
   };
 
