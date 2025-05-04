@@ -1,6 +1,6 @@
 {
   pkgs,
-  agenix,
+  ragenix,
   ...
 }:
 
@@ -27,8 +27,8 @@ let
 
 in
 {
-  imports = [ agenix.nixosModules.default ];
-  environment.systemPackages = [ agenix.packages.${pkgs.system}.default ];
+  imports = [ ragenix.nixosModules.default ];
+  environment.systemPackages = [ ragenix.packages.${pkgs.system}.default ];
 
   age.secrets = secrets;
 }

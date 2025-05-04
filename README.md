@@ -38,7 +38,7 @@ imports =
 
 ### Service with nginx, borgmatic, or other config
 
-If a new service also needs to create an nginx virtual host, backup some data using borgmatic, set up temporary files, open ports, use an agenix secret, etc., then prefer putting those configs in the new module rather than the `nginx`, `borgmatic` modules.
+If a new service also needs to create an nginx virtual host, backup some data using borgmatic, set up temporary files, open ports, use a ragenix secret, etc., then prefer putting those configs in the new module rather than the `nginx`, `borgmatic` modules.
 
 ```nix
 # file: modules/example.nix

@@ -2,34 +2,10 @@
   "nodes": {
     "agenix": {
       "inputs": {
-        "agenix": "agenix_2",
-        "crane": "crane",
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1744897914,
-        "narHash": "sha256-GIVU92o2TZBnKQXTb76zpQbWR4zjU2rFqWKNIIpXnqA=",
-        "owner": "yaxitech",
-        "repo": "ragenix",
-        "rev": "40f2e17ecaeab4d78ec323e96a04548c0aaa5223",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yaxitech",
-        "repo": "ragenix",
-        "type": "github"
-      }
-    },
-    "agenix_2": {
-      "inputs": {
         "darwin": "darwin",
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
         "nixpkgs": [
-          "agenix",
+          "ragenix",
           "nixpkgs"
         ],
         "systems": "systems"
@@ -66,7 +42,7 @@
     "darwin": {
       "inputs": {
         "nixpkgs": [
-          "agenix",
+          "ragenix",
           "agenix",
           "nixpkgs"
         ]
@@ -109,7 +85,9 @@
     },
     "flake-utils": {
       "inputs": {
-        "systems": "systems_2"
+        "systems": [
+          "systems"
+        ]
       },
       "locked": {
         "lastModified": 1731533236,
@@ -127,9 +105,7 @@
     },
     "flake-utils_2": {
       "inputs": {
-        "systems": [
-          "systems"
-        ]
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -163,7 +139,7 @@
     "gep-dotfiles": {
       "inputs": {
         "agenix": [
-          "agenix"
+          "ragenix"
         ],
         "dwm-gep": [],
         "flake-parts": "flake-parts",
@@ -260,8 +236,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "agenix",
-          "agenix",
           "nixpkgs"
         ]
       },
@@ -282,6 +256,8 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
+          "ragenix",
+          "agenix",
           "nixpkgs"
         ]
       },
@@ -534,17 +510,41 @@
         "type": "github"
       }
     },
-    "root": {
+    "ragenix": {
       "inputs": {
         "agenix": "agenix",
+        "crane": "crane",
         "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1744897914,
+        "narHash": "sha256-GIVU92o2TZBnKQXTb76zpQbWR4zjU2rFqWKNIIpXnqA=",
+        "owner": "yaxitech",
+        "repo": "ragenix",
+        "rev": "40f2e17ecaeab4d78ec323e96a04548c0aaa5223",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yaxitech",
+        "repo": "ragenix",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
         "gep-dotfiles": "gep-dotfiles",
-        "home-manager": "home-manager_2",
+        "home-manager": "home-manager",
         "lix-module": "lix-module",
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-patch-glance-secret": "nixpkgs-patch-glance-secret",
+        "ragenix": "ragenix",
         "systems": "systems_3",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
@@ -552,7 +552,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "agenix",
+          "ragenix",
           "nixpkgs"
         ]
       },
@@ -618,7 +618,7 @@
     "ymstnt-dotfiles": {
       "inputs": {
         "agenix": [
-          "agenix"
+          "ragenix"
         ],
         "cosmic-manager": [],
         "home-manager": [
