@@ -21,6 +21,7 @@
     phpOptions = ''
       upload_max_filesize = 50G
       post_max_size = 50G
+      max_input_time = ${toString (60 * 60 * 24)}
     '';
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
   };
