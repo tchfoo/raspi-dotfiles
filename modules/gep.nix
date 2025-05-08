@@ -33,6 +33,10 @@
 
   hm-gep.programs.nh.flake = lib.mkForce "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
 
+  hm-gep.programs.zsh.loginExtra = ''
+    ta
+  '';
+
   users.users.gep = {
     initialPassword = "gep";
     isNormalUser = true;
