@@ -34,7 +34,7 @@
   hm-gep.programs.nh.flake = lib.mkForce "${config.hm-gep.home.homeDirectory}/raspi-dotfiles";
 
   hm-gep.programs.zsh.loginExtra = ''
-    ta
+    test -z "$TMUX" && ta
   '';
 
   users.users.gep = {
