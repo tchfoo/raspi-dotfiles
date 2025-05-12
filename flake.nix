@@ -40,6 +40,7 @@
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
       inputs.nur.follows = "";
+      inputs.treefmt-nix.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
