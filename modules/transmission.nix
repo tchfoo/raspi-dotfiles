@@ -44,5 +44,9 @@
     " d    /var/media/media-server/Movies 0755 ymstnt shared"
     " d    /var/media/media-server/Shows  0755 ymstnt shared"
     " d    /var/media/media-server/Anime  0755 ymstnt shared"
+    " d    /hdd/torrents/                 0755 ymstnt shared"
+    " d    /hdd/torrents/music            0755 ymstnt shared"
+    " d    /hdd/torrents/movies           0755 ymstnt shared"
+    " d    /hdd/torrents/shows            0755 ymstnt shared"
   ];
 }
