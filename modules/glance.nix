@@ -10,6 +10,17 @@
     settings = {
       server = {
         port = 11146;
+        proxied = true;
+      };
+      auth = {
+        secret-key = {
+          _secret = config.age.secrets.glance-secret-key.path;
+        };
+        users = {
+          ymstnt = {
+            password._secret = config.age.secrets.glance-pass-ymstnt.path;
+          };
+        };
       };
       document = {
         head = ''
