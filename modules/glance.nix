@@ -108,8 +108,8 @@
                       url = "https://search.nixos.org/options?query={QUERY}";
                     }
                     {
-                      title = "nixpkgs tracker";
-                      shortcut = "!nixpkgstr";
+                      title = "nixpkgs update tracker";
+                      shortcut = "!nixu";
                       url = "https://nixpkgs-tracker.ocfox.me/?pr={QUERY}";
                     }
                     {
