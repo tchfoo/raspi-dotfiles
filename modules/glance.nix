@@ -66,6 +66,7 @@
                 }
                 {
                   type = "twitch-channels";
+                  hide-header = true;
                   channels = [
                     "alexovics"
                     "cosmoyaha"
@@ -82,6 +83,7 @@
               widgets = [
                 {
                   type = "search";
+                  hide-header = true;
                   bangs = [
                     {
                       title = "nixpkgs";
@@ -150,6 +152,7 @@
                   widgets = [
                     {
                       type = "bookmarks";
+                      hide-header = true;
                       groups = [
                         {
                           title = "Tchfoo & co.";
@@ -206,6 +209,7 @@
                     }
                     {
                       type = "monitor";
+                      hide-header = true;
                       cache = "5m";
                       title = "Services";
                       sites = [
@@ -252,6 +256,7 @@
                   widgets = [
                     {
                       type = "repository";
+                      hide-header = true;
                       repository = "tchfoo/raspi-dotfiles";
                       token = {
                         _secret = config.age.secrets.glance-gh-token.path;
@@ -262,6 +267,7 @@
                     }
                     {
                       type = "repository";
+                      hide-header = true;
                       repository = "NixOS/nixpkgs";
                       token = {
                         _secret = config.age.secrets.glance-gh-token.path;
@@ -279,6 +285,7 @@
               widgets = [
                 {
                   type = "weather";
+                  hide-header = true;
                   location = {
                     _secret = config.age.secrets.glance-weather-location.path;
                   };
@@ -288,6 +295,7 @@
                 }
                 {
                   type = "releases";
+                  hide-header = true;
                   cache = "12h";
                   show-source-icon = true;
                   token = {
@@ -306,6 +314,7 @@
                 }
                 {
                   type = "markets";
+                  hide-header = true;
                   markets = [
                     {
                       symbol = "EURHUF=X";
