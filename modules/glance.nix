@@ -292,34 +292,6 @@
                     }
                   ];
                 }
-                {
-                  type = "split-column";
-                  max-columns = 3;
-                  widgets = [
-                    {
-                      type = "repository";
-                      hide-header = true;
-                      repository = "tchfoo/raspi-dotfiles";
-                      token = {
-                        _secret = config.age.secrets.glance-gh-token.path;
-                      };
-                      pull-requests-limit = -1;
-                      issues-limit = -1;
-                      commits-limit = 5;
-                    }
-                    {
-                      type = "repository";
-                      hide-header = true;
-                      repository = "NixOS/nixpkgs";
-                      token = {
-                        _secret = config.age.secrets.glance-gh-token.path;
-                      };
-                      pull-requests-limit = 5;
-                      issues-limit = 5;
-                      commits-limit = 5;
-                    }
-                  ];
-                }
               ];
             }
             {
@@ -369,6 +341,43 @@
                     {
                       symbol = "GBPHUF=X";
                       name = "GBP";
+                    }
+                  ];
+                }
+              ];
+            }
+          ];
+        }
+        {
+          name = "Repositories";
+          columns = [
+            {
+              size = "full";
+              widgets = [
+                {
+                  type = "split-column";
+                  widgets = [
+                    {
+                      type = "repository";
+                      hide-header = true;
+                      repository = "tchfoo/raspi-dotfiles";
+                      token = {
+                        _secret = config.age.secrets.glance-gh-token.path;
+                      };
+                      pull-requests-limit = -1;
+                      issues-limit = -1;
+                      commits-limit = 5;
+                    }
+                    {
+                      type = "repository";
+                      hide-header = true;
+                      repository = "NixOS/nixpkgs";
+                      token = {
+                        _secret = config.age.secrets.glance-gh-token.path;
+                      };
+                      pull-requests-limit = 5;
+                      issues-limit = 5;
+                      commits-limit = 5;
                     }
                   ];
                 }
