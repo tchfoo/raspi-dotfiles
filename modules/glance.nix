@@ -78,6 +78,7 @@
                 {
                   type = "twitch-channels";
                   hide-header = true;
+                  collapse-after = 3;
                   channels = [
                     "alexovics"
                     "cosmoyaha"
@@ -312,6 +313,7 @@
                   hide-header = true;
                   cache = "12h";
                   show-source-icon = true;
+                  collapse-after = 3;
                   token = {
                     _secret = config.age.secrets.glance-gh-token.path;
                   };
