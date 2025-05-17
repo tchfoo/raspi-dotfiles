@@ -310,6 +310,143 @@
                   hide-location = true;
                 }
                 {
+                  type = "group";
+                  widgets = [
+                    {
+                      type = "custom-api";
+                      title = "Android";
+                      title-url = "https://my.nextdns.io";
+                      cache = "1h";
+                      url._secret = config.age.secrets.glance-nextdns-android.path;
+                      headers = {
+                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                      };
+                      template = ''
+                        {{ if eq .Response.StatusCode 200 }}
+                          <div style="display: flex; justify-content: space-between;">
+                            {{ $total := 0.0 }}
+                            {{ $blocked := 0.0 }}
+                            {{ range .JSON.Array "data" }}
+                              {{ $total = add $total (.Int "queries" | toFloat) }}
+                              {{ if eq (.String "status") "blocked" }}
+                                {{ $blocked = add $blocked (.Int "queries" | toFloat) }}
+                              {{ end }}
+                            {{ end }}
+                            <div style="flex: 1; text-align: center;">
+                              <p>Queries</p>
+                              <p>{{ printf "%.0f" $total }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center; color: var(--color-negative);">
+                              <p>Blocked</p>
+                              <p>{{ printf "%.0f" $blocked }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                              <p>Block Rate</p>
+                              {{ if gt $total 0.0 }}
+                                <p>{{ div (mul $blocked 100) $total | printf "%.2f" }}%</p>
+                              {{ else }}
+                                <p>0.00%</p>
+                              {{ end }}
+                            </div>
+                          </div>
+                        {{ else }}
+                          <div style="text-align: center; color: var(--color-negative);">
+                            Error: {{ .Response.StatusCode }} - {{ .Response.Status }}
+                          </div>
+                        {{ end }}
+                      '';
+                    }
+                    {
+                      type = "custom-api";
+                      title = "Windows";
+                      title-url = "https://my.nextdns.io";
+                      cache = "1h";
+                      url._secret = config.age.secrets.glance-nextdns-windows.path;
+                      headers = {
+                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                      };
+                      template = ''
+                        {{ if eq .Response.StatusCode 200 }}
+                          <div style="display: flex; justify-content: space-between;">
+                            {{ $total := 0.0 }}
+                            {{ $blocked := 0.0 }}
+                            {{ range .JSON.Array "data" }}
+                              {{ $total = add $total (.Int "queries" | toFloat) }}
+                              {{ if eq (.String "status") "blocked" }}
+                                {{ $blocked = add $blocked (.Int "queries" | toFloat) }}
+                              {{ end }}
+                            {{ end }}
+                            <div style="flex: 1; text-align: center;">
+                              <p>Queries</p>
+                              <p>{{ printf "%.0f" $total }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center; color: var(--color-negative);">
+                              <p>Blocked</p>
+                              <p>{{ printf "%.0f" $blocked }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                              <p>Block Rate</p>
+                              {{ if gt $total 0.0 }}
+                                <p>{{ div (mul $blocked 100) $total | printf "%.2f" }}%</p>
+                              {{ else }}
+                                <p>0.00%</p>
+                              {{ end }}
+                            </div>
+                          </div>
+                        {{ else }}
+                          <div style="text-align: center; color: var(--color-negative);">
+                            Error: {{ .Response.StatusCode }} - {{ .Response.Status }}
+                          </div>
+                        {{ end }}
+                      '';
+                    }
+                    {
+                      type = "custom-api";
+                      title = "TV";
+                      title-url = "https://my.nextdns.io";
+                      cache = "1h";
+                      url._secret = config.age.secrets.glance-nextdns-tv.path;
+                      headers = {
+                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                      };
+                      template = ''
+                        {{ if eq .Response.StatusCode 200 }}
+                          <div style="display: flex; justify-content: space-between;">
+                            {{ $total := 0.0 }}
+                            {{ $blocked := 0.0 }}
+                            {{ range .JSON.Array "data" }}
+                              {{ $total = add $total (.Int "queries" | toFloat) }}
+                              {{ if eq (.String "status") "blocked" }}
+                                {{ $blocked = add $blocked (.Int "queries" | toFloat) }}
+                              {{ end }}
+                            {{ end }}
+                            <div style="flex: 1; text-align: center;">
+                              <p>Queries</p>
+                              <p>{{ printf "%.0f" $total }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center; color: var(--color-negative);">
+                              <p>Blocked</p>
+                              <p>{{ printf "%.0f" $blocked }}</p>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                              <p>Block Rate</p>
+                              {{ if gt $total 0.0 }}
+                                <p>{{ div (mul $blocked 100) $total | printf "%.2f" }}%</p>
+                              {{ else }}
+                                <p>0.00%</p>
+                              {{ end }}
+                            </div>
+                          </div>
+                        {{ else }}
+                          <div style="text-align: center; color: var(--color-negative);">
+                            Error: {{ .Response.StatusCode }} - {{ .Response.Status }}
+                          </div>
+                        {{ end }}
+                      '';
+                    }
+                  ];
+                }
+                {
                   type = "releases";
                   hide-header = true;
                   cache = "12h";
