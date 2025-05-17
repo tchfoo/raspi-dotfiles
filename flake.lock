@@ -385,18 +385,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-glance-secret": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-vqMW5oSrgaqmX9rxKo3geEgrxzis1sOU3sRHdrBBENA=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/pull/395551/head~1...pull/395551/head.patch"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/pull/395551/head~1...pull/395551/head.patch"
-      }
-    },
     "nixpkgs-patch-vencord": {
       "flake": false,
       "locked": {
@@ -502,7 +490,6 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-patch-glance-secret": "nixpkgs-patch-glance-secret",
         "ragenix": "ragenix",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
