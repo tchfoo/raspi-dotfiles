@@ -95,6 +95,7 @@
                 {
                   type = "search";
                   hide-header = true;
+                  new-tab = true;
                   bangs = [
                     {
                       title = "nixpkgs";
