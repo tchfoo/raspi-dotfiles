@@ -79,6 +79,7 @@
                   type = "twitch-channels";
                   hide-header = true;
                   collapse-after = 3;
+                  sort-by = "live";
                   channels = [
                     "alexovics"
                     "cosmoyaha"
