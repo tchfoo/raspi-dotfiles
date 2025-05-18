@@ -32,18 +32,6 @@
 
   systemd.tmpfiles.rules = [
     # Type Path                           Mode User   Group   Age Argument
-    " d    /var/media                     0755 ymstnt shared"
-    " d    /var/media/music               0755 ymstnt shared"
-    " d    /var/media/torrents            0755 ymstnt shared"
-    " d    /var/media/incomplete-torrents 0755 ymstnt shared"
-    " d    /var/media/torrents/Music      0755 ymstnt shared"
-    " d    /var/media/torrents/Movies     0755 ymstnt shared"
-    " d    /var/media/torrents/Shows      0755 ymstnt shared"
-    " d    /var/media/torrents/Anime      0755 ymstnt shared"
-    " d    /var/media/media-server        0755 ymstnt shared"
-    " d    /var/media/media-server/Movies 0755 ymstnt shared"
-    " d    /var/media/media-server/Shows  0755 ymstnt shared"
-    " d    /var/media/media-server/Anime  0755 ymstnt shared"
     " d    /hdd/incomplete-torrents       0755 ymstnt shared"
     " d    /hdd/torrents                  0755 ymstnt shared"
     " d    /hdd/torrents/music            0755 ymstnt shared"
