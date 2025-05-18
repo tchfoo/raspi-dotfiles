@@ -13,8 +13,8 @@
     openRPCPort = true;
     openPeerPorts = true;
     settings = {
-      download-dir = "/var/media/torrents";
-      incomplete-dir = "/var/media/incomplete-torrents";
+      download-dir = "/hdd/torrents";
+      incomplete-dir = "/hdd/incomplete-torrents";
       rpc-enabled = true;
       rpc-host-whitelist-enabled = false;
       rpc-whitelist-enabled = true;
@@ -44,7 +44,8 @@
     " d    /var/media/media-server/Movies 0755 ymstnt shared"
     " d    /var/media/media-server/Shows  0755 ymstnt shared"
     " d    /var/media/media-server/Anime  0755 ymstnt shared"
-    " d    /hdd/torrents/                 0755 ymstnt shared"
+    " d    /hdd/incomplete-torrents       0755 ymstnt shared"
+    " d    /hdd/torrents                  0755 ymstnt shared"
     " d    /hdd/torrents/music            0755 ymstnt shared"
     " d    /hdd/torrents/movies           0755 ymstnt shared"
     " d    /hdd/torrents/shows            0755 ymstnt shared"
