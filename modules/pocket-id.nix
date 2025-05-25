@@ -11,6 +11,7 @@ in
     enable = true;
     user = "shared";
     group = "shared";
+    dataDir = "/var/lib/pocket-id-dev";
     settings = {
       PORT = 12673;
       APP_URL = "https://auth.tchfoo.com";
