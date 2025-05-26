@@ -13,11 +13,9 @@ in
     group = "shared";
     settings = {
       PORT = 12673;
-      PUBLIC_APP_URL = "https://auth.tchfoo.com";
+      APP_URL = "https://auth.tchfoo.com";
       TRUST_PROXY = true;
-      INTERNAL_BACKEND_URL = "http://localhost:12674";
-      BACKEND_PORT = 12674;
-      PUBLIC_UI_CONFIG_DISABLED = true;
+      UI_CONFIG_DISABLED = true;
       DISABLE_ANIMATIONS = true;
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
       EMAIL_ONE_TIME_ACCESS_AS_ADMIN_ENABLED = true;
@@ -37,14 +35,6 @@ in
     locations = {
       "/" = {
         proxyPass = "http://127.0.0.1:${toString cfg.settings.PORT}";
-        recommendedProxySettings = true;
-      };
-      "/.well-known/" = {
-        proxyPass = "http://localhost:${toString cfg.settings.BACKEND_PORT}";
-        recommendedProxySettings = true;
-      };
-      "/api/" = {
-        proxyPass = "http://localhost:${toString cfg.settings.BACKEND_PORT}";
         recommendedProxySettings = true;
       };
     };
