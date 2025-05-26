@@ -17,6 +17,7 @@
       PUBLIC_UI_CONFIG_DISABLED = true;
       DISABLE_ANIMATIONS = true;
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
+      EMAIL_ONE_TIME_ACCESS_AS_ADMIN_ENABLED = true;
     };
     environmentFile = config.age.secrets.pocket-id.path;
   };
