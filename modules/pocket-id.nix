@@ -3,6 +3,9 @@
   ...
 }:
 
+let
+  cfg = config.services.pocket-id;
+in
 {
   services.pocket-id = {
     enable = true;
@@ -33,15 +36,15 @@
 
     locations = {
       "/" = {
-        proxyPass = "http://127.0.0.1:12673";
+        proxyPass = "http://127.0.0.1:${toString cfg.settings.PORT}";
         recommendedProxySettings = true;
       };
       "/.well-known/" = {
-        proxyPass = "http://localhost:12674";
+        proxyPass = "http://localhost:${toString cfg.settings.BACKEND_PORT}";
         recommendedProxySettings = true;
       };
       "/api/" = {
-        proxyPass = "http://localhost:12674";
+        proxyPass = "http://localhost:${toString cfg.settings.BACKEND_PORT}";
         recommendedProxySettings = true;
       };
     };
@@ -51,11 +54,11 @@
     sqlite_databases = [
       {
         name = "pocketid";
-        path = "/var/lib/pocket-id/data/pocket-id.db";
+        path = "${cfg.dataDir}/data/pocket-id.db";
       }
     ];
     source_directories = [
-      "/var/lib/pocket-id"
+      cfg.dataDir
     ];
   };
 }
