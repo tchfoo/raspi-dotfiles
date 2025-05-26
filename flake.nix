@@ -38,6 +38,7 @@
       inputs.lix-module.follows = "lix-module";
       inputs.nur.follows = "";
       inputs.treefmt-nix.follows = "";
+      inputs.nixpkgs-patcher.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
