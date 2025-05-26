@@ -40,16 +40,4 @@ in
       };
     };
   };
-
-  services.borgmatic.configurations.raspi = {
-    sqlite_databases = [
-      {
-        name = "pocketid";
-        path = "${cfg.dataDir}/data/pocket-id.db";
-      }
-    ];
-    source_directories = [
-      cfg.dataDir
-    ];
-  };
 }
