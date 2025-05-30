@@ -1,0 +1,103 @@
+diff --git a/nixos/tests/all-tests.nix b/nixos/tests/all-tests.nix
+index c01da895fbbc12..2ba9260afff244 100644
+--- a/nixos/tests/all-tests.nix
++++ b/nixos/tests/all-tests.nix
+@@ -1057,7 +1057,7 @@ in
+   pleroma = handleTestOn [ "x86_64-linux" "aarch64-linux" ] ./pleroma.nix { };
+   plikd = handleTest ./plikd.nix { };
+   plotinus = handleTest ./plotinus.nix { };
+-  pocket-id = handleTest ./pocket-id.nix { };
++  pocket-id = runTest ./pocket-id.nix;
+   podgrab = handleTest ./podgrab.nix { };
+   podman = handleTestOn [ "aarch64-linux" "x86_64-linux" ] ./podman/default.nix { };
+   podman-tls-ghostunnel = handleTestOn [
+diff --git a/nixos/tests/pocket-id.nix b/nixos/tests/pocket-id.nix
+index 753fa251473f4a..830ba3e8c7609c 100644
+--- a/nixos/tests/pocket-id.nix
++++ b/nixos/tests/pocket-id.nix
+@@ -1,47 +1,45 @@
+-import ./make-test-python.nix (
+-  { lib, ... }:
++{ lib, ... }:
+ 
+-  {
+-    name = "pocket-id";
+-    meta.maintainers = with lib.maintainers; [
+-      gepbird
+-      ymstnt
+-    ];
++{
++  name = "pocket-id";
++  meta.maintainers = with lib.maintainers; [
++    gepbird
++    ymstnt
++  ];
+ 
+-    nodes = {
+-      machine =
+-        { ... }:
+-        {
+-          services.pocket-id = {
+-            enable = true;
+-            settings = {
+-              PORT = 10001;
+-              INTERNAL_BACKEND_URL = "http://localhost:10002";
+-              BACKEND_PORT = 10002;
+-            };
++  nodes = {
++    machine =
++      { ... }:
++      {
++        services.pocket-id = {
++          enable = true;
++          settings = {
++            PORT = 10001;
++            INTERNAL_BACKEND_URL = "http://localhost:10002";
++            BACKEND_PORT = 10002;
+           };
+         };
+-    };
++      };
++  };
+ 
+-    testScript =
+-      { nodes, ... }:
+-      let
+-        inherit (nodes.machine.services.pocket-id) settings;
+-        inherit (builtins) toString;
+-      in
+-      ''
+-        machine.wait_for_unit("pocket-id-backend.service")
+-        machine.wait_for_open_port(${toString settings.BACKEND_PORT})
+-        machine.wait_for_unit("pocket-id-frontend.service")
+-        machine.wait_for_open_port(${toString settings.PORT})
++  testScript =
++    { nodes, ... }:
++    let
++      inherit (nodes.machine.services.pocket-id) settings;
++      inherit (builtins) toString;
++    in
++    ''
++      machine.wait_for_unit("pocket-id-backend.service")
++      machine.wait_for_open_port(${toString settings.BACKEND_PORT})
++      machine.wait_for_unit("pocket-id-frontend.service")
++      machine.wait_for_open_port(${toString settings.PORT})
+ 
+-        backend_status = machine.succeed("curl -L -o /tmp/backend-output -w '%{http_code}' http://localhost:${toString settings.BACKEND_PORT}/api/users/me")
+-        assert backend_status == "401"
+-        machine.succeed("grep 'You are not signed in' /tmp/backend-output")
++      backend_status = machine.succeed("curl -L -o /tmp/backend-output -w '%{http_code}' http://localhost:${toString settings.BACKEND_PORT}/api/users/me")
++      assert backend_status == "401"
++      machine.succeed("grep 'You are not signed in' /tmp/backend-output")
+ 
+-        frontend_status = machine.succeed("curl -L -o /tmp/frontend-output -w '%{http_code}' http://localhost:${toString settings.PORT}")
+-        assert frontend_status == "200"
+-        machine.succeed("grep 'Sign in to Pocket ID' /tmp/frontend-output")
+-      '';
+-  }
+-)
++      frontend_status = machine.succeed("curl -L -o /tmp/frontend-output -w '%{http_code}' http://localhost:${toString settings.PORT}")
++      assert frontend_status == "200"
++      machine.succeed("grep 'Sign in to Pocket ID' /tmp/frontend-output")
++    '';
++}

@@ -29,6 +29,10 @@
       url = "nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch";
       flake = false;
     };
+    nixpkgs-patch-11-pocket-id-dev-test-migration = {
+      url = "nixpkgs-patch-11-pocket-id-dev-test-migration.patch";
+      flake = false;
+    };
     nixpkgs-patch-20-pocket-id-dev = {
       url = "https://github.com/NixOS/nixpkgs/compare/master...pull/411229/head.diff";
       flake = false;
