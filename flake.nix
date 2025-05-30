@@ -25,10 +25,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-10-pocket-id-dev-release-notes-fix = {
-      url = "nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch";
-      flake = false;
-    };
     nixpkgs-patch-11-pocket-id-dev-test-migration = {
       url = "nixpkgs-patch-11-pocket-id-dev-test-migration.patch";
       flake = false;

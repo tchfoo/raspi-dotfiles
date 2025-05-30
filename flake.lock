@@ -387,29 +387,16 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-10-pocket-id-dev-release-notes-fix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-FDPPcysEjk3JfFvnsF1dA2DkPLJnDCZQunz1ce+j7zU=",
-        "path": "/nix/store/6fgc04j6dlbxc5dc0ga2f8ycjqx14zxn-source/nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/6fgc04j6dlbxc5dc0ga2f8ycjqx14zxn-source/nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch",
-        "type": "path"
-      }
-    },
     "nixpkgs-patch-11-pocket-id-dev-test-migration": {
       "flake": false,
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-OKvDWR52IOeGPEChFTXyuvjA8YwId8W2QRp0ayrQwr4=",
-        "path": "/nix/store/6fgc04j6dlbxc5dc0ga2f8ycjqx14zxn-source/nixpkgs-patch-11-pocket-id-dev-test-migration.patch",
+        "path": "/nix/store/2i6z0dnzzhdj1h2sr7p283v5i8vycf9x-source/nixpkgs-patch-11-pocket-id-dev-test-migration.patch",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/6fgc04j6dlbxc5dc0ga2f8ycjqx14zxn-source/nixpkgs-patch-11-pocket-id-dev-test-migration.patch",
+        "path": "/nix/store/2i6z0dnzzhdj1h2sr7p283v5i8vycf9x-source/nixpkgs-patch-11-pocket-id-dev-test-migration.patch",
         "type": "path"
       }
     },
@@ -517,7 +504,6 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-10-pocket-id-dev-release-notes-fix": "nixpkgs-patch-10-pocket-id-dev-release-notes-fix",
         "nixpkgs-patch-11-pocket-id-dev-test-migration": "nixpkgs-patch-11-pocket-id-dev-test-migration",
         "nixpkgs-patch-20-pocket-id-dev": "nixpkgs-patch-20-pocket-id-dev",
         "nixpkgs-patcher": "nixpkgs-patcher",
