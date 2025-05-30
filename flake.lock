@@ -387,6 +387,31 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-10-pocket-id-dev-release-notes-fix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-FDPPcysEjk3JfFvnsF1dA2DkPLJnDCZQunz1ce+j7zU=",
+        "path": "/nix/store/7j33rkj7q947jw29n7pfhliy1i0kz85p-source/nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/7j33rkj7q947jw29n7pfhliy1i0kz85p-source/nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch",
+        "type": "path"
+      }
+    },
+    "nixpkgs-patch-20-pocket-id-dev": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-bHRFp9NIGgV7ilmZA7jCD4IEkHm7ayvM9yX/QIbklRM=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...pull/411229/head.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...pull/411229/head.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1748094984,
@@ -479,6 +504,8 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-10-pocket-id-dev-release-notes-fix": "nixpkgs-patch-10-pocket-id-dev-release-notes-fix",
+        "nixpkgs-patch-20-pocket-id-dev": "nixpkgs-patch-20-pocket-id-dev",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "ragenix": "ragenix",
         "systems": "systems",
