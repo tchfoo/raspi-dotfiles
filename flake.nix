@@ -25,6 +25,14 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-10-pocket-id-dev-release-notes-fix = {
+      url = "nixpkgs-patch-10-pocket-id-dev-release-notes-fix.patch";
+      flake = false;
+    };
+    nixpkgs-patch-20-pocket-id-dev = {
+      url = "https://github.com/NixOS/nixpkgs/compare/master...pull/411229/head.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
