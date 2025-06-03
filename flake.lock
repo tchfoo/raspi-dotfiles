@@ -399,6 +399,18 @@
         "url": "https://github.com/gepbird/nixpkgs/compare/pocket-id-1.2.0~2..pocket-id-1.2.0.diff"
       }
     },
+    "nixpkgs-patch-glance-environment-file": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-ia6xO8yXeQhnCeRNmhjKs8fc+zrn1Pxu5LFXGQyzc+A=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...pull/413373/head.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...pull/413373/head.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1748940145,
@@ -491,6 +503,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-glance-environment-file": "nixpkgs-patch-glance-environment-file",
         "nixpkgs-patch-pocket-id-1-2-0": "nixpkgs-patch-pocket-id-1-2-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "ragenix": "ragenix",

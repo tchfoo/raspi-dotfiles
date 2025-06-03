@@ -7,18 +7,17 @@
   services.glance = {
     enable = true;
     openFirewall = true;
+    environmentFile = config.age.secrets.glance.path;
     settings = {
       server = {
         port = 11146;
         proxied = true;
       };
       auth = {
-        secret-key = {
-          _secret = config.age.secrets.glance-secret-key.path;
-        };
+        secret-key = "\${SECRET_KEY}";
         users = {
           ymstnt = {
-            password._secret = config.age.secrets.glance-pass-ymstnt.path;
+            password = "\${USER_YMSTNT_PASSWORD}";
           };
         };
       };
@@ -167,9 +166,7 @@
                   hide-header = true;
                   url = "https://miniflux.ymstnt.com/v1/entries?limit=10&order=published_at&direction=desc&status=unread";
                   headers = {
-                    X-Auth-Token = {
-                      _secret = config.age.secrets.glance-miniflux-token.path;
-                    };
+                    X-Auth-Token = "\${MINIFLUX_TOKEN}";
                     Accept = "application/json";
                   };
                   template = ''
@@ -302,9 +299,7 @@
                 {
                   type = "weather";
                   hide-header = true;
-                  location = {
-                    _secret = config.age.secrets.glance-weather-location.path;
-                  };
+                  location = "\${WEATHER_LOCATION}";
                   units = "metric";
                   hour-format = "24h";
                   hide-location = true;
@@ -315,11 +310,11 @@
                     {
                       type = "custom-api";
                       title = "Android";
-                      title-url = "https://my.nextdns.io";
+                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_ANDROID}";
                       cache = "1h";
-                      url._secret = config.age.secrets.glance-nextdns-android.path;
+                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_ANDROID}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                        X-Api-Key = "\${NEXTDNS_API_KEY}";
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -359,11 +354,11 @@
                     {
                       type = "custom-api";
                       title = "Windows";
-                      title-url = "https://my.nextdns.io";
+                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_WINDOWS}";
                       cache = "1h";
-                      url._secret = config.age.secrets.glance-nextdns-windows.path;
+                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_WINDOWS}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                        X-Api-Key = "\${NEXTDNS_API_KEY}";
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -403,11 +398,11 @@
                     {
                       type = "custom-api";
                       title = "TV";
-                      title-url = "https://my.nextdns.io";
+                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_TV}";
                       cache = "1h";
-                      url._secret = config.age.secrets.glance-nextdns-tv.path;
+                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_TV}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key._secret = config.age.secrets.glance-nextdns-apikey.path;
+                        X-Api-Key = "\${NEXTDNS_API_KEY}";
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -452,9 +447,7 @@
                   cache = "12h";
                   show-source-icon = true;
                   collapse-after = 3;
-                  token = {
-                    _secret = config.age.secrets.glance-gh-token.path;
-                  };
+                  token = "\${GH_TOKEN}";
                   repositories = [
                     "glanceapp/glance"
                     "pocket-id/pocket-id"
@@ -501,9 +494,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "tchfoo/raspi-dotfiles";
-                      token = {
-                        _secret = config.age.secrets.glance-gh-token.path;
-                      };
+                      token = "\${GH_TOKEN}";
                       pull-requests-limit = -1;
                       issues-limit = -1;
                       commits-limit = 5;
@@ -512,9 +503,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "NixOS/nixpkgs";
-                      token = {
-                        _secret = config.age.secrets.glance-gh-token.path;
-                      };
+                      token = "\${GH_TOKEN}";
                       pull-requests-limit = 5;
                       issues-limit = 5;
                       commits-limit = 5;

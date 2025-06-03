@@ -29,6 +29,10 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-glance-environment-file = {
+      url = "https://github.com/NixOS/nixpkgs/compare/master...pull/413373/head.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles/nixos";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,6 +81,7 @@
         modules = [
           ./hosts/raspi-doboz/configuration.nix
         ];
+        system = "aarch64-linux";
         specialArgs = inputs;
       };
     };
