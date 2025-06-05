@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-patch-pocket-id-1-2-0 = {
+      url = "https://github.com/gepbird/nixpkgs/compare/pocket-id-1.2.0~2..pocket-id-1.2.0.diff";
+      flake = false;
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     ragenix = {
       url = "github:yaxitech/ragenix";
