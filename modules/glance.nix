@@ -82,9 +82,15 @@
                   channels = [
                     "alexovics"
                     "cosmoyaha"
+                    "cubfan135"
+                    "illeskristof_"
+                    "impulsesv"
                     "jollywangcore"
                     "lukacs00"
                     "minecraft"
+                    "Reden1471"
+                    "skizzleman"
+                    "tangotek"
                     "xisumavoid"
                   ];
                 }
