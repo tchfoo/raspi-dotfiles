@@ -287,12 +287,6 @@
                           icon = "di:pocket-id";
                           error-url = "https://status.tchfoo.com";
                         }
-                        {
-                          title = "Vikunja";
-                          url = "https://tasks.tchfoo.com";
-                          icon = "di:vikunja";
-                          error-url = "https://status.tchfoo.com";
-                        }
                       ];
                     }
                   ];
