@@ -26,9 +26,10 @@
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     gep-dotfiles = {
-      url = "github:gepbird/dotfiles/nixos";
+      url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.agenix.follows = "ragenix";
+      inputs.agenix.follows = "";
+      inputs.ragenix.follows = "ragenix";
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
       inputs.flake-utils.follows = "flake-utils";
