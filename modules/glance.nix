@@ -101,6 +101,7 @@
               widgets = [
                 {
                   type = "search";
+                  search-engine = "kagi";
                   hide-header = true;
                   new-tab = true;
                   bangs = [
