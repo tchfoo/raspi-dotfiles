@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    uni-week-counter = {
+      url = "github:ymstnt/uni-week-counter";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
