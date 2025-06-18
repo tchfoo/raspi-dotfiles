@@ -21,5 +21,8 @@
       proxyPass = "http://127.0.0.1:11734";
       recommendedProxySettings = true;
     };
+    extraConfig = ''
+      add_header 'Access-Control-Allow-Origin' '*';
+    '';
   };
 }
