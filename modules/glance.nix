@@ -21,11 +21,6 @@
           };
         };
       };
-      document = {
-        head = ''
-          <script src="https://cdn.statically.io/gh/ymstnt/uni-week-counter/main/script.js"></script>
-        '';
-      };
       pages = [
         {
           name = "Home";
@@ -61,17 +56,12 @@
                   ];
                 }
                 {
-                  type = "html";
-                  source = ''
-                    <div class="widget">
-                      <div class="widget-header">
-                        <h2 class="uppercase">Current week (uni)</h2>
-                      </div>
-                      <div class="widget-content">
-                        <p id="week-number" class="color-highlight" onclick="checkDateBefore()" onload="checkDateBefore()">Click me!</p>
-                        <img src="" onerror="checkDateBefore()" />
-                      </div>
-                    </div>
+                  type = "custom-api";
+                  title = "Current week (uni)";
+                  cache = "12h";
+                  url = "https://uwc.ymstnt.com/uniWeekCount?daysLeftExams=true&daysLeftBreak=true";
+                  template = ''
+                    <p class="color-paragraph">{{ .JSON.String "message" }}</p>
                   '';
                 }
                 {
