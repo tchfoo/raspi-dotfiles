@@ -545,11 +545,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750267270,
-        "narHash": "sha256-3FGIwkaKgZUzPRp5ms8BDv01a6FK34eLagsZiH0LIIY=",
+        "lastModified": 1750318652,
+        "narHash": "sha256-tAMoTPgSeM6bNrpvhfV+qrrA3FDZ32nNUFfZ3Bh7BZo=",
         "owner": "ymstnt",
         "repo": "uni-week-counter",
-        "rev": "20a8c575c3a10ab611e39a2fa7b793d1f922b70d",
+        "rev": "90f9f32c65d9b8571d3cbb11a9e68316acd1c83b",
         "type": "github"
       },
       "original": {
