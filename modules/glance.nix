@@ -181,6 +181,8 @@
                                 </div>
                             </div>
                         </li>
+                      {{ else }}
+                        <p class="color-paragraph">There are no unread entries.</p>
                       {{ end }}
                     </ul>
                   '';
