@@ -400,16 +400,28 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/416212.diff"
       }
     },
-    "nixpkgs-patch-plex-desktop-fix-build": {
+    "nixpkgs-patch-msedit": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-RJLzM6IfVUNUDDgkf072/aUBubvEJohTzwMUBhsOHnk=",
+        "narHash": "sha256-KQgt9uc1KVdBFFV+7qrMOyZgFG4Lng5U+IxPeppElzg=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/418546.diff"
+        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/418546.diff"
+        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
+      }
+    },
+    "nixpkgs-patch-msedit_2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-KQgt9uc1KVdBFFV+7qrMOyZgFG4Lng5U+IxPeppElzg=",
+        "type": "file",
+        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -504,6 +516,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-msedit": "nixpkgs-patch-msedit",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "ragenix": "ragenix",
         "systems": "systems",
@@ -586,17 +599,17 @@
         ],
         "nixpkgs-develop": [],
         "nixpkgs-master": [],
-        "nixpkgs-patch-plex-desktop-fix-build": "nixpkgs-patch-plex-desktop-fix-build",
+        "nixpkgs-patch-msedit": "nixpkgs-patch-msedit_2",
         "nixpkgs-patcher": [],
         "nixpkgs-stable": [],
         "nur": []
       },
       "locked": {
-        "lastModified": 1750529338,
-        "narHash": "sha256-RQ3hJvuu+uAzo20EvX81tHqHjaIHoFF6YIcyARgYrmM=",
+        "lastModified": 1751214137,
+        "narHash": "sha256-KTXsjIk0lxFy2EmGbrH56W7b7aGX1RFGfW4tx5+p5P4=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "4547253b3c5de2b8474353ecd4c6099bbb066f5d",
+        "rev": "dd28af11802f4c5aa95a5bbf74313b6bbe8622ac",
         "type": "github"
       },
       "original": {

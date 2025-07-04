@@ -72,6 +72,10 @@
       inputs.systems.follows = "systems";
       inputs.darwin.follows = "";
     };
+    nixpkgs-patch-msedit = {
+      url = "https://github.com/nixos/nixpkgs/pull/409075.diff";
+      flake = false;
+    };
   };
 
   outputs =
