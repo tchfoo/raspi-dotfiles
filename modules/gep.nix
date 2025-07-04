@@ -37,6 +37,8 @@
     test -z "$TMUX" && ta
   '';
 
+  age.secrets.gitconfig-work.file = config.age.secrets.stub.file;
+
   users.users.gep = {
     initialPassword = "gep";
     isNormalUser = true;
