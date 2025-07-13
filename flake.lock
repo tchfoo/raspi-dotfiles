@@ -383,6 +383,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/423723.diff"
       }
     },
+    "nixpkgs-patch-pocket-id-dev-1-6-2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-DBgWqFJ8pDBaAuSWozCJT5OcGcC7dhuSf8yuk6YojBQ=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/423971.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/423971.diff"
+      }
+    },
     "nixpkgs-patch-vencord": {
       "flake": false,
       "locked": {
@@ -558,6 +570,7 @@
         "nixpkgs-patch-msedit": "nixpkgs-patch-msedit",
         "nixpkgs-patch-pocket-id-dev-1-5-0": "nixpkgs-patch-pocket-id-dev-1-5-0",
         "nixpkgs-patch-pocket-id-dev-1-6-1": "nixpkgs-patch-pocket-id-dev-1-6-1",
+        "nixpkgs-patch-pocket-id-dev-1-6-2": "nixpkgs-patch-pocket-id-dev-1-6-2",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "ragenix": "ragenix",
         "systems": "systems",

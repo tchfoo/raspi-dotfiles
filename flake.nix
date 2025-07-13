@@ -38,6 +38,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/423723.diff";
       flake = false;
     };
+    nixpkgs-patch-pocket-id-dev-1-6-2 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/423971.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
