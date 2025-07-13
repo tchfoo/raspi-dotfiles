@@ -30,10 +30,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-pocket-id-dev-1-5-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/422570.diff";
-      flake = false;
-    };
     nixpkgs-patch-pocket-id-dev-1-6-1 = {
       url = "https://github.com/NixOS/nixpkgs/pull/423723.diff";
       flake = false;
