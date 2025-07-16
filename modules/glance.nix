@@ -70,18 +70,19 @@
                   collapse-after = 3;
                   sort-by = "live";
                   channels = [
-                    "alexovics"
-                    "cosmoyaha"
-                    "cubfan135"
-                    "illeskristof_"
+                    "sfgameofficial"
+                    "xisumavoid"
                     "impulsesv"
-                    "jollywangcore"
-                    "lukacs00"
                     "minecraft"
                     "Reden1471"
                     "skizzleman"
                     "tangotek"
-                    "xisumavoid"
+                    "lukacs00"
+                    "alexovics"
+                    "cosmoyaha"
+                    "jollywangcore"
+                    "cubfan135"
+                    "illeskristof_"
                   ];
                 }
               ];
