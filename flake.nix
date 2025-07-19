@@ -30,14 +30,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-pocket-id-dev-1-6-1 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/423723.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pocket-id-dev-1-6-2 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/423971.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -78,10 +70,6 @@
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
       inputs.darwin.follows = "";
-    };
-    nixpkgs-patch-msedit = {
-      url = "https://github.com/nixos/nixpkgs/pull/409075.diff";
-      flake = false;
     };
   };
 

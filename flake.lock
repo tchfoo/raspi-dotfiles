@@ -128,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752313963,
-        "narHash": "sha256-t6hSmOgfnPXmgHs+jf+aLKjlf1g/NmVqACbJoRNNLT8=",
+        "lastModified": 1752501303,
+        "narHash": "sha256-y058Bc7zwUExaTazQIdKw+1KTmH9ZHjKiamf21lJIT8=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "2c44237b4da19ea96422e73b044d49d2c26207bf",
+        "rev": "d564c4d4c1ac775438e9314302df83a7ea6a7ca4",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752402455,
-        "narHash": "sha256-mCHfZhQKdTj2JhCFcqfOfa3uKZbwUkPQbd0/zPnhOE8=",
+        "lastModified": 1752814804,
+        "narHash": "sha256-irfg7lnfEpJY+3Cffkluzp2MTVw1Uq9QGxFp6qadcXI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bf893ad4cbf46610dd1b620c974f824e266cd1df",
+        "rev": "d0300c8808e41da81d6edfc202f3d3833c157daf",
         "type": "github"
       },
       "original": {
@@ -305,11 +305,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1752048960,
-        "narHash": "sha256-gATnkOe37eeVwKKYCsL+OnS2gU4MmLuZFzzWCtaKLI8=",
+        "lastModified": 1752666637,
+        "narHash": "sha256-P8J72psdc/rWliIvp8jUpoQ6qRDlVzgSDDlgkaXQ0Fw=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "7ced9122cff2163c6a0212b8d1ec8c33a1660806",
+        "rev": "d1bfa8f6ccfb5c383e1eba609c1eb67ca24ed153",
         "type": "github"
       },
       "original": {
@@ -321,11 +321,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1751984180,
-        "narHash": "sha256-LwWRsENAZJKUdD3SpLluwDmdXY9F45ZEgCb0X+xgOL0=",
+        "lastModified": 1752687322,
+        "narHash": "sha256-RKwfXA4OZROjBTQAl9WOZQFm7L8Bo93FQwSJpAiSRvo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9807714d6944a957c2e036f84b0ff8caf9930bc0",
+        "rev": "6e987485eb2c77e5dcc5af4e3c70843711ef9251",
         "type": "github"
       },
       "original": {
@@ -333,66 +333,6 @@
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
-      }
-    },
-    "nixpkgs-patch-msedit": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-KQgt9uc1KVdBFFV+7qrMOyZgFG4Lng5U+IxPeppElzg=",
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
-      }
-    },
-    "nixpkgs-patch-msedit_2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-KQgt9uc1KVdBFFV+7qrMOyZgFG4Lng5U+IxPeppElzg=",
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/409075.diff"
-      }
-    },
-    "nixpkgs-patch-pocket-id-dev-1-6-1": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-9TmdkfmwaEsLvji0Mv/duvz+6r9j5Z2Kt13doqR/DNo=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/423723.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/423723.diff"
-      }
-    },
-    "nixpkgs-patch-pocket-id-dev-1-6-2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-DBgWqFJ8pDBaAuSWozCJT5OcGcC7dhuSf8yuk6YojBQ=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/423971.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/423971.diff"
-      }
-    },
-    "nixpkgs-patch-vencord": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-rER/6T/R61JvXV7McdovAJ5iPstw2YJhHUy2cGMJHms=",
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/422168.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/nixos/nixpkgs/pull/422168.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -555,9 +495,6 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-msedit": "nixpkgs-patch-msedit",
-        "nixpkgs-patch-pocket-id-dev-1-6-1": "nixpkgs-patch-pocket-id-dev-1-6-1",
-        "nixpkgs-patch-pocket-id-dev-1-6-2": "nixpkgs-patch-pocket-id-dev-1-6-2",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "ragenix": "ragenix",
         "systems": "systems",
@@ -640,18 +577,16 @@
         ],
         "nixpkgs-develop": [],
         "nixpkgs-master": [],
-        "nixpkgs-patch-msedit": "nixpkgs-patch-msedit_2",
-        "nixpkgs-patch-vencord": "nixpkgs-patch-vencord",
         "nixpkgs-patcher": [],
         "nixpkgs-stable": [],
         "nur": []
       },
       "locked": {
-        "lastModified": 1752393943,
-        "narHash": "sha256-sjdFTZLsIbaX96ozhUHPlweovhw1BMJjiONmkDRs9N8=",
+        "lastModified": 1752874418,
+        "narHash": "sha256-pcGyHDGPNdMH0oW/rPML87O7aaDeI5EB4WhcVqtkWzs=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "25e65917af708d2ebaaea4a1a4e9275baebd9a54",
+        "rev": "1fd050bba375b018d894d0ea3dfa12c14d4c2fba",
         "type": "github"
       },
       "original": {
