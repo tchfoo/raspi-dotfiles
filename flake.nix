@@ -4,11 +4,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    ragenix = {
-      url = "github:yaxitech/ragenix";
+    agenix = {
+      url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.agenix.follows = "agenix";
+      inputs.home-manager.follows = "home-manager";
+      inputs.systems.follows = "systems";
+      inputs.darwin.follows = "";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,7 +35,7 @@
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.agenix.follows = "";
-      inputs.ragenix.follows = "ragenix";
+      inputs.ragenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
       inputs.flake-utils.follows = "flake-utils";
@@ -47,7 +48,7 @@
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.agenix.follows = "ragenix";
+      inputs.agenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
       inputs.nix-matlab.follows = "";
       inputs.nixpkgs-master.follows = "";
@@ -63,13 +64,6 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
-    };
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      inputs.systems.follows = "systems";
-      inputs.darwin.follows = "";
     };
   };
 
