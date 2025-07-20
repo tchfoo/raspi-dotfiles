@@ -28,7 +28,7 @@ let
 in
 {
   imports = [ ragenix.nixosModules.default ];
-  environment.systemPackages = [ ragenix.packages.${pkgs.system}.default ];
+  environment.systemPackages = [ pkgs.ragenix ];
 
   age.secrets = secrets;
 }
