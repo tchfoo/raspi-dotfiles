@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ragenix,
   ...
@@ -10,7 +11,10 @@ let
     listToAttrs
     readDir
     removeAttrs
-    replaceStrings
+    ;
+
+  inherit (lib)
+    replaceString
     ;
 
   secretsFolder = toString ../secrets;
@@ -18,7 +22,7 @@ let
 
   secrets = listToAttrs (
     map (fileName: {
-      name = replaceStrings [ ".age" ] [ "" ] fileName;
+      name = replaceString ".age" "" fileName;
       value = {
         file = secretsFolder + "/" + fileName;
       };
