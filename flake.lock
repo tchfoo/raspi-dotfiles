@@ -320,6 +320,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-pocket-id-1-6-4": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-8JI9mKGQCCOrNAA8+AvBFyiMfmrS7R2NvEztiC3D5AA=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/427057.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/427057.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1750881771,
@@ -452,6 +464,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-pocket-id-1-6-4": "nixpkgs-patch-pocket-id-1-6-4",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "systems": "systems",
         "uni-week-counter": "uni-week-counter",
