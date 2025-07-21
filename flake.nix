@@ -34,8 +34,7 @@
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.agenix.follows = "";
-      inputs.ragenix.follows = "agenix";
+      inputs.agenix.follows = "agenix";
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
       inputs.flake-utils.follows = "flake-utils";
@@ -43,6 +42,7 @@
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "lix-module";
       inputs.nur.follows = "";
+      inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
     };
     ymstnt-dotfiles = {

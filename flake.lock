@@ -85,7 +85,9 @@
     },
     "gep-dotfiles": {
       "inputs": {
-        "agenix": [],
+        "agenix": [
+          "agenix"
+        ],
         "dwm-gep": [],
         "flake-parts": "flake-parts",
         "flake-utils": [
@@ -105,19 +107,17 @@
         "nixpkgs-patcher": [],
         "nur": [],
         "nvim": "nvim",
-        "ragenix": [
-          "agenix"
-        ],
         "systems": [
           "systems"
-        ]
+        ],
+        "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1752501303,
-        "narHash": "sha256-y058Bc7zwUExaTazQIdKw+1KTmH9ZHjKiamf21lJIT8=",
+        "lastModified": 1753083003,
+        "narHash": "sha256-+giS7e93wMmr1FvpNt395HHf8AaMMI67FTOs19LMKWs=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "d564c4d4c1ac775438e9314302df83a7ea6a7ca4",
+        "rev": "f35f58c10036d60fc9e3a3cc9c56be82790a8da2",
         "type": "github"
       },
       "original": {
@@ -275,11 +275,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751170039,
-        "narHash": "sha256-3EKpUmyGmHYA/RuhZjINTZPU+OFWko0eDwazUOW64nw=",
+        "lastModified": 1752441837,
+        "narHash": "sha256-FMH1OSSJp8Cx8MZHXz6KckxJGbCnVMotZNAH3v2WneU=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "9c932ae632d6b5150515e5749b198c175d8565db",
+        "rev": "839e02dece5845be3a322e507a79712b73a96ba2",
         "type": "github"
       },
       "original": {
