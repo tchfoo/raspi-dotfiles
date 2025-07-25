@@ -21,6 +21,9 @@
           };
         };
       };
+      theme = {
+        primary-color = "200 100 60";
+      };
       pages = [
         {
           name = "Home";
@@ -214,7 +217,6 @@
                         }
                         {
                           title = "University";
-                          color = "146 63 51";
                           links = [
                             {
                               title = "Neptun";
