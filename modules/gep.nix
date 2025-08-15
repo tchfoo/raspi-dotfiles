@@ -19,7 +19,8 @@
     lf
     nh
     nix
-    nvim
+    # use `nix profile install github:gepbird/nvim` until eval cache doesn't work
+    #nvim
     php
     python
     rust
