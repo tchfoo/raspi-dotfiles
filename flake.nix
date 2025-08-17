@@ -39,6 +39,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/432938.patch";
       flake = false;
     };
+    nixpkgs-patch-orb = {
+      url = "https://github.com/NixOS/nixpkgs/pull/430663.patch";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
