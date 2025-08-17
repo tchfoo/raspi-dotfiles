@@ -543,11 +543,11 @@
         "nur": []
       },
       "locked": {
-        "lastModified": 1754252025,
-        "narHash": "sha256-Bc1h4rWgDSuC/wQ++2eabvnzUuU3DMLPWG3YchNaPdk=",
+        "lastModified": 1755447453,
+        "narHash": "sha256-LihjMoP44vZJDaoKeExqh3rjR2gZVMtEOdswWNCISOo=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "75172e1354bb055e80eb75d8694c1a3901b4bf91",
+        "rev": "d42fc9cbda03c5c9745cec876432bf43d242b2f4",
         "type": "github"
       },
       "original": {
