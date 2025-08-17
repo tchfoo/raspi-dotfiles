@@ -16,6 +16,7 @@
     micro
     ssh
     starship
+    tmux
     zoxide
     zsh
   ];
