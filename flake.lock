@@ -347,13 +347,25 @@
     "nixpkgs-patch-pocket-id-1-7-0": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-PEDDV9tjqOTr8qPGPcjT3X9F9qiqkF4iXgm2RnplNG8=",
+        "narHash": "sha256-zyVSfUR+6BsdL+Ypxj8XOvAG7irQOlCgXtgGA2UDwLY=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/432938.patch"
       },
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/432938.patch"
+      }
+    },
+    "nixpkgs-patch-pocket-id-1-8-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-iu78jsZm543R/EvEDwt1+cY8sUaVs26opMDaLag8E6M=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/436251.patch"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/436251.patch"
       }
     },
     "nixpkgs-patcher": {
@@ -490,6 +502,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-plex-1-42-1": "nixpkgs-patch-plex-1-42-1",
         "nixpkgs-patch-pocket-id-1-7-0": "nixpkgs-patch-pocket-id-1-7-0",
+        "nixpkgs-patch-pocket-id-1-8-0": "nixpkgs-patch-pocket-id-1-8-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "systems": "systems",
         "uni-week-counter": "uni-week-counter",
