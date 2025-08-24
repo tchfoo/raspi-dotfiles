@@ -31,7 +31,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-pocket-id-1-8-0= {
+    nixpkgs-patch-pocket-id-1-9-1= {
       url = "https://github.com/NixOS/nixpkgs/pull/436251.patch";
       flake = false;
     };
