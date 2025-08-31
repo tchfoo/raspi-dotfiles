@@ -31,10 +31,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-pocket-id-1-9-1= {
-      url = "https://github.com/NixOS/nixpkgs/pull/436251.patch";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
