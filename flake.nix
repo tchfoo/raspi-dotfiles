@@ -31,6 +31,10 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-rauthy-init = {
+      url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";

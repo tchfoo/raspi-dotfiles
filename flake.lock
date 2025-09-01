@@ -320,6 +320,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-rauthy-init": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-5SThlQWr7gDZahA1baAlHPbgkWcrQeDiD0HGQ1HBle0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/371091.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/371091.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1756482624,
@@ -452,6 +464,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-rauthy-init": "nixpkgs-patch-rauthy-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "systems": "systems",
         "uni-week-counter": "uni-week-counter",
