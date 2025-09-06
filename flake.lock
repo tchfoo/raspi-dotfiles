@@ -335,7 +335,7 @@
     "nixpkgs-patch-rauthy-init": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-5SThlQWr7gDZahA1baAlHPbgkWcrQeDiD0HGQ1HBle0=",
+        "narHash": "sha256-+hdQIZf7fuJk6V4higAAtT/1jtxVj9g+OWCx6As/Uqo=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/371091.diff"
       },
