@@ -1,11 +1,12 @@
 {
-  uni-week-counter,
+  pkgs,
+  nur,
   ...
 }:
 
 {
   imports = [
-    uni-week-counter.nixosModules.default
+    nur.legacyPackages.aarch64-linux.repos.ymstnt.modules.uni-week-counter
   ];
 
   uni-week-counter = {

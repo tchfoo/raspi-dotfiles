@@ -523,7 +523,6 @@
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "systems": "systems",
-        "uni-week-counter": "uni-week-counter",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
       }
     },
@@ -539,29 +538,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "uni-week-counter": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756659892,
-        "narHash": "sha256-Wj/O1EobT2ZHf/EEcHF8Pb1430BrFrvljoyERAvJuDE=",
-        "owner": "ymstnt",
-        "repo": "uni-week-counter",
-        "rev": "a9722bdf05a7031532d390dc4c5248d48c60984c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ymstnt",
-        "repo": "uni-week-counter",
         "type": "github"
       }
     },
