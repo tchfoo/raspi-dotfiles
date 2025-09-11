@@ -48,6 +48,27 @@
         "type": "github"
       }
     },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nur",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733312601,
+        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": [
@@ -417,6 +438,27 @@
         "type": "github"
       }
     },
+    "nur": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757621446,
+        "narHash": "sha256-nMFaFsstO3m6e5ZGz10TxjD7LivF4nGITIcRdIH96bs=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "03e674eeebcdd82b10241b7d331ff03b0794c858",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "nvim": {
       "inputs": {
         "flake-parts": [
@@ -479,6 +521,7 @@
         "nixpkgs-patch-pocket-id-1-10-0": "nixpkgs-patch-pocket-id-1-10-0",
         "nixpkgs-patch-rauthy-init": "nixpkgs-patch-rauthy-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
+        "nur": "nur",
         "systems": "systems",
         "uni-week-counter": "uni-week-counter",
         "ymstnt-dotfiles": "ymstnt-dotfiles"
