@@ -2,7 +2,7 @@
 
 {
   services.rauthy = {
-    enable = true;
+    enable = false;
     # for faster build
     package = pkgs.rauthy.overrideAttrs (o: {
       patches = (o.patches or [ ]) ++ [
