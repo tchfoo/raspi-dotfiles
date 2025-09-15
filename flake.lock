@@ -135,11 +135,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1757607067,
-        "narHash": "sha256-ucu0geiw41LFxbxK7nW/6J3tB4TsczdZEffzDg36Cl8=",
+        "lastModified": 1757857672,
+        "narHash": "sha256-Oyx+nAspzjICI58NA3hWq9YZBfAx2ukXzVEU0NE+jow=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "c2cbf33231e0ea02109effa7945f824f86291f62",
+        "rev": "3617561debdc22d3d803484d8f2fdf33ab37b44f",
         "type": "github"
       },
       "original": {
