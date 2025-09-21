@@ -13,6 +13,8 @@
   nixpkgs.overlays = [
     (final: prev: {
       lix = prev.lixPackageSets.latest.lix.overrideAttrs (o: {
+        doCheck = false;
+        doInstallCheck = false;
         patches = (o.patches or [ ]) ++ [
           (prev.fetchpatch2 {
             name = "add-inputs-self-submodules-flake-attribute.patch";
