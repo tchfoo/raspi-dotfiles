@@ -25,4 +25,6 @@
     "vm.dirty_ratio" = 40;
     "vm.vfs_cache_pressure" = 10;
   };
+
+  documentation.nixos.enable = false;
 }
