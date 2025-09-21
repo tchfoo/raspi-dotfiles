@@ -28,18 +28,29 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings = {
-    max-jobs = 1;
-    experimental-features = [
-      "nix-command"
-      "flakes"
-      "flake-self-attrs"
-    ];
-    trusted-users = [
-      "gep"
-      "ymstnt"
-    ];
-  };
+  nix.settings =
+    let
+      caches = [
+        {
+          substituter = "https://tchfoo.cachix.org";
+          trusted-public-key = "tchfoo.cachix.org-1:a5fQv7kLxm1m4KPvRZioJVdKi5X3Mwe6tbnlqJ4Owlc=";
+        }
+      ];
+    in
+    {
+      max-jobs = 1;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "flake-self-attrs"
+      ];
+      trusted-users = [
+        "gep"
+        "ymstnt"
+      ];
+      substituters = map (cache: cache.substituter) caches;
+      trusted-public-keys = map (cache: cache.trusted-public-key) caches;
+    };
 
   home-manager.useGlobalPkgs = true;
 }

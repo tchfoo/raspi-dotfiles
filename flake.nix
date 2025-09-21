@@ -79,5 +79,10 @@
         system = "aarch64-linux";
         specialArgs = inputs;
       };
+      ci = {
+        inherit (self.nixosConfigurations.raspi-doboz.pkgs)
+          lix
+          ;
+      };
     };
 }
