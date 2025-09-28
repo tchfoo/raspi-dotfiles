@@ -327,6 +327,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-pocket-id-1-11-2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-e30pL8lSn2d5rA9bJWaR8CwQkdbaDUlgJHTYboGzZpw=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/446846.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/446846.diff"
+      }
+    },
     "nixpkgs-patch-rauthy-init": {
       "flake": false,
       "locked": {
@@ -492,6 +504,7 @@
         "moe": "moe",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-pocket-id-1-11-2": "nixpkgs-patch-pocket-id-1-11-2",
         "nixpkgs-patch-rauthy-init": "nixpkgs-patch-rauthy-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
