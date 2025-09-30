@@ -14,7 +14,6 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "ymstnt@mailbox.org";
-    defaults.server = "https://api.buypass.com/acme/directory";
   };
 
   networking.firewall.allowedTCPPorts = [
