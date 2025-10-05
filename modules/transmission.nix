@@ -24,8 +24,6 @@
       rpc-bind-address = "0.0.0.0";
       peer-port = 49560;
       umask = 18;
-      ratio-limit = 1;
-      ratio-limit-enabled = true;
     };
     credentialsFile = config.age.secrets."transmission.json".path;
   };
