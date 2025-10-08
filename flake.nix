@@ -82,6 +82,7 @@
       };
       ci = {
         inherit (self.nixosConfigurations.raspi-doboz.pkgs)
+          pocket-id
           comma
           lix
           nil
