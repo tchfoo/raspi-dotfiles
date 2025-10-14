@@ -9,7 +9,7 @@
     adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
-      BASE_URL = "http://localhost/";
+      BASE_URL = "https://miniflux.ymstnt.com/";
     };
   };
 
