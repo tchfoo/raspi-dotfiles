@@ -12,6 +12,9 @@
     shared = {
       isSystemUser = true;
       group = "shared";
+      extraGroups = [
+        "acme"
+      ];
     };
   };
 
