@@ -2,9 +2,43 @@
   config,
   lib,
   pkgs,
+  ymstnt-website,
   ...
 }:
 
+let
+  website = pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
+    pname = "ymstnt-website";
+    version = builtins.substring 0 8 ymstnt-website.lastModifiedDate or "dirty";
+
+    src = ymstnt-website;
+
+    nativeBuildInputs = with pkgs; [
+      zola
+    ];
+
+    buildPhase = ''
+      runHook preBuild
+
+      cp -r ${finalAttrs.passthru.duckquill}/* themes/duckquill/
+      chmod +w -R themes/duckquill
+
+      zola build --output-dir $out
+
+      runHook postBuild
+    '';
+
+    passthru = {
+      duckquill = pkgs.fetchFromGitea {
+        domain = "codeberg.org";
+        owner = "daudix";
+        repo = "duckquill";
+        tag = "v6.2.0";
+        hash = "sha256-IpJ1cmkSGEBycGPc+O/pGbVDWWB0KSla12SPoL1HMbw=";
+      };
+    };
+  });
+in
 {
   services.phpfpm.pools."ymstnt.com" = {
     user = "shared";
@@ -26,7 +60,7 @@
   services.nginx.virtualHosts."ymstnt.com" = {
     enableACME = true;
     forceSSL = true;
-    root = "/var/www/ymstnt.com";
+    root = website;
     extraConfig = ''
       error_page 404 /404.html;
     '';
@@ -39,12 +73,6 @@
           set $1 "/";
         }
         return 301 https://sb.tchfoo.com$1;
-      '';
-      "/".extraConfig = ''
-        try_files $uri /index.php?$query_string;
-      '';
-      "~ \.php$".extraConfig = ''
-        fastcgi_pass unix:${config.services.phpfpm.pools."ymstnt.com".socket};
       '';
     };
   };

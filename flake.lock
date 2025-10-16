@@ -546,7 +546,8 @@
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "systems": "systems",
-        "ymstnt-dotfiles": "ymstnt-dotfiles"
+        "ymstnt-dotfiles": "ymstnt-dotfiles",
+        "ymstnt-website": "ymstnt-website"
       }
     },
     "systems": {
@@ -598,6 +599,22 @@
         "owner": "ymstnt",
         "ref": "main",
         "repo": "dotfiles",
+        "type": "github"
+      }
+    },
+    "ymstnt-website": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757624904,
+        "narHash": "sha256-yf6gdcOHRvwrVf7L4HzWEHn21dzqWB+KIiI1e2o0zZY=",
+        "owner": "ymstnt",
+        "repo": "website",
+        "rev": "d5967d66e1ffe59d5eaed24abc11600425010f1c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ymstnt",
+        "repo": "website",
         "type": "github"
       }
     }
