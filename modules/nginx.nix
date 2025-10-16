@@ -11,6 +11,12 @@
     '';
   };
 
+  users.users.nginx = {
+    extraGroups = [
+      "acme"
+    ];
+  };
+
   security.acme = {
     acceptTerms = true;
     defaults.email = "ymstnt@mailbox.org";
