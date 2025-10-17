@@ -86,6 +86,7 @@
       };
       ci = {
         inherit (self.nixosConfigurations.raspi-doboz.pkgs)
+          bottom
           comma
           lix
           nh
