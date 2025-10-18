@@ -35,6 +35,10 @@
           substituter = "https://tchfoo.cachix.org";
           trusted-public-key = "tchfoo.cachix.org-1:a5fQv7kLxm1m4KPvRZioJVdKi5X3Mwe6tbnlqJ4Owlc=";
         }
+        {
+          substituter = "https://nixos-raspberrypi.cachix.org";
+          trusted-public-key = "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI=";
+        }
       ];
     in
     {

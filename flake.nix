@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +74,10 @@
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
     };
+    nixpkgs-patch-fix-raspi-module-renames = {
+      url = "https://github.com/NixOS/nixpkgs/pull/398456.diff";
+      flake = false;
+    };
   };
 
   outputs =
@@ -81,7 +86,12 @@
         modules = [
           ./hosts/raspi-doboz/configuration.nix
         ];
-        system = "aarch64-linux";
+        specialArgs = inputs;
+      };
+      nixosConfigurations.raspi5-doboz = nixpkgs-patcher.lib.nixosSystem {
+        modules = [
+          ./hosts/raspi5-doboz/configuration.nix
+        ];
         specialArgs = inputs;
       };
       ci = {
