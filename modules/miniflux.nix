@@ -9,19 +9,13 @@
     adminCredentialsFile = config.age.secrets.miniflux.path;
     config = {
       PORT = "3327";
-      BASE_URL = "https://miniflux.ymstnt.com/";
+      BASE_URL = "https://services.tchfoo.com/miniflux";
     };
   };
 
-  services.nginx.virtualHosts."miniflux.ymstnt.com" = {
-    enableACME = true;
-    forceSSL = true;
-    locations = {
-      "/" = {
-        proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/";
-        recommendedProxySettings = true;
-      };
-    };
+  services.nginx.virtualHosts."services.tchfoo.com".locations."/miniflux" = {
+    proxyPass = "http://localhost:${config.services.miniflux.config.PORT}/miniflux";
+    recommendedProxySettings = true;
   };
 
   services.borgmatic.configurations.raspi = {
