@@ -11,6 +11,7 @@
     settings = {
       server = {
         port = 11146;
+        base-url = "/glance";
         proxied = true;
       };
       auth = {
@@ -165,7 +166,7 @@
                   type = "custom-api";
                   title = "Miniflux";
                   hide-header = true;
-                  url = "https://miniflux.ymstnt.com/v1/entries?limit=10&order=published_at&direction=desc&status=unread";
+                  url = "https://services.tchfoo.com/miniflux/v1/entries?limit=10&order=published_at&direction=desc&status=unread";
                   headers = {
                     X-Auth-Token = "\${MINIFLUX_TOKEN}";
                     Accept = "application/json";
@@ -271,7 +272,7 @@
                           title = "Miniflux";
                           url = "#";
                           same-tab = true;
-                          check-url = "https://miniflux.ymstnt.com";
+                          check-url = "https://services.tchfoo.com/miniflux";
                           icon = "di:miniflux";
                           error-url = "https://status.tchfoo.com";
                         }
@@ -546,14 +547,11 @@
     };
   };
 
-  services.nginx.virtualHosts."glance.ymstnt.com" = {
-    enableACME = true;
-    forceSSL = true;
-    locations = {
-      "/" = {
-        proxyPass = "http://${config.services.glance.settings.server.host}:${toString config.services.glance.settings.server.port}";
-        recommendedProxySettings = true;
-      };
-    };
-  };
+  services.nginx.virtualHosts."services.tchfoo.com".locations."/glance" = {
+    proxyPass = "http://${config.services.glance.settings.server.host}:${toString config.services.glance.settings.server.port}";
+    recommendedProxySettings = true;
+    extraConfig = ''
+      rewrite ^/glance/(.*)$ /$1? break;
+    '';
+ };
 }
