@@ -172,11 +172,3 @@ Finally add Borgbase to `known_hosts`:
 ```sh
 sudo -u borgmatic ssh khrfjql1@khrfjql1.repo.borgbase.com
 ```
-
-#### Websites
-
-```sh
-sudo cp -rp /mnt/var/www/{ymstnt.com,ymstnt.com-generated} /var/www/
-sudo chown -R shared:shared /var/www/ymstnt.com-generated
-sudo chown -R nginx:shared /var/www/ymstnt.com
-```
