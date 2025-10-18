@@ -141,9 +141,6 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-patch-bottom-0-11-2": "nixpkgs-patch-bottom-0-11-2",
-        "nixpkgs-patch-gromit-mpx-fix-build": "nixpkgs-patch-gromit-mpx-fix-build",
-        "nixpkgs-patch-qgnomeplatform-fix-build": "nixpkgs-patch-qgnomeplatform-fix-build",
         "nixpkgs-patcher": [],
         "nur": [],
         "nvim": "nvim",
@@ -153,11 +150,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1760266508,
-        "narHash": "sha256-6JUwMO+rn4tExJ5Vv3jfVMX3j0DB55Bdn63pSea3BYM=",
+        "lastModified": 1760821301,
+        "narHash": "sha256-ub4WxKzHm8krKrIREqVWCRVKC1eGXOqf/PEdW3Cs8Mw=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "f3bdc1ce8bcfe51d02f2f2ed83e4bd71773467b0",
+        "rev": "499ed13d2436f8c6dc380ca8762f2a34cf3aaa4c",
         "type": "github"
       },
       "original": {
@@ -301,11 +298,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759637156,
-        "narHash": "sha256-8NI1SqntLfKl6Q0Luemc3aIboezSJElofUrqipF5g78=",
+        "lastModified": 1760241904,
+        "narHash": "sha256-OD7QnaGEVNdukYEbJbUNWPsvnDrpbZOZxVIk6Pt9Jhw=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "0ca69684091aa3a6b1fe994c4afeff305b15e915",
+        "rev": "c9f5ea45f25652ec2f771f9426ccacb21cbbaeaa",
         "type": "github"
       },
       "original": {
@@ -405,18 +402,6 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/448254.diff"
       }
     },
-    "nixpkgs-patch-bottom-0-11-2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-KD9CDC+VjSsotYQXgMdLPPTdt/03c4omNnpR1QiSz98=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/450437.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/450437.diff"
-      }
-    },
     "nixpkgs-patch-fix-raspi-module-renames": {
       "flake": false,
       "locked": {
@@ -429,18 +414,6 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
       }
     },
-    "nixpkgs-patch-gromit-mpx-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-qMnW361f4AK+R3QLGkemxaf4mq5QxpFpPzBK6CMBZQ0=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/451113.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/451113.diff"
-      }
-    },
     "nixpkgs-patch-mcpelauncher-ui-qt-fix-build": {
       "flake": false,
       "locked": {
@@ -451,18 +424,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/450779.diff"
-      }
-    },
-    "nixpkgs-patch-qgnomeplatform-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-Hh7dKX8oAtjmNLBpsa2CMhOcK3rO9rPigyTYaiD0D+8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/449396.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/449396.diff"
       }
     },
     "nixpkgs-patcher": {
