@@ -177,7 +177,7 @@
                         <li>
                             <div class="flex gap-10 row-reverse-on-mobile thumbnail-parent">
                                 <div class="grow min-width-0">
-                                    <a href="https://miniflux.ymstnt.com/unread/entry/{{ .String "id" }}" class="size-title-dynamic color-primary-if-not-visited" target="_blank" rel="noreferrer">{{ .String "title" }}</a>
+                                    <a href="https://services.tchfoo.com/miniflux/unread/entry/{{ .String "id" }}" class="size-title-dynamic color-primary-if-not-visited" target="_blank" rel="noreferrer">{{ .String "title" }}</a>
                                     <ul class="list-horizontal-text flex-nowrap text-compact">
                                         <li class="shrink-0">{{ .String "feed.title" }}</li>
                                         <li class="shrink-0" {{ .String "published_at" | parseTime "rfc3339" | toRelativeTime }}></li>
