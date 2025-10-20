@@ -4,7 +4,6 @@
 
 {
   networking = {
-    hostName = "raspi-doboz";
     networkmanager.enable = true;
   };
 

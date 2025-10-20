@@ -40,5 +40,7 @@ in
   #   };
   # };
 
+  networking.hostName = "raspi5-doboz";
+
   system.stateVersion = "25.05";
 }

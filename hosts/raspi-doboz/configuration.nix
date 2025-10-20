@@ -46,5 +46,7 @@ in
     };
   };
 
+  networking.hostName = "raspi-doboz";
+
   system.stateVersion = "24.05";
 }
