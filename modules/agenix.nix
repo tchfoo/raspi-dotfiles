@@ -32,7 +32,10 @@ let
 in
 {
   imports = [ agenix.nixosModules.default ];
-  environment.systemPackages = [ agenix.packages.${pkgs.system}.default ];
+
+  nixpkgs.overlays = [ agenix.overlays.default ];
+
+  environment.systemPackages = [ pkgs.agenix ];
 
   age.secrets = secrets;
 }

@@ -7,9 +7,9 @@
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      inputs.systems.follows = "systems";
+      inputs.nixpkgs.follows = "";
+      inputs.home-manager.follows = "";
+      inputs.systems.follows = "";
       inputs.darwin.follows = "";
     };
     home-manager = {
