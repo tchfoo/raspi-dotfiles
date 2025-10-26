@@ -17,9 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     moe = {
-      url = "github:ymstnt-com/moe";
+      url = "github:tchfoo/moe";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     ymstnt-website = {
       url = "github:ymstnt/website";

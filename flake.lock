@@ -202,24 +202,21 @@
     },
     "moe": {
       "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ],
         "nuget-packageslock2nix": "nuget-packageslock2nix"
       },
       "locked": {
-        "lastModified": 1760552182,
-        "narHash": "sha256-CNK46jmnfQ+hLdXx4SenTw/6B87OeukuvpHqhUkrx6s=",
-        "owner": "ymstnt-com",
+        "lastModified": 1761488247,
+        "narHash": "sha256-Wer2Rix5LYDfcszJbXIxNi8to4ZF6hdxN2U/lt+X/zc=",
+        "owner": "tchfoo",
         "repo": "moe",
-        "rev": "9a41dd75f746ec6817f9cce84230047fd4008b93",
+        "rev": "781b39b531098dcd3edbe375eb5c2adc74e3c0f4",
         "type": "github"
       },
       "original": {
-        "owner": "ymstnt-com",
+        "owner": "tchfoo",
         "repo": "moe",
         "type": "github"
       }
