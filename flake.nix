@@ -78,6 +78,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/398456.diff";
       flake = false;
     };
+    nixpkgs-patch-pocket-id-1-14-0 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/455744.diff";
+      flake = false;
+    };
   };
 
   outputs =
