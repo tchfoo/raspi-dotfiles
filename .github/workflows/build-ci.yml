@@ -22,5 +22,9 @@ jobs:
       with:
         name: tchfoo
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - name: Debug
+      run: >
+        nix shell -f '<nixpkgs>' lixPackageSets.latest.lix lixPackageSets.latest.nix-fast-build -c nix --version
+        nix shell -f '<nixpkgs>' lixPackageSets.latest.lix lixPackageSets.latest.nix-fast-build -c nix flake show
     - name: Build nix packages
       run: nix shell -f '<nixpkgs>' lixPackageSets.latest.lix lixPackageSets.latest.nix-fast-build -c nix-fast-build --no-nom --skip-cached --max-jobs 4 --flake .#ci
