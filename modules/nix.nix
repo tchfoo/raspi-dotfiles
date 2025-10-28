@@ -47,7 +47,6 @@
       ];
     in
     {
-      max-jobs = 1;
       experimental-features = [
         "nix-command"
         "flakes"
