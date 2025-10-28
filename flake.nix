@@ -49,12 +49,12 @@
     #};
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
-      inputs.nixpkgs.follows = "";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.agenix.follows = "";
       inputs.home-manager.follows = "";
-      inputs.systems.follows = "";
+      inputs.systems.follows = "systems";
       inputs.flake-utils.follows = "";
-      inputs.flake-parts.follows = "";
+      inputs.flake-parts.follows = "flake-parts";
       inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "";
