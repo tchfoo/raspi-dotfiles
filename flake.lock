@@ -298,6 +298,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/448254.diff"
       }
     },
+    "nixpkgs-patch-fix-glance-invalid-user": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-lJsS8hqhwDN3Xe7gIMGyPcMwjN1mcqcJxsQrYT1CkNI=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456164.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456164.diff"
+      }
+    },
     "nixpkgs-patch-fix-raspi-module-renames": {
       "flake": false,
       "locked": {
@@ -507,6 +519,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-patch-fix-glance-invalid-user": "nixpkgs-patch-fix-glance-invalid-user",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
         "nixpkgs-patch-pocket-id-1-14-0": "nixpkgs-patch-pocket-id-1-14-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
