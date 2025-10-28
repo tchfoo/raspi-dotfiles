@@ -65,18 +65,24 @@
       "inputs": {
         "agenix": [],
         "dwm-gep": [],
-        "flake-parts": [],
+        "flake-parts": [
+          "flake-parts"
+        ],
         "flake-utils": [],
         "home-manager": [],
         "lix-module": [],
         "nix-index-database": "nix-index-database",
         "nix-matlab": [],
-        "nixpkgs": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixpkgs-patch-qgnomeplatform-qt6-fix-build": "nixpkgs-patch-qgnomeplatform-qt6-fix-build",
         "nixpkgs-patcher": [],
         "nur": [],
         "nvim-gep": "nvim-gep",
-        "systems": [],
+        "systems": [
+          "systems"
+        ],
         "treefmt-nix": []
       },
       "locked": {
