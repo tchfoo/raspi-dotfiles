@@ -94,6 +94,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/455744.diff";
       flake = false;
     };
+    nixpkgs-patch-fix-glance-invalid-user = {
+      url = "https://github.com/NixOS/nixpkgs/pull/456164.diff";
+      flake = false;
+    };
   };
 
   outputs =
