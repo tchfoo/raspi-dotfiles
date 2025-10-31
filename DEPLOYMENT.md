@@ -5,7 +5,7 @@
 List databases (press `Ctrl+D` to exit from `mysql`/`psql`):
 
 ```sh
-sudo mysql
+sudo mariadb
 MariaDB > SHOW DATABASES;
 
 sudo -u postgres psql
@@ -15,7 +15,7 @@ postgres=# \l
 Dump each database, for example to dump `users` MySQL and `miniflux` PostgreSQL database:
 
 ```sh
-sudo mysqldump users > users.sql
+sudo mariadb-dump users > users.sql
 
 sudo -u postgres pg_dump miniflux > miniflux.sql
 ```
