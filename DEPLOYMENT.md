@@ -145,8 +145,8 @@ Run `sudo tailscale up`: authenticate Tailscale with tailnet, and share out the 
 Restore database:
 
 ```sh
-sudo cp -p /mnt/var/moe/storage.db /var/moe/storage.db
-sudo chown moe:shared /var/moe/storage.db
+sudo cp -p /mnt/var/lib/moe/storage.db /var/lib/moe/storage.db
+sudo chown moe:shared /var/lib/moe/storage.db
 ```
 
 #### Borgmatic
