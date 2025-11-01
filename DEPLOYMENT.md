@@ -62,10 +62,10 @@ services.postgresql = {
 sudo nixos-rebuild switch
 ```
 
-#### MySQL secure installation
+#### MariaDB secure installation
 
 ```sh
-sudo mysql_secure_installation
+sudo mariadb-secure-installation
 ```
 
 Answer with yes to everything and paste the password.
@@ -85,7 +85,7 @@ CREATE DATABASE miniflux;
 Restore each database:
 
 ```sh
-sudo mysql users < users.sql
+sudo mariadb users < users.sql
 
 sudo -u postgres psql -d miniflux < miniflux.sql
 ```
