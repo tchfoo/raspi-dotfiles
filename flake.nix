@@ -121,6 +121,7 @@
           lix
           nh
           nil
+          nvim-gep
           pocket-id
           ;
       };
