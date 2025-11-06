@@ -44,8 +44,9 @@
     initialPassword = "gep";
     isNormalUser = true;
     extraGroups = [
-      "wheel"
+      "networkmanager"
       "shared"
+      "wheel"
     ];
   };
 }
