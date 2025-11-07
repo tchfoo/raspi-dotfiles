@@ -324,6 +324,42 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/455744.diff"
       }
     },
+    "nixpkgs-patch-pocket-id-1-14-1": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Qhv8U3q055nfOPCKqoN14pCUCv0XD5U3IZRQiR7TF94=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456215.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456215.diff"
+      }
+    },
+    "nixpkgs-patch-pocket-id-1-14-2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-DdZ8zfQHPSD+dQb7kgjCZ7ITT0GKZLXimQdJqXwBKlU=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456780.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456780.diff"
+      }
+    },
+    "nixpkgs-patch-pocket-id-1-15-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-DQg9icf8+kAd5S4ZrM8U8lHVrA3tBvyhk1O9HLc/lOY=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/459354.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/459354.diff"
+      }
+    },
     "nixpkgs-patch-qgnomeplatform-qt6-fix-build": {
       "flake": false,
       "locked": {
@@ -512,6 +548,9 @@
         "nixpkgs-patch-fix-glance-invalid-user": "nixpkgs-patch-fix-glance-invalid-user",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
         "nixpkgs-patch-pocket-id-1-14-0": "nixpkgs-patch-pocket-id-1-14-0",
+        "nixpkgs-patch-pocket-id-1-14-1": "nixpkgs-patch-pocket-id-1-14-1",
+        "nixpkgs-patch-pocket-id-1-14-2": "nixpkgs-patch-pocket-id-1-14-2",
+        "nixpkgs-patch-pocket-id-1-15-0": "nixpkgs-patch-pocket-id-1-15-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "systems": "systems",
