@@ -217,7 +217,7 @@
                           ];
                         }
                         {
-                          title = "University";
+                          title = "Egyetem";
                           links = [
                             {
                               title = "Neptun";
@@ -236,8 +236,16 @@
                               url = "https://open.elearning.uni-obuda.hu/";
                             }
                             {
-                              title = "ÓE Website";
+                              title = "ÓE Weboldal";
                               url = "https://uni-obuda.hu/";
+                            }
+                            {
+                              title = "NIK Weboldal";
+                              url = "https://nik.uni-obuda.hu/";
+                            }
+                            {
+                              title = "Telefonkönyv";
+                              url = "https://uni-obuda.hu/telefonkonyv/";
                             }
                             {
                               title = "Tanév rendje";
