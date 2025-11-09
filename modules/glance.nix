@@ -268,6 +268,7 @@
                         {
                           title = "gepDrive";
                           url = "https://gd.tchfoo.com";
+                          icon = "mdi:harddisk";
                           error-url = "https://status.tchfoo.com";
                         }
                         {
@@ -278,17 +279,13 @@
                         }
                         {
                           title = "Miniflux";
-                          url = "#";
-                          same-tab = true;
-                          check-url = "https://services.tchfoo.com/miniflux";
-                          icon = "di:miniflux";
+                          url = "https://services.tchfoo.com/miniflux";
+                          icon = "auto-invert di:miniflux";
                           error-url = "https://status.tchfoo.com";
                         }
                         {
                           title = "PocketID";
-                          url = "#";
-                          same-tab = true;
-                          check-url = "https://auth.tchfoo.com";
+                          url = "https://auth.tchfoo.com";
                           icon = "di:pocket-id";
                           error-url = "https://status.tchfoo.com";
                         }
