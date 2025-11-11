@@ -66,33 +66,69 @@
       };
     };
     programs.starship = {
+      # Don't forget to lock the colors!
+      # raspi5-doboz: https://grayscale.design/app?lums=100.00,82.13,67.27,54.42,43.33,33.80,28.34,20.85,14.82,9.59,3.52,0.00&palettes=%23F75787,%23F41C5D,%23D50A47,%23AF083A&filters=0%7C0,0%7C0,0%7C0,0%7C0&names=,,,&labels=,,,
+      # raspi-doboz: https://grayscale.design/app?lums=100.00,82.13,67.27,54.42,43.33,33.80,25.72,20.76,14.82,9.62,3.52,0.00&palettes=%2308a12b,%23079228,%23067d22,%2305661C&filters=0%7C0,0%7C0,0%7C0,0%7C0&names=,,,&labels=,,,
+
       settings = {
-        format = lib.mkForce "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[](bg:\#F75787 fg:\#F41C5D)\$cmd_duration[ ](fg:\#F75787)";
+        format = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[](bg:\#F75787 fg:\#F41C5D)\$cmd_duration[ ](fg:\#F75787)"
+              else "[](\#05661C)\$os\$username\[](bg:\#067D22 fg:\#05661C)\$directory\[](bg:\#079228 fg:\#067D22)\$git_branch\$git_status\[](bg:\#08A12B fg:\#079228)\$cmd_duration[ ](fg:\#08A12B)"
+            );
 
         username = {
-          style_user = lib.mkForce "bg:\#AF083A";
-          style_root = lib.mkForce "bg:\#AF083A";
+          style_user = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#AF083A"
+              else "bg:\#05661C"
+          );
+          style_root = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#AF083A"
+              else "bg:\#05661C"
+           );
         };
 
         os = {
           format = lib.mkForce "[ ]($style)";
-          style = lib.mkForce "bg:\#AF083A";
+          style = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#AF083A"
+              else "bg:\#05661C"
+           );
         };
 
         directory = {
-          style = lib.mkForce "bg:\#D50A47";
+          style = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#D50A47"
+              else "bg:\#067D22"
+          );
         };
 
         git_branch = {
-          style = lib.mkForce "bg:\#F41C5D";
+          style = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#F41C5D"
+              else "bg:\#079228"
+          );
         };
 
         git_status = {
-          style = lib.mkForce "bg:\#F41C5D";
+          style = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#F41C5D"
+              else "bg:\#079228"
+          );
         };
 
         cmd_duration = {
-          style = lib.mkForce "bg:\#F75787";
+          style = lib.mkForce (
+            if config.networking.hostName == "raspi5-doboz"
+              then "bg:\#F75787"
+              else "bg:\#08A12B"
+          );
         };
       };
     };
