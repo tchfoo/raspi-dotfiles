@@ -90,26 +90,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/398456.diff";
       flake = false;
     };
-    nixpkgs-patch-pocket-id-1-14-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/455744.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pocket-id-1-14-1 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/456215.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pocket-id-1-14-2 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/456780.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pocket-id-1-15-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/459354.diff";
-      flake = false;
-    };
-    nixpkgs-patch-fix-glance-invalid-user = {
-      url = "https://github.com/NixOS/nixpkgs/pull/456164.diff";
-      flake = false;
-    };
   };
 
   outputs =
