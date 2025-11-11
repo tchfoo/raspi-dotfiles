@@ -286,7 +286,7 @@
                         {
                           title = "PocketID";
                           url = "https://auth.tchfoo.com";
-                          icon = "di:pocket-id";
+                          icon = "auto-invert di:pocket-id";
                           error-url = "https://status.tchfoo.com";
                         }
                       ];
