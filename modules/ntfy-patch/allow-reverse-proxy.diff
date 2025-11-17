@@ -1,0 +1,14 @@
+diff --git a/server/server_matrix.go b/server/server_matrix.go
+index f99bea8f..2f6593ea 100644
+--- a/server/server_matrix.go
++++ b/server/server_matrix.go
+@@ -127,7 +127,8 @@ func newRequestFromMatrixJSON(r *http.Request, baseURL string, messageLimit int)
+ 	if !strings.HasPrefix(pushKey, baseURL+"/") {
+ 		return nil, &errMatrixPushkeyRejected{rejectedPushKey: pushKey, configuredBaseURL: baseURL}
+ 	}
+-	newRequest, err := http.NewRequest(http.MethodPost, pushKey, io.NopCloser(bytes.NewReader(body.PeekedBytes)))
++	pushKeyProxy := "http://127.0.0.1" + strings.TrimPrefix(pushKey, baseURL); // Url after reverse proxy
++	newRequest, err := http.NewRequest(http.MethodPost, pushKeyProxy, io.NopCloser(bytes.NewReader(body.PeekedBytes)))
+ 	if err != nil {
+ 		return nil, err
+ 	}
