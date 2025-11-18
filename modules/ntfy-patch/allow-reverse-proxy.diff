@@ -1,3 +1,16 @@
+diff --git a/cmd/serve.go b/cmd/serve.go
+index ab8d75ec..43c8e826 100644
+--- a/cmd/serve.go
++++ b/cmd/serve.go
+@@ -309,8 +309,6 @@ func execServe(c *cli.Context) error {
+ 			return fmt.Errorf("if set, base-url must be a valid URL, e.g. https://ntfy.mydomain.com: %v", err)
+ 		} else if u.Scheme != "http" && u.Scheme != "https" {
+ 			return errors.New("if set, base-url must be a valid URL starting with http:// or https://, e.g. https://ntfy.mydomain.com")
+-		} else if u.Path != "" {
+-			return fmt.Errorf("if set, base-url must not have a path (%s), as hosting ntfy on a sub-path is not supported, e.g. https://ntfy.mydomain.com", u.Path)
+ 		}
+ 	} else if upstreamBaseURL != "" && !strings.HasPrefix(upstreamBaseURL, "http://") && !strings.HasPrefix(upstreamBaseURL, "https://") {
+ 		return errors.New("if set, upstream-base-url must start with http:// or https://")
 diff --git a/server/server_matrix.go b/server/server_matrix.go
 index f99bea8f..2f6593ea 100644
 --- a/server/server_matrix.go
