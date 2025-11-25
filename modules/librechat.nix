@@ -21,7 +21,7 @@
     enableLocalDB = true;
   };
 
-  services.nginx.virtualHosts."test.tchfoo.com" = {
+  services.nginx.virtualHosts."chat.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
