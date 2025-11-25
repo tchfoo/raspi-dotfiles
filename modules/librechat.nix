@@ -6,12 +6,7 @@
 {
   services.librechat = {
     enable = true;
-    credentials = {
-      CREDS_KEY = config.age.secrets.librechat-creds-key.path;
-      CREDS_IV = config.age.secrets.librechat-creds-iv.path;
-      JWT_SECRET = config.age.secrets.librechat-jwt-secret.path;
-      JWT_REFRESH_SECRET = config.age.secrets.librechat-jwt-refresh-secret.path;
-    };
+    credentialsFile = config.age.secrets.librechat.path;
     env = {
       ALLOW_REGISTRATION = true;
       OPENAI_API_KEY = "user_provided";

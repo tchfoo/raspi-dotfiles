@@ -302,7 +302,7 @@
     "nixpkgs-patch-nixos-librechat-init": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-bjhhdIXtFHnEfLIS/knYKQ4jnNIqyf3Vd4KuhbQjpRU=",
+        "narHash": "sha256-BFNajOB+UpbXQs+6dFs1xR5Z7RlwbNxLUq4//6qI8gA=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/462287.diff"
       },
