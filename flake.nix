@@ -47,8 +47,12 @@
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
     #  flake = false;
     #};
-    nixpkgs-patch-librechat-init = {
+    nixpkgs-patch-nixos-librechat-init = {
       url = "https://github.com/NixOS/nixpkgs/pull/462287.diff";
+      flake = false;
+    };
+    nixpkgs-patch-librechat-0-8-0 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/457011.diff";
       flake = false;
     };
     gep-dotfiles = {

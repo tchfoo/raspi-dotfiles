@@ -287,10 +287,22 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
       }
     },
-    "nixpkgs-patch-librechat-init": {
+    "nixpkgs-patch-librechat-0-8-0": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-ZNR/4SmtyJdlljDM31xoSpLliA+4eHi+Auetclmk4WE=",
+        "narHash": "sha256-wpB5KVdx9oELCxaN+Ci+3MrBUWg8Su/ZlUPOkM9ulLc=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/457011.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/457011.diff"
+      }
+    },
+    "nixpkgs-patch-nixos-librechat-init": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-bjhhdIXtFHnEfLIS/knYKQ4jnNIqyf3Vd4KuhbQjpRU=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/462287.diff"
       },
@@ -473,7 +485,8 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
-        "nixpkgs-patch-librechat-init": "nixpkgs-patch-librechat-init",
+        "nixpkgs-patch-librechat-0-8-0": "nixpkgs-patch-librechat-0-8-0",
+        "nixpkgs-patch-nixos-librechat-init": "nixpkgs-patch-nixos-librechat-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "systems": "systems",
