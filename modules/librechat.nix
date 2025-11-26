@@ -12,6 +12,7 @@
       OPENAI_API_KEY = "user_provided";
       GOOGLE_KEY = "user_provided";
       ANTHROPIC_API_KEY = "user_provided";
+      BAN_VIOLATIONS = false;
     };
     enableLocalDB = true;
   };
