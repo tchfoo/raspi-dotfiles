@@ -12,7 +12,7 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      lix = prev.lixPackageSets.latest.lix.overrideAttrs (o: {
+      lix = prev.lixPackageSets.lix_2_93.lix.overrideAttrs (o: {
         doCheck = false;
         doInstallCheck = false;
         patches = (o.patches or [ ]) ++ [
