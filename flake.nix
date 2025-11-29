@@ -51,10 +51,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/462287.diff";
       flake = false;
     };
-    nixpkgs-patch-librechat-0-8-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/457011.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "github:gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
