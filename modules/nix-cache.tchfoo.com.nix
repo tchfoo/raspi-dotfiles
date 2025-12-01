@@ -9,6 +9,10 @@
   services.nginx.virtualHosts."nix-cache.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
+    # with proxy buffering, large files (~1.1G) get cut off
+    extraConfig = ''
+      proxy_buffering off;
+    '';
     locations = {
       "/nix-cache-info".extraConfig = ''
         return 200 'StoreDir: /nix/store\nWantMassQuery: 1\nPriority: 30\n';
