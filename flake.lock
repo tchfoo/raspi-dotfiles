@@ -100,11 +100,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1764937965,
-        "narHash": "sha256-Ikr1AOCAGAj3exQMjTdtF9NrMcnOGQYwuhysNaoEpoQ=",
+        "lastModified": 1765405813,
+        "narHash": "sha256-/WdlSj+GwK1p2a/1z+6QdqwqH3o7TvHVbclT8HlsutE=",
         "owner": "gepbird",
         "repo": "dotfiles",
-        "rev": "9834d3f77743129d20a6f0fd35558da102efe690",
+        "rev": "5b9fffe2dc8917e40e0c535e0a254460e581697d",
         "type": "github"
       },
       "original": {
@@ -224,11 +224,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764475780,
-        "narHash": "sha256-77jL5H5x51ksLiOUDjY0ZK8e2T4ZXLhj3ap8ETvknWI=",
+        "lastModified": 1765267181,
+        "narHash": "sha256-d3NBA9zEtBu2JFMnTBqWj7Tmi7R5OikoU2ycrdhQEws=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "5a3ff8c1a09003f399f43d5742d893c0b1ab8af0",
+        "rev": "82befcf7dc77c909b0f2a09f5da910ec95c5b78f",
         "type": "github"
       },
       "original": {
@@ -446,11 +446,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764934335,
-        "narHash": "sha256-YDX9mrIcRGMraFqJ2CcvmYHlqYXs5Q7vgp90N3QdWyI=",
+        "lastModified": 1765066783,
+        "narHash": "sha256-//u1p0eTWjlFSlM0EHPSDQQomVSJrA2gMphCySZ4awc=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "0d10b1bccd53bd3fcdac031123fe1a46037c7609",
+        "rev": "56d6a0c50691eb338e649d0989cbef979e3ccdcb",
         "type": "github"
       },
       "original": {

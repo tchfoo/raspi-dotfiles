@@ -7,9 +7,9 @@
 
 {
   imports = with gep-dotfiles.nixosModules; [
+    ai
     atuin
     bottom
-    chatgpt
     clac
     cli
     config-formats
