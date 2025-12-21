@@ -35,13 +35,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
-      inputs.nixpkgs.follows = "";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.flakey-profile.follows = "";
-      inputs.lix.follows = "";
-    };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     #nixpkgs-patch-rauthy-init = {
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
@@ -82,10 +75,6 @@
     };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
-    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

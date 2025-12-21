@@ -1,18 +1,16 @@
 {
-  lix-module,
   home-manager,
   ...
 }:
 
 {
   imports = [
-    lix-module.nixosModules.lixFromNixpkgs
     home-manager.nixosModules.default
   ];
 
   nixpkgs.overlays = [
     (final: prev: {
-      lix = prev.lixPackageSets.lix_2_93.lix.overrideAttrs (o: {
+      nix = prev.lixPackageSets.lix_2_93.lix.overrideAttrs (o: {
         doCheck = false;
         doInstallCheck = false;
         patches = (o.patches or [ ]) ++ [
