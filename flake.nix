@@ -42,6 +42,10 @@
       inputs.flakey-profile.follows = "";
       inputs.lix.follows = "";
     };
+    tangled = {
+      url = "https://tangled.org/tangled.org/core/archive/v1.11.0-alpha";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     #nixpkgs-patch-rauthy-init = {
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
