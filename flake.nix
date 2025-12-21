@@ -45,14 +45,13 @@
       flake = false;
     };
     gep-dotfiles = {
-      url = "github:gepbird/dotfiles";
+      url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.agenix.follows = "";
       inputs.home-manager.follows = "";
       inputs.systems.follows = "systems";
       inputs.flake-utils.follows = "";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.nix-matlab.follows = "";
       inputs.dwm-gep.follows = "";
       inputs.lix-module.follows = "";
       inputs.nur.follows = "";
