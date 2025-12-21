@@ -8,6 +8,7 @@
 
   services.tangled.knot = {
     enable = true;
+    openFirewall = true;
     server = {
       hostname = "git.tchfoo.com";
       owner = "did:plc:miulsz77ucpzclff7r2kjdlb";
