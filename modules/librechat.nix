@@ -6,7 +6,7 @@
 {
   services.librechat = {
     enable = true;
-    credentialsFile = config.age.secrets.librechat.path;
+    credentialsFile = config.sops.secrets.librechat.path;
     env = {
       ALLOW_REGISTRATION = true;
       OPENAI_API_KEY = "user_provided";

@@ -6,7 +6,7 @@
 {
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = config.age.secrets.miniflux.path;
+    adminCredentialsFile = config.sops.secrets.miniflux.path;
     config = {
       PORT = "3327";
       BASE_URL = "https://services.tchfoo.com/miniflux";

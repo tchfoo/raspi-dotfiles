@@ -7,7 +7,7 @@
   services.glance = {
     enable = true;
     openFirewall = true;
-    environmentFile = config.age.secrets.glance.path;
+    environmentFile = config.sops.secrets.glance.path;
     settings = {
       server = {
         port = 11146;

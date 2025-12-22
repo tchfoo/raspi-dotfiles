@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   sops-nix,
@@ -43,9 +42,4 @@ in
   };
 
   environment.systemPackages = [ pkgs.sops ];
-
-  system.activationScripts."sops-test" = ''
-    echo hello secret is $(cat ${config.sops.secrets.hello.path}) 1>&2
-    echo a/nested/secret is $(cat ${config.sops.secrets."a/nested/secret".path}) 1>&2
-  '';
 }

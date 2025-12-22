@@ -15,12 +15,12 @@ in
       };
       auth = {
         type = "htpasswd";
-        htpasswd_filename = config.age.secrets.radicale.path;
+        htpasswd_filename = config.sops.secrets.radicale.path;
       };
     };
   };
 
-  age.secrets = {
+  sops.secrets = {
     radicale.owner = config.systemd.services.radicale.serviceConfig.User;
   };
 
