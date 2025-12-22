@@ -35,11 +35,14 @@ in
   imports = [
     sops-nix.nixosModules.sops
   ];
+
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     inherit secrets;
   };
+
+  environment.systemPackages = [ pkgs.sops ];
 
   system.activationScripts."sops-test" = ''
     echo hello secret is $(cat ${config.sops.secrets.hello.path}) 1>&2
