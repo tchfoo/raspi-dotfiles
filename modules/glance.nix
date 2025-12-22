@@ -3,11 +3,14 @@
   ...
 }:
 
+let
+  secrets = config.sops.secrets;
+in
 {
   services.glance = {
     enable = true;
     openFirewall = true;
-    environmentFile = config.sops.secrets.glance.path;
+    environmentFile = config.sops.secrets."glance/ENVIRONMENT_FILE".path;
     settings = {
       server = {
         port = 11146;
@@ -15,10 +18,10 @@
         proxied = true;
       };
       auth = {
-        secret-key = "\${SECRET_KEY}";
+        secret-key._secret = secrets."glance/SECRET_KEY".path;
         users = {
           ymstnt = {
-            password = "\${USER_YMSTNT_PASSWORD}";
+            password._secret = secrets."glance/USER_YMSTNT_PASSWORD".path;
           };
         };
       };
@@ -168,7 +171,7 @@
                   hide-header = true;
                   url = "https://services.tchfoo.com/miniflux/v1/entries?limit=10&order=published_at&direction=desc&status=unread";
                   headers = {
-                    X-Auth-Token = "\${MINIFLUX_TOKEN}";
+                    X-Auth-Token._secret = secrets."glance/MINIFLUX_TOKEN".path;
                     Accept = "application/json";
                   };
                   template = ''
@@ -301,7 +304,7 @@
                 {
                   type = "weather";
                   hide-header = true;
-                  location = "\${WEATHER_LOCATION}";
+                  location._secret = secrets."glance/WEATHER_LOCATION".path;
                   units = "metric";
                   hour-format = "24h";
                   hide-location = true;
@@ -316,7 +319,7 @@
                       cache = "1h";
                       url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_ANDROID}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets."glance/NEXTDNS_API_KEY".path;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -360,7 +363,7 @@
                       cache = "1h";
                       url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_WINDOWS}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets."glance/NEXTDNS_API_KEY".path;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -404,7 +407,7 @@
                       cache = "1h";
                       url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_TV}/analytics/status?from=-1M";
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets."glance/NEXTDNS_API_KEY".path;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -449,7 +452,7 @@
                   cache = "12h";
                   show-source-icon = true;
                   collapse-after = 3;
-                  token = "\${GH_TOKEN}";
+                  token._secret = secrets."glance/GH_TOKEN".path;
                   repositories = [
                     "backuppc/backuppc"
                     "Beaver-Notes/Beaver-Notes"
@@ -528,7 +531,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "tchfoo/raspi-dotfiles";
-                      token = "\${GH_TOKEN}";
+                      token._secret = secrets."glance/GH_TOKEN".path;
                       pull-requests-limit = -1;
                       issues-limit = -1;
                       commits-limit = 5;
@@ -537,7 +540,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "NixOS/nixpkgs";
-                      token = "\${GH_TOKEN}";
+                      token._secret = secrets."glance/GH_TOKEN".path;
                       pull-requests-limit = 5;
                       issues-limit = 5;
                       commits-limit = 5;
