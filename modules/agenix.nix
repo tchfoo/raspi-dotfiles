@@ -18,7 +18,7 @@ let
     ;
 
   secretsFolder = toString ../secrets;
-  secretFileNames = attrNames (removeAttrs (readDir secretsFolder) [ "secrets.nix" ]);
+  secretFileNames = attrNames (removeAttrs (readDir secretsFolder) [ "secrets.nix" "secrets.yaml" ]);
 
   secrets = listToAttrs (
     map (fileName: {

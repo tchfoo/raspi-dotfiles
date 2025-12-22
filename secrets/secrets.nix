@@ -14,7 +14,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK3vrYOUtZIZhwoYihWYUzglxs7w8GGq647OX9vNcPRP root@raspi-doboz"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAl1OF5isvGFJ5HSsDz2iXV8I/lxSjzxOMPkl2IK4FT+ root@raspi5-doboz"
   ];
-  secretFiles = attrNames (removeAttrs (readDir (toString ./.)) [ "secrets.nix" ]);
+  secretFiles = attrNames (removeAttrs (readDir (toString ./.)) [ "secrets.nix" "secrets.yaml" ]);
   result = listToAttrs (
     map (x: {
       name = x;

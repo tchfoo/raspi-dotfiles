@@ -456,9 +456,30 @@
         "nixpkgs-patch-nixos-librechat-init": "nixpkgs-patch-nixos-librechat-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
+        "sops-nix": "sops-nix",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles",
         "ymstnt-website": "ymstnt-website"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766289575,
+        "narHash": "sha256-BOKCwOQQIP4p9z8DasT5r+qjri3x7sPCOq+FTjY8Z+o=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "9836912e37aef546029e48c8749834735a6b9dad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "systems": {
