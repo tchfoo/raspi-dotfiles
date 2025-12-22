@@ -25,7 +25,7 @@
       peer-port = 49560;
       umask = 18;
     };
-    credentialsFile = config.sops.secrets."transmission.json".path;
+    credentialsFile = config.secrets."transmission.json";
   };
 
   systemd.tmpfiles.rules = [

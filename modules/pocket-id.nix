@@ -20,7 +20,7 @@ in
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
       EMAIL_ONE_TIME_ACCESS_AS_ADMIN_ENABLED = true;
     };
-    environmentFile = config.sops.secrets.pocket-id.path;
+    environmentFile = config.secrets.pocket-id;
   };
 
   services.nginx.virtualHosts."auth.tchfoo.com" = {

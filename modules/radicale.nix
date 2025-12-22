@@ -15,7 +15,7 @@ in
       };
       auth = {
         type = "htpasswd";
-        htpasswd_filename = config.sops.secrets.radicale.path;
+        htpasswd_filename = config.secrets.radicale;
       };
     };
   };

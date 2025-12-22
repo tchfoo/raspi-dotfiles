@@ -3,9 +3,6 @@
   ...
 }:
 
-let
-  secrets = config.sops.secrets;
-in
 {
   services.librechat = {
     enable = true;
@@ -16,12 +13,7 @@ in
       ANTHROPIC_API_KEY = "user_provided";
       BAN_VIOLATIONS = false;
     };
-    credentials = {
-      CREDS_KEY = secrets."librechat/CREDS_KEY".path;
-      CREDS_IV = secrets."librechat/CREDS_IV".path;
-      JWT_SECRET = secrets."librechat/JWT_SECRET".path;
-      JWT_REFRESH_SECRET = secrets."librechat/JWT_REFRESH_SECRET".path;
-    };
+    credentials = config.secrets.librechat;
     enableLocalDB = true;
   };
 
