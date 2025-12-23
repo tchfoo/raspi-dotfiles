@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "agenix": {
-      "inputs": {
-        "darwin": [],
-        "home-manager": [],
-        "nixpkgs": [],
-        "systems": []
-      },
-      "locked": {
-        "lastModified": 1762618334,
-        "narHash": "sha256-wyT7Pl6tMFbFrs8Lk/TlEs81N6L+VSybPfiIgzU8lbQ=",
-        "owner": "ryantm",
-        "repo": "agenix",
-        "rev": "fcdea223397448d35d9b31f798479227e80183f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ryantm",
-        "repo": "agenix",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "locked": {
         "lastModified": 1761588595,
@@ -442,7 +421,6 @@
     },
     "root": {
       "inputs": {
-        "agenix": "agenix",
         "flake-parts": "flake-parts",
         "gep-dotfiles": "gep-dotfiles",
         "home-manager": "home-manager",
