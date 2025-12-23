@@ -10,7 +10,6 @@ in
   services.glance = {
     enable = true;
     openFirewall = true;
-    environmentFile = secrets.ENVIRONMENT_FILE;
     settings = {
       server = {
         port = 11146;
@@ -315,9 +314,9 @@ in
                     {
                       type = "custom-api";
                       title = "Android";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_ANDROID}";
+                      title-url._secret = secrets.NEXTDNS_ANDROID_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_ANDROID}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_ANDROID_URL;
                       headers = {
                         X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
@@ -359,9 +358,9 @@ in
                     {
                       type = "custom-api";
                       title = "Windows";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_WINDOWS}";
+                      title-url._secret = secrets.NEXTDNS_WINDOWS_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_WINDOWS}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_WINDOWS_URL;
                       headers = {
                         X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
@@ -403,9 +402,9 @@ in
                     {
                       type = "custom-api";
                       title = "TV";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_TV}";
+                      title-url._secret = secrets.NEXTDNS_TV_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_TV}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_TV_URL;
                       headers = {
                         X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
