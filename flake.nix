@@ -51,13 +51,11 @@
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.agenix.follows = "";
+      inputs.sops-nix.follows = "";
       inputs.home-manager.follows = "";
       inputs.systems.follows = "systems";
-      inputs.flake-utils.follows = "";
       inputs.flake-parts.follows = "flake-parts";
       inputs.dwm-gep.follows = "";
-      inputs.lix-module.follows = "";
       inputs.nur.follows = "";
       inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
