@@ -16,7 +16,7 @@
     settings = {
       status-port = 25571;
     };
-    credentialsFile = config.age.secrets.moe.path;
+    credentialsFile = config.secrets.moe;
   };
 
   services.borgmatic.configurations.raspi = {

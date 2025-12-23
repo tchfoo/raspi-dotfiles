@@ -3,11 +3,13 @@
   ...
 }:
 
+let
+  secrets = config.secrets.glance;
+in
 {
   services.glance = {
     enable = true;
     openFirewall = true;
-    environmentFile = config.age.secrets.glance.path;
     settings = {
       server = {
         port = 11146;
@@ -15,10 +17,10 @@
         proxied = true;
       };
       auth = {
-        secret-key = "\${SECRET_KEY}";
+        secret-key._secret = secrets.SECRET_KEY;
         users = {
           ymstnt = {
-            password = "\${USER_YMSTNT_PASSWORD}";
+            password._secret = secrets.USER_YMSTNT_PASSWORD;
           };
         };
       };
@@ -168,7 +170,7 @@
                   hide-header = true;
                   url = "https://services.tchfoo.com/miniflux/v1/entries?limit=10&order=published_at&direction=desc&status=unread";
                   headers = {
-                    X-Auth-Token = "\${MINIFLUX_TOKEN}";
+                    X-Auth-Token._secret = secrets.MINIFLUX_TOKEN;
                     Accept = "application/json";
                   };
                   template = ''
@@ -301,7 +303,7 @@
                 {
                   type = "weather";
                   hide-header = true;
-                  location = "\${WEATHER_LOCATION}";
+                  location._secret = secrets.WEATHER_LOCATION;
                   units = "metric";
                   hour-format = "24h";
                   hide-location = true;
@@ -312,11 +314,11 @@
                     {
                       type = "custom-api";
                       title = "Android";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_ANDROID}";
+                      title-url._secret = secrets.NEXTDNS_ANDROID_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_ANDROID}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_ANDROID_URL;
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -356,11 +358,11 @@
                     {
                       type = "custom-api";
                       title = "Windows";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_WINDOWS}";
+                      title-url._secret = secrets.NEXTDNS_WINDOWS_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_WINDOWS}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_WINDOWS_URL;
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -400,11 +402,11 @@
                     {
                       type = "custom-api";
                       title = "TV";
-                      title-url = "https://my.nextdns.io/\${NEXTDNS_ID_TV}";
+                      title-url._secret = secrets.NEXTDNS_TV_TITLE;
                       cache = "1h";
-                      url = "https://api.nextdns.io/profiles/\${NEXTDNS_ID_TV}/analytics/status?from=-1M";
+                      url._secret = secrets.NEXTDNS_TV_URL;
                       headers = {
-                        X-Api-Key = "\${NEXTDNS_API_KEY}";
+                        X-Api-Key._secret = secrets.NEXTDNS_API_KEY;
                       };
                       template = ''
                         {{ if eq .Response.StatusCode 200 }}
@@ -449,7 +451,7 @@
                   cache = "12h";
                   show-source-icon = true;
                   collapse-after = 3;
-                  token = "\${GH_TOKEN}";
+                  token._secret = secrets.GH_TOKEN;
                   repositories = [
                     "backuppc/backuppc"
                     "Beaver-Notes/Beaver-Notes"
@@ -528,7 +530,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "tchfoo/raspi-dotfiles";
-                      token = "\${GH_TOKEN}";
+                      token._secret = secrets.GH_TOKEN;
                       pull-requests-limit = -1;
                       issues-limit = -1;
                       commits-limit = 5;
@@ -537,7 +539,7 @@
                       type = "repository";
                       hide-header = true;
                       repository = "NixOS/nixpkgs";
-                      token = "\${GH_TOKEN}";
+                      token._secret = secrets.GH_TOKEN;
                       pull-requests-limit = 5;
                       issues-limit = 5;
                       commits-limit = 5;

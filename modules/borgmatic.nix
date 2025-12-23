@@ -24,7 +24,7 @@
         exclude_if_present = [
           ".nobackup"
         ];
-        encryption_passcommand = "${pkgs.coreutils}/bin/cat ${config.age.secrets.borgmatic-raspi.path}";
+        encryption_passcommand = "${pkgs.coreutils}/bin/cat ${config.secrets.borgmatic-raspi}";
         ssh_command = "${pkgs.openssh}/bin/ssh -i /etc/ssh/borg";
         relocated_repo_access_is_ok = true;
         compression = "auto,zstd";

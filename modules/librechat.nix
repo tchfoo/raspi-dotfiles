@@ -6,7 +6,6 @@
 {
   services.librechat = {
     enable = true;
-    credentialsFile = config.age.secrets.librechat.path;
     env = {
       ALLOW_REGISTRATION = true;
       OPENAI_API_KEY = "user_provided";
@@ -14,6 +13,7 @@
       ANTHROPIC_API_KEY = "user_provided";
       BAN_VIOLATIONS = false;
     };
+    credentials = config.secrets.librechat;
     enableLocalDB = true;
   };
 

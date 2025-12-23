@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "agenix": {
-      "inputs": {
-        "darwin": [],
-        "home-manager": [],
-        "nixpkgs": [],
-        "systems": []
-      },
-      "locked": {
-        "lastModified": 1762618334,
-        "narHash": "sha256-wyT7Pl6tMFbFrs8Lk/TlEs81N6L+VSybPfiIgzU8lbQ=",
-        "owner": "ryantm",
-        "repo": "agenix",
-        "rev": "fcdea223397448d35d9b31f798479227e80183f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ryantm",
-        "repo": "agenix",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "locked": {
         "lastModified": 1761588595,
@@ -58,14 +37,11 @@
     },
     "gep-dotfiles": {
       "inputs": {
-        "agenix": [],
         "dwm-gep": [],
         "flake-parts": [
           "flake-parts"
         ],
-        "flake-utils": [],
         "home-manager": [],
-        "lix-module": [],
         "nix-index-database": "nix-index-database",
         "nixpkgs": [
           "nixpkgs"
@@ -73,17 +49,18 @@
         "nixpkgs-patcher": [],
         "nur": [],
         "nvim-gep": "nvim-gep",
+        "sops-nix": [],
         "systems": [
           "systems"
         ],
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1766360951,
-        "narHash": "sha256-nelH5IKuPp1TIMw0dcUugn7mCyL5eYkpNgLvRILBRkg=",
+        "lastModified": 1766517889,
+        "narHash": "sha256-1SS4dOUgkekR75NAfaNT8Prco6Xzi2tZ6D3Ez40aVrU=",
         "ref": "refs/heads/main",
-        "rev": "feaee7f6caa7175bafce57b60cdfba290177d226",
-        "revCount": 1228,
+        "rev": "e9cddeea98c5f9621c4caa01a5fab995688a1df9",
+        "revCount": 1238,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -444,7 +421,6 @@
     },
     "root": {
       "inputs": {
-        "agenix": "agenix",
         "flake-parts": "flake-parts",
         "gep-dotfiles": "gep-dotfiles",
         "home-manager": "home-manager",
@@ -456,9 +432,30 @@
         "nixpkgs-patch-nixos-librechat-init": "nixpkgs-patch-nixos-librechat-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
+        "sops-nix": "sops-nix",
         "systems": "systems",
         "ymstnt-dotfiles": "ymstnt-dotfiles",
         "ymstnt-website": "ymstnt-website"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766289575,
+        "narHash": "sha256-BOKCwOQQIP4p9z8DasT5r+qjri3x7sPCOq+FTjY8Z+o=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "9836912e37aef546029e48c8749834735a6b9dad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "systems": {
