@@ -226,18 +226,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-cosmic-stable": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-4m74QBFcOf81R783gNuCPhEe4cUQeSzZhUV5E1mxVCY=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/469745.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/469745.diff"
-      }
-    },
     "nixpkgs-patch-fix-raspi-module-renames": {
       "flake": false,
       "locked": {
@@ -478,22 +466,20 @@
         "agenix": [],
         "cosmic-manager": [],
         "home-manager": [],
-        "lix-module": [],
         "nix-matlab": [],
         "nixpkgs": [],
         "nixpkgs-develop": [],
         "nixpkgs-master": [],
-        "nixpkgs-patch-cosmic-stable": "nixpkgs-patch-cosmic-stable",
         "nixpkgs-patcher": [],
         "nixpkgs-stable": [],
         "nur": []
       },
       "locked": {
-        "lastModified": 1765829861,
-        "narHash": "sha256-pr2tMYGj33i00x0eqZ0WTI0/TL/t69Kl+pJiEZp1/pM=",
+        "lastModified": 1766777694,
+        "narHash": "sha256-92f5zNVMP4rkCGPxDas03jDVQHuCEZtwvpz1BscpbDE=",
         "owner": "ymstnt",
         "repo": "dotfiles",
-        "rev": "9c2f73ab945b096e29d0cf71c57568dc1ca9d1d5",
+        "rev": "eba522a10a47e00d9e6305a63b12f99e3b2f1175",
         "type": "github"
       },
       "original": {
