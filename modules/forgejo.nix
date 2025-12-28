@@ -20,7 +20,7 @@ in
       mailer = {
         ENABLED = true;
         PROTOCOL = "smtps";
-        SMTP_PORT = 465;        
+        SMTP_PORT = 465;
       };
       service = {
         ENABLE_NOTIFY_MAIL = true;

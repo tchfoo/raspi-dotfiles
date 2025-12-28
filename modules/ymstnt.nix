@@ -72,62 +72,49 @@
 
       settings = {
         format = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[](bg:\#F75787 fg:\#F41C5D)\$cmd_duration[ ](fg:\#F75787)"
-              else "[](\#05661C)\$os\$username\[](bg:\#067D22 fg:\#05661C)\$directory\[](bg:\#079228 fg:\#067D22)\$git_branch\$git_status\[](bg:\#08A12B fg:\#079228)\$cmd_duration[ ](fg:\#08A12B)"
-            );
+          if config.networking.hostName == "raspi5-doboz" then
+            "[](\#AF083A)\$os\$username\[](bg:\#D50A47 fg:\#AF083A)\$directory\[](bg:\#F41C5D fg:\#D50A47)\$git_branch\$git_status\[](bg:\#F75787 fg:\#F41C5D)\$cmd_duration[ ](fg:\#F75787)"
+          else
+            "[](\#05661C)\$os\$username\[](bg:\#067D22 fg:\#05661C)\$directory\[](bg:\#079228 fg:\#067D22)\$git_branch\$git_status\[](bg:\#08A12B fg:\#079228)\$cmd_duration[ ](fg:\#08A12B)"
+        );
 
         username = {
           style_user = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#AF083A"
-              else "bg:\#05661C"
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#AF083A" else "bg:\#05661C"
           );
           style_root = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#AF083A"
-              else "bg:\#05661C"
-           );
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#AF083A" else "bg:\#05661C"
+          );
         };
 
         os = {
           format = lib.mkForce "[ ]($style)";
           style = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#AF083A"
-              else "bg:\#05661C"
-           );
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#AF083A" else "bg:\#05661C"
+          );
         };
 
         directory = {
           style = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#D50A47"
-              else "bg:\#067D22"
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#D50A47" else "bg:\#067D22"
           );
         };
 
         git_branch = {
           style = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#F41C5D"
-              else "bg:\#079228"
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#F41C5D" else "bg:\#079228"
           );
         };
 
         git_status = {
           style = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#F41C5D"
-              else "bg:\#079228"
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#F41C5D" else "bg:\#079228"
           );
         };
 
         cmd_duration = {
           style = lib.mkForce (
-            if config.networking.hostName == "raspi5-doboz"
-              then "bg:\#F75787"
-              else "bg:\#08A12B"
+            if config.networking.hostName == "raspi5-doboz" then "bg:\#F75787" else "bg:\#08A12B"
           );
         };
       };

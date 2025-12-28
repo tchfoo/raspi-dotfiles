@@ -7,23 +7,22 @@ let
   modules = import ../../modules;
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      nixos-hardware.nixosModules.raspberry-pi-4
-    ]
-    ++ modules.allModulesExcept [
-      "glance"
-      "home-assistant"
-      "miniflux"
-      "moe"
-      "mollysocket"
-      "ntfy"
-      "plex"
-      "radicale"
-      "rauthy"
-      "transmission"
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    nixos-hardware.nixosModules.raspberry-pi-4
+  ]
+  ++ modules.allModulesExcept [
+    "glance"
+    "home-assistant"
+    "miniflux"
+    "moe"
+    "mollysocket"
+    "ntfy"
+    "plex"
+    "radicale"
+    "rauthy"
+    "transmission"
+  ];
 
   boot = {
     loader = {

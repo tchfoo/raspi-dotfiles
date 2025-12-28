@@ -560,5 +560,5 @@ in
     extraConfig = ''
       rewrite ^/glance/(.*)$ /$1? break;
     '';
- };
+  };
 }
