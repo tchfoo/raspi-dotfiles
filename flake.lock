@@ -251,6 +251,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/421940.diff"
       }
     },
+    "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-E0Tmu8KoED+yYFwyy4nVHvqyLG5rqjC0JD119XiOKzI=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1765447685,
@@ -418,6 +430,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
+        "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "sops-nix": "sops-nix",

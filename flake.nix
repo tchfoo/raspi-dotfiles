@@ -37,6 +37,10 @@
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
     #  flake = false;
     #};
+    nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation = {
+      url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
