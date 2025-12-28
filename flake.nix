@@ -62,6 +62,10 @@
       inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "";
+    };
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
     flake-parts = {
@@ -99,6 +103,10 @@
           pocket-id
           ;
       };
+      formatter.aarch64-linux =
+        (treefmt-nix.lib.evalModule self.nixosConfigurations.raspi5-doboz.pkgs {
+          programs.nixfmt.enable = true;
+        }).config.build.wrapper;
     };
 
   nixConfig = {
