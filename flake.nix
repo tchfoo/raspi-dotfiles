@@ -37,10 +37,6 @@
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
     #  flake = false;
     #};
-    nixpkgs-patch-nixos-librechat-init = {
-      url = "https://github.com/NixOS/nixpkgs/pull/462287.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -62,7 +58,6 @@
       inputs.nixpkgs-master.follows = "";
       inputs.nixpkgs-develop.follows = "";
       inputs.nixpkgs-stable.follows = "";
-      inputs.lix-module.follows = "";
       inputs.nur.follows = "";
       inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
