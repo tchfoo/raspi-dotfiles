@@ -1,4 +1,7 @@
-{ config, ... }:
+{
+  config,
+  ...
+}:
 
 let
   cfg = config.services.forgejo;
@@ -35,8 +38,16 @@ in
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      proxyPass = "http://unix:${cfg.settings.server.HTTP_ADDR}";
+      proxyPass = "http://unix:${config.services.anubis.instances.forgejo.settings.BIND}";
       recommendedProxySettings = true;
+    };
+  };
+
+  services.anubis.instances.forgejo = {
+    settings = {
+      TARGET = "unix://${cfg.settings.server.HTTP_ADDR}";
+      BIND = "/run/anubis/anubis-forgejo/anubis.sock";
+      METRICS_BIND = "/run/anubis/anubis-forgejo/anubis-metrics.sock";
     };
   };
 }
