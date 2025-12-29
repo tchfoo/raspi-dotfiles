@@ -46,8 +46,6 @@ in
   services.anubis.instances.forgejo = {
     settings = {
       TARGET = "unix://${cfg.settings.server.HTTP_ADDR}";
-      BIND = "/run/anubis/anubis-forgejo/anubis.sock";
-      METRICS_BIND = "/run/anubis/anubis-forgejo/anubis-metrics.sock";
     };
   };
 }

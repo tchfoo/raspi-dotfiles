@@ -239,6 +239,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
       }
     },
+    "nixpkgs-patch-nixos-anubis-fix-eval-warning": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-6J+muuelKpcdaz5kie6+DW/1zXNwyde4bLPCX8Xi5gY=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/457055.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/457055.diff"
+      }
+    },
     "nixpkgs-patch-nixos-ente-auth-init": {
       "flake": false,
       "locked": {
@@ -430,6 +442,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
+        "nixpkgs-patch-nixos-anubis-fix-eval-warning": "nixpkgs-patch-nixos-anubis-fix-eval-warning",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

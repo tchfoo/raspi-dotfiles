@@ -41,6 +41,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
+    nixpkgs-patch-nixos-anubis-fix-eval-warning = {
+      url = "https://github.com/NixOS/nixpkgs/pull/457055.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
