@@ -1,9 +1,11 @@
 {
   config,
+  pkgs,
   ...
 }:
 
 let
+  inherit (config.networking) hostName;
   cfg = config.services.forgejo;
   host = "git.tchfoo.com";
   httpsHost = "https://${host}";
@@ -33,6 +35,20 @@ in
       admin = {
         SEND_NOTIFICATION_EMAIL_ON_NEW_USER = true;
       };
+    };
+  };
+
+  services.gitea-actions-runner = {
+    package = pkgs.forgejo-runner;
+    instances.${hostName} = {
+      enable = true;
+      name = hostName;
+      tokenFile = config.secrets.forgejo.runner-token;
+      url = httpsHost;
+      labels = [
+        # mimic GitHub ARM runner
+        "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
+      ];
     };
   };
 
