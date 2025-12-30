@@ -5,6 +5,8 @@
 
 let
   cfg = config.services.forgejo;
+  host = "git.tchfoo.com";
+  httpsHost = "https://${host}";
 in
 {
   services.forgejo = {
@@ -18,7 +20,7 @@ in
     settings = {
       server = {
         PROTOCOL = "http+unix";
-        ROOT_URL = "https://git.tchfoo.com";
+        ROOT_URL = httpsHost;
       };
       mailer = {
         ENABLED = true;
@@ -34,7 +36,7 @@ in
     };
   };
 
-  services.nginx.virtualHosts."git.tchfoo.com" = {
+  services.nginx.virtualHosts."${host}" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
