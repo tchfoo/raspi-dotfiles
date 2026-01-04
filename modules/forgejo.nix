@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  utils,
   ...
 }:
 
@@ -51,6 +52,10 @@ in
       ];
     };
   };
+
+  systemd.services."gitea-runner-${utils.escapeSystemdPath hostName}".after = [
+    "forgejo.service"
+  ];
 
   services.nginx.virtualHosts."${host}" = {
     enableACME = true;
