@@ -10,6 +10,7 @@
       #inputs.nixpkgs.follows = "nixpkgs";
       inputs.argononed.follows = "";
       inputs.nixos-images.follows = "";
+      inputs.flake-compat.follows = "";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -41,8 +42,12 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-nixos-anubis-fix-eval-warning = {
-      url = "https://github.com/NixOS/nixpkgs/pull/457055.diff";
+    nixpkgs-patch-nvim-treesitter-legacy = {
+      url = "https://github.com/NixOS/nixpkgs/pull/472119.diff";
+      flake = false;
+    };
+    nixpkgs-patch-librechat-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/476747.diff";
       flake = false;
     };
     gep-dotfiles = {
@@ -56,6 +61,7 @@
       inputs.nur.follows = "";
       inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
+      inputs.nixpkgs-patch-nvim-treesitter-legacy.follows = "nixpkgs-patch-nvim-treesitter-legacy";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
