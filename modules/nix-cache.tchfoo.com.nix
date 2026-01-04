@@ -21,7 +21,7 @@
         proxyPass = "https://cache.gepbird.ovh";
         recommendedProxySettings = true;
         extraConfig = ''
-          proxy_connect_timeout 500ms;
+          proxy_connect_timeout 10s;
           error_page 502 504 = @fallback;
         '';
       };
