@@ -1,9 +1,37 @@
 {
+  pkgs,
   ...
 }:
 
 {
-  # a proxy store that
+  # detect when cache.gepbird.ovh is down so we can return 404 early
+  systemd.services."cache.gepbird.ovh-healthcheck" = {
+    description = "Active health check for cache.gepbird.ovh";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    path = [ pkgs.curl ];
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = "5s";
+    };
+    script = ''
+      STATUS_FILE="/run/cache.gepbird.ovh-down"
+      while true; do
+        # Check availability with a 2s timeout.
+        # If it succeeds (200 OK), remove the down flag.
+        # If it fails (timeout, connection refused, 5xx), create the down flag.
+        if curl -f -s -o /dev/null --connect-timeout 2 --max-time 5 "https://cache.gepbird.ovh/nix-cache-info"; then
+          rm -f "$STATUS_FILE"
+        else
+          touch "$STATUS_FILE"
+        fi
+        sleep 10
+      done
+    '';
+  };
+
+  # a proxy nix store that
   # - tries cache.gepbird.ovh
   # - falls back to a dummy empty store
   services.nginx.virtualHosts."nix-cache.tchfoo.com" = {
@@ -21,7 +49,12 @@
         proxyPass = "https://cache.gepbird.ovh";
         recommendedProxySettings = true;
         extraConfig = ''
-          proxy_connect_timeout 10s;
+          # check for the down flag managed by the systemd service
+          if (-f /run/cache.gepbird.ovh-status/down) {
+            return 404;
+          }
+
+          proxy_connect_timeout 5s;
           error_page 502 504 = @fallback;
         '';
       };
