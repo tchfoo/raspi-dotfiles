@@ -1,7 +1,9 @@
 keys:
   - &raspi5-doboz-host age18y3azflaey9w4d942vnj4jvgpsjlyg3au6g32nlmqh2dfvhaqvqq259rrz
+  - &raspi-doboz-host age149wunsqrt6sr27wpft0x430a276t6yeu66t0l7hn6x8agvgawezqtd65qq
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
         - *raspi5-doboz-host
+        - *raspi-doboz-host
