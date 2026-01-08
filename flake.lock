@@ -275,6 +275,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/472119.diff"
       }
     },
+    "nixpkgs-patch-pocket-id-2-1-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-TYW6ShqFsiWAm5fafsXcMNriGa7AAbrdOdhgZALhp18=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/477919.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/477919.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1765447685,
@@ -452,6 +464,7 @@
         "nixpkgs-patch-librechat-fix-build": "nixpkgs-patch-librechat-fix-build",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patch-nvim-treesitter-legacy": "nixpkgs-patch-nvim-treesitter-legacy",
+        "nixpkgs-patch-pocket-id-2-1-0": "nixpkgs-patch-pocket-id-2-1-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "sops-nix": "sops-nix",
