@@ -19,8 +19,9 @@ in
       DISABLE_ANIMATIONS = true;
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
       EMAIL_ONE_TIME_ACCESS_AS_ADMIN_ENABLED = true;
+      SMTP_PORT = 587;
     };
-    environmentFile = config.secrets.pocket-id;
+    credentials = config.secrets.pocket-id;
   };
 
   services.nginx.virtualHosts."auth.tchfoo.com" = {
