@@ -1,4 +1,5 @@
 {
+  lib,
   nixos-hardware,
   ...
 }:
@@ -40,7 +41,7 @@ in
 
   networking.hostName = "raspi-doboz";
 
-  nix.settings.max-jobs = 1;
+  nix.settings.max-jobs = lib.mkForce 1;
 
   system.stateVersion = "25.05";
 }
