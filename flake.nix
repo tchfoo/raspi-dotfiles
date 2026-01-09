@@ -42,14 +42,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-nvim-treesitter-legacy = {
-      url = "https://github.com/NixOS/nixpkgs/pull/472119.diff";
-      flake = false;
-    };
-    nixpkgs-patch-librechat-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/476747.diff";
-      flake = false;
-    };
     nixpkgs-patch-pocket-id-2-1-0 = {
       url = "https://github.com/NixOS/nixpkgs/pull/477919.diff";
       flake = false;
@@ -65,7 +57,6 @@
       inputs.nur.follows = "";
       inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
-      inputs.nixpkgs-patch-nvim-treesitter-legacy.follows = "nixpkgs-patch-nvim-treesitter-legacy";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
