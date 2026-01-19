@@ -15,7 +15,10 @@
     };
     credentials = config.secrets.librechat;
     enableLocalDB = true;
+    meilisearch.enable = true;
   };
+
+  services.meilisearch.masterKeyFile = config.secrets.meilisearch.MASTER_KEY;
 
   services.nginx.virtualHosts."chat.tchfoo.com" = {
     enableACME = true;

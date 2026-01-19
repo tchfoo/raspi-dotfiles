@@ -42,6 +42,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
+    nixpkgs-patch-nixos-librechat-add-meilisearch-support = {
+      url = "https://github.com/NixOS/nixpkgs/pull/481465.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
