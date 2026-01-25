@@ -46,10 +46,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/481465.diff";
       flake = false;
     };
-    nixpkgs-patch-lurk-fix-aarch64-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/481378.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
