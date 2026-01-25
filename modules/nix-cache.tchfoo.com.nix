@@ -3,6 +3,9 @@
   ...
 }:
 
+let
+  down-status-file = "/run/cache.gepbird.ovh-status-down";
+in
 {
   # detect when cache.gepbird.ovh is down so we can return 404 early
   systemd.services."cache.gepbird.ovh-healthcheck" = {
@@ -16,15 +19,14 @@
       RestartSec = "5s";
     };
     script = ''
-      STATUS_FILE="/run/cache.gepbird.ovh-down"
       while true; do
         # Check availability with a 2s timeout.
         # If it succeeds (200 OK), remove the down flag.
         # If it fails (timeout, connection refused, 5xx), create the down flag.
         if curl -f -s -o /dev/null --connect-timeout 2 --max-time 5 "https://cache.gepbird.ovh/nix-cache-info"; then
-          rm -f "$STATUS_FILE"
+          rm -f ${down-status-file}
         else
-          touch "$STATUS_FILE"
+          touch ${down-status-file}
         fi
         sleep 10
       done
@@ -50,7 +52,7 @@
         recommendedProxySettings = true;
         extraConfig = ''
           # check for the down flag managed by the systemd service
-          if (-f /run/cache.gepbird.ovh-status/down) {
+          if (-f ${down-status-file}) {
             return 404;
           }
 
