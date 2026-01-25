@@ -1,6 +1,4 @@
 {
-  lib,
-  pkgs,
   nixos-raspberrypi,
   ...
 }:
@@ -22,7 +20,7 @@ in
     nixos-raspberrypi.overlays.vendor-pkgs
   ];
 
-  boot.loader.raspberryPi.bootloader = "kernel";
+  boot.loader.raspberry-pi.bootloader = "kernel";
 
   swapDevices = [
     {
