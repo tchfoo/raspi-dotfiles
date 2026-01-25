@@ -47,19 +47,4 @@
       "wheel"
     ];
   };
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      lurk = prev.lurk.overrideAttrs (old: {
-        patches = (old.patches or [ ]) ++ [
-          (prev.fetchurl {
-            # https://github.com/JakWai01/lurk/pull/71
-            name = "fix-build-with-syscalls-v0.7.0.patch";
-            url = "https://github.com/JakWai01/lurk/pull/71/commits/d674ff29062933c1819f2e0c2a6e14e9247c7ff3.patch";
-            hash = "sha256-VciE1ri9WWgDYosa2mTpVIGPN4kvWiDP5hii+6TKJd8=";
-          })
-        ];
-      });
-    })
-  ];
 }

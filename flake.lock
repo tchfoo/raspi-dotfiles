@@ -223,6 +223,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
       }
     },
+    "nixpkgs-patch-lurk-fix-aarch64-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-/FXYNHpNQN6EtgQDE6mUh5kQ6/rPNhTI6e1e2BgWzCM=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/481378.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/481378.diff"
+      }
+    },
     "nixpkgs-patch-nixos-librechat-add-meilisearch-support": {
       "flake": false,
       "locked": {
@@ -399,6 +411,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
+        "nixpkgs-patch-lurk-fix-aarch64-build": "nixpkgs-patch-lurk-fix-aarch64-build",
         "nixpkgs-patch-nixos-librechat-add-meilisearch-support": "nixpkgs-patch-nixos-librechat-add-meilisearch-support",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
