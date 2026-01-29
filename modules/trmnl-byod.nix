@@ -6,11 +6,11 @@
 }:
 
 {
-  services.nginx.virtualHosts."terminus.tchfoo.com" = {
+  services.nginx.virtualHosts."dash.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      proxyPass = "http://localhost:2300";
+      proxyPass = "http://localhost:4567";
       recommendedProxySettings = true;
     };
   };
