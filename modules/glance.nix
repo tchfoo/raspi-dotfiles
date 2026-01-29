@@ -65,7 +65,7 @@ in
                   type = "custom-api";
                   title = "Current week (uni)";
                   cache = "12h";
-                  url = "https://uwc.ymstnt.com/uwc?days-left-exam&days-left-break&append-week";
+                  url = "https://uwc.ymstnt.com/uwc?verbose&countdown";
                   template = ''
                     <p class="color-paragraph">{{ .JSON.String "message" }}</p>
                   '';
