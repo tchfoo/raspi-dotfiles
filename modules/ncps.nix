@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }:
 
@@ -10,6 +11,15 @@ in
 {
   services.ncps = {
     enable = true;
+    package = pkgs.ncps.overrideAttrs (old: {
+      patches = (old.patches or [ ]) ++ [
+        (pkgs.fetchpatch2 {
+          name = "fix-invalid-nar-url-error.patch";
+          url = "https://github.com/kalbasit/ncps/commit/c854bb9c215c7dbe048878560390dae36c288956.patch";
+          hash = "sha256-/7kAsSz5LHoRdu9U3nMlRMocZXMmtJT7GdX5i8jk7E4=";
+        })
+      ];
+    });
     cache = {
       hostName = "${hostName}-1";
       secretKeyPath = config.secrets.ncps."${hostName}-1.sec";
@@ -29,7 +39,6 @@ in
     };
   };
 
-  # TODO: replace legacy nix-cache.tchfoo.com with ncps once resolved: "invalid nar URL"
   #services.nginx.virtualHosts."${hostName}" = {
   services.nginx.virtualHosts."test.tchfoo.com" = {
     enableACME = true;
