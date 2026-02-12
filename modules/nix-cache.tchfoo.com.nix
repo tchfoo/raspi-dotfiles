@@ -39,30 +39,19 @@ in
   services.nginx.virtualHosts."nix-cache.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
-    # with proxy buffering, large files (~1.1G) get cut off
-    extraConfig = ''
-      proxy_buffering off;
-    '';
     locations = {
       "/nix-cache-info".extraConfig = ''
         return 200 'StoreDir: /nix/store\nWantMassQuery: 1\nPriority: 30\n';
       '';
       "/" = {
-        proxyPass = "https://cache.gepbird.ovh";
-        recommendedProxySettings = true;
         extraConfig = ''
           # check for the down flag managed by the systemd service
           if (-f ${down-status-file}) {
             return 404;
           }
-
-          proxy_connect_timeout 5s;
-          error_page 502 504 = @fallback;
+          return 302 https://cache.gepbird.ovh$request_uri;
         '';
       };
-      "@fallback".extraConfig = ''
-        try_files _ =404;
-      '';
     };
   };
 }
