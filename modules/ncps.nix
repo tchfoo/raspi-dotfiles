@@ -11,14 +11,15 @@ in
 {
   services.ncps = {
     enable = true;
-    package = pkgs.ncps.overrideAttrs (old: {
-      patches = (old.patches or [ ]) ++ [
-        (pkgs.fetchpatch2 {
-          name = "fix-invalid-nar-url-error.patch";
-          url = "https://github.com/kalbasit/ncps/commit/c854bb9c215c7dbe048878560390dae36c288956.patch";
-          hash = "sha256-/7kAsSz5LHoRdu9U3nMlRMocZXMmtJT7GdX5i8jk7E4=";
-        })
-      ];
+    package = pkgs.ncps.overrideAttrs (old: rec {
+      version = "0.8.5-rc1";
+      src = pkgs.fetchFromGitHub {
+        owner = "kalbasit";
+        repo = "ncps";
+        tag = "v${version}";
+        hash = "sha256-UBNzOF9/rdZkxp5+k0f975EPdO+/5Mf27uxr/FOcVj8=";
+      };
+      vendorHash = "sha256-AcgC+zTS3eVsbcs0jim4zDBGc3lIjwPbdVT7/KQ9Lkc=";
     });
     cache = {
       hostName = "${hostName}-1";
