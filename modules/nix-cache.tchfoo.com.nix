@@ -41,7 +41,7 @@ in
     forceSSL = true;
     locations = {
       "/nix-cache-info".extraConfig = ''
-        return 200 'StoreDir: /nix/store\nWantMassQuery: 1\nPriority: 30\n';
+        return 200 'StoreDir: /nix/store\nWantMassQuery: 1\nPriority: 200\n';
       '';
       "/" = {
         extraConfig = ''
