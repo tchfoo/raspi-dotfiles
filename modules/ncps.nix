@@ -11,16 +11,20 @@ in
 {
   services.ncps = {
     enable = true;
-    package = pkgs.ncps.overrideAttrs (old: rec {
-      version = "0.8.5-rc1";
-      src = pkgs.fetchFromGitHub {
-        owner = "kalbasit";
-        repo = "ncps";
-        tag = "v${version}";
-        hash = "sha256-UBNzOF9/rdZkxp5+k0f975EPdO+/5Mf27uxr/FOcVj8=";
-      };
-      vendorHash = "sha256-AcgC+zTS3eVsbcs0jim4zDBGc3lIjwPbdVT7/KQ9Lkc=";
-    });
+    package =
+      (pkgs.ncps.overrideAttrs (old: rec {
+        version = "0.8.5-rc2";
+        src = pkgs.fetchFromGitHub {
+          owner = "kalbasit";
+          repo = "ncps";
+          tag = "v${version}";
+          hash = "sha256-UgnJE6b+G1n56ExcpBrP5Lb54Ak7BCbJPIdr1gKbP4c=";
+        };
+        vendorHash = "sha256-AcgC+zTS3eVsbcs0jim4zDBGc3lIjwPbdVT7/KQ9Lkc=";
+      })).override
+        {
+          buildGoModule = pkgs.buildGo126Module;
+        };
     cache = {
       hostName = "${hostName}-1";
       secretKeyPath = config.secrets.ncps."${hostName}-1.sec";
