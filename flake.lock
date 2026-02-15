@@ -224,34 +224,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-kdenlive": {
-      "locked": {
-        "lastModified": 1768813120,
-        "narHash": "sha256-dZLEsNU3xVDE18nhGckVmlb9oUd5xDEMaAn/s8FRKR4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9d3f216d67d8a33c7171c72e030f0ffb14cf886c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9d3f216d67d8a33c7171c72e030f0ffb14cf886c",
-        "type": "github"
-      }
-    },
-    "nixpkgs-patch-fix-pika-backup": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-ASfihdrcBKwPLmPvQhmGeFgkFx305w/sLE+to/Fy234=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/484174.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/484174.diff"
-      }
-    },
     "nixpkgs-patch-fix-raspi-module-renames": {
       "flake": false,
       "locked": {
@@ -395,11 +367,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769968490,
-        "narHash": "sha256-z2fbTh8x8mRGCnnGgbdSk9ZzpCHrysET+tj0idpseTw=",
+        "lastModified": 1771171903,
+        "narHash": "sha256-EoreRNWpr7AU2ReY2HzziqNsk5yj33wbV2aZrQOF+RI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "83d89a5b2a41452e2084bdde6e0a7c254f21f10d",
+        "rev": "808437a80776258df972f9f0c6f9e98ad57968a2",
         "type": "github"
       },
       "original": {
@@ -523,45 +495,45 @@
         "agenix": [],
         "cosmic-manager": [],
         "home-manager": [],
-        "nix-matlab": [],
-        "nixpkgs": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixpkgs-develop": [],
-        "nixpkgs-kdenlive": "nixpkgs-kdenlive",
+        "nixpkgs-kdenlive": [],
         "nixpkgs-master": [],
-        "nixpkgs-patch-fix-pika-backup": "nixpkgs-patch-fix-pika-backup",
+        "nixpkgs-patch-hytale-launcher": [],
         "nixpkgs-patcher": [],
         "nixpkgs-stable": [],
         "nur": []
       },
       "locked": {
-        "lastModified": 1769970221,
-        "narHash": "sha256-m4GnSLkcZ4jR5VUuTqg4RG76Zy7RY5hqdhT3u9lcU+o=",
-        "owner": "ymstnt",
-        "repo": "dotfiles",
-        "rev": "c0d67434ed6261bb79159777a2f92d8fab89fe3a",
-        "type": "github"
+        "lastModified": 1771173083,
+        "narHash": "sha256-C9su/ziXZpo9gGgFYl+hDwLiLmCmvPiE0chs2j8B7/o=",
+        "ref": "refs/heads/main",
+        "rev": "e18c157ebd84d39d8983084ca03632a3ca4f2582",
+        "revCount": 799,
+        "type": "git",
+        "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
       "original": {
-        "owner": "ymstnt",
-        "ref": "main",
-        "repo": "dotfiles",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       }
     },
     "ymstnt-website": {
       "flake": false,
       "locked": {
-        "lastModified": 1769854922,
-        "narHash": "sha256-wIxmLBgjSXbZE42cyrdupDkZzNSVfCk0VSRzwttm3g4=",
-        "owner": "ymstnt",
-        "repo": "website",
-        "rev": "655bb777f94e9bd1e7e0971ce9bc4db9f18ccb13",
-        "type": "github"
+        "lastModified": 1771172032,
+        "narHash": "sha256-Cqkw0D82py0U9K5rFp9yKzVUhgMXZ8S3tsrHKajU47U=",
+        "ref": "refs/heads/main",
+        "rev": "aca2316ae24723859e60e474e2023eb10b8bd4c7",
+        "revCount": 27,
+        "type": "git",
+        "url": "https://git.tchfoo.com/ymstnt/website"
       },
       "original": {
-        "owner": "ymstnt",
-        "repo": "website",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.tchfoo.com/ymstnt/website"
       }
     }
   },
