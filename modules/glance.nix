@@ -65,9 +65,15 @@ in
                   type = "custom-api";
                   title = "Current week (uni)";
                   cache = "12h";
-                  url = "https://uwc.ymstnt.com/uwc?verbose&countdown";
+                  url = "https://api.ymstnt.com/uwc";
                   template = ''
-                    <p class="color-paragraph">{{ .JSON.String "message" }}</p>
+                    {{ if .JSON.Bool "regWeek" }}
+                    <p class="color-paragraph">{{ .JSON.String "verbose" }}</p>
+                    {{ else if and .JSON.Bool "study" not .JSON.Bool "regWeek" }}
+                    <p class="color-paragraph">{{ .JSON.String "week" }}{{ .JSON.String "suffix"}} week</p>
+                    {{ else }}
+                    <p class="color-paragraph">{{ .JSON.String "verbose" }} ({{ .JSON.String "week"}} days left)</p>
+                    {{ end }}
                   '';
                 }
                 {
