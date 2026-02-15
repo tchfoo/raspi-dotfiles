@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ymstnt-website = {
-      url = "github:ymstnt/website";
+      url = "git+https://git.tchfoo.com/ymstnt/website";
       flake = false;
     };
     nur = {
@@ -60,17 +60,18 @@
       inputs.nixpkgs-patch-hytale-launcher.follows = "";
     };
     ymstnt-dotfiles = {
-      url = "github:ymstnt/dotfiles/main";
-      inputs.nixpkgs.follows = "";
+      url = "git+https://git.tchfoo.com/ymstnt/dotfiles";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.agenix.follows = "";
       inputs.home-manager.follows = "";
-      inputs.nix-matlab.follows = "";
       inputs.nixpkgs-master.follows = "";
       inputs.nixpkgs-develop.follows = "";
       inputs.nixpkgs-stable.follows = "";
       inputs.nur.follows = "";
       inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
+      inputs.nixpkgs-patch-hytale-launcher.follows = "";
+      inputs.nixpkgs-kdenlive.follows = "";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
