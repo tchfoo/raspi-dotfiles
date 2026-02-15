@@ -15,7 +15,7 @@
     port = 11734;
   };
 
-  services.nginx.virtualHosts."uwc.ymstnt.com" = {
+  services.nginx.virtualHosts."api.ymstnt.com" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
