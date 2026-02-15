@@ -57,6 +57,7 @@
       inputs.nur.follows = "";
       inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
+      inputs.nixpkgs-patch-hytale-launcher.follows = "";
     };
     ymstnt-dotfiles = {
       url = "github:ymstnt/dotfiles/main";
