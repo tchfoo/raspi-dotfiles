@@ -49,6 +49,7 @@ in
       labels = [
         # mimic GitHub ARM runner
         "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
+        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
       ];
     };
   };
