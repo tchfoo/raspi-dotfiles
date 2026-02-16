@@ -52,6 +52,17 @@ in
         "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
       ];
     };
+    instances."${hostName}-ymstnt-cv" = {
+      enable = true;
+      name = hostName;
+      tokenFile = config.secrets.forgejo.runner-token-ymstnt-cv;
+      url = httpsHost;
+      labels = [
+        # mimic GitHub ARM runner
+        "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
+        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
+      ];
+    };
   };
 
   systemd.services."gitea-runner-${utils.escapeSystemdPath hostName}".after = [
