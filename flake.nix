@@ -46,10 +46,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/481465.diff";
       flake = false;
     };
-    nixpkgs-patch-ncps-0-8-5 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/490669.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
