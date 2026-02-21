@@ -34,8 +34,7 @@ in
     };
   };
 
-  #services.nginx.virtualHosts."${hostName}" = {
-  services.nginx.virtualHosts."test.tchfoo.com" = {
+  services.nginx.virtualHosts."${hostName}" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
