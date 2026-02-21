@@ -69,7 +69,7 @@ in
                   template = ''
                     {{ if .JSON.Bool "regWeek" }}
                     <p class="color-paragraph">{{ .JSON.String "verbose" }}</p>
-                    {{ else if and .JSON.Bool "study" not .JSON.Bool "regWeek" }}
+                    {{ else if and (.JSON.Bool "study") (not (.JSON.Bool "regWeek")) }}
                     <p class="color-paragraph">{{ .JSON.String "week" }}{{ .JSON.String "suffix"}} week</p>
                     {{ else }}
                     <p class="color-paragraph">{{ .JSON.String "verbose" }} ({{ .JSON.String "week"}} days left)</p>
