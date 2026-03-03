@@ -1,6 +1,7 @@
 # public key: "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
 {
   config,
+  pkgs,
   ...
 }:
 
@@ -11,6 +12,20 @@ in
 {
   services.ncps = {
     enable = true;
+    package = pkgs.ncps.overrideAttrs (old: {
+      patches = (old.patches or [ ]) ++ [
+        (pkgs.fetchurl {
+          url = "https://github.com/kalbasit/ncps/commit/7e1a87c5141fd2a230043bfd01e2d6f70698318f.diff";
+          hash = "sha256-FbxtMIZSwWr/G5rHhvGNjzL+3ol+rtmIAGcUfNC01+Y=";
+        })
+      ];
+      doCheck = false;
+    });
+    prometheus.enable = true;
+    openTelemetry = {
+      enable = true;
+      grpcURL = "insecure://localhost:4317";
+    };
     cache = {
       hostName = "${hostName}-1";
       secretKeyPath = config.secrets.ncps."${hostName}-1.sec";
