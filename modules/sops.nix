@@ -77,6 +77,12 @@ in
     environment.systemPackages = [ pkgs.sops ];
   };
 
+  options.enableSecrets = lib.mkOption {
+    type = lib.types.bool;
+    default = true;
+    description = "Whether to enable using secrets";
+  };
+
   options.secrets = secretOptions;
-  config.secrets = secretValues;
+  config.secrets = lib.optionalAttrs config.enableSecrets secretValues;
 }
