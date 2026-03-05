@@ -71,7 +71,6 @@
       inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
       inputs.nixpkgs-patch-hytale-launcher.follows = "";
-      inputs.nixpkgs-kdenlive.follows = "";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
