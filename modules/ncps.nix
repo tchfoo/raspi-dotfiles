@@ -12,13 +12,15 @@ in
 {
   services.ncps = {
     enable = true;
+    # https://github.com/kalbasit/ncps/pull/1017
     package = pkgs.ncps.overrideAttrs (old: {
-      patches = (old.patches or [ ]) ++ [
-        (pkgs.fetchurl {
-          url = "https://github.com/kalbasit/ncps/commit/7e1a87c5141fd2a230043bfd01e2d6f70698318f.diff";
-          hash = "sha256-FbxtMIZSwWr/G5rHhvGNjzL+3ol+rtmIAGcUfNC01+Y=";
-        })
-      ];
+      src = pkgs.fetchFromGitHub {
+        owner = "kalbasit";
+        repo = "ncps";
+        rev = "3789f0015418def2d425923b49e51ac7e071e2d4";
+        hash = "sha256-bW7t1wQPWbc6/HwHtfJE5qKJf5jDkv3OqH8qH7RZU+A=";
+      };
+      vendorHash = "sha256-3RdRQzqO7y3bzC2w2mlxJAF4EGBxv6AGJ4pTxMOpN5U=";
       doCheck = false;
     });
     prometheus.enable = true;
