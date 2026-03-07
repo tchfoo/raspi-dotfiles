@@ -12,6 +12,8 @@
       GOOGLE_KEY = "user_provided";
       ANTHROPIC_API_KEY = "user_provided";
       BAN_VIOLATIONS = false;
+      DOMAIN_CLIENT = "https://services.tchfoo.com/chat";
+      DOMAIN_SERVER = "https://services.tchfoo.com/chat";
     };
     credentials = config.secrets.librechat;
     enableLocalDB = true;
@@ -20,12 +22,8 @@
 
   services.meilisearch.masterKeyFile = config.secrets.meilisearch.MASTER_KEY;
 
-  services.nginx.virtualHosts."chat.tchfoo.com" = {
-    enableACME = true;
-    forceSSL = true;
-    locations."/" = {
-      proxyPass = "http://localhost:${toString config.services.librechat.env.PORT}";
-      recommendedProxySettings = true;
-    };
+  services.nginx.virtualHosts."services.tchfoo.com".locations."/chat" = {
+    proxyPass = "http://localhost:${toString config.services.librechat.env.PORT}";
+    recommendedProxySettings = true;
   };
 }
