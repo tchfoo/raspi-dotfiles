@@ -16,6 +16,9 @@ in
       secretKeyPath = config.secrets.ncps."${hostName}-1.sec";
       maxSize = "100G";
       lru.schedule = "0 4 * * *";
+      cdc = {
+        enabled = true;
+      };
       upstream = {
         urls = [
           "https://cache.gepbird.ovh"
