@@ -290,6 +290,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
       }
     },
+    "nixpkgs-patch-pocket-id-2-4-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-YdIDRcZAApa4TEoOqOOLyDYmAsZG+e7MZ3Iqf+8lGDc=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/497928.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/497928.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1772571520,
@@ -446,6 +458,7 @@
         "nixpkgs-patch-librechat-0-8-2": "nixpkgs-patch-librechat-0-8-2",
         "nixpkgs-patch-nixos-librechat-add-meilisearch-support": "nixpkgs-patch-nixos-librechat-add-meilisearch-support",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-pocket-id-2-4-0": "nixpkgs-patch-pocket-id-2-4-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "sops-nix": "sops-nix",
