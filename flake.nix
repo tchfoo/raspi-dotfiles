@@ -50,6 +50,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/497688.diff";
       flake = false;
     };
+    nixpkgs-patch-pocket-id-2-4-0 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/497928.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
