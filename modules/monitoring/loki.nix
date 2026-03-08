@@ -4,6 +4,9 @@
 }:
 
 {
+  # allow collecting nginx access logs
+  systemd.services.alloy.serviceConfig.SupplementaryGroups = [ "shared" ];
+
   services.loki = {
     enable = true;
     configuration = {
@@ -74,6 +77,19 @@
         target_label  = "job"
         replacement   = "integrations/node_exporter"
       }
+    }
+
+    local.file_match "files" {
+      path_targets = [{
+        __address__ = "localhost",
+        __path__    = "/var/log/nginx/access.log*",
+        instance    = constants.hostname,
+        job         = "nginx/access.log",
+      }]
+    }
+    loki.source.file "files" {
+      targets    = local.file_match.files.targets
+      forward_to = [loki.write.local.receiver]
     }
 
     loki.write "local" {
