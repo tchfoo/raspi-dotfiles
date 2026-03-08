@@ -68,12 +68,6 @@ in
       "~ ^/(auth|explode|gepDrive|geputils|header|libs|global.css)".extraConfig = ''
         return 301 https://gd.tchfoo.com$request_uri;
       '';
-      "~ ^/seboard(/.*)?$".extraConfig = ''
-        if ($1 = "") {
-          set $1 "/";
-        }
-        return 301 https://sb.tchfoo.com$1;
-      '';
     };
   };
 
