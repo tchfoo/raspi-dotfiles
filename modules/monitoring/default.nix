@@ -4,6 +4,10 @@
 }:
 
 {
+  imports = [
+    ./loki.nix
+  ];
+
   sops.secrets = {
     grafana.owner = "grafana";
   };
@@ -28,5 +32,9 @@
   services.nginx.virtualHosts."services.tchfoo.com".locations."/grafana" = {
     proxyPass = "http://unix:${config.services.grafana.settings.server.socket}";
     recommendedProxySettings = true;
+  };
+
+  services.alloy = {
+    enable = true;
   };
 }
