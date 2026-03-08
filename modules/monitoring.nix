@@ -1,0 +1,29 @@
+{
+  config,
+  ...
+}:
+
+{
+  sops.secrets = {
+    grafana.owner = "grafana";
+  };
+
+  users.users.nginx.extraGroups = [ "grafana" ];
+
+  services.grafana = {
+    enable = true;
+    settings = {
+      server = {
+        protocol = "socket";
+        root_url = "https://services.tchfoo.com/grafana";
+        serve_from_sub_path = true;
+      };
+      security.secret_key = "$__file{${config.secrets.grafana}}";
+    };
+  };
+
+  services.nginx.virtualHosts."services.tchfoo.com".locations."/grafana" = {
+    proxyPass = "http://unix:${config.services.grafana.settings.server.socket}";
+    recommendedProxySettings = true;
+  };
+}
