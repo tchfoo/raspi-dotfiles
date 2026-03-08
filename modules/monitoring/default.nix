@@ -8,8 +8,6 @@
     grafana.owner = "grafana";
   };
 
-  users.users.nginx.extraGroups = [ "grafana" ];
-
   services.grafana = {
     enable = true;
     settings = {
@@ -23,6 +21,9 @@
       auth.oauth_allow_insecure_email_lookup = true;
     };
   };
+
+  # for socket access
+  users.users.nginx.extraGroups = [ "grafana" ];
 
   services.nginx.virtualHosts."services.tchfoo.com".locations."/grafana" = {
     proxyPass = "http://unix:${config.services.grafana.settings.server.socket}";
