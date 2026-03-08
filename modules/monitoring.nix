@@ -19,6 +19,8 @@
         serve_from_sub_path = true;
       };
       security.secret_key = "$__file{${config.secrets.grafana}}";
+      # required to work with Pocket ID
+      auth.oauth_allow_insecure_email_lookup = true;
     };
   };
 
