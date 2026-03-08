@@ -31,6 +31,7 @@
 
   services.nginx.virtualHosts."services.tchfoo.com".locations."/grafana" = {
     proxyPass = "http://unix:${config.services.grafana.settings.server.socket}";
+    proxyWebsockets = true;
     recommendedProxySettings = true;
   };
 
