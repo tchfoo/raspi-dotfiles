@@ -74,8 +74,17 @@
         target_label  = "level"
       }
       rule {
+        source_labels = ["transport"]
         target_label  = "job"
-        replacement   = "integrations/node_exporter"
+        replacement   = "system/$1"
+      }
+      // Use system/<transport> as service_name if no systemd unit is present
+      rule {
+        source_labels = ["service_name", "transport"]
+        separator     = ";"
+        regex         = ";(kernel|syslog|stdout|stderr)"
+        replacement   = "system/$1"
+        target_label  = "service_name"
       }
     }
 
