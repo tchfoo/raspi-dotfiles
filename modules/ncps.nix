@@ -17,10 +17,10 @@ in
       src = pkgs.fetchFromGitHub {
         owner = "kalbasit";
         repo = "ncps";
-        rev = "3789f0015418def2d425923b49e51ac7e071e2d4";
-        hash = "sha256-bW7t1wQPWbc6/HwHtfJE5qKJf5jDkv3OqH8qH7RZU+A=";
+        rev = "116817ca05f5f90a10629762095b09315227cfa2";
+        hash = "sha256-Pkmd8G4NWqgia76IFzK+kEy+r8Aav8fE1Gb3p1TNZjw=";
       };
-      vendorHash = "sha256-3RdRQzqO7y3bzC2w2mlxJAF4EGBxv6AGJ4pTxMOpN5U=";
+      vendorHash = "sha256-zHUzLr4TLEb1GQ9YZBmR5/5ppG0QSMxhYczpttrKWI0=";
       doCheck = false;
     });
     prometheus.enable = true;
