@@ -42,16 +42,8 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-nixos-librechat-add-meilisearch-support = {
-      url = "https://github.com/NixOS/nixpkgs/pull/481465.diff";
-      flake = false;
-    };
     nixpkgs-patch-librechat-0-8-2 = {
       url = "https://github.com/NixOS/nixpkgs/pull/497688.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pocket-id-2-4-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/497928.diff";
       flake = false;
     };
     gep-dotfiles = {
