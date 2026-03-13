@@ -78,14 +78,6 @@
         target_label  = "job"
         replacement   = "system/$1"
       }
-      // Use system/<transport> as service_name if no systemd unit is present
-      rule {
-        source_labels = ["service_name", "transport"]
-        separator     = ";"
-        regex         = ";(kernel|syslog|stdout|stderr)"
-        replacement   = "system/$1"
-        target_label  = "service_name"
-      }
     }
 
     local.file_match "files" {
