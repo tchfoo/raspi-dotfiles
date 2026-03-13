@@ -74,8 +74,9 @@
         target_label  = "level"
       }
       rule {
+        source_labels = ["transport"]
         target_label  = "job"
-        replacement   = "integrations/node_exporter"
+        replacement   = "system/$1"
       }
     }
 
