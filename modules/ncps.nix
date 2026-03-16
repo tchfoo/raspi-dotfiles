@@ -18,10 +18,10 @@ in
       src = pkgs.fetchFromGitHub {
         owner = "kalbasit";
         repo = "ncps";
-        rev = "v0.9.3-rc4";
-        hash = "sha256-1PqwiUUFWuWNUUaMxuGi/M/bYq9nrTTzSAt3s9OQ0K4=";
+        rev = "06337a9fd67448566380e9cf5c62a4e408d53f00";
+        hash = "sha256-V+HwojuImOmrY7Q1V+2njEFA9j4zZQDXrx3IMrJdMFQ=";
       };
-      vendorHash = "sha256-PpHSkD7+csPfUXoYRuKhBm1iBtTSwJhOxuW/4ayv9hY=";
+      vendorHash = "sha256-LxzdhM+Tw7Un2ISG8c7pF0ahONyRqlNBJYdMub5xMJs=";
       doCheck = false;
     });
     prometheus.enable = true;
@@ -36,6 +36,7 @@ in
       lru.schedule = "0 4 * * *";
       cdc = {
         enabled = true;
+        #background-workers = 1;
       };
       upstream = {
         urls = [
