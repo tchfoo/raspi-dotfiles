@@ -249,6 +249,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
       }
     },
+    "nixpkgs-patch-no-acme-email": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-DqYv0ZCTzkG6lcH/h/FPPpoVkR2JFHwg4+awhCa7GT0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/489983.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/489983.diff"
+      }
+    },
     "nixpkgs-patch-packet-tracer-fix-mime": {
       "flake": false,
       "locked": {
@@ -415,6 +427,7 @@
         "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
         "nixpkgs-patch-librechat-0-8-2": "nixpkgs-patch-librechat-0-8-2",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-no-acme-email": "nixpkgs-patch-no-acme-email",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "sops-nix": "sops-nix",

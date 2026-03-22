@@ -46,6 +46,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/497688.diff";
       flake = false;
     };
+    nixpkgs-patch-no-acme-email = {
+      url = "https://github.com/NixOS/nixpkgs/pull/489983.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";

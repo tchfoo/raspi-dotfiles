@@ -17,10 +17,7 @@
     ];
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "ymstnt@mailbox.org";
-  };
+  security.acme.acceptTerms = true;
 
   networking.firewall.allowedTCPPorts = [
     80
