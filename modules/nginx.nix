@@ -17,7 +17,11 @@
     ];
   };
 
-  security.acme.acceptTerms = true;
+  security.acme = {
+    acceptTerms = true;
+    # workaround for https://github.com/NixOS/nixpkgs/issues/448921
+    defaults.extraLegoRenewFlags = [ "--ari-disable" ];
+  };
 
   networking.firewall.allowedTCPPorts = [
     80
