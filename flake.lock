@@ -44,11 +44,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1774283816,
-        "narHash": "sha256-0JZ9Wf15uSUVmVFhS8witqhJNS+fGRbQ60h+Llu31mA=",
+        "lastModified": 1774359792,
+        "narHash": "sha256-xLQ3bK/ueRiRhUnlUe1XiJHw2h4oQhNo7ljIZSKlovQ=",
         "ref": "refs/heads/main",
-        "rev": "9f3bbcfbfeff856072ffa688bafc330fad12a091",
-        "revCount": 1316,
+        "rev": "24841c75d6f3b930d599fb41c3f3a51e1a0d262c",
+        "revCount": 1317,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
