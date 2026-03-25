@@ -58,5 +58,10 @@
       trusted-public-keys = map (cache: cache.trusted-public-key) caches;
     };
 
+  nix.optimise = {
+    automatic = true;
+    dates = "02:30";
+  };
+
   home-manager.useGlobalPkgs = true;
 }
