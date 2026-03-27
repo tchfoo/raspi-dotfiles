@@ -37,6 +37,14 @@
     };
   };
 
+  services.grafana.provision.datasources.settings.datasources = [
+    {
+      name = "Loki";
+      type = "loki";
+      url = "http://localhost:${toString config.services.loki.configuration.server.http_listen_port}";
+    }
+  ];
+
   environment.etc."alloy/loki.alloy".text = ''
     loki.source.journal "journal" {
       max_age       = "24h0m0s"
