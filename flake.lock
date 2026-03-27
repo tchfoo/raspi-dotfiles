@@ -286,6 +286,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
       }
     },
+    "nixpkgs-patch-zswap-module-init": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-uDWlozVooYiVfEz90v3H3f5hD/a+xjZo/nty4EWVjg8=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/470366.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/470366.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1772817589,
@@ -441,6 +453,7 @@
         "nixpkgs-patch-librechat-0-8-2": "nixpkgs-patch-librechat-0-8-2",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patch-no-acme-email": "nixpkgs-patch-no-acme-email_2",
+        "nixpkgs-patch-zswap-module-init": "nixpkgs-patch-zswap-module-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "sops-nix": "sops-nix",

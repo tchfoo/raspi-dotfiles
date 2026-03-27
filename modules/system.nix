@@ -19,6 +19,8 @@
 
   systemd.coredump.enable = false;
 
+  boot.zswap.enable = true;
+
   # reduce IO cache, this should reduce latency when 2 processes try to read a lot from the disk
   boot.kernel.sysctl = {
     "vm.dirty_background_ratio" = 10;
