@@ -6,6 +6,7 @@
 {
   imports = [
     ./loki.nix
+    ./prometheus.nix
   ];
 
   sops.secrets = {
