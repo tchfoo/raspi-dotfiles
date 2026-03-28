@@ -15,6 +15,17 @@
 
   services.grafana = {
     enable = true;
+
+    provision.dashboards.settings = {
+      providers = [
+        {
+          name = "default";
+          type = "file";
+          options.path = ./dashboards;
+        }
+      ];
+    };
+
     settings = {
       server = {
         protocol = "socket";
