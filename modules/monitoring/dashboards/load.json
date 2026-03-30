@@ -538,13 +538,13 @@
             "uid": "${datasource}"
           },
           "editorMode": "code",
-          "expr": "rate(node_schedstat_waiting_seconds_total[30s])",
+"expr": "rate(node_schedstat_waiting_seconds_total[30s]) / count(node_cpu_seconds_total{mode=\"idle\"}) * 1000",
           "legendFormat": "{{cpu}}",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Scheduler Wait Time (sec/sec)",
+"title": "Scheduler Wait Time",
       "type": "timeseries"
     }
   ],
