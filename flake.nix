@@ -103,12 +103,14 @@
           ./hosts/raspi-doboz/configuration.nix
         ];
         specialArgs = inputs;
+        nixpkgsPatcher.enableTroubleshootingShell = false;
       };
       nixosConfigurations.raspi5-doboz = nixpkgs-patcher.lib.nixosSystem {
         modules = [
           ./hosts/raspi5-doboz/configuration.nix
         ];
         specialArgs = inputs;
+        nixpkgsPatcher.enableTroubleshootingShell = false;
       };
       ci = {
         inherit (self.nixosConfigurations.raspi-doboz.pkgs)
