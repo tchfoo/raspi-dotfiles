@@ -42,20 +42,8 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-librechat-0-8-2 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/497688.diff";
-      flake = false;
-    };
-    nixpkgs-patch-no-acme-email = {
-      url = "https://github.com/NixOS/nixpkgs/pull/489983.diff";
-      flake = false;
-    };
     nixpkgs-patch-zswap-module-init = {
       url = "https://github.com/NixOS/nixpkgs/pull/470366.diff";
-      flake = false;
-    };
-    nixpkgs-patch-lix-2-95 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/500176.diff";
       flake = false;
     };
     gep-dotfiles = {
