@@ -35,7 +35,7 @@
       fastcgi_read_timeout 24h;
     '';
     locations = {
-      "~ ^([^.\?]*[^/])$".extraConfig = ''
+      "~ ^([^.?]*[^/])$".extraConfig = ''
         if (-d $document_root/gd.tchfoo.com$uri) {
           rewrite ^([^.]*[^/])$ $1/ permanent;
         }
@@ -65,7 +65,7 @@
           fastcgi_pass unix:${config.services.phpfpm.pools."gd.tchfoo.com".socket};
         }
       '';
-      "/\.git".extraConfig = ''
+      "/.git".extraConfig = ''
         deny all;
       '';
     };
