@@ -519,11 +519,11 @@
         "nur": []
       },
       "locked": {
-        "lastModified": 1775384882,
-        "narHash": "sha256-zilDLySOBVX32cLuQUewBXyHOrc/ohYCpsRdRxbnbrA=",
+        "lastModified": 1775850838,
+        "narHash": "sha256-T+rDrO7npl5KjjJHiV7ESRa8uSqNTGqF7Y7GehwYjzk=",
         "ref": "refs/heads/main",
-        "rev": "559a2bd881affcc5ea77db10db878acc57e476d2",
-        "revCount": 833,
+        "rev": "b8947400e8471926402d748a93709b8d6ca099cf",
+        "revCount": 836,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
