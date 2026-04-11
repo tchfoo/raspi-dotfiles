@@ -1,11 +1,14 @@
 {
+  config,
   ...
 }:
 
 {
   services.openssh = {
     enable = true;
-    ports = [ 42727 ];
+    ports = [
+      (if config.networking.hostName == "raspi5-doboz" then 42728 else 42727)
+    ];
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
