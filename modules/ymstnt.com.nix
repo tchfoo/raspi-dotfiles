@@ -64,11 +64,6 @@ in
     extraConfig = ''
       error_page 404 /404.html;
     '';
-    locations = {
-      "~ ^/(auth|explode|gepDrive|geputils|header|libs|global.css)".extraConfig = ''
-        return 301 https://gd.tchfoo.com$request_uri;
-      '';
-    };
   };
 
   systemd.tmpfiles.rules = [
