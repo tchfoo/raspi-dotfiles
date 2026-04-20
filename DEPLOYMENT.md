@@ -149,6 +149,14 @@ sudo cp -p /mnt/var/lib/moe/storage.db /var/lib/moe/storage.db
 sudo chown moe:shared /var/lib/moe/storage.db
 ```
 
+#### Samba
+
+To properly use Samba shares, users first need to be set up:
+
+```sh
+sudo smbpasswd -a ymstnt
+```
+
 #### Borgmatic
 
 To fix borg error 81 _Remote: Host key verification failed._ you need to have a key at `/etc/ssh/borg` and the borgbase repo needs to be in `known_hosts`.
