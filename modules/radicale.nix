@@ -24,12 +24,12 @@ in
     radicale.owner = config.systemd.services.radicale.serviceConfig.User;
   };
 
-  services.nginx.virtualHosts."radicale.tchfoo.com" = {
-    enableACME = true;
-    forceSSL = true;
-    locations."/" = {
-      proxyPass = "http://${host}";
-      recommendedProxySettings = true;
-    };
+  services.nginx.virtualHosts."services.tchfoo.com".locations."/radicale/" = {
+    proxyPass = "http://${host}";
+    recommendedProxySettings = true;
+    extraConfig = ''
+      proxy_set_header X-Script-Name /radicale;
+      proxy_pass_header Authorization;
+    '';
   };
 }
