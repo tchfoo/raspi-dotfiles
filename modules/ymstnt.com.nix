@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ymstnt-website,
   ...
@@ -40,23 +38,6 @@ let
   });
 in
 {
-  services.phpfpm.pools."ymstnt.com" = {
-    user = "shared";
-    settings = {
-      pm = "dynamic";
-      "listen.owner" = config.services.nginx.user;
-      "pm.max_children" = 32;
-      "pm.max_requests" = 500;
-      "pm.min_spare_servers" = 2;
-      "pm.max_spare_servers" = 5;
-    };
-    phpEnv."PATH" =
-      with pkgs;
-      lib.makeBinPath [
-        curl
-      ];
-  };
-
   services.nginx.virtualHosts."ymstnt.com" = {
     enableACME = true;
     forceSSL = true;
