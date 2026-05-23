@@ -225,18 +225,6 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/511131.diff"
       }
     },
-    "nixpkgs-patch-fix-raspi-module-renames": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-Aq8LhYkG36rDeHR32AJnjBKTsifnEKAST2vcIP81Gqk=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/398456.diff"
-      }
-    },
     "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
       "flake": false,
       "locked": {
@@ -424,7 +412,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-patch-fix-raspi-module-renames": "nixpkgs-patch-fix-raspi-module-renames",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

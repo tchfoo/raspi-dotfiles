@@ -78,10 +78,6 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-    nixpkgs-patch-fix-raspi-module-renames = {
-      url = "https://github.com/NixOS/nixpkgs/pull/398456.diff";
-      flake = false;
-    };
   };
 
   outputs =
