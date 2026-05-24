@@ -35,5 +35,8 @@
     " d    /hdd/torrents/music            0755 ymstnt shared"
     " d    /hdd/torrents/movies           0755 ymstnt shared"
     " d    /hdd/torrents/shows            0755 ymstnt shared"
+    " L+   /hdd/torrents/music_hu         -    -      -       -      /hdd/torrents/music "
+    " L+   /hdd/torrents/movies_hu        -    -      -       -      /hdd/torrents/movies"
+    " L+   /hdd/torrents/shows_hu         -    -      -       -      /hdd/torrents/shows "
   ];
 }
