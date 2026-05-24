@@ -29,5 +29,8 @@
     " d    /hdd/media/music               0755 ymstnt shared"
     " d    /hdd/media/movies              0755 ymstnt shared"
     " d    /hdd/media/shows               0755 ymstnt shared"
+    " L+   /hdd/media/music_hu            -    -      -       -   /hdd/media/music "
+    " L+   /hdd/media/movies_hu           -    -      -       -   /hdd/media/movies"
+    " L+   /hdd/media/shows_hu            -    -      -       -   /hdd/media/shows "
   ];
 }
