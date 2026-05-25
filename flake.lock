@@ -545,11 +545,11 @@
     "ymstnt-website": {
       "flake": false,
       "locked": {
-        "lastModified": 1771172032,
-        "narHash": "sha256-Cqkw0D82py0U9K5rFp9yKzVUhgMXZ8S3tsrHKajU47U=",
+        "lastModified": 1779691904,
+        "narHash": "sha256-c5CHllNwosEplFCGFY2OFwV5X6PFD4m9HdLsWwFsWcQ=",
         "ref": "refs/heads/main",
-        "rev": "aca2316ae24723859e60e474e2023eb10b8bd4c7",
-        "revCount": 27,
+        "rev": "d3d4d4a9555fd3048b3a55b62c8f775a7284d95f",
+        "revCount": 28,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/website"
       },
