@@ -68,11 +68,11 @@ in
                   url = "https://api.ymstnt.com/uwc";
                   template = ''
                     {{ if .JSON.Bool "regWeek" }}
-                    <p class="color-paragraph">{{ .JSON.String "verbose" }}</p>
+                    <p class="color-paragraph">{{ .JSON.String "verbose" }} ({{ .JSON.String "daysLeft"}} days left)</p>
                     {{ else if and (.JSON.Bool "study") (not (.JSON.Bool "regWeek")) }}
-                    <p class="color-paragraph">{{ .JSON.String "week" }}{{ .JSON.String "suffix"}} week</p>
+                    <p class="color-paragraph">{{ .JSON.String "week" }}{{ .JSON.String "suffix"}} week ({{ .JSON.String "daysLeft"}} days left)</p>
                     {{ else }}
-                    <p class="color-paragraph">{{ .JSON.String "verbose" }} ({{ .JSON.String "week"}} days left)</p>
+                    <p class="color-paragraph">{{ .JSON.String "verbose" }} ({{ .JSON.String "daysLeft"}} days left)</p>
                     {{ end }}
                   '';
                 }
