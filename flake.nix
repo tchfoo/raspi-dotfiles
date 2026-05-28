@@ -58,7 +58,7 @@
     ymstnt-dotfiles = {
       url = "git+https://git.tchfoo.com/ymstnt/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.agenix.follows = "";
+      inputs.sops-nix.follows = "";
       inputs.home-manager.follows = "";
       inputs.nixpkgs-master.follows = "";
       inputs.nixpkgs-develop.follows = "";
