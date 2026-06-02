@@ -72,6 +72,9 @@ in
   services.nginx.virtualHosts."${host}" = {
     enableACME = true;
     forceSSL = true;
+    extraConfig = ''
+      client_max_body_size 50G;
+    '';
     locations."/" = {
       proxyPass = "http://unix:${config.services.anubis.instances.forgejo.settings.BIND}";
       recommendedProxySettings = true;
