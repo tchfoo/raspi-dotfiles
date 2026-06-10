@@ -1,6 +1,7 @@
 # public key: "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
 {
   config,
+  lib,
   ...
 }:
 
@@ -9,6 +10,37 @@ let
   cfg = config.services.ncps;
 in
 {
+  # fix for "invliad nar url" is in https://github.com/kalbasit/ncps/pull/1331
+  # but cherry-picking it is hard, let's use the first rc version
+  # TODO: remove this after new version
+  nixpkgs.overlays = [
+    (final: prev: {
+      ncps = prev.ncps.overrideAttrs (old: {
+        src = old.src.overrideAttrs {
+          tag = "v0.10.0-rc10";
+          hash = "sha256-x6LL9gb5KmIyHw5SiX591wUAeEHg7XPCWw+E7D95m+c=";
+        };
+        vendorHash = "sha256-ZGZNFIe2zuVpgtXbOx4JbW1Tec+1KDxxqUvRpBpYbqA=";
+        # remove db copy and dbmate
+        postInstall = ''
+          mkdir -p $out/share/ncps
+
+          # ncps makes use of xz for decompression as it's 3-5x faster than
+          # using the native Go implementation of xz. By wrapping ncps, and
+          # setting the XZ_BINARY_PATH environment variable, we ensure that
+          # ncps can always find the xz binary. This environment variable is
+          # read by a flag in pkg/ncps and can be overriden by using calling
+          # ncps with the --xz-binary-path flag.
+          wrapProgram $out/bin/ncps --set XZ_BINARY_PATH ${prev.lib.getExe' prev.xz "xz"}
+        '';
+        doCheck = false;
+      });
+    })
+  ];
+  systemd.services.ncps.preStart = lib.mkForce ''
+    ${lib.getExe cfg.package} migrate up --cache-database-url ${cfg.cache.databaseURL}
+  '';
+
   services.ncps = {
     enable = true;
     cache = {
