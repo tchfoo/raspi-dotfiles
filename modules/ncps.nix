@@ -1,7 +1,6 @@
 # public key: "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
 {
   config,
-  lib,
   ...
 }:
 
@@ -22,25 +21,10 @@ in
           hash = "sha256-6Aem8USOYeUvDrQi3wZIsTidJpZBqnj75hxoyTrJqMo=";
         };
         vendorHash = "sha256-MKhrXZjgYVKseXv6kBuK5TkCrrW2GcMQxnlT8OqoCeU=";
-        # remove db copy and dbmate
-        postInstall = ''
-          mkdir -p $out/share/ncps
-
-          # ncps makes use of xz for decompression as it's 3-5x faster than
-          # using the native Go implementation of xz. By wrapping ncps, and
-          # setting the XZ_BINARY_PATH environment variable, we ensure that
-          # ncps can always find the xz binary. This environment variable is
-          # read by a flag in pkg/ncps and can be overriden by using calling
-          # ncps with the --xz-binary-path flag.
-          wrapProgram $out/bin/ncps --set XZ_BINARY_PATH ${prev.lib.getExe' prev.xz "xz"}
-        '';
         doCheck = false;
       });
     })
   ];
-  systemd.services.ncps.preStart = lib.mkForce ''
-    ${lib.getExe cfg.package} migrate up --cache-database-url ${cfg.cache.databaseURL}
-  '';
 
   services.ncps = {
     enable = true;
