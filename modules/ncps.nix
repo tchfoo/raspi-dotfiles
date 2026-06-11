@@ -15,12 +15,13 @@ in
   # TODO: remove this after new version
   nixpkgs.overlays = [
     (final: prev: {
-      ncps = prev.ncps.overrideAttrs (old: {
+      ncps = prev.ncps.overrideAttrs (old: rec {
+        version = "0.10.0-rc13";
         src = old.src.overrideAttrs {
-          tag = "v0.10.0-rc10";
-          hash = "sha256-x6LL9gb5KmIyHw5SiX591wUAeEHg7XPCWw+E7D95m+c=";
+          tag = "v${version}";
+          hash = "sha256-6Aem8USOYeUvDrQi3wZIsTidJpZBqnj75hxoyTrJqMo=";
         };
-        vendorHash = "sha256-ZGZNFIe2zuVpgtXbOx4JbW1Tec+1KDxxqUvRpBpYbqA=";
+        vendorHash = "sha256-MKhrXZjgYVKseXv6kBuK5TkCrrW2GcMQxnlT8OqoCeU=";
         # remove db copy and dbmate
         postInstall = ''
           mkdir -p $out/share/ncps
