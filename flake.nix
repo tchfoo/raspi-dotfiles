@@ -58,6 +58,7 @@
       inputs.treefmt-nix.follows = "";
       inputs.nixpkgs-patcher.follows = "";
       inputs.nixpkgs-patch-hytale-launcher.follows = "";
+      inputs.nix-index-database.follows = "nix-index-database";
     };
     ymstnt-dotfiles = {
       url = "git+https://git.tchfoo.com/ymstnt/dotfiles";
@@ -71,6 +72,7 @@
       inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
       inputs.nixpkgs-patch-hytale-launcher.follows = "";
+      inputs.nix-index-database.follows = "nix-index-database";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -81,6 +83,10 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "";
     };
   };
 
