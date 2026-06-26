@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-curl-8-19-0.url = "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/main";
@@ -45,6 +44,10 @@
     };
     nixpkgs-patch-ncps-0-10-0 = {
       url = "https://github.com/NixOS/nixpkgs/pull/529765.diff";
+      flake = false;
+    };
+    nixpkgs-patch-lix-curl = {
+      url = "https://github.com/NixOS/nixpkgs/pull/534757.diff";
       flake = false;
     };
     gep-dotfiles = {
