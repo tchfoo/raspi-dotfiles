@@ -235,6 +235,22 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
+    "nixpkgs-curl-8-19-0": {
+      "locked": {
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      }
+    },
     "nixpkgs-patch-brave": {
       "flake": false,
       "locked": {
@@ -257,18 +273,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/513143.diff"
-      }
-    },
-    "nixpkgs-patch-lix-curl": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-Culbazu8K9FCy+rls265eS0G5mDHvQVX67h0jseBYRQ=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/534757.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/534757.diff"
       }
     },
     "nixpkgs-patch-ncps-0-10-0": {
@@ -476,7 +480,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-patch-lix-curl": "nixpkgs-patch-lix-curl",
+        "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-ncps-0-10-0": "nixpkgs-patch-ncps-0-10-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
