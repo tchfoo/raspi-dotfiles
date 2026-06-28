@@ -14,10 +14,8 @@
     helix
     hm
     intelli-shell
-    micro
     ssh
     starship
-    tmux
     zoxide
     zsh
   ];
