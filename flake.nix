@@ -70,7 +70,6 @@
       inputs.nixpkgs-develop.follows = "";
       inputs.nixpkgs-stable.follows = "";
       inputs.nur.follows = "";
-      inputs.cosmic-manager.follows = "";
       inputs.nixpkgs-patcher.follows = "";
       inputs.nixpkgs-patch-hytale-launcher.follows = "";
       inputs.nix-index-database.follows = "nix-index-database";
