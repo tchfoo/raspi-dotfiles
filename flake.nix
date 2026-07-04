@@ -6,7 +6,7 @@
     nixpkgs-curl-8-19-0.url = "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi = {
-      url = "github:nvmd/nixos-raspberrypi/main";
+      url = "github:nvmd/nixos-raspberrypi/nixos-unstable";
       # a long running build is cached with their nixpkgs, let's keep it for now
       #inputs.nixpkgs.follows = "nixpkgs";
       inputs.argononed.follows = "";
@@ -45,6 +45,14 @@
     };
     nixpkgs-patch-ncps-0-10-0 = {
       url = "https://github.com/NixOS/nixpkgs/pull/529765.diff";
+      flake = false;
+    };
+    nixpkgs-patch-stylelint-lsp-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
+      flake = false;
+    };
+    nixpkgs-patch-vue-language-server-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/537169.diff";
       flake = false;
     };
     gep-dotfiles = {
