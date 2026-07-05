@@ -6,7 +6,7 @@
 }:
 
 {
-  services.nginx.virtualHosts."dash.tchfoo.com" = {
+  services.nginx.virtualHosts."trmnl.tchfoo.com" = {
     enableACME = true;
     forceSSL = true;
     locations."/" = {
