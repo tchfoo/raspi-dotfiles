@@ -4,7 +4,7 @@
 }:
 
 let
-  host = "test.tchfoo.com";
+  host = "knot.tchfoo.com";
 in
 {
   imports = [
@@ -19,10 +19,10 @@ in
     openFirewall = false;
     server = {
       hostname = host;
-      listenAddr = "127.0.0.1:5555";
+      listenAddr = "127.0.0.1:57841";
       # TODO: replace with the real did:plc:... from https://tangled.sh/settings
       # (or https://tangled.org/settings) before enabling this in production.
-      owner = "did:plc:REPLACE_ME";
+      owner = "did:plc:kscpezis4hhpdydy2bmebcr2";
     };
   };
 
@@ -30,7 +30,7 @@ in
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      proxyPass = "http://127.0.0.1:5555";
+      proxyPass = "http://127.0.0.1:57841";
       proxyWebsockets = true;
       recommendedProxySettings = true;
     };
