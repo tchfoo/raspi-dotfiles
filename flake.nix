@@ -35,6 +35,10 @@
       inputs.flake-parts.follows = "flake-parts";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    tangled-core = {
+      url = "git+https://tangled.org/tangled.org/core";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #nixpkgs-patch-rauthy-init = {
     #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
     #  flake = false;
