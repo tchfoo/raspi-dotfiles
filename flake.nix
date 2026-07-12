@@ -55,8 +55,12 @@
       url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
       flake = false;
     };
-    nixpkgs-patch-vue-language-server-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/537169.diff";
+    nixpkgs-patch-lix-curl-patch-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:lix-curl-unpatch.diff";
+      flake = false;
+    };
+    nixpkgs-patch-mongodb-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/541057.diff";
       flake = false;
     };
     gep-dotfiles = {
