@@ -59,10 +59,6 @@
       url = "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:lix-curl-unpatch.diff";
       flake = false;
     };
-    nixpkgs-patch-mongodb-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/541057.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
