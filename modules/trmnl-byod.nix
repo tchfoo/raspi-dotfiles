@@ -1,4 +1,4 @@
-# the service is currently running from /home/gep/forks/byos_hanami
+# the service is currently running from /var/lib/misc/trmnl/
 # with `docker compose up --pull always`
 # TODO: package it with a NixOS module if we end up using it long term
 {
