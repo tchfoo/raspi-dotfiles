@@ -4,7 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-curl-8-19-0.url = "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "";
+    };
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/nixos-unstable";
       # a long running build is cached with their nixpkgs, let's keep it for now
