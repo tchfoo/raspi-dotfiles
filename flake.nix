@@ -51,16 +51,8 @@
       url = "https://github.com/NixOS/nixpkgs/pull/529765.diff";
       flake = false;
     };
-    nixpkgs-patch-stylelint-lsp-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/530554.diff";
-      flake = false;
-    };
     nixpkgs-patch-lix-curl-patch-fix-build = {
       url = "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:lix-curl-unpatch.diff";
-      flake = false;
-    };
-    nixpkgs-patch-python-cheetah3-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/545346.diff";
       flake = false;
     };
     gep-dotfiles = {
