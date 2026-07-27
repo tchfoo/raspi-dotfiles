@@ -509,6 +509,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-larapaper-init": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-LCufBXhqoZb1bcYUb8qVXNViU8SfszGy3fox3UNdGWg=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:feat/larapaper/init.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:feat/larapaper/init.diff"
+      }
+    },
     "nixpkgs-patch-lix-curl-patch-fix-build": {
       "flake": false,
       "locked": {
@@ -711,6 +723,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
+        "nixpkgs-patch-larapaper-init": "nixpkgs-patch-larapaper-init",
         "nixpkgs-patch-lix-curl-patch-fix-build": "nixpkgs-patch-lix-curl-patch-fix-build",
         "nixpkgs-patch-ncps-0-10-0": "nixpkgs-patch-ncps-0-10-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
