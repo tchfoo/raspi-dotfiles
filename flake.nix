@@ -58,6 +58,10 @@
       url = "https://github.com/NixOS/nixpkgs/compare/master...gepbird:nixpkgs:lix-curl-unpatch.diff";
       flake = false;
     };
+    nixpkgs-patch-nixos-meilisearch-fix-runtime-crash = {
+      url = "https://github.com/NixOS/nixpkgs/pull/548169.diff";
+      flake = false;
+    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
