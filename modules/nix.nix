@@ -1,5 +1,6 @@
 {
   home-manager,
+  lib,
   ...
 }:
 
@@ -54,7 +55,7 @@
 
   nix.optimise = {
     automatic = true;
-    dates = "02:30";
+    dates = lib.mkForce "02:30";
   };
 
   home-manager.useGlobalPkgs = true;
