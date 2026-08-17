@@ -15,12 +15,12 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       ncps = prev.ncps.overrideAttrs (old: rec {
-        version = "0.10.0-rc14";
+        version = "0.10.0-rc16";
         src = old.src.overrideAttrs {
           tag = "v${version}";
-          hash = "sha256-kGtMV+U/xzDt2PLrvn9bCBtiYqdsueICsGou3lfLRKE=";
+          hash = "sha256-b8cYpPkJYmt0WJiTtuSsNqbGKViok6zPHpQHTBc9wZc=";
         };
-        vendorHash = "sha256-MKhrXZjgYVKseXv6kBuK5TkCrrW2GcMQxnlT8OqoCeU=";
+        vendorHash = "sha256-vhwuUkqU9oWHtKT3BELa1v+QPmYsw+11AK/1KMtO9l0=";
         doCheck = false;
       });
     })
