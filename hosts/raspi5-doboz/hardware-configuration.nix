@@ -15,8 +15,9 @@
   ];
 
   boot.initrd.availableKernelModules = [
-    "usbhid"
+    "nvme"
     "usb_storage"
+    "usbhid"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
