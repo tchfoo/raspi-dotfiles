@@ -13,7 +13,6 @@ in
     nixos-raspberrypi.nixosModules.raspberry-pi-5.bluetooth
   ]
   ++ modules.allModulesExcept [
-    "rauthy"
   ];
 
   nixpkgs.overlays = [

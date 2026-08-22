@@ -21,7 +21,6 @@ in
     "ntfy"
     "plex"
     "radicale"
-    "rauthy"
     "transmission"
   ];
 

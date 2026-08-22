@@ -42,10 +42,6 @@
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nixpkgs-patch-rauthy-init = {
-    #  url = "https://github.com/NixOS/nixpkgs/pull/371091.diff";
-    #  flake = false;
-    #};
     nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation = {
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
