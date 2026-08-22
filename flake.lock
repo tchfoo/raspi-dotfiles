@@ -113,28 +113,42 @@
     },
     "gep-dotfiles": {
       "inputs": {
-        "dwm-gep": [],
+        "dwm-gep": [
+          "null"
+        ],
         "flake-parts": [
           "flake-parts"
         ],
-        "home-manager": [],
+        "home-manager": [
+          "null"
+        ],
         "nix-index-database": [
           "nix-index-database"
         ],
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-patch-hytale-launcher": [],
+        "nixpkgs-patch-hytale-launcher": [
+          "null"
+        ],
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
-        "nixpkgs-patcher": [],
-        "nur": [],
+        "nixpkgs-patcher": [
+          "null"
+        ],
+        "nur": [
+          "null"
+        ],
         "nvim-gep": "nvim-gep",
-        "sops-nix": [],
+        "sops-nix": [
+          "null"
+        ],
         "systems": [
           "systems"
         ],
-        "treefmt-nix": []
+        "treefmt-nix": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1787267032,
@@ -186,7 +200,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": []
+        "nixpkgs": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1787379775,
@@ -409,7 +425,9 @@
     },
     "nix-index-database": {
       "inputs": {
-        "nixpkgs": []
+        "nixpkgs": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1786852476,
@@ -427,7 +445,9 @@
     },
     "nixos-hardware": {
       "inputs": {
-        "nixpkgs": []
+        "nixpkgs": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1787144466,
@@ -446,9 +466,15 @@
     },
     "nixos-raspberrypi": {
       "inputs": {
-        "argononed": [],
-        "flake-compat": [],
-        "nixos-images": [],
+        "argononed": [
+          "null"
+        ],
+        "flake-compat": [
+          "null"
+        ],
+        "nixos-images": [
+          "null"
+        ],
         "nixpkgs": "nixpkgs"
       },
       "locked": {
@@ -655,6 +681,21 @@
         "type": "github"
       }
     },
+    "null": {
+      "locked": {
+        "lastModified": 1630400035,
+        "narHash": "sha256-MWaVOCzuFwp09wZIW9iHq5wWen5C69I940N1swZLEQ0=",
+        "owner": "input-output-hk",
+        "repo": "empty-flake",
+        "rev": "2040a05b67bf9a669ce17eca56beb14b4206a99a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "input-output-hk",
+        "repo": "empty-flake",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -728,6 +769,7 @@
         "nixpkgs-patch-ncps-0-10-0": "nixpkgs-patch-ncps-0-10-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
+        "null": "null",
         "nur": "nur",
         "sops-nix": "sops-nix",
         "systems": "systems",
@@ -885,7 +927,9 @@
     },
     "treefmt-nix": {
       "inputs": {
-        "nixpkgs": []
+        "nixpkgs": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1786901030,
@@ -903,7 +947,9 @@
     },
     "ymstnt-dotfiles": {
       "inputs": {
-        "home-manager": [],
+        "home-manager": [
+          "null"
+        ],
         "nix-index-database": [
           "nix-index-database"
         ],
@@ -911,13 +957,27 @@
           "nixpkgs"
         ],
         "nixpkgs-brave-origin": "nixpkgs-brave-origin",
-        "nixpkgs-develop": [],
-        "nixpkgs-master": [],
-        "nixpkgs-patch-hytale-launcher": [],
-        "nixpkgs-patcher": [],
-        "nixpkgs-stable": [],
-        "nur": [],
-        "sops-nix": []
+        "nixpkgs-develop": [
+          "null"
+        ],
+        "nixpkgs-master": [
+          "null"
+        ],
+        "nixpkgs-patch-hytale-launcher": [
+          "null"
+        ],
+        "nixpkgs-patcher": [
+          "null"
+        ],
+        "nixpkgs-stable": [
+          "null"
+        ],
+        "nur": [
+          "null"
+        ],
+        "sops-nix": [
+          "null"
+        ]
       },
       "locked": {
         "lastModified": 1787263776,

@@ -6,15 +6,15 @@
     nixpkgs-curl-8-19-0.url = "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb";
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
-      inputs.nixpkgs.follows = "";
+      inputs.nixpkgs.follows = "null";
     };
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/nixos-unstable";
       # a long running build is cached with their nixpkgs, let's keep it for now
       #inputs.nixpkgs.follows = "nixpkgs";
-      inputs.argononed.follows = "";
-      inputs.nixos-images.follows = "";
-      inputs.flake-compat.follows = "";
+      inputs.argononed.follows = "null";
+      inputs.nixos-images.follows = "null";
+      inputs.flake-compat.follows = "null";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -22,7 +22,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "";
+      inputs.nixpkgs.follows = "null";
     };
     moe = {
       url = "github:tchfoo/moe";
@@ -57,34 +57,36 @@
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.sops-nix.follows = "";
-      inputs.home-manager.follows = "";
+      inputs.sops-nix.follows = "null";
+      inputs.home-manager.follows = "null";
       inputs.systems.follows = "systems";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.dwm-gep.follows = "";
-      inputs.nur.follows = "";
-      inputs.treefmt-nix.follows = "";
-      inputs.nixpkgs-patcher.follows = "";
-      inputs.nixpkgs-patch-hytale-launcher.follows = "";
+      inputs.dwm-gep.follows = "null";
+      inputs.nur.follows = "null";
+      inputs.treefmt-nix.follows = "null";
+      inputs.nixpkgs-patcher.follows = "null";
+      inputs.nixpkgs-patch-hytale-launcher.follows = "null";
       inputs.nix-index-database.follows = "nix-index-database";
     };
     ymstnt-dotfiles = {
       url = "git+https://git.tchfoo.com/ymstnt/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.sops-nix.follows = "";
-      inputs.home-manager.follows = "";
-      inputs.nixpkgs-master.follows = "";
-      inputs.nixpkgs-develop.follows = "";
-      inputs.nixpkgs-stable.follows = "";
-      inputs.nur.follows = "";
-      inputs.nixpkgs-patcher.follows = "";
-      inputs.nixpkgs-patch-hytale-launcher.follows = "";
+      inputs.sops-nix.follows = "null";
+      inputs.home-manager.follows = "null";
+      inputs.nixpkgs-master.follows = "null";
+      inputs.nixpkgs-develop.follows = "null";
+      inputs.nixpkgs-stable.follows = "null";
+      inputs.nur.follows = "null";
+      inputs.nixpkgs-patcher.follows = "null";
+      inputs.nixpkgs-patch-hytale-launcher.follows = "null";
       inputs.nix-index-database.follows = "nix-index-database";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "";
+      inputs.nixpkgs.follows = "null";
     };
+    # see https://github.com/NixOS/nix/issues/7807
+    null.url = "github:input-output-hk/empty-flake";
     # dependencies of the above modules
     systems.url = "github:nix-systems/default";
     flake-parts = {
@@ -93,7 +95,7 @@
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "";
+      inputs.nixpkgs.follows = "null";
     };
   };
 
