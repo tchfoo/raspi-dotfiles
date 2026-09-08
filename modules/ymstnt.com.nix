@@ -31,8 +31,8 @@ let
         domain = "codeberg.org";
         owner = "daudix";
         repo = "duckquill";
-        tag = "v6.2.0";
-        hash = "sha256-IpJ1cmkSGEBycGPc+O/pGbVDWWB0KSla12SPoL1HMbw=";
+        tag = "v6.3.0";
+        hash = "sha256-eyo4E//A0Akckeux2VDcPLSNFDPwCpqmtY3falrKBkg=";
       };
     };
   });
