@@ -10,24 +10,18 @@ let
 in
 {
   # fix for "invliad nar url" is in https://github.com/kalbasit/ncps/pull/1331
-  # but cherry-picking it is hard, let's use the first rc version
+  # fix for "getting chunks: too many SQL variables" is in https://github.com/kalbasit/ncps/pull/1468
+  # but cherry-picking them is hard, let's use an rc version
   # TODO: remove this after new version
   nixpkgs.overlays = [
     (final: prev: {
       ncps = prev.ncps.overrideAttrs (old: rec {
-        version = "0.10.0-rc16";
+        version = "0.10.0-rc17";
         src = old.src.overrideAttrs {
           tag = "v${version}";
-          hash = "sha256-b8cYpPkJYmt0WJiTtuSsNqbGKViok6zPHpQHTBc9wZc=";
+          hash = "sha256-1d1vzk2motvXgRtJO07ou7TV4eciL5KLminRPwnaZ34=";
         };
-        patches = (old.patches or [ ]) ++ [
-          (prev.fetchpatch {
-            name = "fix-crash-with-big-file.patch";
-            url = "https://github.com/kalbasit/ncps/commit/b15280cb79f584cb444860dad9cf8a451a233b7c.patch";
-            hash = "sha256-mKDgPLj1XHscKGzKDuq2BTyqro4ytNXoOHPCiCrSkVg=";
-          })
-        ];
-        vendorHash = "sha256-vhwuUkqU9oWHtKT3BELa1v+QPmYsw+11AK/1KMtO9l0=";
+        vendorHash = "sha256-bF8IA172IjdGSZVu1zngPeAofAyaiS7crFK3/T8mHDM=";
         doCheck = false;
       });
     })
