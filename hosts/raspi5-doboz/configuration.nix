@@ -34,6 +34,11 @@ in
       fsType = "btrfs";
       options = [ "nofail" ];
     };
+    "/ssd" = {
+      device = "/dev/disk/by-uuid/1a566d8c-6ce7-4f87-8a5a-91ad80053fea";
+      fsType = "ext4";
+      options = [ "nofail" ];
+    };
   };
 
   networking.hostName = "raspi5-doboz";
