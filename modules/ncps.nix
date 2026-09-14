@@ -32,6 +32,7 @@ in
     cache = {
       hostName = "${hostName}-1";
       secretKeyPath = config.secrets.ncps."${hostName}-1.sec";
+      storage.local = "/ssd/var/lib/ncps";
       maxSize = "100G";
       lru.schedule = "0 4 * * *";
       cdc = {
