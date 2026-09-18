@@ -971,11 +971,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789250592,
-        "narHash": "sha256-avmd0j0/wk9iawp0psovy1//k7UMSxVwA6yzaOjwEao=",
+        "lastModified": 1789417083,
+        "narHash": "sha256-JQSXMJxnIJUCOagVHi1D55bat7pjzZr8NxTjLghKNeY=",
         "ref": "refs/heads/main",
-        "rev": "c28945a7154115877c743c819e6c64bd02b582da",
-        "revCount": 954,
+        "rev": "3c682de309cc6c9487e861968bc0ec63bf3af85a",
+        "revCount": 956,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
