@@ -6,7 +6,6 @@
 {
   services.ntfy-sh = {
     enable = true;
-    group = "shared";
     settings = {
       base-url = "https://ntfy.tchfoo.com";
       behind-proxy = true;

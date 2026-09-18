@@ -561,6 +561,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
       }
     },
+    "nixpkgs-patch-ntfy-force-dynamic-user": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-J4tnHasWizZK2npSt67FueT4Ep4CNDcyOa549ZIe0Rg=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/492803.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/492803.diff"
+      }
+    },
     "nixpkgs-patch-packet-tracer-fix-mime": {
       "flake": false,
       "locked": {
@@ -759,6 +771,7 @@
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-ncps-0-10-0": "nixpkgs-patch-ncps-0-10-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-ntfy-force-dynamic-user": "nixpkgs-patch-ntfy-force-dynamic-user",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
         "nur": "nur",
