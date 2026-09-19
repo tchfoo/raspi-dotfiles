@@ -50,10 +50,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/529765.diff";
       flake = false;
     };
-    nixpkgs-patch-ntfy-force-dynamic-user = {
-      url = "https://github.com/NixOS/nixpkgs/pull/492803.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
