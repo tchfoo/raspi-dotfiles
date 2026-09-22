@@ -31,13 +31,6 @@ in
     };
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 6 * 1024;
-    }
-  ];
-
   networking.hostName = "raspi-doboz";
 
   nix.settings.max-jobs = lib.mkForce 1;

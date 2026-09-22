@@ -21,13 +21,6 @@ in
 
   boot.loader.raspberry-pi.bootloader = "kernel";
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 8 * 1024;
-    }
-  ];
-
   fileSystems = {
     "/hdd" = {
       device = "/dev/disk/by-uuid/7e3592b6-314f-4c6e-a524-6682b601d444";
