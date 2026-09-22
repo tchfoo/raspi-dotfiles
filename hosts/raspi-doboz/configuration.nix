@@ -14,8 +14,12 @@ in
   ]
   ++ modules.allModulesExcept [
     "home-assistant"
+    "jellyfin"
+    "librechat"
     "miniflux"
     "moe"
+    "ntfy-sh"
+    "pocket-id"
     "radicale"
     "transmission"
   ];
