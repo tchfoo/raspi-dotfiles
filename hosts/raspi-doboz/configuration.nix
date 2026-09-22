@@ -13,13 +13,9 @@ in
     nixos-hardware.nixosModules.raspberry-pi-4
   ]
   ++ modules.allModulesExcept [
-    "glance"
     "home-assistant"
     "miniflux"
     "moe"
-    "mollysocket"
-    "ntfy"
-    "plex"
     "radicale"
     "transmission"
   ];
