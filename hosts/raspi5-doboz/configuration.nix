@@ -13,6 +13,7 @@ in
     nixos-raspberrypi.nixosModules.raspberry-pi-5.bluetooth
   ]
   ++ modules.allModulesExcept [
+    "auto-upgrade"
   ];
 
   nixpkgs.overlays = [
