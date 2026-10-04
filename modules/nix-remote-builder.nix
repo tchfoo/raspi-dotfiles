@@ -50,6 +50,7 @@ in
       (
         builtins.removeAttrs config.hosts [
           config.networking.hostName
+          "raspi-doboz"
         ]
       );
 }
