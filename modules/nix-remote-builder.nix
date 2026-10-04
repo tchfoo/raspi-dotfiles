@@ -30,7 +30,6 @@ in
     }) config.hosts;
   };
 
-
   nix = {
     distributedBuilds = true;
     settings = {
@@ -41,9 +40,16 @@ in
     };
   };
 
-  lix.buildMachines.machines = lib.mapAttrs (hostname: host: {
-    jobs = host.jobs;
-    system-types = [ "aarch64-linux" ];
-    uri = "ssh-ng://${user}@${host.domain}";
-  }) (builtins.removeAttrs config.hosts [ config.networking.hostName ]);
+  lix.buildMachines.machines =
+    lib.mapAttrs
+      (hostname: host: {
+        jobs = host.jobs;
+        system-types = [ "aarch64-linux" ];
+        uri = "ssh-ng://${user}@${host.domain}";
+      })
+      (
+        builtins.removeAttrs config.hosts [
+          config.networking.hostName
+        ]
+      );
 }
