@@ -27,6 +27,11 @@
       "wheel"
       "shared"
     ];
+    # Specify keys here if you only want access on raspi5-doboz and raspi-doboz but not your personal devices
+    # Otherwise, add keys to your dotfiles ssh.nix module
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+lmpI06dNR/QMHMraXoF7ElaotVaA7uBTZX4OzXUhU work-laptop"
+    ];
   };
 
   home-manager.users.ymstnt = {
