@@ -16,6 +16,27 @@
         "url": "https://tangled.org/@jakelazaroff.com/actor-typeahead"
       }
     },
+    "blip": {
+      "inputs": {
+        "nixpkgs": [
+          "ymstnt-dotfiles",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790637908,
+        "narHash": "sha256-3zfuQ/4wIthcuqeM8q2OB2GX/YQHF6AdAMzjWrN1YI4=",
+        "owner": "blip-net",
+        "repo": "nix",
+        "rev": "a2c6c382f03e44bd61af5a8757f83fc54b9beda4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blip-net",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -80,11 +101,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788450739,
-        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+        "lastModified": 1790898470,
+        "narHash": "sha256-zTwuwezD0w3hpga6a6P8emidzAZFyWqlNeRBlpWOOl8=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+        "rev": "024633cd702b10285db5cb19b40ad48d2399ba60",
         "type": "github"
       },
       "original": {
@@ -133,6 +154,7 @@
           "null"
         ],
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
+        "nixpkgs-patch-zotero-fix-build": "nixpkgs-patch-zotero-fix-build",
         "nixpkgs-patcher": [
           "null"
         ],
@@ -151,11 +173,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790636840,
-        "narHash": "sha256-YG+pW6fhXo06M7fpRuRIWhV4EZjk1xefj/nxu9ieb5Q=",
+        "lastModified": 1791075265,
+        "narHash": "sha256-NG+pAlCfGr+5eIE93NZU2e6n4pd5g5PuWzvPrnWLEZM=",
         "ref": "refs/heads/main",
-        "rev": "0736168e3b7c2f3b78f1649ee0a40d6d5346a1aa",
-        "revCount": 1492,
+        "rev": "c5d23c9fe01efb843100f599e5ca0a7bd44bd76c",
+        "revCount": 1503,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -205,11 +227,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790365885,
-        "narHash": "sha256-iQ0ebhiVo64NktTnwft9hNxlFu4j5cvljVxyJaEVIP4=",
+        "lastModified": 1791163078,
+        "narHash": "sha256-DiuwfdoZtEqVRsWuAhXcHa+cfvkr0t/xWW8ugkcxNyI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7b4c5ec4bedaf1e062bbc1bcaeddbc6bd242aa1b",
+        "rev": "f53f3267f5d009dd8f99443505e609389d7ff267",
         "type": "github"
       },
       "original": {
@@ -394,11 +416,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790208154,
-        "narHash": "sha256-AKRK5SIR5rVzEW2EAMW+K5Gj4BYzmYBgwQSUorZmsBg=",
+        "lastModified": 1790985924,
+        "narHash": "sha256-/J5iw51IcLexuI9ESAZUnXFbFdGTM7gSTDeA1KOPEcw=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "924d1a8596332eeec0f8710cd365cbfa6e327e99",
+        "rev": "7bf3d61b3c3a914c55d717205b5a2f039bf2f864",
         "type": "github"
       },
       "original": {
@@ -410,11 +432,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1790207017,
-        "narHash": "sha256-sTEYwP8L1boTcFKknvOjb7e4WT5E6XqJOWUFFPTvoZ8=",
+        "lastModified": 1790953847,
+        "narHash": "sha256-dMEh0UhgBbDrwYpHsnS9OIuOMzYrMs0yo4VzHPJumrg=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "bdc5eb75f87b271f7e2099b4376657397ee206b7",
+        "rev": "28d641b5607025c34153e11272fbd270ac673f85",
         "type": "github"
       },
       "original": {
@@ -430,11 +452,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790499302,
-        "narHash": "sha256-Gbf/U9ptJhQh0qnDnJ/+a8MAcq1HXunbArUTHR2wNYk=",
+        "lastModified": 1791105314,
+        "narHash": "sha256-oTM7QFgRQ+vxBpMBMc7hEYpqBtpXAzXu2xuB/tru84U=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "161d7c91accd93034bb3c295224d9d895a778573",
+        "rev": "e740bc4e9d8918d7819a51486d5099930c65c72e",
         "type": "github"
       },
       "original": {
@@ -450,11 +472,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790321948,
-        "narHash": "sha256-mZGHLGi217oLIwzDM4PNRZeCNa6g2WBXURyXbNMFs7Y=",
+        "lastModified": 1791128201,
+        "narHash": "sha256-rlsYY/Dg/LhbIj51Aa6TLvRpZeb3KZgUTd7llQ5XcJE=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "30d48a0ec6035f8140d0125af274f0de95f1e9b5",
+        "rev": "31cc5f4d9b9ba601071e8b8504601b9b176e2756",
         "type": "github"
       },
       "original": {
@@ -536,6 +558,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-fix-nodejs-slim-26-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-UAaUf9OdMD9DGchcrAQbnGuwHfWZiFp0BICpeYCAEpY=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/570428.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/570428.diff"
+      }
+    },
     "nixpkgs-patch-ncps-0-10-0": {
       "flake": false,
       "locked": {
@@ -584,6 +618,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/570001.diff"
       }
     },
+    "nixpkgs-patch-zotero-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Y7f72bHs3+qCTrXQgRx73a1JdyDDY4MuEcyi2NFOKrc=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/569006.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/569006.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1789143781,
@@ -601,11 +647,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1790578696,
-        "narHash": "sha256-ZoxIApko70jCdbH3l20HWXOBaT2HZd87orzd2yJ9dVE=",
+        "lastModified": 1791048980,
+        "narHash": "sha256-KgItSKML8Xvte0B7/uGnBDsYzSnnKHcOaiUbgWBXLXw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7a0f122f5090cf4c2ade2a13a0e229d4e19ba71f",
+        "rev": "a7868a727837f3c09cee2ce0ca671c76b1589fed",
         "type": "github"
       },
       "original": {
@@ -634,11 +680,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789961561,
-        "narHash": "sha256-2lRgE8XsmXIVmiujmHVaCy5TrBUSblILNT5vYOj/Ed0=",
+        "lastModified": 1790928658,
+        "narHash": "sha256-EeMn6SmrBe4gnxaMyb3NZYMXG8FPF9PY0OCcbPDFFNI=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "bcb5f577a36565bda07d7b81346b73cad8618d16",
+        "rev": "1cdfef1a6eb583d65b606b04fc97687491479d62",
         "type": "github"
       },
       "original": {
@@ -694,11 +740,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790641429,
-        "narHash": "sha256-PJUkLNQYZRKV/F96HWeFhxep3Dj3N8lZNx/9MuXLq94=",
+        "lastModified": 1791194473,
+        "narHash": "sha256-DVh0sCAtbZSBRgxVzdkGD0DzOFMUdSn7OesmYk7ZCWI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c614715284cf723c61acbfa355ede427b11a3e38",
+        "rev": "f02ff80da1eef0b8dd8d52d3d1693b9e8bfb1efd",
         "type": "github"
       },
       "original": {
@@ -732,11 +778,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790241181,
-        "narHash": "sha256-ASwFI+ODDkVlQGPnHf+IYwAjlfyAhoUKPcRFcby3+AA=",
+        "lastModified": 1791069167,
+        "narHash": "sha256-xq0Ox5OVRXMvievHWXisv3BBLGNrGHalwNRZUyli7nU=",
         "ref": "refs/heads/main",
-        "rev": "c3c0bee8df1e04dfad9338369cb2e7f567fdc0dc",
-        "revCount": 237,
+        "rev": "991b65338f250ee1e5cb09079e1abf483f9c505b",
+        "revCount": 238,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/nvim"
       },
@@ -756,6 +802,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
+        "nixpkgs-patch-fix-nodejs-slim-26-build": "nixpkgs-patch-fix-nodejs-slim-26-build",
         "nixpkgs-patch-ncps-0-10-0": "nixpkgs-patch-ncps-0-10-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patch-pocket-id-2-17-0": "nixpkgs-patch-pocket-id-2-17-0",
@@ -794,11 +841,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790498116,
-        "narHash": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI=",
+        "lastModified": 1791103873,
+        "narHash": "sha256-nFxM+pKoZ8LJAEnUXARyCaOAloWgaW9kZQOSjWzKcTE=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
+        "rev": "dcd241ba97088c22569d1573286e1b9daad340c0",
         "type": "github"
       },
       "original": {
@@ -903,11 +950,11 @@
         "tailwindcss-animated-src": "tailwindcss-animated-src"
       },
       "locked": {
-        "lastModified": 1789731405,
-        "narHash": "sha256-coBPFy5y841710mAEZJ2hXetSq7nEJoyGNH+vVVxloU=",
+        "lastModified": 1790862499,
+        "narHash": "sha256-xfFTvvSQoI0McFEQW8IkCyW1yfEA6QhwKVL7TDfRpj4=",
         "ref": "refs/heads/master",
-        "rev": "7fcec78848bfd98f3f6a05411efaca1958da0e8f",
-        "revCount": 3226,
+        "rev": "3f736f0ba5a9b2c89a2e84ebf97f79b6a9f54a3f",
+        "revCount": 3227,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -938,6 +985,7 @@
     },
     "ymstnt-dotfiles": {
       "inputs": {
+        "blip": "blip",
         "home-manager": [
           "null"
         ],
@@ -971,11 +1019,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790453695,
-        "narHash": "sha256-2xz6VaTr+UPZe+IeSN2Eu3Xu84BEXG4rIxxIAQqC6yM=",
+        "lastModified": 1790713164,
+        "narHash": "sha256-M682Sn84uL4E7XDJkR242s2uhNDDs9kv4ktK6vOA89o=",
         "ref": "refs/heads/main",
-        "rev": "5ac254766ed525e15e8f4daf800657c237693a7b",
-        "revCount": 963,
+        "rev": "abaefbc2caa9d1b2d1a4ccfc8a63e6fa05b6b2ed",
+        "revCount": 964,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
