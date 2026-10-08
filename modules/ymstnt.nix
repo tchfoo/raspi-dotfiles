@@ -36,7 +36,9 @@
 
   home-manager.users.ymstnt = {
     home.packages = with pkgs; [
+      gcc
       git
+      go
       inotify-tools
       lazydocker
       ncdu
