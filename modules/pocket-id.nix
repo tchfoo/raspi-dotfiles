@@ -22,6 +22,7 @@ in
       EMAIL_API_KEY_EXPIRATION_ENABLED = true;
       EMAIL_VERIFICATION_ENABLED = true;
       SMTP_PORT = 587;
+      SMTP_TLS = "starttls";
     };
     credentials = config.secrets.pocket-id;
   };
