@@ -27,7 +27,7 @@ in
       };
       mailer = {
         ENABLED = true;
-        PROTOCOL = "smtps";
+        PROTOCOL = "smtp+starttls";
         SMTP_PORT = 587;
       };
       service = {
