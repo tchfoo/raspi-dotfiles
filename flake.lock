@@ -549,7 +549,7 @@
     "nixpkgs-patch-ncps-0-10-0": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-WmjYCZndA2D71x0YDvSFh77yg0+CmLjFmpSXWqcdxtE=",
+        "narHash": "sha256-ZwlbhlK4GzHOAR0MBEQ9ybD03B7uG+8HgxalNd2+v3E=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/529765.diff"
       },

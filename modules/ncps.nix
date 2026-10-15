@@ -9,21 +9,12 @@ let
   cfg = config.services.ncps;
 in
 {
-  # fix for "invliad nar url" is in https://github.com/kalbasit/ncps/pull/1331
-  # fix for "getting chunks: too many SQL variables" is in https://github.com/kalbasit/ncps/pull/1468
-  # but cherry-picking them is hard, let's use an rc version
-  # TODO: remove this after new version
+  # TODO: remove after fixed: https://github.com/NixOS/nixpkgs/issues/574569
   nixpkgs.overlays = [
     (final: prev: {
-      ncps = prev.ncps.overrideAttrs (old: rec {
-        version = "0.10.0-rc17";
-        src = old.src.overrideAttrs {
-          tag = "v${version}";
-          hash = "sha256-1d1vzk2motvXgRtJO07ou7TV4eciL5KLminRPwnaZ34=";
-        };
-        vendorHash = "sha256-bF8IA172IjdGSZVu1zngPeAofAyaiS7crFK3/T8mHDM=";
+      ncps = prev.ncps.overrideAttrs {
         doCheck = false;
-      });
+      };
     })
   ];
 
