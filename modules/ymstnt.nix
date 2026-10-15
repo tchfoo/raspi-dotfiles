@@ -16,6 +16,7 @@
     intelli-shell
     ssh
     starship
+    zellij
     zoxide
     zsh
   ];
