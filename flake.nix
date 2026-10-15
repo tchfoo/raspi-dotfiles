@@ -46,8 +46,8 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-ncps-0-10-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/529765.diff";
+    nixpkgs-patch-lix-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/573938.diff";
       flake = false;
     };
     gep-dotfiles = {
