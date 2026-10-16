@@ -9,5 +9,11 @@
       recommendedProxySettings = true;
     };
   };
+
+  services.borgmatic.configurations.raspi = {
+    source_directories = [
+      "/var/lib/misc/tino/data"
+    ];
+  };
 }
 
