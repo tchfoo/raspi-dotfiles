@@ -125,33 +125,6 @@
         };
       };
     };
-    programs.zellij = {
-      settings = {
-        default_layout = "compact";
-        keybinds = {
-          shared_except = {
-            _args = [ "locked" ];
-            _children = [
-              {
-                bind = {
-                  _args = [
-                    "Alt g"
-                  ];
-                  _children = [
-                    {
-                      LaunchPlugin = {
-                        _args = ["filepicker"];
-                      };
-                    }
-                  ];
-                };
-              }
-            ];
-          };
-        };
-      };
-    };
-
     home.stateVersion = config.system.stateVersion;
   };
 }
