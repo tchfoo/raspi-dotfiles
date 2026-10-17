@@ -15,6 +15,7 @@ in
       PORT = 12673;
       APP_URL = "https://auth.tchfoo.com";
       TRUST_PROXY = true;
+      ALLOW_USER_SIGNUPS = "withToken";
       UI_CONFIG_DISABLED = true;
       DISABLE_ANIMATIONS = true;
       EMAIL_LOGIN_NOTIFICATION_ENABLED = true;
