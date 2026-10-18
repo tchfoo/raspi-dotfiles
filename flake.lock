@@ -595,6 +595,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
       }
     },
+    "nixpkgs-patch-podman-5-8-9": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-sSxDs2eGrt2qrb/jw87MPxtcZt5Ms10Bl3HvyIOAqNo=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/574021.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/574021.diff"
+      }
+    },
     "nixpkgs-patch-zotero-fix-build": {
       "flake": false,
       "locked": {
@@ -781,6 +793,7 @@
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-lix-fix-build": "nixpkgs-patch-lix-fix-build_2",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-podman-5-8-9": "nixpkgs-patch-podman-5-8-9",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
         "nur": "nur",
