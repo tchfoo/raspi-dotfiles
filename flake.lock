@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790637908,
-        "narHash": "sha256-3zfuQ/4wIthcuqeM8q2OB2GX/YQHF6AdAMzjWrN1YI4=",
+        "lastModified": 1791849471,
+        "narHash": "sha256-AeqM/I/Sn6hEAL6+UbJi/wnBxueAmEyIZ87okSVejWw=",
         "owner": "blip-net",
         "repo": "nix",
-        "rev": "a2c6c382f03e44bd61af5a8757f83fc54b9beda4",
+        "rev": "34dee223931f7ff3eddcf98f089c925569bfb7e8",
         "type": "github"
       },
       "original": {
@@ -153,9 +153,7 @@
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
-        "nixpkgs-patch-lix-fix-build": "nixpkgs-patch-lix-fix-build",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
-        "nixpkgs-patch-zotero-fix-build": "nixpkgs-patch-zotero-fix-build",
         "nixpkgs-patcher": [
           "null"
         ],
@@ -174,11 +172,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792081468,
-        "narHash": "sha256-qfMMh3WhLeZmTDpGkuG4i3KqLCusj4G6/D7BAZrBgw4=",
+        "lastModified": 1792356385,
+        "narHash": "sha256-yyPtdYRCTkXp8Bw+47Vg4ZeLUOcCX3OUrg0OctHcwDs=",
         "ref": "refs/heads/main",
-        "rev": "230fe9009cf1c45f3307f5a6d754a2fec4b23e55",
-        "revCount": 1519,
+        "rev": "158d8a91518b8fcd39be297ad6e996ac1a0d9bf0",
+        "revCount": 1523,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -228,11 +226,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792085665,
-        "narHash": "sha256-X9iN67cdW9KqLuvbyyr9rdF4Zssk1uFHh1UC/GZH08s=",
+        "lastModified": 1792098797,
+        "narHash": "sha256-u4DIIZgznEGzByxXrxWCXK19VcMtTBmi/M9gZ7Jk9bM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "54ad640b81c5e9a32db1a29e7561fda628601117",
+        "rev": "640725978b99076e18e069f6e7d2959124584f8f",
         "type": "github"
       },
       "original": {
@@ -453,11 +451,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791711434,
-        "narHash": "sha256-LpIhxnuO0tYeZ4k7BbNMxsPs2zJpB4hWXO1jdhUuE7Q=",
+        "lastModified": 1792309949,
+        "narHash": "sha256-2DAEMk8YkV8OF6N2uw9jQ016cYoNkcgnq50AShwWxNw=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "9a2dd40780eeab8543aa97c59c26f11267025616",
+        "rev": "1b4d1758fa6053c5d6284254a793134fa602fbff",
         "type": "github"
       },
       "original": {
@@ -559,18 +557,6 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/573938.diff"
       }
     },
-    "nixpkgs-patch-lix-fix-build_2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-+MNX3SB8dTY/SJOIo/X7s1ndDgMsigYiaRNYJIccww8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/573938.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/573938.diff"
-      }
-    },
     "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
       "flake": false,
       "locked": {
@@ -595,30 +581,6 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
       }
     },
-    "nixpkgs-patch-podman-5-8-9": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-sSxDs2eGrt2qrb/jw87MPxtcZt5Ms10Bl3HvyIOAqNo=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/574021.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/574021.diff"
-      }
-    },
-    "nixpkgs-patch-zotero-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-wq3x/0n8IdWFZxMcgd1ifdGFO7hKPUY8pKiCSnzTLUE=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/572466.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/572466.diff"
-      }
-    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1789143781,
@@ -636,11 +598,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1791956154,
-        "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
         "type": "github"
       },
       "original": {
@@ -729,11 +691,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792094713,
-        "narHash": "sha256-Hp+9lWaIWu2sVF4W6PeAEk4uU2yc85r+IpWYssc207c=",
+        "lastModified": 1792355809,
+        "narHash": "sha256-Ki4wOwqnFGJdHJbNa86AvN4dKXdQHutwOjUSeR0Jy1Y=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6aca7161bf2a803078a87c6e08c3ccb104828d97",
+        "rev": "7a691473c0a5a05d8b6093f6065d957abd4c7a02",
         "type": "github"
       },
       "original": {
@@ -791,9 +753,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
-        "nixpkgs-patch-lix-fix-build": "nixpkgs-patch-lix-fix-build_2",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
-        "nixpkgs-patch-podman-5-8-9": "nixpkgs-patch-podman-5-8-9",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
         "nur": "nur",
@@ -938,11 +898,11 @@
         "tailwindcss-animated-src": "tailwindcss-animated-src"
       },
       "locked": {
-        "lastModified": 1791659366,
-        "narHash": "sha256-hCirSRtMMhhDvaQKI8ep1bR17ARJFNDJlgOjH1ZRS14=",
+        "lastModified": 1792352840,
+        "narHash": "sha256-pehXSw17JRgWA/d4t/x9ZcdxOHJaY3I0+H+3p1hVZxk=",
         "ref": "refs/heads/master",
-        "rev": "e0ef7981da82fe1516cbdc2992b3023f4b2ca717",
-        "revCount": 3237,
+        "rev": "dad751949f865d6189f7602e1409c5f951e75771",
+        "revCount": 3260,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -992,6 +952,7 @@
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
+        "nixpkgs-patch-lix-fix-build": "nixpkgs-patch-lix-fix-build",
         "nixpkgs-patcher": [
           "null"
         ],
@@ -1006,11 +967,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792048167,
-        "narHash": "sha256-27JELj/haozz9WpCv8fwsJt9do6HBn75zQK1EU9VYww=",
+        "lastModified": 1792333598,
+        "narHash": "sha256-lT1aiOqNlOKWV8x407wZAP2rfT7o+J4tg4a/csKtnaI=",
         "ref": "refs/heads/main",
-        "rev": "949c167b33954b01a6ddfa3c6b0e72c78703f10b",
-        "revCount": 970,
+        "rev": "a9d5457f2a842748681dcc75eb90547648339c1e",
+        "revCount": 977,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },

@@ -46,14 +46,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-lix-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/573938.diff";
-      flake = false;
-    };
-    nixpkgs-patch-podman-5-8-9 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/574021.diff";
-      flake = false;
-    };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
