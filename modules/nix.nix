@@ -44,6 +44,7 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "derivation-memoization"
       ];
       trusted-users = [
         "gep"
