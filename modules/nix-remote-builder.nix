@@ -46,6 +46,9 @@ in
         jobs = host.jobs;
         system-types = [ "aarch64-linux" ];
         uri = "ssh-ng://${user}@${host.domain}";
+        supported-features = [
+          "big-parallel"
+        ];
       })
       (
         builtins.removeAttrs config.hosts [
