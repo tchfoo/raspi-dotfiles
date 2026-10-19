@@ -22,6 +22,8 @@ in
     "pocket-id"
     "radicale"
     "transmission"
+    "uni-week-counter"
+    "ymstnt.com"
   ];
 
   boot = {
