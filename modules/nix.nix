@@ -11,14 +11,14 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      nix = prev.lixPackageSets.lix_2_95.lix.overrideAttrs (o: {
+      nix = prev.lixPackageSets.lix_2_96.lix.overrideAttrs (o: {
         doCheck = false;
         doInstallCheck = false;
         patches = (o.patches or [ ]) ++ [
           (prev.fetchurl {
-            name = "trace-cache.patch";
-            url = "https://git.lix.systems/gepbird/lix/compare/2.95.1...2.95.1-trace-cache-4.1.0.patch";
-            hash = "sha256-mLcsDXfRwscQFisZSXXaZ1vWfbeEK/Deuw1gWvfPYes=";
+            name = "derivation-memoization.patch";
+            url = "https://git.lix.systems/gepbird/lix/compare/2.96.0...2.96.0-derivation-memoization-6.0.0.patch";
+            hash = "sha256-AnQLUwTSNYUl/9ayZ7XpoVJo9m/H8F0QV9OBhqmyp5U=";
           })
         ];
       });
