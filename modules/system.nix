@@ -27,4 +27,10 @@
   };
 
   documentation.nixos.enable = false;
+
+  # compromised certificates: https://emudhra.we-have-a-problem.com/
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
 }
