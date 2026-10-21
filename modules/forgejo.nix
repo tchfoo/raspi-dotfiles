@@ -1,6 +1,6 @@
 {
   config,
-  pkgs,
+  lib,
   utils,
   ...
 }:
@@ -10,6 +10,11 @@ let
   cfg = config.services.forgejo;
   host = "git.tchfoo.com";
   httpsHost = "https://${host}";
+  # offline registration: UUID is the hex encoding of the first 16 characters of the secret
+  runnerScopesToUUIDs = {
+    ymstnt = "33663737-3131-6564-3734-336366633538";
+    tchfoo = "61313536-3636-3430-6162-633062663437";
+  };
 in
 {
   services.forgejo = {
@@ -39,35 +44,52 @@ in
     };
   };
 
-  services.gitea-actions-runner = {
-    package = pkgs.forgejo-runner;
-    instances.${hostName} = {
-      enable = true;
-      name = hostName;
-      tokenFile = config.secrets.forgejo.runner-token;
-      url = httpsHost;
-      labels = [
-        # mimic GitHub ARM runner
-        "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
-        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
-      ];
-    };
-    instances."${hostName}-ymstnt" = {
-      enable = true;
-      name = hostName;
-      tokenFile = config.secrets.forgejo.runner-token-ymstnt;
-      url = httpsHost;
-      labels = [
-        # mimic GitHub ARM runner
-        "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
-        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
-      ];
+  sops.secrets = lib.mapAttrs' (
+    scope: _: lib.nameValuePair "forgejo/runner-tokens/${scope}" { owner = cfg.user; }
+  ) runnerScopesToUUIDs;
+
+  systemd.services.forgejo-register-runners = {
+    description = "Register Forgejo Runners";
+    requires = [ "forgejo.service" ];
+    after = [ "forgejo.service" ];
+    wantedBy = [ "multi-user.target" ];
+    environment.FORGEJO_CUSTOM = cfg.customDir;
+    script = lib.concatMapAttrsStringSep "\n" (scope: _: ''
+      ${lib.getExe cfg.package} forgejo-cli actions register \
+        --name ${lib.escapeShellArg hostName} \
+        --scope ${lib.escapeShellArg scope} \
+        --secret-file ${lib.escapeShellArg config.secrets.forgejo.runner-tokens.${scope}}
+    '') runnerScopesToUUIDs;
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      User = cfg.user;
+      Group = cfg.group;
     };
   };
 
-  systemd.services."gitea-runner-${utils.escapeSystemdPath hostName}".after = [
-    "forgejo.service"
-  ];
+  systemd.services."forgejo-runner-${utils.escapeSystemdPath hostName}" = {
+    wants = [ "forgejo-register-runners.service" ];
+    after = [ "forgejo-register-runners.service" ];
+  };
+
+  services.forgejo-runner.instances.${hostName} = {
+    enable = true;
+    settings = {
+      server.connections = lib.mapAttrs (_: uuid: {
+        url = httpsHost;
+        inherit uuid;
+      }) runnerScopesToUUIDs;
+      runner.labels = [
+        # mimic GitHub ARM runner
+        "ubuntu-24.04-arm:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
+        "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest"
+      ];
+    };
+    secrets.server.connections = lib.mapAttrs (scope: _: {
+      token_url = config.secrets.forgejo.runner-tokens.${scope};
+    }) runnerScopesToUUIDs;
+  };
 
   services.nginx.virtualHosts."${host}" = {
     enableACME = true;
