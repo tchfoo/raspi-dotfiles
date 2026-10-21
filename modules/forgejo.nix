@@ -10,10 +10,16 @@ let
   cfg = config.services.forgejo;
   host = "git.tchfoo.com";
   httpsHost = "https://${host}";
-  # offline registration: UUID is the hex encoding of the first 16 characters of the secret
+  # to add a new runner connection:
+  # - choose a scope (global, an organization, a user or a repository)
+  # - add a new secret token to forgejo.runner-tokens.<scope> generated with:
+  #   `token=$(openssl rand -hex 20); echo $token`
+  # - convert the first 16 characters of it to hex and format it as a UUID, add it runnerScopesToUUIDs:
+  #   `hex=$(printf %s "${token:0:16}" | od -An -tx1 | tr -d ' \n'); echo "${hex:0:8}-${hex:8:4}-${hex:12:4}-${hex:16:4}-${hex:20:12}"`
   runnerScopesToUUIDs = {
-    ymstnt = "33663737-3131-6564-3734-336366633538";
+    gepbird = "64346335-6233-6465-6464-303438333630";
     tchfoo = "61313536-3636-3430-6162-633062663437";
+    ymstnt = "33663737-3131-6564-3734-336366633538";
   };
 in
 {
