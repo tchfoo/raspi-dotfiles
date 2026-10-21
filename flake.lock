@@ -545,6 +545,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-fix-CVE-2026-111943": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-N+PTlLhVUQT4Rk1eKa5oeSUa947e24fDGgCYhUJS0EY=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/576390.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/576390.diff"
+      }
+    },
     "nixpkgs-patch-lix-fix-build": {
       "flake": false,
       "locked": {
@@ -753,6 +765,7 @@
         "nixos-raspberrypi": "nixos-raspberrypi",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
+        "nixpkgs-patch-fix-CVE-2026-111943": "nixpkgs-patch-fix-CVE-2026-111943",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
