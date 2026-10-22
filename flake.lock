@@ -582,6 +582,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
       }
     },
+    "nixpkgs-patch-php-fix-CVE-2026-1096--18--19": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-D5WZzeY0es4f6hb/mtVOhp+wMyKWa3ghb3kBqNRsM0c=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/576853.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/576853.diff"
+      }
+    },
     "nixpkgs-patch-pipewire-auto-restart": {
       "flake": false,
       "locked": {
@@ -767,6 +779,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-php-fix-CVE-2026-1096--18--19": "nixpkgs-patch-php-fix-CVE-2026-1096--18--19",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
         "nur": "nur",
