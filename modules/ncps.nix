@@ -9,15 +9,6 @@ let
   cfg = config.services.ncps;
 in
 {
-  # TODO: remove after fixed: https://github.com/NixOS/nixpkgs/issues/574569
-  nixpkgs.overlays = [
-    (final: prev: {
-      ncps = prev.ncps.overrideAttrs {
-        doCheck = false;
-      };
-    })
-  ];
-
   services.ncps = {
     enable = true;
     cache = {
