@@ -35,6 +35,7 @@ in
       server = {
         PROTOCOL = "http+unix";
         ROOT_URL = httpsHost;
+        LANDING_PAGE = "explore";
       };
       mailer = {
         ENABLED = true;
