@@ -569,6 +569,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
       }
     },
+    "nixpkgs-patch-tailscale-1-104-4": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-qE/hyZENp7/CVQH6vYvDiKm4yDvzt7fw4imr0GKq2sE=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/579890.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/579890.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1789143781,
@@ -742,6 +754,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
+        "nixpkgs-patch-tailscale-1-104-4": "nixpkgs-patch-tailscale-1-104-4",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
         "nur": "nur",
