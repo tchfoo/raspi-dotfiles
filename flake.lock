@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792353892,
-        "narHash": "sha256-AeqM/I/Sn6hEAL6+UbJi/wnBxueAmEyIZ87okSVejWw=",
+        "lastModified": 1793062804,
+        "narHash": "sha256-nd67OzZ169qA07xp3X4zZNvYX7FyFGmb9bKllc5dCMQ=",
         "owner": "blip-net",
         "repo": "nix",
-        "rev": "eeaed45e714126c8dc1f634a92c2d70ec3992d90",
+        "rev": "92ae525425b38b2873d8d52a564a9c146fccba08",
         "type": "github"
       },
       "original": {
@@ -967,11 +967,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793002136,
-        "narHash": "sha256-AHt717r8IBuDFMBpiwmislDOktORAEnurP1agSaRDbk=",
+        "lastModified": 1793402324,
+        "narHash": "sha256-XAR/Tq+Q4mZEwHaXArolPP1gxhK31G7Plc3tShP2OYI=",
         "ref": "refs/heads/main",
-        "rev": "3e01e43857b7aafe26fb431d86253bf65635937e",
-        "revCount": 988,
+        "rev": "6485475879a9f96fe6d3bf1192ccbc3ec12aa9d3",
+        "revCount": 992,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
