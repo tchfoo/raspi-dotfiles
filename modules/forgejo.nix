@@ -65,6 +65,7 @@ in
       ${lib.getExe cfg.package} forgejo-cli actions register \
         --name ${lib.escapeShellArg hostName} \
         --scope ${lib.escapeShellArg scope} \
+        --keep-labels \
         --secret-file ${lib.escapeShellArg config.secrets.forgejo.runner-tokens.${scope}}
     '') runnerScopesToUUIDs;
     serviceConfig = {
