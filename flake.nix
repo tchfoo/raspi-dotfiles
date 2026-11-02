@@ -32,6 +32,10 @@
       url = "git+https://git.tchfoo.com/ymstnt/website";
       flake = false;
     };
+    the-missing-intel-naming-scheme = {
+      url = "git+https://git.tchfoo.com/gepbird/the-missing-intel-naming-scheme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
