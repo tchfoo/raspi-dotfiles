@@ -45,6 +45,16 @@
     tangled-core = {
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.microvm.follows = "null";
+      inputs.indigo.follows = "null";
+      inputs.hydrant-dev.follows = "null";
+      inputs.hydrant.follows = "null";
+      inputs.ibm-plex-mono-src.follows = "null";
+      inputs.timeless-fonts-src.follows = "null";
+      inputs.gomod2nix.follows = "null";
+      inputs.flake-compat.follows = "null";
+      inputs.nixpkgs-pds.follows = "null";
+      inputs.sqlite-lib-src.follows = "null";
     };
     nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation = {
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
@@ -62,6 +72,7 @@
       inputs.treefmt-nix.follows = "null";
       inputs.nixpkgs-patcher.follows = "null";
       inputs.nixpkgs-patch-hytale-launcher.follows = "null";
+      inputs.nixpkgs-patch-pipewire-auto-restart.follows = "null";
       inputs.nix-index-database.follows = "nix-index-database";
     };
     ymstnt-dotfiles = {
@@ -76,6 +87,7 @@
       inputs.nixpkgs-patcher.follows = "null";
       inputs.nixpkgs-patch-hytale-launcher.follows = "null";
       inputs.nix-index-database.follows = "nix-index-database";
+      inputs.blip.follows = "null";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
