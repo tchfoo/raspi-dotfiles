@@ -607,11 +607,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793470595,
-        "narHash": "sha256-hmvSOS+LyWXLiJN41hM2O2ARqapsEo706jZoww0O38k=",
+        "lastModified": 1793702435,
+        "narHash": "sha256-C3JjGFn16dc+5YdxCGw8IzWDoGog2OjwbR7K4f+6Fuc=",
         "ref": "refs/heads/master",
-        "rev": "4a30c98e01eeada0cf1957a94ae34237751b853c",
-        "revCount": 6081,
+        "rev": "3d79c7eeace9cf432b5d44b1f76e1f33df9b17a1",
+        "revCount": 6235,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
