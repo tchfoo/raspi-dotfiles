@@ -19,7 +19,6 @@ in
       atproto.plc_directory = "https://plc.directory";
       contact.email = "ymstnt@ymstnt.com";
       git.object_format = "sha1";
-      lfs.store_path = "/var/lib/knot/lfs";
       tls.http3 = false;
       xrpc = {
         trusted_proxy_header = "x-forwarded-for";
