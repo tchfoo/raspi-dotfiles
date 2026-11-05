@@ -45,6 +45,7 @@
     tangled-core = {
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.fenix.follows = "fenix";
       inputs.microvm.follows = "null";
       inputs.indigo.follows = "null";
       inputs.hydrant-dev.follows = "null";
@@ -104,6 +105,11 @@
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "null";
+    };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.rust-analyzer-src.follows = "null";
     };
   };
 
