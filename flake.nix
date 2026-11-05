@@ -42,6 +42,14 @@
       inputs.flake-parts.follows = "flake-parts";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation = {
+      url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
+      flake = false;
+    };
+    nixpkgs-patch-atuin-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/582602.diff";
+      flake = false;
+    };
     tangled-core = {
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,10 +64,6 @@
       inputs.flake-compat.follows = "null";
       inputs.nixpkgs-pds.follows = "null";
       inputs.sqlite-lib-src.follows = "null";
-    };
-    nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation = {
-      url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
-      flake = false;
     };
     gep-dotfiles = {
       url = "git+https://git.tchfoo.com/gepbird/dotfiles";
