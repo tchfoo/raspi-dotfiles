@@ -46,4 +46,18 @@ in
       recommendedProxySettings = true;
     };
   };
+
+  services.borgmatic.configurations.raspi =
+    let
+      inherit (config.services.tangled.knot-rs) stateDir;
+    in
+    {
+      source_directories = [
+        stateDir
+      ];
+      # Override exclude_patterns, which would silently drop refs such as refs/heads/fix-cache
+      patterns = [
+        "+ pp:${stateDir}"
+      ];
+    };
 }
