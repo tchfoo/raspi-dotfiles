@@ -10,5 +10,8 @@
     source_directories = [
       "/var/lib/misc/tino/data"
     ];
+    exclude_patterns = [
+      "/var/lib/misc/tino/data/fonts"
+    ];
   };
 }
