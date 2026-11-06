@@ -77,7 +77,10 @@ in
   };
 
   systemd.services."forgejo-runner-${utils.escapeSystemdPath hostName}" = {
-    wants = [ "forgejo-register-runners.service" ];
+    wants = [
+      "docker.service"
+      "forgejo-register-runners.service"
+    ];
     after = [ "forgejo-register-runners.service" ];
   };
 
