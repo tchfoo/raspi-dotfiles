@@ -7,7 +7,7 @@
   services.openssh = {
     enable = true;
     ports = [
-      config.hosts.${config.networking.hostName}.port
+      config.currentHost.port
     ];
     settings = {
       PasswordAuthentication = false;

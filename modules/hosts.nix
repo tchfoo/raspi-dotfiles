@@ -1,10 +1,12 @@
 {
+  config,
   lib,
   ...
 }:
 
 let
   inherit (lib)
+    literalExpression
     mkOption
     types
     ;
@@ -12,6 +14,7 @@ let
     attrsOf
     int
     port
+    raw
     str
     submodule
     ;
@@ -34,6 +37,12 @@ in
         };
       };
     });
+  };
+
+  options.currentHost = mkOption {
+    type = raw;
+    readOnly = true;
+    default = config.hosts.${config.networking.hostName};
   };
 
   config.hosts = {
