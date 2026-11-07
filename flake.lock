@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793801102,
-        "narHash": "sha256-XZz60a37nUaPX0zH8TcD83ChVVyRV9o/H/t1dr4RZpk=",
+        "lastModified": 1794055457,
+        "narHash": "sha256-ikO+WgHkuOGeBH8gJMUt4zbkhkRMIyEHEPSQOSkz+4M=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "12b7e3178c093a8af075f4a889238a2fffa3d0ef",
+        "rev": "5161c3b5239da76a876135d51ff91281daffd78e",
         "type": "github"
       },
       "original": {
@@ -82,7 +82,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-patch-discord-openasar-fix-launch": "nixpkgs-patch-discord-openasar-fix-launch",
+        "nixpkgs-patch-discord-vencord-1-15-16": "nixpkgs-patch-discord-vencord-1-15-16",
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
@@ -107,11 +107,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793890200,
-        "narHash": "sha256-KyANixuTZeAPDPLwk66KvCaJ3SxhgPzC3KuAGCg2W84=",
+        "lastModified": 1794054802,
+        "narHash": "sha256-uuYxzHRUi+mydlmNXzqm2LrdNG4ZhQ8wGhxm5yecNfY=",
         "ref": "refs/heads/main",
-        "rev": "b3f60aee4dca2a29af9b658939635c8317d0feac",
-        "revCount": 1543,
+        "rev": "ce2ab12ebad7e24838c5e81fe73cc9f2d8d4cd3a",
+        "revCount": 1552,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -127,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793757180,
-        "narHash": "sha256-gyV7AtCwLnOImcrfSETP4J3Ie96bz19DY47B7m7Y3HM=",
+        "lastModified": 1793979366,
+        "narHash": "sha256-7OoWDsYO9teiPxl0QdlS5lYE20Pue8/5mpscSL32FUA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b787c48e2ec57a9d098f5c2721882a3bc1e16f97",
+        "rev": "2c0c1f01521469cf0271180c453c79782d53c2f6",
         "type": "github"
       },
       "original": {
@@ -247,11 +247,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793871777,
-        "narHash": "sha256-DbFyxXHjP4SJDWVVIILkgrUZxj29cDusi8ULXoQGuZ8=",
+        "lastModified": 1794051415,
+        "narHash": "sha256-mJok3uMK0awq2MPKdSnvTxm3UD89KD3LclQzASgtY1s=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "d645c71a58dbae3eb17ff551a07aea13a541cb1a",
+        "rev": "1a8ff4f57ffe1f732beaa1db842247a381ea471d",
         "type": "github"
       },
       "original": {
@@ -345,6 +345,30 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/582751.diff"
       }
     },
+    "nixpkgs-patch-discord-vencord-1-15-16": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-pUpjbdEBLq9ngUa2w8DNt50flnpaaaOktcbdNNBI4Xs=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
+      }
+    },
+    "nixpkgs-patch-discord-vencord-1-15-16_2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-pUpjbdEBLq9ngUa2w8DNt50flnpaaaOktcbdNNBI4Xs=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
+      }
+    },
     "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
       "flake": false,
       "locked": {
@@ -374,11 +398,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1793726008,
-        "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
+        "lastModified": 1793876309,
+        "narHash": "sha256-Wojg9lIH/hDH91iDVH2/EPw8oDSpxjxhXONbU1yf4Zg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+        "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
         "type": "github"
       },
       "original": {
@@ -467,11 +491,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793895785,
-        "narHash": "sha256-4gV5Awc1kQXbugOS4SMkQXlEQQXorE9H+ey3/FnU42I=",
+        "lastModified": 1794090170,
+        "narHash": "sha256-mhaeV5a1yrDgwrcaDAXpefMFeFraFuwFitU4KnL0ZvM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "4db3d74452f668cedca53e4ba69f1116f72d937f",
+        "rev": "319e5026c432e3af6f32123edd5d33d78b3d06e3",
         "type": "github"
       },
       "original": {
@@ -551,11 +575,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793657466,
-        "narHash": "sha256-GoOvpdsjO5hqZuO6T6ok9u6sJEjO0iPli2zRr9oNUNw=",
+        "lastModified": 1793995029,
+        "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "b18e01ce148eb3efff5de2f2d3181ca53b2b2a54",
+        "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
         "type": "github"
       },
       "original": {
@@ -620,11 +644,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793890331,
-        "narHash": "sha256-toOxg476TZRy0dEWyfWlGKF8LgQSQZZM3zzuk7dvx3k=",
+        "lastModified": 1794076291,
+        "narHash": "sha256-jRgXaKHAmtx352F2VCdn9nbAF/mdk2hyDHZEKosaiWs=",
         "ref": "refs/heads/master",
-        "rev": "2668fb5a1b596be13cc464f4771f261dd86f7b8e",
-        "revCount": 6327,
+        "rev": "f70c71c7696a1cb0caaf472cca950bbbc74f174f",
+        "revCount": 6430,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -693,6 +717,8 @@
         "nixpkgs-master": [
           "null"
         ],
+        "nixpkgs-patch-discord-openasar-fix-launch": "nixpkgs-patch-discord-openasar-fix-launch",
+        "nixpkgs-patch-discord-vencord-1-15-16": "nixpkgs-patch-discord-vencord-1-15-16_2",
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
@@ -710,11 +736,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793472111,
-        "narHash": "sha256-KA4CkKIIxDVBcKlDayh9P2kb8xUqCynTTHP9IrL2KUA=",
+        "lastModified": 1794047706,
+        "narHash": "sha256-cngHOuDfvqc090QklwIcWY+ni7sYdLX4bVz4OdE2lu8=",
         "ref": "refs/heads/main",
-        "rev": "12021ae2b9ac377b64c4a4e9e1923f6fca97b9f3",
-        "revCount": 993,
+        "rev": "e17055166f363d0b988c1a9dc0cac10a4bfc6e96",
+        "revCount": 995,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
