@@ -1,7 +1,6 @@
 {
-  config,
   pkgs,
-  the-missing-intel-naming-scheme,
+  the-missing-hardware-naming-schemes,
   ...
 }:
 
@@ -9,7 +8,7 @@ let
   website-config = {
     enableACME = true;
     forceSSL = true;
-    root = the-missing-intel-naming-scheme.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    root = the-missing-hardware-naming-schemes.packages.${pkgs.stdenv.hostPlatform.system}.default;
     extraConfig = ''
       error_page 404 /404.html;
     '';

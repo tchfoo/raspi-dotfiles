@@ -32,8 +32,8 @@
       url = "git+https://git.tchfoo.com/ymstnt/website";
       flake = false;
     };
-    the-missing-intel-naming-scheme = {
-      url = "git+https://git.tchfoo.com/gepbird/the-missing-intel-naming-scheme";
+    the-missing-hardware-naming-schemes = {
+      url = "git+https://git.tchfoo.com/gepbird/the-missing-hardware-naming-schemes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur = {
