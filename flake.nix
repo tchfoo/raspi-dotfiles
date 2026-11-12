@@ -50,14 +50,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/583850.diff";
       flake = false;
     };
-    nixpkgs-patch-intelli-shell-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/584630.diff";
-      flake = false;
-    };
-    nixpkgs-patch-msedit-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/584906.diff";
-      flake = false;
-    };
     tangled-core = {
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";

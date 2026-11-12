@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794239082,
-        "narHash": "sha256-s0LM0VgI+LQF+hqO96lyqfpyrux6xS8CgcxTjv+g8qU=",
+        "lastModified": 1794405206,
+        "narHash": "sha256-cuOxbz5ZpU5tW/0WCJacryQ29WwX7YriRSCQOPfmhHw=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "f8e0414b287d4a5c674ba9a7dd3fbe47d563246c",
+        "rev": "ccd92f7d6a0cce55646fffc6b5804e9b7a9fb411",
         "type": "github"
       },
       "original": {
@@ -82,13 +82,13 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-patch-discord-vencord-1-15-16": "nixpkgs-patch-discord-vencord-1-15-16",
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
         "nixpkgs-patch-pipewire-auto-restart": [
           "null"
         ],
+        "nixpkgs-patch-rustdesk-flutter-fix-build": "nixpkgs-patch-rustdesk-flutter-fix-build",
         "nixpkgs-patcher": [
           "null"
         ],
@@ -107,11 +107,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794141581,
-        "narHash": "sha256-CqezK9fQN5QF4OFBBHxyZ8N5Xk1D2hatAot77NOs9Ak=",
+        "lastModified": 1794476766,
+        "narHash": "sha256-IH5F0tHwXNjkHaT8j489wu9uBIx0zwvybHkVTU5H6qo=",
         "ref": "refs/heads/main",
-        "rev": "03729fc4444eb6dd1deb91f07959827c199d51af",
-        "revCount": 1555,
+        "rev": "30736d8e97563cf367e338f246ce6b611a49b026",
+        "revCount": 1559,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -127,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794260168,
-        "narHash": "sha256-QekF1EcwDWVnxAu2zianjXSf1vp6XwfCgttJf1tPZfM=",
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "761b01ffedcc7fb5a2346ef00ea23b3621d66629",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
         "type": "github"
       },
       "original": {
@@ -163,11 +163,11 @@
         "nuget-packageslock2nix": "nuget-packageslock2nix"
       },
       "locked": {
-        "lastModified": 1793093031,
-        "narHash": "sha256-2ib5m69kLmUrvozSFgtWGiHzGv+q6Lyt8hM0hlzwGSI=",
+        "lastModified": 1794409893,
+        "narHash": "sha256-YSU7ZkJvqJ7CMDEPzGK0zVSGICQaB/Tqn6jLLXMlAeA=",
         "owner": "tchfoo",
         "repo": "moe",
-        "rev": "09da70ab3fb3e69d199db6f3ed421fa798363b37",
+        "rev": "90ee0f9b700864502cdae1aee78969ea1a755f17",
         "type": "github"
       },
       "original": {
@@ -247,11 +247,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794222723,
-        "narHash": "sha256-jehPADpSIsWnyNHw/s44OHF9l6Y75QmW74sqO9cEe0A=",
+        "lastModified": 1794425805,
+        "narHash": "sha256-4s5CRvkYX4oAJVZ+zu2bBKFH2gG2GqN6OKHEWgJr1AY=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "919c16cf46a7acf9b44b2c2444bc39aa094eaa85",
+        "rev": "b6ca87f78ec5bafc4b2aef7b29803dcf419266af",
         "type": "github"
       },
       "original": {
@@ -324,7 +324,7 @@
     "nixpkgs-patch-atuin-fix-build": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-5WV8egJ8V0vgitDwb/VpEJQyKv8NdvXqqVyaILBhWhs=",
+        "narHash": "sha256-qwU8+PwlAyoWPt30SdVj13jYDZwdsUGuRaVa/XRKLy0=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/583850.diff"
       },
@@ -357,52 +357,28 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
       }
     },
-    "nixpkgs-patch-discord-vencord-1-15-16_2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-pUpjbdEBLq9ngUa2w8DNt50flnpaaaOktcbdNNBI4Xs=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584169.diff"
-      }
-    },
-    "nixpkgs-patch-intelli-shell-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-YPtfNT6m2qIe4RAcJPJGpusMVEoG93nNIqEfwaS18ZU=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584630.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584630.diff"
-      }
-    },
-    "nixpkgs-patch-msedit-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-udriqws2rT+j6uaOqfKPB3pGX0toirVdQGx8520RPSQ=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584906.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/584906.diff"
-      }
-    },
     "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-al1LqNVSWNpigJVcPanpWMjfvxhFx8l7/Yo52w1zSbU=",
+        "narHash": "sha256-XsVYN2v/YpBhqzsEdT1p083C3iDFP3NkjLPmbCvWnv8=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
       },
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
+      }
+    },
+    "nixpkgs-patch-rustdesk-flutter-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-M0la8LsUgclow6Ky0wv9wd7V4Jvu88XX0U+Kswd4S/w=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/585583.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/585583.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -422,11 +398,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1794042290,
-        "narHash": "sha256-ziZn2PvCJE5JEEpqTdxXwJpPB+L3YqoCpTAMCzyaP3U=",
+        "lastModified": 1794192123,
+        "narHash": "sha256-SvB8u5qaJAOwZZyZciqTVOg/rBoUs2w0sFTU6ED51AQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
+        "rev": "177d0540942fb205af6993b1d5fa0b57799e09f8",
         "type": "github"
       },
       "original": {
@@ -515,11 +491,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794258886,
-        "narHash": "sha256-Cv4N5eNV2TM9Zk7+iAxTQmAG72xwVThurUpPaAl/3GI=",
+        "lastModified": 1794475847,
+        "narHash": "sha256-zUMoL8Jsa21CQJ26Bo3SR/MS60oixcT2RVYV2o/Fp0w=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "03cd292c580a050ab2c31b2e54e2e5d5f8f4b863",
+        "rev": "7b921c747644347cbb458826f751416c2a7d96d3",
         "type": "github"
       },
       "original": {
@@ -579,8 +555,6 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-curl-8-19-0": "nixpkgs-curl-8-19-0",
         "nixpkgs-patch-atuin-fix-build": "nixpkgs-patch-atuin-fix-build",
-        "nixpkgs-patch-intelli-shell-fix-build": "nixpkgs-patch-intelli-shell-fix-build",
-        "nixpkgs-patch-msedit-fix-build": "nixpkgs-patch-msedit-fix-build",
         "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "null": "null",
@@ -601,11 +575,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793995029,
-        "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
+        "lastModified": 1794261845,
+        "narHash": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
+        "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
         "type": "github"
       },
       "original": {
@@ -670,11 +644,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794252473,
-        "narHash": "sha256-gOX9iEmAjitW3dzwP9vxr/4N9hHcMVx8SssF1gCa7Rk=",
+        "lastModified": 1794428638,
+        "narHash": "sha256-n4QBjC0/boqR1dZKNCGN76DjiPlt2Li929mQcJa2PVw=",
         "ref": "refs/heads/master",
-        "rev": "89a2df39ca8fd54dba9018120464a52220ce868e",
-        "revCount": 6455,
+        "rev": "28daeb52f1c499ba8cd053f06cbc1e0f09c0bdc1",
+        "revCount": 6486,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -744,7 +718,7 @@
           "null"
         ],
         "nixpkgs-patch-discord-openasar-fix-launch": "nixpkgs-patch-discord-openasar-fix-launch",
-        "nixpkgs-patch-discord-vencord-1-15-16": "nixpkgs-patch-discord-vencord-1-15-16_2",
+        "nixpkgs-patch-discord-vencord-1-15-16": "nixpkgs-patch-discord-vencord-1-15-16",
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
