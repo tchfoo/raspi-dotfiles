@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794750246,
-        "narHash": "sha256-7Yd8fQdT8G1p76nY5thZMAO4/hMyhG9iIL42i8OfbLU=",
+        "lastModified": 1795015517,
+        "narHash": "sha256-hudxF5BuipTDnLpklD965NQYHbKjRzXG4HeZhlm3It8=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "03b9a946cbd2777de45d7ba96c29157e1f7db613",
+        "rev": "99a75e53c977fe7c3934e8a4a7a0d3000efd6a33",
         "type": "github"
       },
       "original": {
@@ -85,11 +85,11 @@
         "nixpkgs-patch-hytale-launcher": [
           "null"
         ],
-        "nixpkgs-patch-nh-4-5-0": "nixpkgs-patch-nh-4-5-0",
         "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing",
         "nixpkgs-patch-pipewire-auto-restart": [
           "null"
         ],
+        "nixpkgs-patch-rom-0-6-1": "nixpkgs-patch-rom-0-6-1",
         "nixpkgs-patcher": [
           "null"
         ],
@@ -108,11 +108,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794736794,
-        "narHash": "sha256-HHBkIjhBMaBATzdZkUk4QlQVdzY/aCsl55Wihbq52wA=",
+        "lastModified": 1795023411,
+        "narHash": "sha256-zzlEbrr0fDuPjw4DbcMSZWzrS10tCbQhehdlJVPXg0Y=",
         "ref": "refs/heads/main",
-        "rev": "ddc4f0bad061decf967a9a7e288a3f91ac13100d",
-        "revCount": 1571,
+        "rev": "9f00479255d19251c52d4e8b341f389278a886c2",
+        "revCount": 1578,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dotfiles"
       },
@@ -128,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794715309,
-        "narHash": "sha256-awkBBs5ctFKgEYjpNGpi3t/VqF589n5EWfdinRb2gNI=",
+        "lastModified": 1794963576,
+        "narHash": "sha256-+CPrP74GDJ63f7bgEFC9Av4hbxc7K9WUNv1ZVRifRe8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1293da7dd8e497e08d26173f97e2976b36a31ea",
+        "rev": "2b13c9cb3aa20653e6f8ee0b7f8331a53ea9b0a9",
         "type": "github"
       },
       "original": {
@@ -248,11 +248,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794597451,
-        "narHash": "sha256-bUkc9dMpCFiJuuf5Efr7pnCDs5q18aA8zJah+MYZl9w=",
+        "lastModified": 1795018746,
+        "narHash": "sha256-glQAHvZGgBVjzGIWgIZYSf3X10gvtO2LPR4rtyP/Soc=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "eb3c90bd715f7a9a28719bb014f53d309ccb2fc8",
+        "rev": "33475966110df258f52d05ec4d4cd6394637cbb9",
         "type": "github"
       },
       "original": {
@@ -318,22 +318,10 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/589961.diff"
       }
     },
-    "nixpkgs-patch-nh-4-5-0": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-RHgwPaK0J0O2kcPZbwPyrmvYoS2xza4APyNtYJdAMH0=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/578415.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/578415.diff"
-      }
-    },
     "nixpkgs-patch-nixos-nginx-add-build-time-syntax-validation": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-XsVYN2v/YpBhqzsEdT1p083C3iDFP3NkjLPmbCvWnv8=",
+        "narHash": "sha256-qj+V7P5Coy4SkCo1CYyMPH87DffRTLMEnPlYDzzUUNs=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/474858.diff"
       },
@@ -345,13 +333,25 @@
     "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-DvkPJ/CuaPEvGM2Y/1f+Ip8ahdzQOC8jsWlwSyRKU1E=",
+        "narHash": "sha256-kZMGgnoOkJgCP0E0R0fbPwVMcGPFXB+B5t4LwBt3ND4=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/587646.diff"
       },
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/587646.diff"
+      }
+    },
+    "nixpkgs-patch-rom-0-6-1": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-enau4WT9K8x/tWrD/D9XKkCSEw41s7oBBB5bGFioS5c=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/589922.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/589922.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -371,11 +371,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1794537146,
-        "narHash": "sha256-Wpz/7x/YWnDIBu7yj6ixe8j6fIMsidd9Y+o1PqPF3iM=",
+        "lastModified": 1794890597,
+        "narHash": "sha256-lME2lHoDHAaSHP3/okgiVoJ0icVEvsQH8LeU3We7tcc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
+        "rev": "04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
         "type": "github"
       },
       "original": {
@@ -464,11 +464,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794781505,
-        "narHash": "sha256-mrJbCpf/nRa+ci3yukrvr+9JAPdcOZDQQogECQWQUC4=",
+        "lastModified": 1795036979,
+        "narHash": "sha256-DEy3nn/XbROoMk1Obb7X+rup9//fluVnsJa6oR+kBNw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "47913bc596f85a5699e14447f5df622bdcb236d9",
+        "rev": "f00e194c85d9e7deeadee78f6e5a633b795c5036",
         "type": "github"
       },
       "original": {
@@ -547,11 +547,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794624949,
-        "narHash": "sha256-3q/hxp/flW1PnV3Dx+H3p8kHGEHJ7251BqVMNsAAB9E=",
+        "lastModified": 1794866654,
+        "narHash": "sha256-Y28AMB8lyKjASdJ0BVsR2AqR1cUsVuo8RVVpzHoECho=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "11e5885d241743ff0193465d533b20e754bc3ce0",
+        "rev": "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4",
         "type": "github"
       },
       "original": {
@@ -616,11 +616,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794757948,
-        "narHash": "sha256-mpXdZOIHrmz9AuI1Uu14d5D6J6MAio74YI1NUg9WJ1w=",
+        "lastModified": 1795034431,
+        "narHash": "sha256-PhsX/O8TZfmtkQRihxvo6oFxuOw/ZMydvLSJPxKHPqM=",
         "ref": "refs/heads/master",
-        "rev": "cff614dedaa51c63bcf874a2a9d49e2f3fe188d5",
-        "revCount": 6524,
+        "rev": "68b90c8e0415e3b3d0a874e941acfc38a7d8e425",
+        "revCount": 6629,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
@@ -656,11 +656,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791885023,
-        "narHash": "sha256-C3alQ2MEt0zVrUSho5NUDo3jmhbff72++bfwoqT9Omo=",
+        "lastModified": 1795017206,
+        "narHash": "sha256-WSBJcYjPRxGetDNxVzKnRPs1TQasQQlAC25W/S4W6YE=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "0d6d739a833ba9a9c93034862e4a7b061a062a1c",
+        "rev": "0ba5d67225c3f5c88eb134e1a665a379bfd3bea9",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794609542,
-        "narHash": "sha256-SNyzRItzTH8MyEbmaHyikN4pKcWpPCgtVELhq3FsVOM=",
+        "lastModified": 1794939912,
+        "narHash": "sha256-9KLIGBBv7UQi8/BTqhggZwyuwcBYXdNd7icisbeHbXg=",
         "ref": "refs/heads/main",
-        "rev": "ad4b103edd4cd685e6be1cfc21b2c26dc4f8250e",
-        "revCount": 1011,
+        "rev": "5c318b2c5052e43918a5392f82d3ad16efbf4da7",
+        "revCount": 1014,
         "type": "git",
         "url": "https://git.tchfoo.com/ymstnt/dotfiles"
       },
