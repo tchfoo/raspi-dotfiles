@@ -45,10 +45,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/474858.diff";
       flake = false;
     };
-    nixpkgs-patch-nginx-1-30-7 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/589961.diff";
-      flake = false;
-    };
     tangled-core = {
       url = "git+https://tangled.org/tangled.org/core";
       inputs.nixpkgs.follows = "nixpkgs";
