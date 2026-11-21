@@ -597,11 +597,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794147218,
-        "narHash": "sha256-TjW/vr4VfGJuyq8YzseO5cKAI4xDSrth2hVDrUDWXSI=",
+        "lastModified": 1795271267,
+        "narHash": "sha256-cEqYIo8+tiMgCvtR62SSsgMkv7HdU1R1C76K3hV6CNk=",
         "ref": "refs/heads/main",
-        "rev": "661dad644c88302edff185ae793085264c0b9526",
-        "revCount": 62,
+        "rev": "e722d9278139bd8517db0904d9747471cf346ba7",
+        "revCount": 76,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/the-missing-hardware-naming-schemes"
       },
