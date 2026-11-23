@@ -85,7 +85,6 @@
       inputs.nixpkgs-stable.follows = "null";
       inputs.nur.follows = "null";
       inputs.nixpkgs-patcher.follows = "null";
-      inputs.nixpkgs-patch-hytale-launcher.follows = "null";
       inputs.nix-index-database.follows = "nix-index-database";
       inputs.blip.follows = "null";
     };
